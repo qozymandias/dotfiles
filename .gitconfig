@@ -1,0 +1,18 @@
+[user]
+	name = qozymandias
+	email = odowning19@gmail.com
+
+[mergetool "vimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[difftool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE
+
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+
+[http]
+	sslverify = false
+	postBuffer = 1048576000

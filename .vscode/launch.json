@@ -1,0 +1,643 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "scale app server",
+            "label": "conference_server",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/scale_app_server",
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "args": [],
+            "filterStdout": true,
+        },
+        {
+            "name": "conference server",
+            "label": "conference_server",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvconference_server",
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "args": [],
+            "filterStdout": true,
+        },
+        {
+            "name": "audio server",
+            "label": "audio_server",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvaudio_server",
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "args": [
+                "--log_level=debug",
+            ],
+            "filterStdout": true,
+        },
+        {
+            "name": "audio_server extra args",
+            "label": "audio_server",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvaudio_server",
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "args": [
+                "--disable_load_balancing=true",
+                "--log_level=debug",
+                "--quiet_mode=true",
+                "--upstream_log_mode=NTL",
+                "--log_full_rtpdump=true",
+                "--upstream_log_pattern=[^\\s]+"
+            ],
+            "filterStdout": true,
+        },
+        {
+            "name": "InternalCascadeAngleJumping",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*InternalCascadeAngleJumping*",
+                "--gtest_catch_exceptions=0",
+                "-run_until_fail",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Simplesix point",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*VerifySixPointSceneForOpusStereoWithoutListenerCascade*",
+                "--gtest_catch_exceptions=0",
+                "-run_until_fail"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "ASAN audio_server",
+            "label": "audio_server",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvaudio_server",
+            "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+            "args": [
+                "--disable_load_balancing=true",
+                "--internal_cascade_mode=forward",
+                "--quiet_mode=true",
+            ],
+        },
+        {
+            "name": "ASAN InternalCascadeAngleJumping",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*InternalCascadeAngleJumping*",
+                "--gtest_catch_exceptions=0",
+                "-run_until_fail"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": false
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": false
+                }
+            ]
+        },
+        {
+            "name": "DVMS-5993 anoter",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*ForwardCascadedAngleIssues*",
+                "--gtest_catch_exceptions=0",
+                "-run_until_fail"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "6123",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*StreamForwardGainOverrideIssues*",
+                "--gtest_catch_exceptions=0",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "DVMS-5993 ASAN",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*VerifySixPointSceneForOpusStereoWithoutListenerCascade*:*VerifySixPointSceneForOpusStereoWithListenerCascade*:*InternalCascadeAngleJumping*:*ForwardCascadedAngleIssues*",
+                "--gtest_catch_exceptions=0",
+                "-run_until_fail"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "DVMS-5993",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*VerifySixPointSceneForOpusStereoWithoutListenerCascade*:*VerifySixPointSceneForOpusStereoWithListenerCascade*:*InternalCascadeAngleJumping*:*ForwardCascadedAngleIssues*",
+                "--gtest_catch_exceptions=0",
+                "-run_until_fail"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "DVMS-6123",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*ForwardCascadedAngleIssues*",
+                "--gtest_catch_exceptions=0",
+                "-run_until_fail"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "SpatialTransformTest",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_unittest",
+            "args": [
+                "--gtest_filter=*SpatialTransformTest*",
+                "--gtest_catch_exceptions=0",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "global position manager",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_unittest",
+            "args": [
+                "--gtest_filter=*GlobalPositionManagerTest*",
+                "--gtest_catch_exceptions=0",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "unit test",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_unittest",
+            "args": [
+                "--gtest_filter=*",
+                "--gtest_catch_exceptions=0",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "SpatialTest",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*ForwardCascadedAngleIssues*",
+                "--gtest_catch_exceptions=0",
+                "-run_until_fail",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "SpatialTest ASAN",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*ForwardCascadedAngleIssues*",
+                "--gtest_catch_exceptions=0",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "ForceSplitSmall",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_unittest",
+            "args": [
+                "--gtest_filter=*ConferenceManagerTest.ForceSplitSmall*",
+                "--gtest_catch_exceptions=0",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "sys test",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*",
+                "--gtest_catch_exceptions=0",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "sys test FEC",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*FECTest*"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "sys test: Spatial Test",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*SpatialTest*",
+                "-run_until_fail",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "unit test: SceneManagerTest",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_unittest",
+            "args": [
+                "--gtest_filter=*SceneManagerTest*"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "sys test (ASAN)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "sys test InternalCascadeAngleJumping (ASAN)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*InternalCascadeAngleJumping*",
+                "-run_until_fail",
+                "--gtest_catch_exceptions=0"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "sys test NtlRtpdumpTest",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
+            "args": [
+                "--gtest_filter=*NtlRtpdumpTest*", //NtlOnly*",
+                "-run_until_fail",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../Build/bin/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+    ]
+}

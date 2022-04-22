@@ -32,6 +32,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'AckslD/nvim-neoclip.lua'
     Plug 'tami5/sqlite.lua'
+    Plug 'puremourning/vimspector'
+    Plug 'neovim/pynvim'
+    Plug 'nvim-telescope/telescope-vimspector.nvim'
+    Plug 'janko/vim-test'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -149,7 +153,7 @@ vnoremap <C-c> "+y
 map <C-p> "+P
 " Highlight in search toggle shortcut
 nnoremap <silent> <C-_> :set hlsearch!<cr>
-nnoremap <leader>_ :set hlsearch!<cr>
+" nnoremap <leader>_ :set hlsearch!<cr>
 " paragraph jump up/down 
 noremap <silent> <expr> <C-k> (line('.') - search('^\n.\+$', 'Wenb')) . 'kzv^'
 noremap <silent> <expr> <C-j> (search('^\n.', 'Wen') - line('.')) . 'jzv^'
@@ -157,6 +161,21 @@ noremap <silent> <expr> <C-j> (search('^\n.', 'Wen') - line('.')) . 'jzv^'
 cnoremap <C-A> <Home>
 " command mode remap: end of line
 cnoremap <C-E> <End>
+
+set foldmethod=manual
+
+nnoremap <leader>f} zfa}
+nnoremap <leader>fc zd
+
+inoremap <F9> <C-O>za
+nnoremap <F9> za
+onoremap <F9> <C-C>za
+vnoremap <F9> zf
+
+" missing ZZ and ZQ counterparts:
+" quick save-buffer and quit-everything
+nnoremap ZS :w<CR>
+nnoremap ZX :qa<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -278,6 +297,17 @@ function! s:check_back_space() abort
     return !col || getline('.')[col - 1] =~ '\s'
 endfunction
 
+func! AddToWatch()
+    let word = expand("<cexpr>")
+    call vimspector#AddWatch(word)
+endfunction
+
+" janko/vim-test and puremouring/vimspector integration
+function! JestStrategy(cmd)
+    let testName = matchlist(a:cmd, '\v -t ''(.*)''')[1]
+    call vimspector#LaunchWithSettings( {'configuration': 'jest', 'TestName': testName} )
+endfunction
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Functions usages 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -326,8 +356,18 @@ set undofile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Window
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
+" Resize windows
+"nnoremap <leader>+ :resize +2<cr>
+"nnoremap <leader>= :resize -2<cr>
+"nnoremap <leader>_ :vertical resize +2<cr>
+"nnoremap <leader>- :vertical resize -2<cr>
+nnoremap <Up>    :resize +3<CR>
+nnoremap <Down>  :resize -3<CR>
+nnoremap <Left>  :vertical resize -3<CR>
+nnoremap <Right> :vertical resize +3<CR>
+" nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
+" nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 set splitbelow
 set splitright
@@ -393,8 +433,68 @@ nmap <leader>f <Plug>(coc-fix-current)
 nmap <leader>t :tab split<cr>
 nmap <leader>tt :ToggleTerm direction=tab<cr>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ==> Coc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" @todo have coc installs within vimrc
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ==> Vimspector
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vimspector_enable_mappings = 'HUMAN'
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
+
+let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'vscode-node-debug2']
+
+" inspect variable under current cursor
+" for normal mode - the word under the cursor
+nmap <leader>de <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+xmap <leader>de <Plug>VimspectorBalloonEval
+
+" toggle breakpoint
+nnoremap <leader>db :call vimspector#ToggleBreakpoint()<CR>
+
+" Add expression under current cursor to watch list
+nnoremap <leader>dw :call AddToWatch()<CR>
+
+" debugger launch, reset stop restart and pause
+nnoremap <leader>dl :call vimspector#Launch()<CR>
+nnoremap <leader>dp :call vimspector#Pause()<CR>
+nnoremap <leader>dk :call vimspector#Stop()<CR>
+nnoremap <leader>dr :call vimspector#Restart()<CR>
+nnoremap <leader>drr :call vimspector#Reset()<CR>
+
+" key mapping for step into, next, finish until, continue
+nnoremap <leader>dst :call vimspector#StepInto()<CR>
+nnoremap <leader>dso :call vimspector#StepOver()<CR>
+nnoremap <leader>dsu :call vimspector#StepOut()<CR>
+nnoremap <leader>drh :call vimspector#RunToCursor()<CR>
+nnoremap <leader>dc :call vimspector#Continue()<CR>
+
+nnoremap <leader>ds :Telescope vimspector configurations<cr>
+
+" up or down a frame
+nnoremap <leader>u :call vimspector#UpFrame()<CR>
+nnoremap <leader>d :call vimspector#DownFrame()<CR>
+
+" janko/vim-test test test, test file, test suite, test last
+nnoremap <silent> <leader>tn : TestNearest<CR>
+nnoremap <silent> <leader>th : TestFile<CR>
+nnoremap <silent> <leader>ts : TestSuite<CR>
+nnoremap <silent> <leader>tl : TestLast<CR>
+
+let test#strategy = "neovim"
+let test#neovim#term_position = "vertical"
+let g:test#custom_strategies = {'jest': function('JestStrategy')}
+
+nnoremap <leader>tnn : TestNearest -strategy=jest<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ==> Lua
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 lua require'telescope'.setup{ defaults = { prompt_prefix = '=> ', selection_caret = '-> ', }, }
 lua require('telescope').load_extension('coc')
 lua require('telescope').load_extension('neoclip')
-
-" @todo have coc installs within vimrc
+lua require('telescope').load_extension('vimspector')

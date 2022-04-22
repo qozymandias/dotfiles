@@ -1,0 +1,185 @@
+{
+    "configurations": {
+        "Conference Server Debug": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "type": "cppdbg",
+                "request": "launch",
+                "name": "conference server",
+                "label": "conference_server",
+                "program": "${workspaceFolder}/../Build/bin/Debug/dvconference_server",
+                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "environment": [
+                    {
+                        "name": "VIMRUNTIME",
+                        "value": "${workspaceRoot}/runtime"
+                    }
+                ],
+                "externalConsole": true,
+                "stopAtEntry": true,
+                "MIMode": "gdb",
+                "logging": {
+                    "engineLogging": false
+                }
+            }
+        },
+        "Audio Server Debug": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "type": "cppdbg",
+                "request": "launch",
+                "name": "audio server",
+                "label": "audio_server",
+                "program": "${workspaceFolder}/../Build/bin/Debug/dvaudio_server",
+                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "args": [
+                    "--log_level=debug"
+                ],
+                "environment": [
+                    {
+                        "name": "VIMRUNTIME",
+                        "value": "${workspaceRoot}/runtime"
+                    }
+                ],
+                "externalConsole": true,
+                "stopAtEntry": true,
+                "MIMode": "gdb",
+                "logging": {
+                    "engineLogging": false
+                }
+            }
+        },
+        "Audio Server ASAN": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "type": "cppdbg",
+                "request": "launch",
+                "name": "audio server",
+                "label": "audio_server",
+                "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvaudio_server",
+                "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+                "args": [
+                    "--disable_load_balancing=true",
+                    "--internal_cascade_mode=forward",
+                    "--quiet_mode=true"
+                ],
+                "environment": [
+                    {
+                        "name": "VIMRUNTIME",
+                        "value": "${workspaceRoot}/runtime"
+                    }
+                ],
+                "externalConsole": true,
+                "stopAtEntry": true,
+                "MIMode": "gdb",
+                "logging": {
+                    "engineLogging": false
+                }
+            }
+        },
+        "Sys Tests Debug": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "name": "sys test",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
+                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "args": [
+                    "--gtest_filter=*",
+                    "--gtest_catch_exceptions=0"
+                ],
+                "stopAtEntry": false,
+                "environment": [
+                    {
+                        "name": "VIMRUNTIME",
+                        "value": "${workspaceRoot}/runtime"
+                    }
+                ],
+                "externalConsole": true,
+                "MIMode": "gdb",
+                "logging": {
+                    "engineLogging": false
+                }
+            }
+        },
+        "Sys Tests ASAN": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "name": "sys test asan",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_systest",
+                "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+                "args": [
+                    "--gtest_filter=*",
+                    "--gtest_catch_exceptions=0"
+                ],
+                "stopAtEntry": false,
+                "environment": [
+                    {
+                        "name": "VIMRUNTIME",
+                        "value": "${workspaceRoot}/runtime"
+                    }
+                ],
+                "externalConsole": true,
+                "MIMode": "gdb",
+                "logging": {
+                    "engineLogging": false
+                }
+            }
+        },
+        "Unit Tests Debug": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "name": "unit test debug",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_unittest",
+                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "args": [
+                    "--gtest_filter=*",
+                    "--gtest_catch_exceptions=0"
+                ],
+                "stopAtEntry": false,
+                "environment": [
+                    {
+                        "name": "VIMRUNTIME",
+                        "value": "${workspaceRoot}/runtime"
+                    }
+                ],
+                "externalConsole": true,
+                "MIMode": "gdb",
+                "logging": {
+                    "engineLogging": false
+                }
+            }
+        },
+        "Unit Tests ASAN": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "name": "unit test asan",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_unittest",
+                "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+                "args": [
+                    "--gtest_filter=*",
+                    "--gtest_catch_exceptions=0"
+                ],
+                "stopAtEntry": false,
+                "environment": [
+                    {
+                        "name": "VIMRUNTIME",
+                        "value": "${workspaceRoot}/runtime"
+                    }
+                ],
+                "externalConsole": true,
+                "MIMode": "gdb",
+                "logging": {
+                    "engineLogging": false
+                }
+            }
+        }
+    }
+}
