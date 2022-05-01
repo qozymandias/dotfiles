@@ -1,6 +1,6 @@
 [user]
-	name = qozymandias
-	email = odowning19@gmail.com
+	name = odown
+	email = oscar.downing@dolby.com
 
 [mergetool "vimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
@@ -16,3 +16,6 @@
 [http]
 	sslverify = false
 	postBuffer = 1048576000
+[core]
+	excludesFile = ~/.gitignore
+	editor = ~/.gitignore

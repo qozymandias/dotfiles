@@ -7,47 +7,76 @@
 " ==> Vim Plug
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'ludovicchabant/vim-gutentags', {'branch': 'master'}
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'fannheyward/telescope-coc.nvim'
+    " Plug 'ludovicchabant/vim-gutentags', {'branch': 'master'}
     Plug 'BurntSushi/ripgrep'
     Plug 'rhysd/vim-clang-format'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
-    Plug 'gfeiyou/command-center.nvim'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    " Plug 'gfeiyou/command-center.nvim'
+    Plug 'nvim-lualine/lualine.nvim'
     Plug 'mhinz/vim-signify'
-    Plug 'tomasr/molokai'
     Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
     Plug 'EthanJWright/vs-tasks.nvim'
     Plug 'akinsho/toggleterm.nvim'
-    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
     Plug 'jnurmine/Zenburn'
     Plug 'altercation/vim-colors-solarized'
-    Plug 'fannheyward/telescope-coc.nvim'
     Plug 'tpope/vim-fugitive'
-    Plug 'jaxbot/semantic-highlight.vim'
-    Plug 'jackguo380/vim-lsp-cxx-highlight'
+    " Plug 'jaxbot/semantic-highlight.vim'
+    " Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'AckslD/nvim-neoclip.lua'
     Plug 'tami5/sqlite.lua'
     Plug 'puremourning/vimspector'
     Plug 'neovim/pynvim'
     Plug 'nvim-telescope/telescope-vimspector.nvim'
-    Plug 'janko/vim-test'
+    Plug 'nvim-telescope/telescope-file-browser.nvim'
+    Plug 'sumneko/lua-language-server', { 'do' : 'make' }
+    Plug 'MattesGroeger/vim-bookmarks'
+    Plug 'tom-anders/telescope-vim-bookmarks.nvim'
+    Plug 'stefandtw/quickfix-reflector.vim'
+    Plug 'startup-nvim/startup.nvim'
+    Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'SmiteshP/nvim-gps'
+    Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
+    Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'vijaymarupudi/nvim-fzf'
+    Plug 'nvim-telescope/telescope-fzy-native.nvim', { 'do': 'make' }
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/vim-vsnip'
+    Plug 'hrsh7th/vim-vsnip-integ'
+    Plug 'nvim-lua/lsp-status.nvim'
+    Plug 'nvim-telescope/telescope-smart-history.nvim'
+    Plug 'nvim-telescope/telescope-frecency.nvim'
+    Plug 'williamboman/nvim-lsp-installer'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:zenburn_high_Contrast = 1
+let g:zenburn_italic_Comment=1
+let g:zenburn_alternate_Visual = 1
 colorscheme zenburn
+
 " set background=dark
 " colorscheme solarized
+set completeopt=menu,menuone,noselect
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> General 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ctrl-q twice 
+" cdo s/ / /g
+let laststatus=3
+
 " Sets how many lines of history VIM has to remember
 set history=5000        
 " Enable filetype plugins
@@ -241,26 +270,6 @@ map <leader>1 :setlocal spell! spelllang=en_au<cr>
 map <leader>2 :set rnu!<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Haskell related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
-let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
-let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
-let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
-let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
-let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
-let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
-let g:haskell_indent_if = 3
-let g:haskell_indent_case = 3
-let g:haskell_indent_let = 3
-let g:haskell_indent_where = 3
-let g:haskell_indent_before_where = 3
-let g:haskell_indent_after_bare_where = 3
-let g:haskell_indent_do = 3
-let g:haskell_indent_in = 3
-let g:haskell_indent_guard = 3
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Functions 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 fun! s:VisualVLine() abort
@@ -282,15 +291,15 @@ fun! s:VisualVLine() abort
                 \ (from == lnum ? '' : (lnum - from . 'k'))
 endfun
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
+" function! s:show_documentation()
+"   if (index(['vim','help'], &filetype) >= 0)
+"     execute 'h '.expand('<cword>')
+"   elseif (coc#rpc#ready())
+"     call CocActionAsync('doHover')
+"   else
+"     execute '!' . &keywordprg . " " . expand('<cword>')
+"   endif
+" endfunction
 
 function! s:check_back_space() abort
     let col = col('.') - 1
@@ -303,21 +312,34 @@ func! AddToWatch()
 endfunction
 
 " janko/vim-test and puremouring/vimspector integration
-function! JestStrategy(cmd)
-    let testName = matchlist(a:cmd, '\v -t ''(.*)''')[1]
-    call vimspector#LaunchWithSettings( {'configuration': 'jest', 'TestName': testName} )
+" function! JestStrategy(cmd)
+"     let testName = matchlist(a:cmd, '\v -t ''(.*)''')[1]
+"     call vimspector#LaunchWithSettings( {'configuration': 'jest', 'TestName': testName} )
+" endfunction
+
+function InsertIfEmpty()
+    if @% == ""
+        " No filename for current buffer
+        "startinsert
+        Telescope vim_bookmarks
+    elseif filereadable(@%) == 0
+        " File doesn't exist yet
+        startinsert
+    elseif line('$') == 1 && col('$') == 1
+        " File is empty
+        startinsert
+    endif
 endfunction
+
+au VimEnter * call InsertIfEmpty()
+
+" autocmd VimEnter * :call BookmarkShowAll()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Functions usages 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " use vm to highlight a 'slice' with visual mode
 nnoremap <expr> vm <SID>VisualVLine()
-
-inoremap <silent><expr> <tab>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<tab>" :
-    \ coc#refresh()
 
 augroup vimrc_todo
     au!
@@ -382,9 +404,6 @@ set splitright
 set hidden
 autocmd BufReadPost *.kt setlocal filetype=kotlin
 
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
 tnoremap <Esc> <C-\><C-n>
 
 set tags=./tags;/
@@ -399,37 +418,37 @@ set matchpairs+=<:>
 let g:clang_format#detect_style_file = 1
 let g:clang_format#auto_format_git_diff = 1
 let g:clang_format#auto_format_git_diff_fallback = 0
-let g:clang_format#auto_format_on_insert_leave = 1
+" let g:clang_format#auto_format_on_insert_leave = 1
 let g:clang_format#enable_fallback_style = 0
-
-let g:lsp_cxx_hl_use_text_props = 1
-
-nmap <space>e :CocCommand explorer<cr>
+" let g:lsp_cxx_hl_use_text_props = 1
+let g:bookmark_save_per_working_dir = 1
+let g:bookmark_auto_save = 1
 
 nmap <Leader>B :lua require("telescope").extensions.vstask.tasks()<CR>
 "nnoremap <Leader>ti :lua require("telescope").extensions.vstask.inputs()<CR>
 "nnoremap <Leader>tt :lua require("telescope").extensions.vstask.close()<CR>
 
-nnoremap <leader>h :Telescope search_history<cr>
+nnoremap <leader>hh :Telescope search_history<cr>
+nnoremap <leader>h/ :Telescope resume<cr>
+nnoremap <leader>h// :Telescope pickers<cr>
+nnoremap <leader>y :Telescope neoclip<cr>
+
+" Pick from all bookmarks
+nnoremap <leader>b :Telescope vim_bookmarks all<cr>
+" Only pick from bookmarks in current file
+nnoremap <leader>bc :Telescope vim_bookmarks current_file<cr>
+
 nnoremap <leader>c :Telescope command_history<cr>
-nnoremap <leader>k :Telescope keymaps<cr>
+nnoremap <leader>m :Telescope keymaps<cr>
 nnoremap <leader>? :Telescope find_files<cr>
 nnoremap <leader>/ :Telescope live_grep<cr> 
+nnoremap <leader>e :NvimTreeToggle<cr>
 " --smart-case<cr>
 nnoremap <leader>r :Telescope registers<cr>
 nnoremap <leader>gt :Telescope git_status<cr>
 nnoremap <leader>gm :Git mergetool<cr>
-nnoremap <leader>s :SemanticHighlightToggle<cr>
+" nnoremap <leader>s :SemanticHighlightToggle<cr>
 
-" GoTo code navigation.
-nmap <silent> gd :Telescope coc definitions<cr>
-" nmap <silent> gD :tabedit % | Telescope coc definitions<cr>
-nmap <silent> gy :Telescope coc type_definitions<cr>
-nmap <silent> gi :Telescope coc implementations<cr>
-nmap <silent> gr :Telescope coc references<cr>
-nmap <silent> gu :Telescope coc references_used<cr>
-
-nmap <leader>f <Plug>(coc-fix-current)
 nmap <leader>t :tab split<cr>
 nmap <leader>tt :ToggleTerm direction=tab<cr>
 
@@ -437,6 +456,50 @@ nmap <leader>tt :ToggleTerm direction=tab<cr>
 " ==> Coc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " @todo have coc installs within vimrc
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ==> Coc extensions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:coc_global_extensions = ['coc-word',
+"             \ 'coc-explorer',
+"             \ 'coc-dictionary',
+"             \ 'coc-python',
+"             \ 'coc-pyright',
+"             \ 'coc-json',
+"             \ 'coc-vimlsp',
+"             \ 'coc-sumneko-lua',
+"             \ 'coc-snippets',
+"             \ 'coc-ccls' ]
+" 
+" " Highlight the symbol and its references when holding the cursor.
+" autocmd CursorHold * silent call CocActionAsync('highlight')
+" 
+" " inoremap <silent><expr> <tab>
+" "     \ pumvisible() ? "\<C-n>" :
+" "     \ <SID>check_back_space() ? "\<tab>" :
+" "     \ coc#refresh()
+"  inoremap <silent><expr> <TAB>
+"        \ pumvisible() ? "\<C-n>" : 
+"        \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+"        \ <SID>check_back_space() ? "\<TAB>" :
+"        \ coc#refresh()
+"  let g:coc_snippet_next = '<tab>'
+" 
+" " GoTo code navigation.
+" nmap <silent> gd :Telescope coc definitions<cr>
+" " nmap <silent> gD :tabedit % | Telescope coc definitions<cr>
+" nmap <silent> gy :Telescope coc type_definitions<cr>
+" nmap <silent> gi :Telescope coc implementations<cr>
+" nmap <silent> gr :Telescope coc references<cr>
+" nmap <silent> gu :Telescope coc references_used<cr>
+" nmap <leader>f <Plug>(coc-fix-current)
+
+nmap <silent> gd :Telescope lsp_definitions<cr>
+nmap <silent> gi :Telescope lsp_implementations<cr>
+nmap <silent> gr :Telescope lsp_references<cr>
+" nmap <silent> gD :Telescope lsp_definitions<cr>
+" nmap <silent> gy :Telescope lsp_type_definitions<cr>
+" nmap <silent> gu :Telescope lsp_references_used<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Vimspector
@@ -479,22 +542,26 @@ nnoremap <leader>ds :Telescope vimspector configurations<cr>
 nnoremap <leader>u :call vimspector#UpFrame()<CR>
 nnoremap <leader>d :call vimspector#DownFrame()<CR>
 
-" janko/vim-test test test, test file, test suite, test last
-nnoremap <silent> <leader>tn : TestNearest<CR>
-nnoremap <silent> <leader>th : TestFile<CR>
-nnoremap <silent> <leader>ts : TestSuite<CR>
-nnoremap <silent> <leader>tl : TestLast<CR>
-
-let test#strategy = "neovim"
-let test#neovim#term_position = "vertical"
-let g:test#custom_strategies = {'jest': function('JestStrategy')}
-
-nnoremap <leader>tnn : TestNearest -strategy=jest<CR>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Lua
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-lua require'telescope'.setup{ defaults = { prompt_prefix = '=> ', selection_caret = '-> ', }, }
-lua require('telescope').load_extension('coc')
+" lua require('telescope').load_extension('coc')
 lua require('telescope').load_extension('neoclip')
 lua require('telescope').load_extension('vimspector')
+lua require('telescope').load_extension('file_browser')
+lua require('telescope').load_extension('vim_bookmarks')
+lua require('telescope').load_extension('fzy_native')
+lua require('telescope').load_extension('smart_history')
+lua require("nvim-gps").setup()
+
+luafile /home/centos/.config/nvim/lua/telescope.lua
+luafile /home/centos/.config/nvim/lua/neoclip.lua
+luafile /home/centos/.config/nvim/lua/startup.lua
+" luafile /home/centos/.config/nvim/lua/hardline.lua
+luafile /home/centos/.config/nvim/lua/bufferline.lua
+luafile /home/centos/.config/nvim/lua/nvim-tree.lua
+luafile /home/centos/.config/nvim/lua/nvim-treesitter.lua
+" luafile /home/centos/.config/nvim/lua/lsp-status.lua
+luafile /home/centos/.config/nvim/lua/nvim-lsp-installer.lua
+luafile /home/centos/.config/nvim/lua/lspconfig.lua
+luafile /home/centos/.config/nvim/lua/lualine.lua

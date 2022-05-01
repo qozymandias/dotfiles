@@ -77,6 +77,32 @@
                 }
             }
         },
+        "Sys Tests NTL": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "name": "sys test",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
+                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "args": [
+                    "--gtest_filter=*NtlRtpdumpTest*",
+                    "--gtest_catch_exceptions=0"
+                ],
+                "stopAtEntry": false,
+                "environment": [
+                    {
+                        "name": "VIMRUNTIME",
+                        "value": "${workspaceRoot}/runtime"
+                    }
+                ],
+                "externalConsole": true,
+                "MIMode": "gdb",
+                "logging": {
+                    "engineLogging": false
+                } 
+            }
+        },
         "Sys Tests Debug": {
             "adapter": "vscode-cpptools",
             "configuration": {
@@ -165,6 +191,58 @@
                 "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
                 "args": [
                     "--gtest_filter=*",
+                    "--gtest_catch_exceptions=0"
+                ],
+                "stopAtEntry": false,
+                "environment": [
+                    {
+                        "name": "VIMRUNTIME",
+                        "value": "${workspaceRoot}/runtime"
+                    }
+                ],
+                "externalConsole": true,
+                "MIMode": "gdb",
+                "logging": {
+                    "engineLogging": false
+                }
+            }
+        },
+        "Unit Tests UpdateGlobalPositionsClientInMultiConf": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "name": "unit test asan",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_unittest",
+                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "args": [
+                    "--gtest_filter=*UpdateGlobalPositionsClientInMultiConf*",
+                    "--gtest_catch_exceptions=0"
+                ],
+                "stopAtEntry": false,
+                "environment": [
+                    {
+                        "name": "VIMRUNTIME",
+                        "value": "${workspaceRoot}/runtime"
+                    }
+                ],
+                "externalConsole": true,
+                "MIMode": "gdb",
+                "logging": {
+                    "engineLogging": false
+                }
+            }
+        },
+        "Unit Tests AudioServer3Test": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "name": "unit test asan",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_unittest",
+                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "args": [
+                    "--gtest_filter=*AudioServer3Test.ClearGlobalPositionsClientInMultiConf*",
                     "--gtest_catch_exceptions=0"
                 ],
                 "stopAtEntry": false,
