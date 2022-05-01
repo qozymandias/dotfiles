@@ -1,69 +1,3 @@
-clang-format --version
-./format_code.sh --all
-gt
-./format_code.sh --all
-gt
-git diff
-gt
-git reset --hard HEAD
-gt
-./format_code.sh -h
-python --version
-nvim git_pre_commit_hook/format_check.py 
-./format_code.sh -a
-gt
-nvim git_pre_commit_hook/format_check.py 
-./git_pre_commit_hook/format_check.py -a
-./format_code.sh -a
-gt
-git branch
-git checkout feature/shared-spatial-scene
-gt
-./format_code.sh -a
-gt
-git diff
-gt
-rm -rf ../Build/bin/Debug/system_test_results/*
-ls /home/centos/Documents/Gitlab/dvcs/Build/bin/Debug/system_test_results/NtlRtpdumpTest.NtlOnly/
-ls /home/centos/Documents/Gitlab/dvcs/Build/bin/Debug/system_test_results/NtlRtpdumpTest.NtlOnly/dvaudio_server_1/ntl/systest_client_3_3_20220413T133925Z /usr/bin/env /bin/sh /tmp/Microsoft-MIEngine-Cmd-xevpd2xt.awd 
-ls /home/centos/Documents/Gitlab/dvcs/Build/bin/Debug/system_test_results/NtlRtpdumpTest.NtlOnly/dvaudio_server_1/ntl/systest_client_ /usr/bin/env /bin/sh /tmp/Microsoft-MIEngine-Cmd-1awg5u5s.eto 
-sudo reboot
-git branch
-git branch | grep -i 6240
-git fetch'
-git fetch
-git checkout develop
-gt
-git reset --hard HEAD
-gt
-git checkout develop
-git pull origin develop
-git checkout dev/oscar/DVMS-6240_dont_gen_vsv_files_unnecessarily
-git checkout -b dev/oscar/DVMS-6240_dont_gen_vsv_files_unnecessarily
-conan remove "sdsp"
-history | grep -i py
-./scripts/build.py --build-dir=/home/centos/Documents/Gitlab/dvcs/Build --build-type=debug --build-platform=linux64_gcc7 --update
-./scripts/build.py --build-dir=/home/centos/Documents/Gitlab/dvcs/Build --build-type=debug --build-platform=linux64_gcc7
-nvim ~/.conan/conan.conf 
-./scripts/build.py --build-dir=/home/centos/Documents/Gitlab/dvcs/Build --build-type=debug --build-platform=linux64_gcc7
-nvim ~/.conan/conan.conf 
-./scripts/build.py --build-dir=/home/centos/Documents/Gitlab/dvcs/Build --build-type=debug --build-platform=linux64_gcc7
-ip a
-ls ../Build/bin/Debug/system_test_results/NtlRtpdumpTest.NtlOnly/dvaudio_server_1/ntl/
-ls /home/centos/Documents/Gitlab/dvcs/Build/bin/Debug/system_test_results/NtlRtpdumpTest.NtlOnly//dvaudio_server_0/./ntl/systest_client_3_3_20220414T052149Z
-ls /home/centos/Documents/Gitlab/dvcs/Build/bin/Debug/system_test_results/NtlRtpdumpTest.NtlOnly//dvaudio_server_0//ntl/systest_client_3_3_20220414T052149Z
-ls /home/centos/Documents/Gitlab/dvcs/Build/bin/Debug/system_test_results/NtlRtpdumpTest.NtlOnly/dvaudio_server_0//ntl/systest_client_3_3_20220414T052149Z
-cd ~/.config/coc/
-ls
-cd ..
-cd ~/.config/coc/extensions/node_modules/coc-ccls
-cd ~/.vim/bundle/coc.nvim
-cd ~/.vim/plugged/coc.nvim/
-yarn install
-yarn build
-git pull origin master
-yarn build
-yarn install
 yarn build
 cd ~/.config/coc/extensions/node_modules/coc-ccls
 ln -s node_modules/ws/lib lib
@@ -1998,3 +1932,69 @@ cdproj
 nvim audio_server/src/dvaudio_server/audio_server.cpp
 ~/.vimrc
 nvim ~/.vimrc
+cdproj 
+nvim ~/.vimrc
+nvim ~/.bash_aliases 
+clswaps 
+nvim ~/.bash_aliases 
+nvim ~/.vimrc
+nvim ~/.bash_aliases 
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+git diff audio_server/src/dvaudio_server/audio_server.cpp
+git checkout HEAD audio_server/src/dvaudio_server/audio_server.cpp
+gt
+rm -rf .ccls-cache/
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+rm -rf .ccls-cache/
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.vimrc
+nvim ~/.config/nvim/lua/lualine.lua
+cp -r ~/.bash* ~/.vim* ~/.config ~/.git* ./.vim*  ~/dev/dotfiles/
+ls
+cd ~/dev/d
+cd ~/dev/dotfiles/
+gt
+git add --all && git commit -m "updates" && git push origin master 
+nvim .gitignore 
+git rm .config/coc/extensions/
+git rm -r .config/coc/extensions/
+gt
+git add --all && git commit -m "updates" && git push origin master 
+cdproj 
+nvim ~/.config/nvim/lua/lualine.lua
+nvim ~/.config/nvim/lua/lspconfig.lua 
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim ~/.config/nvim/lua/lspconfig.lua 
+nvim ~/.bashrc 
+nvim ~/.config/nvim/lua/lspconfig.lua 
+ls /home/centos/.local/share/nvim/lsp_servers/
