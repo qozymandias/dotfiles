@@ -1,6 +1,8 @@
 require("nvim-lsp-installer").setup({
-    ensure_installed = { "pyright", "sumneko_lua", "vimls" }, -- ensure these servers are always installed
-    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+    ensure_installed = {
+        "pyright", "sumneko_lua", "vimls", "jsonls", "bashls", "yamlls", "html", "tsserver", "eslint", "emmet_ls"
+    },
+    automatic_installation = true,
     ui = {
         icons = {
             server_installed = "✓",

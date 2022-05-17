@@ -44,12 +44,15 @@ call plug#begin('~/.vim/plugged')
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'hrsh7th/nvim-cmp'
-    Plug 'hrsh7th/vim-vsnip'
-    Plug 'hrsh7th/vim-vsnip-integ'
     Plug 'nvim-lua/lsp-status.nvim'
     Plug 'nvim-telescope/telescope-smart-history.nvim'
     Plug 'nvim-telescope/telescope-frecency.nvim'
     Plug 'williamboman/nvim-lsp-installer'
+    Plug 'gauteh/vim-cppman'
+    Plug 'L3MON4D3/LuaSnip'
+    Plug 'saadparwaiz1/cmp_luasnip'
+    Plug 'folke/lsp-colors.nvim'
+    Plug 'onsails/lspkind.nvim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -62,6 +65,11 @@ colorscheme zenburn
 " set background=dark
 " colorscheme solarized
 set completeopt=menu,menuone,noselect
+
+highlight Pmenu guibg=#7f9f7f guifg=white
+" guifg=#222222 guibg=black
+
+" ctermbg=gray 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Save position on exit
@@ -180,6 +188,9 @@ nnoremap <Right> :vertical resize +3<CR>
 " let g:vim_markdown_folding_disabled = 1
 " let g:vim_markdown_new_list_item_indent = 0
 
+nnoremap <C-tab> <C-w>w<esc>
+nnoremap <C-S-tab> <C-w>W<esc>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -288,17 +299,19 @@ noremap <silent> <expr> <C-j> (search('^\n.', 'Wen') - line('.')) . 'jzv^'
 cnoremap <C-A> <Home>
 " command mode remap: end of line
 cnoremap <C-E> <End>
-set foldmethod=manual
-nnoremap <leader>f} zfa}
-nnoremap <leader>fc zd
-inoremap <F9> <C-O>za
-nnoremap <F9> za
-onoremap <F9> <C-C>za
-vnoremap <F9> zf
-" missing ZZ and ZQ counterparts:
-" quick save-buffer and quit-everything
-nnoremap ZS :w<CR>
-nnoremap ZX :qa<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Functions 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~ '\s'
+endfunction
+
+func! AddToWatch()
+    let word = expand("<cexpr>")
+    call vimspector#AddWatch(word)
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
@@ -309,12 +322,6 @@ augroup vimrc_todo
           \ containedin=.*Comment,vimCommentTitle
 augroup END
 hi def link MyTodo Todo
-
-" <CR>: confirm completion, or insert <CR>
-" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
-
-highlight Pmenu guibg=gray
-" ctermbg=gray 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Clang-Format
@@ -339,62 +346,35 @@ nmap <Leader>B :lua require("telescope").extensions.vstask.tasks()<CR>
 "nnoremap <Leader>tt :lua require("telescope").extensions.vstask.close()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Telescope
+" => NvimTree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>hh :Telescope search_history<cr>
-nnoremap <leader>h/ :Telescope resume<cr>
-nnoremap <leader>h// :Telescope pickers<cr>
-nnoremap <leader>y :Telescope neoclip<cr>
-" Pick from all bookmarks
-nnoremap <leader>b :Telescope vim_bookmarks all<cr>
-" Only pick from bookmarks in current file
-nnoremap <leader>bc :Telescope vim_bookmarks current_file<cr>
-nnoremap <leader>c :Telescope command_history<cr>
-nnoremap <leader>m :Telescope keymaps<cr>
-nnoremap <leader>? :Telescope find_files<cr>
-nnoremap <leader>/ :Telescope live_grep<cr> 
-nnoremap <leader>r :Telescope registers<cr>
-nnoremap <leader>gt :Telescope git_status<cr>
-
 nnoremap <leader>e :NvimTreeToggle<cr>
-nnoremap <leader>gm :Git mergetool<cr>
-nmap <leader>tt :ToggleTerm direction=tab<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => LSP
+" => Git
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <silent> gd :Telescope lsp_definitions<cr>
-nmap <silent> gi :Telescope lsp_implementations<cr>
-nmap <silent> gr :Telescope lsp_references<cr>
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <leader>gm :Git mergetool<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ==> Coc extensions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:coc_global_extensions = ['coc-word',
-"             \ 'coc-explorer',
-"             \ 'coc-dictionary',
-"             \ 'coc-python',
-"             \ 'coc-pyright',
-"             \ 'coc-json',
-"             \ 'coc-vimlsp',
-"             \ 'coc-sumneko-lua',
-"             \ 'coc-snippets',
-"             \ 'coc-ccls' ]
+" => Terminal
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>tt :ToggleTerm direction=tab<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Vimspector
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-func! AddToWatch()
-    let word = expand("<cexpr>")
-    call vimspector#AddWatch(word)
-endfunction
-
 let g:vimspector_enable_mappings = 'HUMAN'
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
 let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'vscode-node-debug2']
+
+let g:vimspector_sidebar_width = 5
+let g:vimspector_bottombar_height = 5
+let g:vimspector_code_minwidth = 95
+let g:vimspector_terminal_maxwidth = 500
+let g:vimspector_terminal_minwidth = 20
+let g:vimspector_variables_display_mode = 'full'
+
 " inspect variable under current cursor
 " for normal mode - the word under the cursor
 nmap <leader>de <Plug>VimspectorBalloonEval
@@ -422,6 +402,58 @@ nnoremap <leader>du :call vimspector#UpFrame()<CR>
 nnoremap <leader>dd :call vimspector#DownFrame()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ==> VSnip
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Telescope
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>hh :Telescope search_history<cr>
+nnoremap <leader>h/ :Telescope resume<cr>
+nnoremap <leader>h// :Telescope pickers<cr>
+nnoremap <leader>y :Telescope neoclip<cr>
+" Pick from all bookmarks
+nnoremap <leader>b :Telescope vim_bookmarks all<cr>
+" Only pick from bookmarks in current file
+nnoremap <leader>bc :Telescope vim_bookmarks current_file<cr>
+nnoremap <leader>c :Telescope command_history<cr>
+nnoremap <leader>m :Telescope keymaps<cr>
+nnoremap <leader>? :Telescope find_files<cr>
+nnoremap <leader>/ :Telescope live_grep<cr> 
+nnoremap <leader>r :Telescope registers<cr>
+nnoremap <leader>gt :Telescope git_status<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => LSP
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <silent> gd :Telescope lsp_definitions<cr>
+nmap <silent> gi :Telescope lsp_implementations<cr>
+nmap <silent> gr :Telescope lsp_references<cr>
+" call <SID>show_documentation()<CR>
+nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>ca :lua vim.lsp.buf.code_action()<CR>
+nnoremap <leader>fo :lua vim.lsp.buf.formatting()<CR>
+nnoremap <silent>K  :lua vim.lsp.buf.hover()<CR>
+nnoremap <silent>gy :lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent>gD :lua vim.lsp.buf.declaration()<CR>
+nnoremap <C-k>      :lua vim.lsp.buf.signature_help()<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ==> Misc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set foldmethod=manual
+nnoremap <leader>f} zfa}
+nnoremap <leader>fc zd
+inoremap <F9> <C-O>za
+nnoremap <F9> za
+onoremap <F9> <C-C>za
+vnoremap <F9> zf
+" missing ZZ and ZQ counterparts:
+" quick save-buffer and quit-everything
+nnoremap ZS :w<CR>
+nnoremap ZX :qa<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Lua
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 lua require('telescope').load_extension('neoclip')
@@ -439,5 +471,7 @@ luafile /home/centos/.config/nvim/lua/bufferline.lua
 luafile /home/centos/.config/nvim/lua/nvim-tree.lua
 luafile /home/centos/.config/nvim/lua/nvim-treesitter.lua
 luafile /home/centos/.config/nvim/lua/nvim-lsp-installer.lua
+luafile /home/centos/.config/nvim/lua/luasnip.lua
 luafile /home/centos/.config/nvim/lua/lspconfig.lua
 luafile /home/centos/.config/nvim/lua/lualine.lua
+luafile /home/centos/.config/nvim/lua/vstask.lua
