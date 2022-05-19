@@ -53,6 +53,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'saadparwaiz1/cmp_luasnip'
     Plug 'folke/lsp-colors.nvim'
     Plug 'onsails/lspkind.nvim'
+    Plug 'ingram1107/vim-zhi'
+    Plug 'morhetz/gruvbox'
+    Plug 'tanvirtin/monokai.nvim'
+    Plug 'rebelot/kanagawa.nvim'
+    Plug 'ishan9299/nvim-solarized-lua'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -60,15 +65,15 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:zenburn_italic_Comment=1
 let g:zenburn_alternate_Visual = 1
-colorscheme zenburn
+set background=light
+colorscheme solarized-high
+" colorscheme zenburn
 
-" set background=dark
 " colorscheme solarized
 set completeopt=menu,menuone,noselect
 
 highlight Pmenu guibg=#7f9f7f guifg=white
 " guifg=#222222 guibg=black
-
 " ctermbg=gray 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
