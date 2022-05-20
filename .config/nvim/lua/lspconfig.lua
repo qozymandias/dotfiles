@@ -226,12 +226,12 @@ lspconfig.tsserver.setup {
     flags = flag_args
 }
 
-lspconfig.eslint.setup {
-    cmd = { lsp_path .. "eslint/node_modules/.bin/vscode-eslint-language-server", "--stdio" },
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
+-- lspconfig.eslint.setup {
+--     cmd = { lsp_path .. "eslint/node_modules/.bin/vscode-eslint-language-server", "--stdio" },
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = flag_args
+-- }
 
 lspconfig.emmet_ls.setup {
     cmd = { lsp_path .. "emmet_ls/node_modules/.bin/emmet_ls", "--stdio" },

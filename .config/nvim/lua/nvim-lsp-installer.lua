@@ -2,7 +2,7 @@ require("nvim-lsp-installer").setup({
     ensure_installed = {
         "pyright", "sumneko_lua", "vimls", "jsonls", "bashls", "yamlls", "html", "tsserver", "eslint", "emmet_ls"
     },
-    automatic_installation = false,
+    automatic_installation = true,
     ui = {
         icons = {
             server_installed = "✓",
