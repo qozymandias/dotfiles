@@ -464,14 +464,14 @@ lua require('telescope').load_extension('fzy_native')
 lua require('telescope').load_extension('smart_history')
 lua require("nvim-gps").setup()
 
-luafile /home/centos/.config/nvim/lua/telescope.lua
-luafile /home/centos/.config/nvim/lua/neoclip.lua
-luafile /home/centos/.config/nvim/lua/startup.lua
-luafile /home/centos/.config/nvim/lua/bufferline.lua
-luafile /home/centos/.config/nvim/lua/nvim-tree.lua
-luafile /home/centos/.config/nvim/lua/nvim-treesitter.lua
-luafile /home/centos/.config/nvim/lua/nvim-lsp-installer.lua
-luafile /home/centos/.config/nvim/lua/luasnip.lua
-luafile /home/centos/.config/nvim/lua/lspconfig.lua
-luafile /home/centos/.config/nvim/lua/lualine.lua
-luafile /home/centos/.config/nvim/lua/vstask.lua
+luafile /Users/odown/.config/nvim/lua/telescope.lua
+luafile /Users/odown/.config/nvim/lua/neoclip.lua
+luafile /Users/odown/.config/nvim/lua/startup.lua
+luafile /Users/odown/.config/nvim/lua/bufferline.lua
+luafile /Users/odown/.config/nvim/lua/nvim-tree.lua
+luafile /Users/odown/.config/nvim/lua/nvim-treesitter.lua
+luafile /Users/odown/.config/nvim/lua/nvim-lsp-installer.lua
+luafile /Users/odown/.config/nvim/lua/luasnip.lua
+luafile /Users/odown/.config/nvim/lua/lspconfig.lua
+luafile /Users/odown/.config/nvim/lua/lualine.lua
+luafile /Users/odown/.config/nvim/lua/vstask.lua
