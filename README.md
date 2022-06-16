@@ -28,6 +28,11 @@ _-_ _,,
 ```
 
 # Setup 
+## Quick Setup
 ```
-./bootstrap.sh
+./push.sh && ./bootstrap.sh
 ```
+
+## Script info
+- `push.sh` sync's `.vimrc` and `.config` in this repo to your local root directory.
+- `bootstrap.sh` downloads the latest neovim image and install the pluggins.
