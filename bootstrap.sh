@@ -14,7 +14,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     NVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/"$NVIM_NAME
     curl -LO $NVIM_URL
     chmod u+x ./nvim.appimage
-    mv ./nvim.appimage /usr/local/bin/nvim
+    mv ./nvim.appimage /usr/bin/nvim
 fi
 
-nvim +'PlugInstall'
+# Docker issue
+# nvim +'PlugInstall'
