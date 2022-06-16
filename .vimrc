@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'BurntSushi/ripgrep'
     Plug 'rhysd/vim-clang-format'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter-context'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
@@ -53,26 +54,23 @@ call plug#begin('~/.vim/plugged')
     Plug 'saadparwaiz1/cmp_luasnip'
     Plug 'folke/lsp-colors.nvim'
     Plug 'onsails/lspkind.nvim'
-    Plug 'ingram1107/vim-zhi'
-    Plug 'morhetz/gruvbox'
-    Plug 'tanvirtin/monokai.nvim'
-    Plug 'rebelot/kanagawa.nvim'
     Plug 'ishan9299/nvim-solarized-lua'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:zenburn_italic_Comment=1
-let g:zenburn_alternate_Visual = 1
+" let g:zenburn_italic_Comment=1
+" let g:zenburn_alternate_Visual = 1
+" colorscheme zenburn
+" colorscheme solarized
 set background=light
 colorscheme solarized-high
-" colorscheme zenburn
 
-" colorscheme solarized
 set completeopt=menu,menuone,noselect
 
 highlight Pmenu guibg=#7f9f7f guifg=white
+highlight TreesitterContext guibg=white
 " guifg=#222222 guibg=black
 " ctermbg=gray 
 
@@ -193,8 +191,11 @@ nnoremap <Right> :vertical resize +3<CR>
 " let g:vim_markdown_folding_disabled = 1
 " let g:vim_markdown_new_list_item_indent = 0
 
-nnoremap <C-tab> <C-w>w<esc>
-nnoremap <C-S-tab> <C-w>W<esc>
+nnoremap <C-tab> <C-w>w 
+":call CheckInsertAndEsc()<cr>
+"call CheckInsertAndEsc()<CR>
+nnoremap <C-S-tab> <C-w>W 
+":call CheckInsertAndEsc()<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -318,6 +319,12 @@ func! AddToWatch()
     call vimspector#AddWatch(word)
 endfunction
 
+func! CheckInsertAndEsc()
+    if mode() == 'i'
+        <esc>
+    endif
+endfunction
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -424,7 +431,7 @@ nnoremap <leader>bc :Telescope vim_bookmarks current_file<cr>
 nnoremap <leader>c :Telescope command_history<cr>
 nnoremap <leader>m :Telescope keymaps<cr>
 nnoremap <leader>? :Telescope find_files<cr>
-nnoremap <leader>/ :Telescope live_grep<cr> 
+nnoremap <leader>/ :Telescope live_grep<cr>
 nnoremap <leader>r :Telescope registers<cr>
 nnoremap <leader>gt :Telescope git_status<cr>
 
@@ -469,14 +476,15 @@ lua require('telescope').load_extension('fzy_native')
 lua require('telescope').load_extension('smart_history')
 lua require("nvim-gps").setup()
 
-luafile /Users/odown/.config/nvim/lua/telescope.lua
-luafile /Users/odown/.config/nvim/lua/neoclip.lua
-luafile /Users/odown/.config/nvim/lua/startup.lua
-luafile /Users/odown/.config/nvim/lua/bufferline.lua
-luafile /Users/odown/.config/nvim/lua/nvim-tree.lua
-luafile /Users/odown/.config/nvim/lua/nvim-treesitter.lua
-luafile /Users/odown/.config/nvim/lua/nvim-lsp-installer.lua
-luafile /Users/odown/.config/nvim/lua/luasnip.lua
-luafile /Users/odown/.config/nvim/lua/lspconfig.lua
-luafile /Users/odown/.config/nvim/lua/lualine.lua
-luafile /Users/odown/.config/nvim/lua/vstask.lua
+luafile /home/centos/.config/nvim/lua/telescope.lua
+luafile /home/centos/.config/nvim/lua/neoclip.lua
+luafile /home/centos/.config/nvim/lua/startup.lua
+luafile /home/centos/.config/nvim/lua/bufferline.lua
+luafile /home/centos/.config/nvim/lua/nvim-tree.lua
+luafile /home/centos/.config/nvim/lua/nvim-treesitter.lua
+luafile /home/centos/.config/nvim/lua/nvim-lsp-installer.lua
+luafile /home/centos/.config/nvim/lua/luasnip.lua
+luafile /home/centos/.config/nvim/lua/lspconfig.lua
+luafile /home/centos/.config/nvim/lua/lualine.lua
+luafile /home/centos/.config/nvim/lua/vstask.lua
+luafile /home/centos/.config/nvim/lua/treesitter-context.lua

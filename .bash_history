@@ -1,2000 +1,2000 @@
-yarn build
-cd ~/.config/coc/extensions/node_modules/coc-ccls
-ln -s node_modules/ws/lib lib
-nvim 
-nvim ~/.vimrc
-rpm -Uvh epel-release*rpm
-nvim ~/.vimrc
-git clone https://github.com/ggreer/the_silver_searcher.git
-cd the_silver_searcher
-./build.sh
-sudo yum install -y pcre-devel
-sudo yum install -y xz-devel
-git diff
-cd Documents/Gitlab/dvcs/Project
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-vim ~/.vimrc 
-nvim ~/.vimrc 
-nvim ~/.config/nvim/coc-settings.json 
-nvim ~/.vimrc 
-nvim ~/.config/nvim/coc-settings.json 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-ag
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-gt
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-gt
-git diff
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-clang-format --version
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-git reset --hard HEAD
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-gt
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-git reset --hard HEAD
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-gt
-git diff
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-gt
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-git diff
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-git diff
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-git diff
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-gt
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-gt
-git diff
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/processing_thread.cpp 
-gt
-git diff
-gt
-git diff
-ls /tmp/.vim-undo-dir 
-ls -la /tmp/.vim-undo-dir 
-ls -la /tmp/.vim-undo-dir/
-gt
-git pull origin feature/test-branch/shared-spatial-scene
-gt
-pip3 install --user jedi
-cd Documents/Gitlab/dvcs/Project
-nvim audio_server/src/dvaudio_server/conference.cpp 
-gt
-git diff
-git reset --hard HEAD
-nvim audio_server/src/common/sdsp_ingress.cpp 
-gt
-git diff
-git add audio_server/
-gt
-git commit -m "fix for vsv almost ready needs debugging"
-git push origin dev/oscar/DVMS-6240_dont_gen_vsv_files_unnecessarily
-gt
-git branch
-git checkout feature/shared-spatial-scene
-git pull origin feature/shared-spatial-scene
-git checkout -b dev/oscar/DVMS-6282_scale_test_stats
-nvim 
-nvim ~/.vimrc
-t
-gt
-git reset --hard HEAD
-gt
-rm -f *.cmake
-gt
-rm conan.lock conan_imports_manifest.txt conanbuildinfo.txt conaninfo.txt graph_info.json 
-gt
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim
-gt
-git checkout feature/shared-spatial-scene
-git checkout -b tmp/shared-spatial-scene
-git push origin tmp/shared-spatial-scene
-git checkout feature/shared-spatial-scene
-git pull origin feature/shared-spatial-scene
-git checkout -b tmp/shared-spatial-scene
-git checkout tmp/shared-spatial-scene
-git merge feature/shared-spatial-scene
-git push origin tmp/shared-spatial-scene
-nvim 
-git checkout feature/shared-spatial-scene
-git pull origin feature/shared-spatial-scene 
-git checkout -b feature/tmp/shared-spatial-scene
-git push origin feature/tmp/shared-spatial-scene
-git checkout feature/shared-spatial-scene
-git checkout -b test/feature/shared-spatial-scene
-git push origin test/feature/shared-spatial-scene
-git fetch
-git checkout 
-feature/test-branch/shared-spatial-scene
-git checkout feature/test-branch/shared-spatial-scene
-nvim
-nvim 
-[A
-nvim
-gt
-rm -rf bin
-nvim
-nvim ~/.virmc
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-ls /tmp/.vim-undo-dir/%home%centos%.vimrc
-nvim ~/.vimrc
-rm /tmp/.vim-undo-dir/%home%centos%.vimrc
-nvim ~/.vimrc
-pip3 install --user vstask
-vstask -l
-pip install vstask
-pip3 install vstask
-vstask
-vstask -h
-vstask -t
-vstask -l
-nvim
-sudo yum install jedi-language-server
-jedi
-pip3 install --user jedi-language-server
-jedi-language-server --version
+sudo ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+sudo ln -s ~/dev/dvcs/ /home/axon/projects
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+cd /home/axon/
 ls
-gt
-git diff
-gt
-git add audio_server/
-git commit -m "changes from testing with msml"
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-cd ../Build/bin/Debug/
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo5.py
-cd3
-cd Project
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo5.py
-pip install dlb-yoda-appserver -i https://devpi-au.dolby.net/comms_common/dev
-pip3 install dlb-yoda-appserver -i https://devpi-au.dolby.net/comms_common/dev
-pip3 install --user dlb-yoda-appserver -i https://devpi-au.dolby.net/comms_common/dev
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo5.py
-pip3 install --user dlb-dvsippy -i https://devpi-au.dolby.net/comms_common/dev
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo5.py
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo1.py 
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo2.py 
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_create_client.py 
-history
-cp audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo5.py audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-gt
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_create_client.py 
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-gt
-git diff
-gt
-conan install /home/centos/Documents/Gitlab/dvcs/Project -pr=/home/centos/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_debug.conanprofile --build=missing --update
-ls ../Build/bin/Debug/dvconference_server
-../Build/bin/Debug/dvconference_server -h
-../Build/bin/Debug/dvconference_server --help
-cd Documents/Gitlab/dvcs/Project
+ls projects/
+cd projects/
 ls
-git checkout -b dev/oscar/DVMS-6327_test_cs_to_as
-nvim audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo5.py
-rm -f ~/.local/share/nvim/swap/%*
-nvim audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo5.py
-gt
-ls -l /etc/localtime
-sudo timedatectl set-timezone Australia/Sydney
-ls -l /etc/localtime
-gt
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-git remote
-pip3 install pynvim --upgrade
-pip3 install --user pynvim --upgrade
-cd Documents/Gitlab/dvcs/Project
-nvim ~/.vimrc
-rr
-cd Documents/Gitlab/dvcs/Project
-git push --set-upstream origin dev/oscar/DVMS-6327_test_cs_to_as
-ls -l /etc/localtime
-sudo timedatectl set-timezone Australia/Sydney
-ls -l /etc/localtime
-timedatectl
-fixtime 
+rm -rf dvcs/
+sudo rm -rf dvcs/
 ls
-gt
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py ""
-killall5 python3
-pkill python3
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py ""
-top
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-gt
-git diff
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-gt
-git diff
-gt
-diff audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-git diff audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-git checkout HEAD audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-gt
-git diff
-git add 
-gt
-git add audio_server/
-git commit -m "some changes from py_app_server tests"
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-gt
-git fetch
-gt
-git merge dev/zliao/dvms_6273_shared_scene_scale_app_server
-git checkout dev/zliao/dvms_6273_shared_scene_scale_app_server
-git pull origin dev/zliao/dvms_6273_shared_scene_scale_app_server
-git branch
-git merge dev/zliao/dvms_6273_shared_scene_scale_app_server
-git checkout dev/oscar/DVMS-6327_test_cs_to_as
-git merge dev/zliao/dvms_6273_shared_scene_scale_app_server
-ip a
-gt
-git diff
-sudo reboot
-gt
-../Build/bin/Debug/scale_app_server -h
-nvim conference_server/src/tools/scaleappserver/CCAPI_Tester.py 
-cd Documents/Gitlab/dvcs/Project
-nvim
-nvim ~/.vimrc
-nvim ~/.config/nvim/init.vim 
-nvim ~/.vimrc
-[A
-nvim ~/.vimrc
-nvim
-nvim audio_server/src/common/ids.cpp 
-nvim .vscode/tasks.json 
-nvim audio_server/src/common/ids.cpp 
-nvim ~/.vimrc
-nvim audio_server/src/common/ids.cpp 
-nvim ~/.vimrc
-nvim audio_server/src/common/ids.cpp 
-nvim ~/.vimrc
-nvim audio_server/src/common/ids.cpp 
-nvim .vscode/tasks.json 
-nvim audio_server/src/common/ids.cpp 
-nvim ~/.vimrc
-nvim audio_server/src/common/ids.cpp 
-nvim ~/.vimrc
-nvim audio_server/src/common/ids.cpp 
-nvim ~/.vimrc
-nvim audio_server/src/common/ids.cpp 
-nvim ~/.vim/plugged/BuildTask.nvim/lua/buildtask/init.lua
-nvim audio_server/src/common/ids.cpp 
-nvim ~/.vimrc
-gt
-git fetch
-git checkout dev/josh/DVMS-6313_Global_position_MSML_support 
-git pull origin dev/josh/DVMS-6313_Global_position_MSML_support 
-gt
-git reset --hard HEAD
-gtr
-gt
-git pull
-git reset --hard HEAD
-gt
-git checkout feature/test-branch/shared-spatial-scene 
-git pull
-git branch
-git checkout dev/josh/DVMS-6313_Global_position_MSML_support 
-git pull -f 
-gt
-git reset --hard HEAD
-git reset --hard origin/dev/josh/DVMS-6313_Global_position_MSML_support
-git pull 
-gt
-git checkout feature/test-branch/shared-spatial-scene 
-git diff HEAD dev/josh/DVMS-6313_Global_position_MSML_support
-git branch
-gt
-git checkout dev/oscar/DVMS-6327_test_cs_to_as
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-git remote
-git remote status
-git branch
-git checkout feature/test-branch/shared-spatial-scene 
-git merge dev/josh/DVMS-6313_Global_position_MSML_support 
-gt
-git diff
-gt
-git push origin feature/test-branch/shared-spatial-scene
-gt
-git commit -m "6313 updates"
-gt
-git add --all
-git commit -m "6313 updates"
-git push origin feature/test-branch/shared-spatial-scene
-gt
-git
-git checkout dev/oscar/DVMS-6327_test_cs_to_as
-git merge feature/test-branch/shared-spatial-scene
-vim
-nvim ~/.gitconfig 
-gt
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-gt
-nvim conference_server/src/tools/scaleappserver/msml_helper.cpp conference_server/src/tools/scaleappserver/ScaleAppServer.cpp
-nvim conference_server/src/tools/scaleappserver/msml_helper.cpp 
-nvim conference_server/src/tools/scaleappserver/ScaleAppServer.cpp
-ip a
-cd Documents/Gitlab/dvcs/Project
-nvim conference_server/src/tools/scaleappserver/ScaleAppServer.cpp
-rm ~/.local/share/nvim/swap/%home%centos%Documents%Gitlab%dvcs%Project%conference_server%src%tools%scaleappserver%ScaleAppServer.cpp.swp 
-nvim conference_server/src/tools/scaleappserver/ScaleAppServer.cpp
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-gt
-git add audio_server/
-git commit -m "updates
-git commit -m "updates"
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-cd Documents/Gitlab/dvcs/Project
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-sudo reboot
-fzf
-sudo yum install https://extras.getpagespeed.com/release-latest.rpm
-sudo yum install ripgrep
-rg
-sudo yum install ripgrep
-sudo yum-complete-transaction --cleanup-only
-sudo yum install ripgrep
-rg
-sudo yum install ripgrep
-sudo yum install applydeltarpm
-cd Documents/Gitlab/dvcs/Project
-gt
-git diff
-gt
-git add --all
-gt
-git commit -m "added py_app_server set/clear msml"
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-git fetch
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc 
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-cd ~/.vim/plugged/telescope-fzf-native.nvim/
-make
+cp -r ~/Documents/Gitlab ./
+sudo cp -r ~/Documents/Gitlab ./
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+curl --version
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+sudo docker run -v /home/axon:/home/axon -it 8fa149e7d4f3 bin/bash
+cd ~/dev/dvcs/
+sudo docker run -it 8fa149e7d4f3 /bin/bash
+sudo systemctl start docker
+sudo docker run -it 8fa149e7d4f3 /bin/bash
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
+sudo ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+sudo ln -s ~/dev/dvcs/ /home/axon/projects
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+cd /home/axon/
 ls
-cd ~/Documents/Gitlab/dvcs/Project
-nvim ~/.vimrc 
-cd ~/.vim/plugged/telescope-fzf-native.nvim/
-cd ~/Documents/Gitlab/dvcs/Project
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc 
-rg
-ag
-sudo yum install ripgrep
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-sudo yum install ripgrep
-sudo yum install https://extras.getpagespeed.com/release-latest.rpm
-sudo yum install ripgrep
-sudo yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlgeorge/ripgrep/repo/epel-7/carlgeorge-ripgrep-epel-7.repo
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim -v
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc 
-sudo snap install ripgrep --classic
-rg
-sudo snap install ripgrep --classic
-find /usr/ -name ripgrep 
-find /snap/ -name ripgrep 
-/snap/ripgrep/current/bin/rg -v
-ln -s /snap/ripgrep/current/bin/rg /usr/bin/rg
-sudo ln -s /snap/ripgrep/current/bin/rg /usr/bin/rg
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp [B
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp [B
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-mkdir ~/dotfiles
-cp ~/.vimrc ~/dotfiles/
-ls -al ~/dotfiles/
-nvim ~/.vimrc
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-nvim ~/.bashrc 
-cd Documents/Gitlab/dvcs/Project
-nvim .
-git branch
-git checkout dev/josh/DVMS-6313_Global_position_MSML_support
-git pull
-git checkout dev/oscar/DVMS-6327_test_cs_to_as
-git merge dev/josh/DVMS-6313_Global_position_MSML_support
-gt
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-pkill python3
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-gt
-gt
-git add audio_server/
-git commit -m "clear as interface functions added"
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-gt
-git checkout feature/shared-spatial-scene 
-git pull
-git checkout feature/test-branch/shared-spatial-scene 
-git pull
-git merge feature/shared-spatial-scene
-git checkout dev/oscar/DVMS-6327_test_cs_to_as 
-git merge feature/test-branch/shared-spatial-scene 
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-git checkout feature/test-branch/shared-spatial-scene 
-git push origin  feature/test-branch/shared-spatial-scene 
-gt
-git checkout feature/shared-spatial-scene 
-git pull 
-gt
-git checkout feature/test-branch/shared-spatial-scene 
-git merge feature/shared-spatial-scene 
-gt
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-pkill python3
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-cd Documents/Gitlab/dvcs/
-cd Project
-nvim conference_server/test/integration/global_position/test_global_position.py
-nvim conference_server/src/dvconference_controller/dvconference_controller.cpp
-nvim dvmsp/dvmsp.fbs
-nvim
-nvim conference_server/src/dvconference_controller/dvconference_controller.cpp
-nvim ~/.vimrc 
-nvim conference_server/src/dvconference_controller/dvconference_controller.cpp
-nvim ~/.vimrc 
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-nvim audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-nvim audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-[A
-nvim audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-nvim ~/.vimrc
-nvim audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-nvim conference_server/src/dvconference_controller/dvconference_controller.cpp
-nvim ~/.vimrc
-nvim conference_server/src/dvconference_controller/dvconference_controller.cpp
-nvim ~/.vimrc
-nvim conference_server/src/dvconference_controller/dvconference_controller.cpp
-nvim ~/.vimrc
-nvim conference_server/src/dvconference_controller/dvconference_controller.cpp
-nvim ~/.vimrc
-nvim conference_server/src/dvconference_controller/dvconference_controller.cpp
-nvim ~/.vimrc
-nvim conference_server/src/dvconference_controller/dvconference_controller.cpp
-nvim ~/.vimrc
-nvim conference_server/src/dvconference_controller/dvconference_controller.cpp
-nvim audio_server/src/dvaudio_server/audio_server.cpp 
-[A
-nvim audio_server/src/dvaudio_server/audio_server.cpp 
-gt
-git add --all 
-git commit -m "cs to as working now with py_app_server"
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-git fetch
-git checkout feature/shared-spatial-scene 
-git pull 
-git pull origin feature/shared-spatial-scene
-git branch --set-upstream-to=origin/feature/shared-spatial-scene feature/shared-spatial-scene
-git pull 
-git checkout dev/oscar/DVMS-6327_test_cs_to_as
-git checkout feature/test-branch/shared-spatial-scene 
-git merge feature/shared-spatial-scene 
-gt
-git push origin feature/test-branch/shared-spatial-scene
-git branch
-git checkout dev/oscar/DVMS-6327_test_cs_to_as
-git merge feature/test-branch/shared-spatial-scene
-gt
-nvim audio_server/src/dvaudio_server/cs_connection.cpp 
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp 
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp 
-git add --all
-nvim audio_server/src/dvaudio_server/cs_connection.cpp 
-gt
-git commit -m "josh mr updates"
-git push origin feature/test-branch/shared-spatial-scene
-git checkout dev/oscar/DVMS-6327_test_cs_to_as 
-git merge feature/test-branch/shared-spatial-scene 
-gt
-nvim
-gt
-nvim ~/.vimrc
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-gt
-git add --all 
-git commit -m "merge updates"
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-nvim
-gt
-git diff
-nvim
-gt
-git dif
-git diff
-git add audio_server/
-gt
-git commit -m 
-git commit -m "added logs"
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-git checkout feature/test-branch/shared-spatial-scene 
-git pull 
-git checkout feature/
-git checkout feature/shared-spatial-scene 
-git pull
-gt
-git checkout dev/oscar/DVMS-6327_test_cs_to_as 
-git checkout feature/test-branch/shared-spatial-scene 
-git pull
-git merge feature/shared-spatial-scene 
-gt
-git push origin feature/test-branch/shared-spatial-scene 
-git checkout dev/oscar/DVMS-6327_test_cs_to_as 
-git merge feature/test-branch/shared-spatial-scene 
-gt
-nvim
-gt
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-gt
-git add conference_server/
-gt
-git commit -m "merge updates"
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-gt
-git checkout feature/test-branch/shared-spatial-scene conference_server/test/integration/global_position/global_position.xml
-gt
-nvim
-gt
-git diff
-git add audio_server/
-git commit -m "better py app server test script
-
-git commit -m "better py app server test script"
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-git checkout feature/shared-spatial-scene 
-git pull
-git whatchanged 
-gt
-git checkout feature/test-branch/shared-spatial-scene 
-git merge feature/shared-spatial-scene 
-gt
-git push origin feature/test-branch/shared-spatial-scene 
-git checkout dev/oscar/DVMS-6327_test_cs_to_as 
-git merge feature/test-branch/shared-spatial-scene 
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-nvim
-gt
-git dif
-git diff
-nvim
-nvim a/audio_server/src/dvaudio_server/cs_connection.cpp
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-gt
-git dif
-git diff
-gt
-git add audio_server/
-git commit -m "log fix"
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-git checkout feature/shared-spatial-scene audio_server/src/common/global_position_manager.cpp
-gt
-git add audio_server/
-gt
-git checkout feature/shared-spatial-scene conference_server/test/integration/global_position/global_position.xml
-gt
-git commit -m "merge fixes"
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-nvim
-gt
-git diff
-gt
-git add audio_server/
-git commit -m "log fix"
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-nvim 
-nvim
-gt
-git diff
-gt
-nvim
-gt
-git add audio_server/
-git commit -m "global position flag to stop useless buffer updates"
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-nvim
-gt
-git diff
-git add audio_server/
-git commit -m "fixed slight name issue"
-git push origin dev/oscar/DVMS-6327_test_cs_to_as
-nvim ~/.vimrc
-gt
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim -v
-sudo snap install nvim --classic
-sudo snap upgrad nvim
-sudo snap upgrade nvim
-snap help
-yum -y install epel-release
-curl -o /etc/yum.repos.d/dperson-neovim-epel-7.repo https://copr.fedorainfracloud.org/coprs/dperson/neovim/repo/epel-7/dperson-neovim-epel-7.repo 
-sudo yum -y install epel-release
-curl -o /etc/yum.repos.d/dperson-neovim-epel-7.repo https://copr.fedorainfracloud.org/coprs/dperson/neovim/repo/epel-7/dperson-neovim-epel-7.repo 
-sudo curl -o /etc/yum.repos.d/dperson-neovim-epel-7.repo https://copr.fedorainfracloud.org/coprs/dperson/neovim/repo/epel-7/dperson-neovim-epel-7.repo 
-sudo yum -y install neovim --enablerepo=epel
-nvim -v
-sudo yum -y install neovim 
-neovim -v
-sudo yum -y remove neovim
-nvim
-sudo snap install nvim 
-/snap/bin/nvim -v
-cd ~/
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-./nvim.appimage
+ls projects/
+cd projects/
 ls
-mv nvim.appimage /usr/bin/nvim
-sudo mv nvim.appimage /usr/bin/nvim
-nvim
-nvim ~/.vimrc 
-cd Documents/Gitlab/dvcs/Project
-nvim
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-find /home/centos/.config/ -name lua
-find /home/centos/.config/ -iname lua
-find /home/centos/ -iname lua
-nvim /home/centos/.vim/plugged/telescope.nvim/autoload/health/telescope.vim 
-nvim
-nvim ~/.config/nvim/init.lua
-nvim
-mv ~/.config/nvim/init.lua ~/tmp.lua
-mkdir ~/.config/nvim/lua
-mv ~/tmp.lua ~/.config/nvim/lua/nvim-treesitter.lua
-nvim ~/.config/nvim/lua/nvim-treesitter.lua
-vnim
-nvim
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-neoclip
-nvim ~/.vimrc
-cp ~/.config/nvim/lua/nvim-treesitter.lua ~/.config/nvim/lua/neoclip.lua
-nvim ~/.config/nvim/lua/neoclip.lua 
-cp ~/.config/nvim/lua/nvim-treesitter.lua ~/.config/nvim/lua/neoclip.lua
-nvim ~/.config/nvim/lua/neoclip.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/neoclip.lua 
-sqlite3 
-nvim ~/.config/nvim/lua/neoclip.lua 
-cd Documents/Gitlab/dvcs/Project
-nvim
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/cs_connection.cpp
-/usr/bin/env /bin/sh /tmp/Microsoft-MIEngine-Cmd-zptq3muf.bai 
-cd Documents/Gitlab/dvcs/Project
-nvim
-gt
-git checkout feature/shared-spatial-scene 
-git pull 
-gt
-git checkout dev/josh/shared-spatial-scene-bug_fixes
-git pull origin dev/josh/shared-spatial-scene-bug_fixes
-git diff HEAD feature/shared-spatial-scene
-git diff feature/shared-spatial-scene HEAD 
-gt
-git merge feature/shared-spatial-scene 
-gt
-nvim audio_server/src/dvaudio_server/audio_
-nvim audio_server/src/dvaudio_server/audio_server.cpp 
-t
-git diff feature/shared-spatial-scene HEAD 
-nvim audio_server/src/dvaudio_server/audio_server.cpp 
-git diff HEAD feature/shared-spatial-scene 
+rm -rf dvcs/
+sudo rm -rf dvcs/
+ls
+cp -r ~/Documents/Gitlab ./
+sudo cp -r ~/Documents/Gitlab ./
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+curl --version
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+sudo docker run -v /home/axon:/home/axon -it 8fa149e7d4f3 bin/bash
+cd ~/dev/dvcs/
+sudo docker run -it 8fa149e7d4f3 /bin/bash
+sudo systemctl start docker
+sudo docker run -it 8fa149e7d4f3 /bin/bash
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
+sudo ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+sudo ln -s ~/dev/dvcs/ /home/axon/projects
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+cd /home/axon/
+ls
+ls projects/
+cd projects/
+ls
+rm -rf dvcs/
+sudo rm -rf dvcs/
+ls
+cp -r ~/Documents/Gitlab ./
+sudo cp -r ~/Documents/Gitlab ./
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+curl --version
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+sudo docker run -v /home/axon:/home/axon -it 8fa149e7d4f3 bin/bash
+cd ~/dev/dvcs/
+sudo docker run -it 8fa149e7d4f3 /bin/bash
+sudo systemctl start docker
+sudo docker run -it 8fa149e7d4f3 /bin/bash
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
+sudo ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+sudo ln -s ~/dev/dvcs/ /home/axon/projects
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+cd /home/axon/
+ls
+ls projects/
+cd projects/
+ls
+rm -rf dvcs/
+sudo rm -rf dvcs/
+ls
+cp -r ~/Documents/Gitlab ./
+sudo cp -r ~/Documents/Gitlab ./
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+curl --version
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+sudo docker run -v /home/axon:/home/axon -it 8fa149e7d4f3 bin/bash
+cd ~/dev/dvcs/
+sudo docker run -it 8fa149e7d4f3 /bin/bash
+sudo systemctl start docker
+sudo docker run -it 8fa149e7d4f3 /bin/bash
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
+sudo ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+sudo ln -s ~/dev/dvcs/ /home/axon/projects
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+cd /home/axon/
+ls
+ls projects/
+cd projects/
+ls
+rm -rf dvcs/
+sudo rm -rf dvcs/
+ls
+cp -r ~/Documents/Gitlab ./
+sudo cp -r ~/Documents/Gitlab ./
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+curl --version
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+sudo docker run -v /home/axon:/home/axon -it 8fa149e7d4f3 bin/bash
+cd ~/dev/dvcs/
+sudo docker run -it 8fa149e7d4f3 /bin/bash
+sudo systemctl start docker
+sudo docker run -it 8fa149e7d4f3 /bin/bash
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
+sudo ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+sudo ln -s ~/dev/dvcs/ /home/axon/projects
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+cd /home/axon/
+ls
+ls projects/
+cd projects/
+ls
+rm -rf dvcs/
+sudo rm -rf dvcs/
+ls
+cp -r ~/Documents/Gitlab ./
+sudo cp -r ~/Documents/Gitlab ./
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+curl --version
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+sudo docker run -v /home/axon:/home/axon -it 8fa149e7d4f3 bin/bash
+cd ~/dev/dvcs/
 gt
 git diff
-nvim 
+git add --all && git commit -m "updates"
+git push origin dev/oscar/DVMS-6394_test_old
 gt
-git reset --hard HEAD
+cdproj 
+nvim audio_server/test/sys/spatial_test.cpp 
+git diff
+git checkout HEAD 
+git stash
 gt
-git checkout feature/shared-spatial-scene 
-gt
-git pull 
-git checkout dev/josh/DVMS-6334_Global-position-log
-gt
-nvim 
+nvim
+git diff HEAD~1
+git diff HEAD~2
+git diff HEAD~3
+nvim audio_server/test/sys/sys_test_common.h
+git diff HEAD~2
+git history
+git --help
+git show c
+git show 
+git diff HEAD~2
+git diff HEAD~3
+git diff HEAD~4
+git diff HEAD~5
+git diff HEAD~6
+git diff HEAD HEAD~5
+git diff HEAD HEAD~3
 git diff HEAD HEAD~1
-git diff HEAD~1 HEAD
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
-git diff
-nvim audio_server/src/dvaudio_server/audio_server.cpp
- 
-gt
-git diff
-nvim
-gt
-git add audio_server/
-git commit -m "added proper debug logs"
-git push origin dev/josh/DVMS-6334_Global-position-log
-python3 audio_server/src/tools/py_app_server/dlb-yoda-appserver-demo/dlb_yoda_appserver_demo/demo_global_positions.py
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-ln -s ~/Documents/Gitlab/dvcs/Project ~/code
-cd code/
-ls
-cd ~/Documents/Gitlab/dvcs/Project
-rm ~/code
-nvim ~/.bash_aliases 
-cdproj 
-nvim ~/.vimrc 
-mkdir ~/dev/dotfiles
-cdproj 
-ls
-cp ~/.vimrc ~/dev/dotfiles/.backup-vimrc
-nvim ~/.vimrc
-nvim 
-nvim ~/.vscode/tasks.json 
-nvim 
-nvim .vscode/tasks.json 
-nvim ~/.vscode/tasks.json 
-nvim .vscode/tasks.json 
-gt
-nvim .vscode/tasks.json 
-nvim ~/.config/nvim/lua/vstask.lua
-nvim ~/.config/nvim/lua/neoclip.lua 
-nvim ~/.config/nvim/lua/nvim-treesitter.lua 
-nvim
-nvim ~/.config/nvim/lua/vstask.lua
-nvim
-nvim ~/.config/nvim/lua/vstask.lua
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/toggleterm.lua
-nvim
-nvim ~/.config/nvim/lua/toggleterm.lua
-nvim 
-nvim ~/.config/nvim/lua/toggleterm.lua
-nvim 
-nvim ~/.config/nvim/lua/toggleterm.lua
-nvim ~/.vimrc
-cp ~/.vimrc ~/dev/dotfiles/
-nvim ~/.vimrc
-cp ~/.vimrc ~/dev/dotfiles/
-nvim 
-nvim
-cd ~/dev/dotfiles/
-sl
-git init
-gt
-git add --all 
-git commit -m "first"
-git remote add origin git@github.com:qozymandias/dotfiles.git
-git push -u origin master
-cat ~/.ssh/id_rsa.pub 
-git remote add origin git@github.com:qozymandias/dotfiles.git
-git push -u origin master
-nvim ~/.gitconfig 
-nvim README.md
-gt
-nvim .gitignore
-gt
-git add --all 
-git commit -m "readme"
-nvim ~/.gitconfig 
-git commit -m "readme"
-git push origin master
-nvim ~/.gitconfig 
-cdproj 
-gt
-cd ~/
-cdproj 
-gt
-cd ~/
-nvim ~/.vimrc 
-ls -al /usr/bin/nvim 
-sudo pip3 install neovim
-nvim ~/.vimrc 
-sudo yum install python36-neovim
-nvim
-nvim -v
-mkdir -p $HOME/tools/ && cd $HOME/tools/
-wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
-tar zxvf nvim-linux64.tar.gz
-export PATH=$HOME/tools/nvim-linux64/bin:$PATH
-pip3 install --user neovim
-which python4
-which python3
-python3 -v
-python3 -m pip install --user --upgrade pynvim
-which python
-python -v
-python3 -v
-cd /home/centos/Documents/Gitlab/dvcs/ASAN_Build && conan install /home/centos/Documents/Gitlab/dvcs/Project -pr=/home/centos/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/
-linux64_gcc7_asan_debug.conanprofile --build=missing --update
-gtgtA
-nvim v
-nvim -v
-ls -al nvim
-ls -al /usr/bin/nvim 
-rm /usr/bin/nvim 
-sudo rm /usr/bin/nvim 
-cd ~/tools/
-ls
-cd nvim-linux64/
-ls
-cd bin/
-ls
-nvim -v
-./nvim -v
-./nvim
-cd ..
-ls
-nvim
-sudo ln -s ~/tools/nvim-linux64/bin/nvim /usr/bin/nvim
-nvim
-nvim ~/.vimrc
-cdproj 
-nvim 
-nvim ~/.vimrc 
-nvim 
-nvim ~/.vimrc 
-nvim
-cp .vscode/launch.json .vimspector.json
-nvim .vimspector.json 
-nvim
-nvim .vimspector.json 
-[A
-nvim .vimspector.json 
-[A
-nvim .vimspector.json 
-nvim
-nvim ~/.vimrc
-nvim ~/.gitconfig 
-nvim ~/dev/dotfiles/.gitconfig
-gt
-nvim .gitconfig 
-rm .gitconfig 
-gt
-cp -r .vimspector.json .vscode ~/dev/dotfiles/
-cp -r ~/.config ~/.vimrc ~/.bash* ~/dev/dotfiles/ 
-nvim ~/dev/dotfiles/.vimrc 
-nvim ~/dev/dotfiles/.config/coc/commands 
-rm -rf ~/dev/dotfiles/.config/TabNine/
-rm -rf ~/.config/TabNine/
-ls
-cd ~/dev/dotfiles/
-gt
-nvim .gitconfig 
-gt
-cp ~/Documents/Gitlab/dvcs/Project/git_pre_commit_hook/pre-commit ~/Documents/Gitlab/dvcs/Project/.git/hooks/pre-commit
-gt
-git add  --all 
-gt
-rm -rf ./.config/coc/extensions/
-gt
-du -h .config/
-du -h .config/coc/
-git add --all 
-git commit -m "more dot files"
-gt
-git push origin master 
-git config user.name "qozymandias"
-git config user.email odowning19@gmail.com
-git config user.name
-cdproj 
-nvim
-nvim 
-nvim ~/.vimrc
-cd ~/dev/
-ls
-git clone https://github.com/NvChad/NvChad.git
-ls
-cdproj 
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim 
-nvim ~/.vimrc 
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim ~/.vimrc 
-ls
-gt
-nvim
-nvim ~/.vimrc 
-nvim ~/.config/nvim/init.vim 
-nvim ~/.config/nvim/init.lua
-nvim ~/.config/nvim/init.vim 
-nvim ~/.config/nvim/init.lua
-nvim ~/.config/nvim/init.vim 
-nvim ~/.config/nvim/init.lua
-nvim ~/.config/nvim/init.vim 
-nvim ~/.vimrc 
-rm ~/.config/nvim/init.lua
-nvim ~/.vimrc 
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim ~/.vimrc 
-nvim
-nvim ~/.vimrc 
-nvim 
-ls ~/.local/share/nvim/databases/telescope_history.sqlite3
-ls ~/.local/share/nvim/databases/
-nvim ~/.local/share/nvim/telescope_history 
-mkdir ~/.local/share/nvim/databases/
-cdproj 
-nvim 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/telescope.lua 
-sudo yum install epel-release && yum install lua
-sudo yum install epel-release && sudo yum install lua
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/lua-language-server.lua
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/lua-language-server.lua
-cd ~/tools/
-ls
-git clone https://github.com/sumneko/lua-language-server
-cd lua-language-server
-git submodule update --init --recursive
-cd 3rd/luamake
-./compile/install.sh
-cd ../..
-cd 3rd/luamake/
-./compile/install.sh
-ls
-nvim
-nvim ~/.config/nvim/lua/lua-language-server.lua
-nvim ~/.config/nvim/lua/telescope.lua 
-ls
-./compile/install.sh 
-sudo yum install ninja
-yum install http://repo.okay.com.mx/centos/7/x86_64/release/okay-release-1-1.noarch.rpm
-sudo yum install http://repo.okay.com.mx/centos/7/x86_64/release/okay-release-1-1.noarch.rpm
-sudo yum install ninja-build
-./compile/install.sh 
-sudo ./compile/install.sh 
-ls
-gt
-cd ..
-ls
-cd ~/
-sudo snap insta lua-language-server
-sudo snap install lua-language-server
-sudo snap install lua
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim ~/.config/nvim/init.vim 
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/init.vim 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/telescope.lua 
-cdproj 
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim ~/.vimrc
-cdproj 
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim
-nvim audio_server/
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/startup.lua
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/startup.lua
-nvim
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/startup.lua
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/startup.lua
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/startup.lua
-nvim 
-nvim ~/.config/nvim/lua/startup.lua
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/hardline.lua
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/hardline.lua
-nvim 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/hardline.lua
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/vacuumline.lua
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/vacuumline.lua
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.vimrc
-mv ~/.config/nvim/lua/vacuumline.lua ~/.config/nvim/lua/statusline.lua
-nvim ~/.config/nvim/lua/statusline.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/statusline.lua 
-rm ~/.config/nvim/lua/statusline.lua 
-nvim
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/hardline.lua 
-[A
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.vimrc
-sudo yum install nerd-fonts-hermit
-nvim ~/setup.sh
-bash ~/setup.sh
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-cdproj 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts && curl -fLo "DejaVu Sans Mono Nerd Font Complete Mono Windows Compatible.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/1.2.0/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf
-cdproj 
-cd ~?
-cd ~/
-git clone https://github.com/ryanoasis/nerd-fonts
-cdproj 
-nivm
-nvim
-cdproj 
-nvim ~/.vimrc 
-nvim ~/.config/nvim/lua/neoclip.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/neoclip.lua 
-rm -rf ../databases/
-nvim ~/.config/nvim/lua/neoclip.lua 
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/neoclip.lua 
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim\
-nvim
-nvim -c "ma"
-nvim -c ":ma"
-nvim -c :ma
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-nvim
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.config/nvim/lua/telescope.lua 
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-gt
-cdproj 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-cl
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-cl
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-cl
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.config/nvim/lua/hardline.lua 
-cl
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-cl
-nvim ~/.config/nvim/lua/hardline.lua 
-cdproj 
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.config/nvim/lua/hardline.lua 
-git config --global core.excludesFile '~/.gitignore'
-cd /home/centos/Documents/Gitlab/dvcs/Build && conan install /home/centos/Documents/Gitlab/dvcs/Project -pr=/home/centos/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_debug.conanprofile --build=missing --update
-nvim ~/.vimrc
-cdproj 
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_mixer.cpp
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/hardline.lua 
-nvim ~/.vimrc
-git branch 
-git checkout dev/oscar/DVMS-6240_dont_gen_vsv_files_unnecessarily
-gt
-nvim ~/.gitignore
-gt
-nvim ~/.gitignore
-gt
-git config --global core.excludesFile '~/.gitignore'
-gt
-ls
-nvim 
-nvim audio_server/src/dvaudio_server/audio_server.cpp 
-nvim
-nvim audio_server/src/dvaudio_server/audio_server.cpp 
-nvim
-cdproj 
-nvim
-sudo reboot
-cdproj 
-nvim audio_server/src/dvaudio_server/audio_server.cpp 
-conan remove "go"
-conan remove "go_web"
-nvim audio_server/src/dvaudio_server/audio_server.cpp 
-nvim ~/.vimrc
-cl
-nvim audio_server/src/dvaudio_server/audio_server.cpp 
-nvim ~/.vimrc
-cdproj 
-nvim ~/.vimrc
-cdproj 
-nvim audio_server/src/dvaudio_server/audio_server.cpp 
-cdproj 
-nvim
-sudo reboot
-cd /home/centos/Documents/Gitlab/dvcs/Build && conan install /home/centos/Documents/Gitlab/dvcs/Project -pr=/home/centos/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_debug.conanprofile --build=missing --update
-gt
-git diff
-gt
+git diff HEAD HEAD~2
+git diff HEAD HEAD~3
+git checkout -b dev/oscar/DVMS-6394_systest_fix_bak
+git checkout dev/oscar/DVMS-6394_systest_fix
 git branch
-git checkout dev/oscar/DVMS-6282_scale_client_stats
+git diff HEAD HEAD~3
+git reset --soft HEAD~3
+git diff
+git diff HEAD 
+nvim audio_server/test/sys/spatial_test.cpp 
+git stash
+nvim audio_server/test/sys/spatial_test.cpp 
+git stash pop
+git reset --soft HEAD~2
+git diff HEAD 
+git stash
+nvim audio_server/test/sys/spatial_test.cpp 
+git stash pop
+git diff HEAD
+nvim audio_server/test/sys/spatial_test.cpp 
+git diff HEAD
+nvim audio_server/test/sys/spatial_test.cpp 
 gt
-git merge dev/josh/DVMS-6334_Global-position-log
+git stash
+nvim audio_server/test/sys/spatial_test.cpp 
+git checkout HEAD 
+nvim audio_server/test/sys/spatial_test.cpp 
+git pull origin dev/oscar/DVMS-6394_systest_fix
+nvim audio_server/test/sys/spatial_test.cpp 
+git diff
+git stash
+gt
+nvim audio_server/test/sys/spatial_test.cpp 
+git checkout dev/oscar/DVMS-6394_test_old
+git checkout dev/oscar/DVMS-6394_systest_fix audio_server/test/sys/spatial_test.cpp
+git checkout dev/oscar/DVMS-6394_systest_fix audio_server/test/sys/sys_test_driver.cpp
+git checkout dev/oscar/DVMS-6394_systest_fix audio_server/test/sys/sys_test_driver.h
+gt
+git diff HEAD 
+nvim audio_server/test/sys/spatial_test.cpp 
+nvim audio_server/test/sys/sys_test_driver.cpp
+nvim audio_server/test/sys/spatial_test.cpp 
+nvim .vimspector.json 
+git checkout dev/oscar/DVMS-6394_systest_fix 
+git checkout develop audio_server/test/sys/sys_test_common.h
+nvim audio_server/test/sys/sys_test_driver.cpp
+gt
+git diff
+git add --all && git commit -m "cleanup"
+git push origin dev/oscar/DVMS-6394_systest_fix
+nvim audio_server/test/sys/sys_test_driver.cpp
+cd ~/dev/do
+cd ~/dev/dotfiles/
 ls
+cp -r ~/.vimrc ~/.config/ ./
+gt
+git diff
+gt
+git add --all && git commit -m "updates"
+git push origin master
+cd dev/dotfiles/
+git pull
+nvim bootstrap.sh 
+ls /usr/local/bin/
+ls -al /usr/local/bin/
+sudo docker run -it 8fa149e7d4f3 /bin/bash
+sudo systemctl start docker
+sudo docker run -it 8fa149e7d4f3 /bin/bash
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
+sudo ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+sudo ln -s ~/dev/dvcs/ /home/axon/projects
+sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+cd /home/axon/
+ls
+ls projects/
+cd projects/
+ls
+rm -rf dvcs/
+sudo rm -rf dvcs/
+ls
+cp -r ~/Documents/Gitlab ./
+sudo cp -r ~/Documents/Gitlab ./
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+curl --version
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+sudo docker run -v /home/axon:/home/axon -it 8fa149e7d4f3 bin/bash
+cd ~/dev/dvcs/
+gt
+nvim audio_server/src/tools/docker/oel/Dockerfile
+nvim audio_server/src/tools/docker/oel6/Dockerfile 
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+git diff HEAD~2
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel6/Dockerfile 
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel6/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+yum-config-manager --help
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+yum-config-manager --help
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+rpm --help
+rpm --help | grep -i import
+rpm --help | grep import
+rpm --help
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel6/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel6/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel6:v1.1  .
+nvim audio_server/src/tools/docker/oel6/Dockerfile 
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon -it fe6f83aa561d bin/bash
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon -it 43d2ae0a43eb bin/bash
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim dev/dotfiles/bootstrap.sh 
+vim +'PlugInstall'
+nvim +'PlugInstall'
+nvim dev/dotfiles/bootstrap.sh 
+cd dev/dotfiles/
+gt
+git add --all && git commit -m "updates"
+git push origin master
+cdproj 
+cd
+git checkout develop
+cdproj 
+git checkout develop
+git pull
+git checkout dev/oscar/DVMS-6394_systest_fix
+git checkout -b DVMS-6374_systest_moving_gp_positions
+nvim audio_server/test/sys/spatial_test.cpp 
+nvim .vimspector.json 
+nvim audio_server/test/sys/spatial_test.cpp 
+nvim ~/.vimrc
+nvim audio_server/test/sys/spatial_test.cpp 
+nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim audio_server/test/sys/spatial_test.cpp 
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim audio_server/test/sys/spatial_test.cpp 
+sudo reboot
+cdproj 
+nvim audio_server/test/sys/spatial_test.cpp 
+git diff
+nvim audio_server/test/sys/spatial_test.cpp 
+git add --all && git commit -m "created helper + log checker for GP movement test"
+git push origin DVMS-6374_systest_moving_gp_positions
+git checkout develop
+git pull
+gt
+git checkout dev/oscar/DVMS-6394_systest_fix
+git merge develop
+git push origin dev/oscar/DVMS-6394_systest_fix
+git checkout DVMS-6374_systest_moving_gp_positions
+git merge dev/oscar/DVMS-6394_systest_fix
+git push origin DVMS-6374_systest_moving_gp_positions
+nvim .vimspector.json 
+nvim audio_server/test/sys/spatial_test.cpp 
+cdproj 
+nvim audio_server/test/sys/spatial_test.cpp 
+gt
+git difft
+cd dev/dvcs/
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo systemctl start docker
+sudo sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon -it 492670556d51 bin/bash
+cdproj 
+cd ../Build/
+rm -rf bin/Debug/system_test_results/
+nvim audio_server/test/sys/spatial_test.cpp 
+cd ../Project
+nvim audio_server/test/sys/spatial_test.cpp 
+ls cmake_common/toolchain
+ls ~/Documents/Gitlab/dvcs/Project/cmake_common/toolchain
+ls ~/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_debug.conanprofile 
+cp -r ~/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/ ./
+nvim toolchains/linux64_gcc7_base.conanprofile 
+npm run build
+npm run-script build
+cp src/utils/voxeetUtils.js src/utils/streamUtils.js
+ls
+npm run build
+npm install
+npm run build
+npm run start
+npm run build
+npm install node-sass
+npm run build
+cd dev/comms-web-test-application/
+ls
+nvim src/sdk.js 
+yarn install
+nvim
+nvim .en
+nvim README.md 
+nvim .env
+yarn install
+cd1
+ls
+cd dvcs/
+;s
+cd ~/Documents/Gitlab/d
+cd ~/Documents/Gitlab/dausvo/
+ls
+nvim 
+nvim src/App.
+nvim src/App.js 
 gt
 git diff
 git stash
-git checkout dev/josh/DVMS-6334_Global-position-log
-git pull
 gt
-git diff
-git branch
-gt
+git checkout dev/oscar/echo_io_init_integration
+git checkout -b dev/oscar/echo_io_init_integration
 git stash pop
 gt
-git add audio_server/
-git commit -m "added clear"
-gt
-nvim .git/hooks/pre-commit
-python3 ./git_pre_commit_hook/format_check.py
-gt
-git diff
-git add audio_server/
-git commit -m "clear stats"
-gt
-git push origin dev/oscar/DVMS-6282_scale_client_stats
-cl
-nvim .vscode/tasks.json 
-cdproj 
-./scripts/build.py --build-dir=/home/centos/Documents/Gitlab/dvcs/Build --build-type=release --build-platform=linux64_gcc7
-./scripts/tests/scalability/scale_test.py --test-platform=c5.2xlarge --test-names=g711u,tcs --build-dir=/home/odown/Documents/Gitlab/dvcs/Build
-pip3 install --user pebble
-./scripts/tests/scalability/scale_test.py --test-platform=c5.2xlarge --test-names=g711u,tcs --build-dir=/home/odown/Documents/Gitlab/dvcs/Build
-pip3 install --user boto
-./scripts/tests/scalability/scale_test.py --test-platform=c5.2xlarge --test-names=g711u,tcs --build-dir=/home/odown/Documents/Gitlab/dvcs/Build
-pip3 install --user test_helpers
-./scripts/tests/scalability/scale_test.py --test-platform=c5.2xlarge --test-names=g711u,tcs --build-dir=/home/odown/Documents/Gitlab/dvcs/Build
-nvim ./scripts/tests/scalability/scale_test.py
-ccl
-cl
-nvim ./scripts/tests/scalability/scale_test.py
-./scripts/tests/scalability/scale_test.py --test-platform=c5.2xlarge --test-names=g711u,tcs --build-dir=/home/odown/Documents/Gitlab/dvcs/Build
-./scripts/tests/scalability/scale_test.py --test-platform=c5.2xlarge --test-names=g711u,tcs --build-dir=/home/centos/Documents/Gitlab/dvcs/Build
-cl
-cdproj 
+nvim src/components/RoomElement/GifElement.js 
+nvim src/components/RoomElement/VideoPlayer.js 
+nvim src/components/RoomElement/Note.js 
+nvim src/components/BuildMenu/index.js 
+nvim src/components/RoomElement/Note.js 
+nvim src/components/BuildMenu/index.js 
+nvim src/components/RoomElement/Note.js 
+nvim src/components/BuildMenu/index.js 
+nvim src/components/VirtualRoom/
+nvim src/components/RoomElement/Note.js 
 nvim
-nvim audio_server/src/dvaudio_server/audio_server.cpp 
-cl
-nvim audio_server/src/dvaudio_server/audio_server.cpp 
-git checkout feature/shared-spatial-scene 
-git pull
-git checkout -b dev/oscar/DVMS-6282_scale_client_stats
+nvim src/components/BuildMenu/index.js 
 nvim
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-cl
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-git diff
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim .git/hooks/pre-commit
-rm /home/centos/.local/share/nvim/swap//%home%centos%Documents%Gitlab%dvcs%Project%.git%hooks%pre-commit.swp 
-nvim .git/hooks/pre-commit
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim .vscode/tasks.json 
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim .vscode/tasks.json 
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim .vscode/tasks.json 
-rm "/home/centos/.local/share/nvim/swap//%home%centos%Documents%Gitlab%dvcs%Project%.vscode%tasks.js
-rm /home/centos/.local/share/nvim/swap//%home%centos%Documents%Gitlab%dvcs%Project%.vscode%tasks.js
-rm /home/centos/.local/share/nvim/swap//%home%centos%Documents%Gitlab%dvcs%Project%.vscode%tasks.json.swp 
-nvim .vscode/tasks.json 
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim .vscode/tasks.json 
-cdproj 
-nvim .vscode/tasks.json 
-nvim
-mkdir ../Release
-cdproj 
-gt
-nvim
-git checkout feature/shared-spatial-scene 
-git pull
-git checkout dev/oscar/DVMS-6282_scale_client_stats
-git merge feature/shared-spatial-scene 
-gt
-nvim ~/.gitconfig 
-git config --global core.excludesFile '~/.gitignore'
-git config --global core.editor  '~/.gitignore'
-nvim ~/.gitconfig 
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim .vscode/tasks.json 
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim .vscode/tasks.json 
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim .vscode/tasks.json 
-cd /home/centos/Documents/Gitlab/dvcs/Release && conan install /home/centos/Documents/Gitlab/dvcs/Project -pr=/home/centos/     Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_release.conanprofile --build=missing --update
-cd ../Project
+pactl load-module module-pipe-source source_name=virtmic file=/tmp/virtmic format=s16le rate=16000 channels=1
+cd1
+cd ~/dev/
 ls
+git clone git@github.com:qozymandias/21T2.git
+cd 21T2/cs6771/work/cs6771/assignments/ass3/
+ls
+nvim include/gdwg/graph.hpp 
+ls
+nvim CMakeLists.txt 
+nvim source/client.cpp 
+cd ~/dev/
+mkdir echo_io
+cd echo_io/
+cp -r ~/dev/21T2/cs6771/work/cs6771/assignments/ass3 ./graph
+ls
+cd graph/
+ls
+nvim README.md 
+nvim include/gdwg/graph.hpp 
+cp source/client.cpp source/conference.cpp
+nvim source/conference.cpp 
+nvim CMakeLists.txt 
+nvim ~/Documents/Gitlab/dvcs/Project/conanfile.py 
+cp -r ~/Documents/Gitlab/dvcs/Project/.vscode/ ./
+nvim .vscode/tasks.json 
+nvim 
+mkdir ../Build
+nvim 
+nvim .vscode/tasks.json 
+cd ~/Documents/Gitlab/dausvo/
+nvim src/components/RoomElement/Note.js 
+nvim src/components/RoomElement/SmartObj.js
+nvim src/components/RoomElement/Note.js 
+nvim src/components/RoomElement/SmartObj.js
+nvim src/index.js 
+nvim
+yarn build
+npm build
+npm run build
+npm run start
+npm help
+npm test
+npm help
+npm run help
+npm run --help
+npm run 
+npm run build
+nvim src/components/RoomElement/SmartObj.js
+npm run build
+nvim src/components/RoomElement/SmartObj.js
+gt
+git add src
+gt
+git commit -m "updates"
+git push origin dev/oscar/echo_io_init_integration
+gt
+npm run start
+cd Documents/Gitlab/dausvo/
+gt
+npm run start
+nvim src/components/RoomElement/SmartObj.js
+npm run start
+cd Documents/Gitlab/dausvo/
+npm run start
+nvim ~/.config/nvim/init.vim 
+cd dev/
+ls
+cd server/
+ls
+cd ..
+cd 21T2/cs6771/work/cs6771/assignments/ass3/
+ls
+history | grep cp
+cd ~/dev/
+ls
+cd ..
+ls
+find ./ -name 'graph'
+find ./dev/ -name 'graph'
+cd dev/echo_io/
+ls
+cd graph/
+ls
+nvim include/gdwg/graph.hpp 
+nvim config/cmake/toolchains/vcpkg-install.cmake 
+nvim config/tools/install-extensions.ps1 
+nvim config/tools/install-vcpkg-linux.sh 
+nvim config/tools/install-vscode.sh 
+ls
+nimv config/ci/Dockerfile
+nvim config/ci/Dockerfile
+nvim config/tools/apt-install.sh 
+nvim CMakeLists.txt 
+nvim README.md 
+cmake 
+cmake .
+nvim conanfile.txt
+nvim .vscode/tasks.json 
+conan --help
+conan install --help
+nvim .vscode/tasks.json 
 nvim
 nvim .vscode/tasks.json 
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc'
-nvim ~/.vimrc
-nvim ~/.vimrc'
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim ~/.vimrc'
-nvim ~/.vimrc
-[A
-nvim ~/.vimrc
-[A
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
 nvim
-nvim ~/.vimrc
+nvim .vscode/tasks.json 
 nvim
-nvim ~/.vimrc
+nvim .vscode/tasks.json 
 nvim
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
-git diff
-git add audio_server/
-git commit -m "minor fix"
-gt
-git push origin dev/oscar/DVMS-6282_scale_client_stats
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
-git add audio_server/
-git commit -m "minor fix"
-git push origin dev/oscar/DVMS-6282_scale_client_stats
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim audio_server/test/unit/audio_server_test.cpp
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
-git diff
-gt
-git add audio_server/
-git commit -m "added processing timer"
-gt
-git push origin dev/oscar/DVMS-6282_scale_client_stats
-gt
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
+nvim .vscode/tasks.json 
+conan update
+conan install
+conan install .
+nvim config/
+nvim conanfile.txt 
+nvim .vscode/tasks.json 
+conan remote add conancenter https://center.conan.io
+nvim .vscode/tasks.json 
+rm -rf ../Build/*
+nvim .vscode/tasks.json 
 ls
 gt
-git diff
-clangd -v
-clangd --version
-ccls --version
-which ccls
-ls -al /usr/bin/ccls 
+rm CMakeCache.txt 
+nvim .vscode/tasks.json 
+nvim CMakeLists.txt 
+nvim .vscode/tasks.json 
+nvim CMakeLists.txt 
 ls
-cdproj 
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-ls scripts/tests/as_unit_test.py
+nvim .vscode/tasks.json 
+nvim toolchains/linux64_gcc7.cmake 
+cd config/tools/
 ls
-nvim scripts/tests/as_coverage_test.py 
+rm -rf ./*
+;s
+ls
+cd //
+cd ~/dev/echo_io/graph/config/tools
+nvim toolchains/linux64_gcc7.cmake 
+cd2
+nvim .vscode/tasks.json 
+rm config/cmake/toolchains/vcpkg-install.cmake
+nvim .vscode/tasks.json 
+rm config/cmake/toolchains/vcpkg-install.cmake
+nvim .vscode/tasks.json 
+nvim CMakeLists.txt 
+cmake .
+ls
+nvim CMakeFiles/CMakeError.log 
+nvim CMakeFiles/CMakeOutput.log 
+ls
+nvim CMakeLists.txt 
+cmake .
+nvim CMakeLists.txt 
+ls 
+ls toolchains/linux64_gcc7.cmake 
+nvim toolchains/linux64_gcc7.cmake 
+cmake .
+cmake CMakeLists.txt 
+cd ../Build/
+cmake .
+cp ../graph/CMakeLists.txt  ./
+cmake .
+cd ..
+ls
+cd graph/
+nvim CMakeLists.txt 
+cmake .
+nvim CMakeLists.txt 
+cmake .
+nvim CMakeLists.txt 
+nvim ~/Documents/Gitlab/dvcs/Project/CMakeLists.txt 
+nvim CMakeLists.txt 
+cmake .
+nvim CMakeLists.txt 
+cmake .
+nvim source/CMakeLists.txt 
+nvim test/CMakeLists.txt 
+nvim CMakeLists.txt 
+cd ..
+git checkout git@github.com:qozymandias/mod-manager.git
+git clone git@github.com:qozymandias/mod-manager.git
+cd mod-manager/
+ls
+nvim CMakeLists.txt 
+nvim conanfile.txt 
+cd ../graph/
+ls
+rm -rf ACKNOWLEDGEMENTS.md CMakeFiles/ CMakeCache.txt config/ DartConfiguration.tcl LICENSE.md README.md Testing/ toolchains/
 gt
-git diff
-gt
-git add audio_server/
-git commit -m "better clear"
-git push origin dev/oscar/DVMS-6346_better_clear
+ls
+nvim conanfile.txt 
+nvim CMakeLists.txt 
+nvim ../mod-manager/Makefile 
+conan install conanfile.txt 
+nvim conanfile.txt 
+conan install conanfile.txt 
+nvim conanfile.txt 
+conan install conanfile.txt 
+conan install conanfile.txt --update=missing
+nvim .vscode/tasks.json 
+conan install conanfile.txt --build=missing --update
+nvim conanfile.txt 
+conan install conanfile.txt --build=missing --update
+nvim conanfile.txt 
+conan install conanfile.txt --build=missing --update
+nvim conanfile.txt 
+conan install conanfile.txt --build=missing --update
+nvim conanfile.txt 
+conan install conanfile.txt --build=missing --update
+nvim conanfile.txt 
+conan install conanfile.txt --build=missing --update
+nvim conanfile.txt 
+conan install conanfile.txt --build=missing --update
+nvim conanfile.txt 
+conan install conanfile.txt --build=missing --update
+nvim conanfile.txt 
+conan install conanfile.txt --build=missing --update
+nvim conanfile.txt 
+conan install conanfile.txt --build=missing --update
+nvim conanfile.txt 
+ls
+cd ..
+ls
+cd graph/
+ls
+git init
+git add --all
+git commit -m "first commit"
+git remote add origin git@github.com:qozymandias/echo_io.git
+git push -u origin master
 cdproj 
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
-rm -rf .ccls-cache/
-gt
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-[A
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
-git diff
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
-git diff
-nvim audio_server/src/common/global_position_manager.cpp
-git diff audio_server/src/common/global_position_manager.cpp
-git checkout HEAD audio_server/src/common/global_position_manager.cpp
-gt
-nvim audio_server/src/common/global_position_manager.h
-git diff audio_server/src/common/global_position_manager.h
-git diff 
-gt
-git add audio_server/
-git commit -m "more stats"
-git push origin dev/oscar/DVMS-6282_scale_client_stats
-gt
-git checkout feature/shared-spatial-scene 
-git pull
-git checkout dev/oscar/DVMS-6282_scale_client_stats
-git merge feature/shared-spatial-scene 
-nvim ~/.gitignore
-git merge feature/shared-spatial-scene 
-gt
-git add --all 
-git commit -m "merge updates"
-gt
-git push origin dev/oscar/DVMS-6282_scale_client_stats
-gt
-nvim ~/.gitignore 
-ls -al ~/.gitignore 
+git checkout develop
 git pull 
+git checkout dev/oscar/DVMS-6394_systest_fix
+git merge develop
+gt
 nvim
-nvim ~/.vimrc
-[A
-nvim ~/.vimrc
-nvim audio_server/src/common/global_position_manager.h
-nvim ~/.vimrc
-nvim audio_server/src/common/global_position_manager.h
-nvim ~/.vimrc
-nvim audio_server/src/common/global_position_manager.h
-nvim ~/.vimrc
-ccls
-ccls -v
-ccls --version
-nvim ~/.vimrc
-nvim audio_server/src/common/global_position_manager.h
-git fetch
-git checkout dev/zliao/dvms_6337_cs_unittest_gitlab_ci
-nvim .gitlab-ci.yml 
+git diff
+nvim
+nvim audio_server/test/sys/spatial_test.cpp 
+gt
+git add --all && git commit -m "merge updates"
+git push origin dev/oscar/DVMS-6394_systest_fix
 gt
 git diff
-docker run -v /home/Documents/Gitab/dvcs/Project:/home/dvcs -v /mnt/syd-file-03:/mnt/syd-file-03 --name as_unittest_debug -it iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:latest   bin/bash
-cd ~/
-curl -fsSL https://get.docker.com/ | sh
-ls
-sudo yum check-update
-sudo yum install docker
-docker run -v /home/Documents/Gitab/dvcs/Project:/home/dvcs -v /mnt/syd-file-03:/mnt/syd-file-03 --name as_unittest_debug -it iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:latest   bin/bash
-docker -h
-docker run -v /home/Documents/Gitab/dvcs/Project:/home/dvcs -v /mnt/syd-file-03:/mnt/syd-file-03 --name as_unittest_debug -it iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:latest   bin/bash
+git add --all && git commit -m "merge updates"
+git push origin DVMS-6374_systest_moving_gp_positions
+gt
+git diff
+git add --all && git commit -m "merge updates"
+git push origin DVMS-6374_systest_moving_gp_positions
+git diff
+cdproj 
+git branch
+git checkout DVMS-6374_systest_moving_gp_positions
+git checkout develop
+git pull
+git checkout DVMS-6374_systest_moving_gp_positions]
+git checkout DVMS-6374_systest_moving_gp_positions
+git merge develop 
+gt
+nvim 
+nvim audio_server/test/sys/spatial_test.cpp 
+gt
+git idff
+git diff
+nvim audio_server/test/sys/spatial_test.cpp 
+gt
+git add --all && git commit -m "cleanup"
+git push origin DVMS-6374_systest_moving_gp_positions
+cd dev/dotfiles/
+ls .config/
+rsync -a ~/.config ./
+ll
+gt
+git add --all && git commit -m "updates"
+git push origin master
+cd ~/dev/dvcs/
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+history | grep docker run
+history | grep -i 'docker run'
+sudo docker run -v /home/axon:/home/axon -it 492670556d51 bin/bash
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+gt
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+gt
+git diff
+git add --all && git commit -m "josh, zita feeback"
+git push origin DVMS-6374_systest_moving_gp_positions
+cdproj 
+nvim audio_server/test/sys/spatial_test.cpp
+cdproj 
+nvim audio_server/test/sys/spatial_test.cpp
+sudo reboot
+cdproj 
+nvim
+nvim audio_server/test/sys/spatial_test.cpp
+cdproj 
+nvim audio_server/test/sys/spatial_test.cpp
+cdproj 
+gt
+git diff
+git add --all && git commit -m "make it clearer to hear"
+git push origin DVMS-6374_systest_moving_gp_positions
+cdproj 
+git checkout develop
+git pull
+git checkout DVMS-6374_systest_moving_gp_positions
+git merge develop
+gt
+git push origin DVMS-6374_systest_moving_gp_positions
+nvim audio_server/test/sys/spatial_test.cpp
+cdproj 
+nvim audio_server/test/sys/spatial_test.cpp
+gt
+git difgf
+git diff
+nvim audio_server/test/sys/spatial_test.cpp
+git stash
+gt
+nvim audio_server/test/sys/spatial_test.cpp
+cdproj 
+gt
+git diff
+git add --all && git commit -m "removed listener "
+git push origin DVMS-6374_systest_moving_gp_positions
+nvim audio_server/test/sys/spatial_test.cpp
+gt
+git diff
+git add --all && git commit -m "josh updates"
+git push origin DVMS-6374_systest_moving_gp_positions
+cdproj 
+nvim 
+ip a
+cd dev/dvcs/
+gt
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+git diff
+git checkout audio_server/src/tools/docker/oel7/Dockerfile
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
 sudo systemctl start docker
-sudo systemctl status docker
-docker run -v /home/Documents/Gitab/dvcs/Project:/home/dvcs -v /mnt/syd-file-03:/mnt/syd-file-03 --name as_unittest_debug -it iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:latest   bin/bash
-sudo docker run -v /home/Documents/Gitab/dvcs/Project:/home/dvcs -v /mnt/syd-file-03:/mnt/syd-file-03 --name as_unittest_debug -it iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:latest   bin/bash
-docker login -u odown -p letmeingarima@1924 iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net
-sudo docker login -u odown -p letmeingarima@1924 iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net
-sudo docker run -v /home/Documents/Gitab/dvcs/Project:/home/dvcs -v /mnt/syd-file-03:/mnt/syd-file-03 --name as_unittest_debug -it iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:latest   bin/bash
-sudo docker run -v /mnt/syd-file-03:/mnt/syd-file-03 --name as_unittest_debug -it iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:latest   bin/bash
-sudo docker pull iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:latest   
-docker --version
-sudo docker pull iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.0 
-docker run -v /home/Documents/Gitab/dvcs/Project:/home/dvcs -v /mnt/syd-file-03:/mnt/syd-file-03 --name as_unittest_debug -it iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.0   bin/bash
-sudo docker run -v /home/Documents/Gitab/dvcs/Project:/home/dvcs -v /mnt/syd-file-03:/mnt/syd-file-03 --name as_unittest_debug -it iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.0   bin/bash
-docker ps -a
-sudo docker ps -a
-sudo docker kill 613df95f5994
-sudo docker ps -a
-sudo docker run -v /home/Documents/Gitab/dvcs/Project:/home/dvcs -v /mnt/syd-file-03:/mnt/syd-file-03 --name as_unittest_debug -it iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.0   bin/bash
-sudo docker rm 613df95f5994ab1d1308f2beecbd6e33e42ff5b521fa870b63faf296abe91330.
-sudo docker kill 613df95f5994ab1d1308f2beecbd6e33e42ff5b521fa870b63faf296abe91330.
-docker run --help
-sudo docker run --rm -v /home/Documents/Gitab/dvcs/Project:/home/dvcs -v /mnt/syd-file-03:/mnt/syd-file-03 --name as_unittest_debug -it iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.0   bin/bash
-docker ps -a
-sudo docker ps -a
-sudo docker kill 613df95f5994
-sudo docker rm 613df95f5994
-sudo docker ps -a
-sudo docker run --rm -v /home/Documents/Gitab/dvcs/Project:/home/dvcs -v /mnt/syd-file-03:/mnt/syd-file-03 --name as_unittest_debug -it iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.0   bin/bash
-sudo docker ps -a
-sudo docker run --rm -v /home/Documents/Gitab/dvcs/Project:/home/dvcs -v /mnt/syd-file-03:/mnt/syd-file-03 --name as_unittest_debug -it iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.0   bin/bash
-cd pr
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
 cdproj 
-nvim .gitlab-ci.yml 
-sudo docker run --rm -v /home/tmp:/home/dvcs -v /mnt/syd-file-03:/mnt/syd-file-03 --name as_unittest_debug -it iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.0   bin/bash
-cl
-nvim .gitlab-ci.yml 
+git checkout DVMS-6374_systest_moving_gp_positions
+git checkout develop
+git pull 
+git checkout DVMS-6374_systest_moving_gp_positions
+git merge develop
+git push origin DVMS-6374_systest_moving_gp_positions
+nvim
+nvim audio_server/test/sys/spatial_test.cpp
+nvim .vimspector.json 
+nvim audio_server/test/sys/spatial_test.cpp
+nvim .vimspector.json 
+nvim audio_server/test/sys/spatial_test.cpp
 gt
 git diff
-nvim .gitlab-ci.yml 
-git diff
-git add .gitlab-ci.yml 
-git commit -m "coverage test"
-git push origin dev/oscar/dev/DVMS-6338_coverage_test_gitlab_ci
-history | grep wget
-history 
-cd ~/tools/
-ls
-wget https://github.com/neovim/neovim/releases/download/nightly/
-wget https://github.com/clangd/clangd/releases/download/14.0.1/clangd-linux-14.0.1.zip
-ls
-tar zxvf clangd-linux-14.0.1.zip 
-unzip clangd-linux-14.0.1.zip 
-ls
-cd clangd_14.0.1/
-ls
-cd bin/
-ls
-clangd -v
-clangd help
-clangd --version
-ls /usr/bin/clangd 
-ls -al /usr/bin/clangd 
-rm /usr/bin/clangd 
-sudo rm /usr/bin/clangd 
-ln -s ~/tools/clangd_14.0.1/bin/clangd /usr/bin/clangd
-sudo ln -s ~/tools/clangd_14.0.1/bin/clangd /usr/bin/clangd
-cd ~/
-clangd --help
-cp -r /usr/lib/clang/ ~/tools/clangd_14.0.1/lib/clang/14.0.1
-cd ~/tools/
-ls
-unzip clangd-linux-14.0.1.zip 
-cd clangd_14.0.1/
-clangd
-cp -r lib/clang/14.0.1 /usr/lib/clang/
-sudo cp -r lib/clang/14.0.1 /usr/lib/clang/
-clangd
-cd /lib64/
-ls
-clangd
-./libc.so.6 
-cd /usr/lib/clang/
-ls
-cd 14.0.1/
-ls
-ls ../3.4.2/
-clangd
-rm /usr/bin/clangd 
-sudo rm /usr/bin/clangd 
-ls -al /usr/bin/ccls 
-sudo snap install clangd'
-sudo snap install clangd
-sudo snap install clangd --classic
-clangd
-/snap/clangd/current/bin/clangd  --version
-/snap/clangd/current/bin/clangd
-sudo ln -s /snap/clangd/current/bin/clangd  /usr/bin/clangd
-clangd
-clangd --version
-nvim ~/.vimrc
+sudo reboot
+cdproj 
+nvim audio_server/test/sys/spatial_test.cpp
+nvim
 cdproj 
 nvim
-nvim audio_server/src/common/global_position_manager.h
-nvim audio_server/src/dvaudio_server/audio_server.cpp 
+nvim audio_server/test/sys/spatial_test.cpp
+nvim .vim
+nvim .vimspector.json 
+nvim audio_server/test/sys/spatial_test.cpp
+git diff
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+git diff
+nvim audio_server/src/dvaudio_server/audio_mixer.cpp
+nvim audio_server/test/sys/spatial_test.cpp
+gt
+nvim audio_server/test/sys/spatial_test.cpp
+t
+gt
+git diff
+git checkout audio_server/src/dvaudio_server/audio_mixer.cp
+gt
+git checkout HEAD audio_server/src/dvaudio_server/audio_mixer.cp
+git checkout HEAD audio_server/src/dvaudio_server/audio_mixer.cpp
+gt
+git add --all && git commit -m "asan build fixed"
+git push origin DVMS-6374_systest_moving_gp_positions
+git checkout HEAD audio_server/src/dvaudio_server/audio_mixer.cpp
+nvim HEAD audio_server/src/dvaudio_server/audio_mixer.cpp
+nvim audio_server/src/dvaudio_server/audio_mixer.cpp
+cd ~/dev/
+cd dvcs/
+ls
+sudo docker run -v /home/axon:/home/axon -it 492670556d51 bin/bash
+git diff HEAD
+git diff HEAD~1
+git diff HEAD~2
+gt
+git add --all && git commit -m "merge updates"
+git push origin DVMS-6374_systest_moving_gp_positions
+cdproj 
+git fetch
+df -i
+du -hs /tmp /var/log\
+du -hs /tmp /var/log
+sudo du -hs /tmp /var/log
+rm -rf /home/axon/dvcs/Project_b*
+rm -rf /home/axon/dvcs/.ccls-cache/
+rm -rf /home/axon/dvcs/backup_project/
+rm -rf /home/axon/dvcs/ASAN_Build/
+ls
+ls -la
+git fetch
+git checkout  feature/shared-spatial-scene-stage-2
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+git checkout -b dev/oscar/DVMS-6421_proc_client_global_positions
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim audio_server/src/dvaudio_server/proc_client.
+nvim audio_server/src/dvaudio_server/proc_client.cpp 
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim audio_server/src/dvaudio_server/proc_client.cpp 
+gt
+git stash 
+git stash pop
+git add --all && git commit -m "init"
+git checkout DVMS-6374_systest_moving_gp_positions
+git checkout develop
+git pull
+git checkout DVMS-6374_systest_moving_gp_positions
+git merge develop
+gt
+nvim
+gt
+nvim
+gt
+git diff
+git add --all && git commit -m "log fix"
+git push origin DVMS-6374_systest_moving_gp_positions
+ls
+gt
+git diff
+git add --all && git commit -m "better impl"
+git push origin dev/oscar/DVMS-6421_proc_client_global_positions
+cdproj 
+git push origin DVMS-6374_systest_moving_gp_positions
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+gt
+git diff
+nvim 
+git branch
+git checkout dev/oscar/DVMS-6421_proc_client_global_positions
+nvim audio_server/src/dvaudio_server/proc_client.cpp 
+nvim audio_server/src/dvaudio_server/audio_server.h
+nvim audio_server/src/dvaudio_server/proc_client.h
+gt
+git add --all && git commit -m "minor fix"
+git push origin dev/oscar/DVMS-6421_proc_client_global_positions
+nvim audio_server/test/sys/spatial_test.cpp
+nvim audio_server/src/dvaudio_server/proc_client.h
 gt
 nvim audio_server/src/dvaudio_server/audio_server.cpp 
-nvim ~/.vimrc
+du -h /home/axon/
+cd /home/axon/
+ls
+cd projects/
+ls
+rm -rf Gitlab/
+cdproj 
+git push origin DVMS-6374_systest_moving_gp_positions
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+gt
+git diff
+nvim 
+git branch
+git checkout dev/oscar/DVMS-6421_proc_client_global_positions
+nvim audio_server/src/dvaudio_server/proc_client.cpp 
+nvim audio_server/src/dvaudio_server/audio_server.h
+nvim audio_server/src/dvaudio_server/proc_client.h
+gt
+git add --all && git commit -m "minor fix"
+git push origin dev/oscar/DVMS-6421_proc_client_global_positions
+nvim audio_server/test/sys/spatial_test.cpp
+nvim audio_server/src/dvaudio_server/proc_client.h
+gt
 nvim audio_server/src/dvaudio_server/audio_server.cpp 
-nvim ~/.vimrc
+du -h /home/axon/
+cd /home/axon/
+ls
+cd projects/
+ls
+rm -rf Gitlab/
+cdproj 
+git push origin DVMS-6374_systest_moving_gp_positions
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+gt
+git diff
+nvim 
+git branch
+git checkout dev/oscar/DVMS-6421_proc_client_global_positions
+nvim audio_server/src/dvaudio_server/proc_client.cpp 
+nvim audio_server/src/dvaudio_server/audio_server.h
+nvim audio_server/src/dvaudio_server/proc_client.h
+gt
+git add --all && git commit -m "minor fix"
+git push origin dev/oscar/DVMS-6421_proc_client_global_positions
+nvim audio_server/test/sys/spatial_test.cpp
+nvim audio_server/src/dvaudio_server/proc_client.h
+gt
 nvim audio_server/src/dvaudio_server/audio_server.cpp 
-nvim ~/.vimrc
+du -h /home/axon/
+cd /home/axon/
+ls
+cd projects/
+ls
+rm -rf Gitlab/
+sudo rm -rf Gitlab/
+cd ..
+ls
+cd dvcs/
+ls
+du -h ./
+rm -rf Release/
+du -h ./
+ls
+gt
+ls 
+sl -la
+ls -al
+du -h ./
+du -h ./ | sort
+du -h ./
+du -h ./Build/
+du -h /
+du -h /home/centos
+cd ~/
+ls
+du -h /home/centos
+du -h 
+ls
+du -h Documents/
+du -h .cache/
+du -h snap/
+du -h .vscode
+du -h the_silver_searcher/
+du -h .conan
+du -h .local/
+du -h no
+du -h node_modules/
+du -h .*
+du -h ./.*
+du -h ./dev/
+cd dev/
+ls
+cd dvcs/
+ls
+du -h ./
+cd ..
+ls
+du -h ./
+du -h ./ | grep G
+rm -rf ./21T2/cs4601/labs
+du -h ./ | grep G
+du -h ./ | grep M
+du -h ./ | grep G
+du -h ./
+ls
+du -h ./21T2/
+du -h ./comms-web-test-application/
+du -h NvChad/
+du -h .ccls-cache/
+du -h 20220511T153322_core.358 
+rm -rf 20220511T153322_core.358 
+du -h ./
+cdproj 
 nvim audio_server/src/dvaudio_server/audio_server.cpp 
-nvim ~/.vimrc
+nvim audio_server/src/dvaudio_server/processing_thread.h 
+nvim audio_server/src/dvaudio_server/processing_thread.cpp 
+sudo reboot
+cd dev/dvcs/
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo systemctl start docker
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon -it e99ff490ba34 bin/bash
+git diff 
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon -it d5d1fa4b7f10 bin/bash
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+clswaps 
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+clswaps 
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+cdproj 
+gt
+git diff
+cd dev/dvcs/
+sudo docker run -v /home/axon:/home/axon -it 81e6277dc43e bin/bash
+sudo systemctl start docker
+sudo docker run -v /home/axon:/home/axon -it 81e6277dc43e bin/bash
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon -it 1594a97f03e7 bin/bash
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+cd dev/dvcs/
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+cdproj 
+nvim audio_server/src/dvaudio_server/processing_thread.cpp 
+nvim audio_server/src/dvaudio_server/processing_thread.h 
+nvim audio_server/src/dvaudio_server/processing_thread.cpp 
+cdproj 
+gt
+nvim
+gt
+git diff
+git add --all && git commit -m "added transaction changes"
+git push origin dev/oscar/DVMS-6421_proc_client_global_positions
 nvim audio_server/src/dvaudio_server/audio_server.cpp 
-nvim ~/.vimrc
-git checkout dev/oscar/DVMS-6282_scale_client_stats
-nvim audio_server/src/dvaudio_server/stats/dvrts_stats.h
-cd -- vim/nsis/lang
+git diff
+nvim audio_server/src/dvaudio_server/audio_server.cpp 
+git diff
+git add --all && git commit -m "added clear"
+git push origin dev/oscar/DVMS-6421_proc_client_global_positions
+nvim audio_server/src/dvaudio_server/audio_server.cpp 
+[A
+nvim audio_server/src/dvaudio_server/audio_server.cpp 
+\
+gt
+which libtool
+cd ~/dev/dvcs/
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+ls /usr/lib/libto
+ls /usr/lib/libto*
+which libtool
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+clswaps 
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+sudo systemctl start docker
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it  bin/bash
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it  bin/bash
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+cd dev/dvcs/
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 82cbf1fb5f83 bin/bash
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 82cbf1fb5f83 bin/bash
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+curl -L "https://yt-dl.org/downloads/latest/youtube-dl"
+curl -v
+curl --version
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+curl -h
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+curl -L "http://yt-dl.org/downloads/latest/youtube-dl" -o /bin/youtube-dl
+curl -L "http://yt-dl.org/downloads/latest/youtube-dl" -o /usr/bin/yt-dl
+curl -L "https://yt-dl.org/downloads/latest/youtube-dl" -o /usr/bin/yt-dl
+curl  "https://yt-dl.org/downloads/latest/youtube-dl" -o /usr/bin/yt-dl
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it ff9c84cb1628 bin/bash
+sudo docker run -v /home/axon:/home/axon -it ff9c84cb1628 bin/bash
+sudo docker run -v /home/axon:/home/axon ff9c84cb1628 bin/bash
+sudo docker run -v /home/axon:/home/axon -it 5b4724b71924 bin/bash
+nvim audio_server/src/tools/docker/oel7/Dockerfile 
+gt
+git add --all && git commit -m "small fix"
+git push origin dev/oscar/DVMS-6338_dockerfile_curl_fix
+sudo docker run -v /home/axon:/home/axon -it 5b4724b71924 bin/bash
+cd dev/dvcs/
+gt
+nvim
+git add --all && git commit -m "merge updates + correct dockerfile for curl 7.69.1"
+git push origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+git branch
+git checkout dev/shared/gitlab_ci
+git pull
+git checkout -b dev/oscar/DVMS-6338_dockerfile_curl_fix
+git checkout dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci audio_server/src/tools/docker/oel7/Dockerfile
+git diff HEAD
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+gt
+git add --all && git commit -m " dockerfile for curl 7.69.1"
+git push origin dev/oscar/DVMS-6338_dockerfile_curl_fix
+cdproj 
+nvim audio_server/src/dvaudio_server/proc_client.cpp
+nvim audio_server/src/dvaudio_server/processing_thread.cpp 
+gt
+nvim audio_server/src/dvaudio_server/processing_thread.cpp 
+nvim audio_server/test/unit/audio_server_test.cpp 
+git diff
+git add --all && git commit -m "feedback updates + update unit test"
+git push origin dev/oscar/DVMS-6421_proc_client_global_positions
+nvim /etc/sysconfig/clock
+nvim /etc/localtime 
+tzselect 
+nvim /etc/localtime 
+ntpd -g -q
+sudo ntpd -g -q
+date
+hwclock -wu
+sudo hwclock -wu
+sudo reboot
+ip a
+gt
+ls
+cdproj 
+nvim
+ls /home/axon/dvcs/Project/
+cd ../Build/
+ls
+rm -rf ./*
+gt
+rsync -av ~/dev/Build /home/axon/
+sudo rsync -av ~/dev/Build /home/axon/dvcs/Build
+cd dev/dvcs/
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo systemctl start docker
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+rsync -a ~/Documents/Gitlab/dvcs/Build /home/axon/dvcs/Build
+rsync -av ~/Documents/Gitlab/dvcs/Build /home/axon/dvcs/Build
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon -it 5bd703e7ea5e bin/bash
+gt
+git diff
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+git add --all && git commit -m "added ssl"
+git push origin dev/oscar/DVMS-6338_dockerfile_curl_fix
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon -it 3e1ad7b3e6a3 bin/bash
+gt
+git diff
+git add --all && git commit -m "minor fix"
+git push origin dev/oscar/DVMS-6338_dockerfile_curl_fix
+sudo docker run -v /home/axon:/home/axon -it 3e1ad7b3e6a3 bin/bash
+cdproj 
+sudo docker run -v /home/axon:/home/axon -it 3e1ad7b3e6a3 bin/bash
+cd ~/dev/dvcs/
+ls
+nvim 
+sudo docker run -v /home/axon:/home/axon -it 3e1ad7b3e6a3 bin/bash
+cp -r ~/Documents/Gitlab/dvcs/Project/.vscode ./
+cp -r ~/Documents/Gitlab/dvcs/Project/.vimspector.json ./
+nvim
+nvim .vscode/tasks.json 
+mkdir ../Build
+nvim
+nvim .vscode/tasks.json 
+nvim
+nvim .vscode/tasks.json 
+nvim
+nvim .vscode/tasks.json 
+nvim
+ls /home/axon/dvcs/Build/
+ls /home/axon/dvcs/Build/system_test_results/
+history
+sudo docker run -v /home/axon:/home/axon -it 3e1ad7b3e6a3 bin/bash
+cd dev/dvcs/
+gt
+sudo docker run -v /home/axon:/home/axon -it 3e1ad7b3e6a3 bin/bash
+cd ..
+sudo docker run -v /home/axon:/home/axon -it 3e1ad7b3e6a3 bin/bash
+cd ../
+mv linux64_gcc7_debug.tar.gz /home/axon/projects/
+sudo mv linux64_gcc7_debug.tar.gz /home/axon/projects/
+sudo docker run -v /home/axon:/home/axon -it 3e1ad7b3e6a3 bin/bash
+cd dev/dvcs/
+cd ../Build/
+ls
+cd ~/Documents/Gitlab/dvcs/Build/bin/Debug/
+./dvrts_unittest --gtest_filter=FileServiceTest.WriteRead/1
+ldd dvrts_unittest
+ldd dvrts_unittest | grep -i libcurl
+/lib64/libcurl.so.4 -al
+ls -al /lib64/libcurl.so.4
+./dvrts_unittest --gtest_filter=FileServiceTest.WriteRead/0
+sudo docker run -v /home/axon:/home/axon -it 3e1ad7b3e6a3 bin/bash
+cd dev/dvcs/
+sudo docker run -v /home/axon:/home/axon -it 3e1ad7b3e6a3 bin/bash
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker run -v /home/axon:/home/axon -it 3e1ad7b3e6a3 bin/bash
+curl --version
+nvim ~/tmp1.txt
+nvim ~/tmp2.txt
+vimdiff ~/tmp1.txt ~/tmp2.txt 
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker run -v /home/axon:/home/axon -it 3e1ad7b3e6a3 bin/bash
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker run -v /home/axon:/home/axon -it 3e1ad7b3e6a3 bin/bash
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+cdproj 
+nvim audio_server/src/dvaudio_server/proc_client.h
+git add --all && git commit -m "minor fix"
+git push origin dev/oscar/DVMS-6421_proc_client_global_positions
+git diff
+rpm --help
+rpm --help | grep -i '-i'
+rpm --help | grep -i "-i"
+rpm --help | grep -i "i"
+rpm --help | grep -i "i "
+rpm --help | grep -i "\-i"
+rpm --help | grep -i "\-U"
+rpm --help | grep -i "\-v"
+rpm --help | grep -i "\-h"
+curl --version
+nvim tmp
+cat tmp
+cd dev/dvcs/
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+ls term://~/Documents/Gitlab/dvcs/Project//470:/bin/sh
+ls /home/centos/dev/dolby/Build/CMakeFiles/CMakeTmp/CMakeLists.txt
+cd dev/dvcs/
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+rpm --help | grep -i "\-h"
+rpm --help | grep -i "dep"
+cd ..
+ls
+mkdir dolby
+cd dolby/
+rsync -av ~/dev/dvcs ./
+cd dvcs/
+ls
+gt
+git stash
+git checkout develop
+git pull
+git checkout dev/bcost/DVMS-6415-jumpdoubletalk
+git checkout -b dev/oscar/DVMS-6415-cluster-unittests
+nvim
+nvim audio_server/src/dvaudio_server/cluster.h 
+mkdir ../Build
+nvim audio_server/src/dvaudio_server/cluster.h 
+nvim audio_server/test/unit/cluster_test.cpp 
+ls ../.ccls-cache/
+nvim audio_server/test/unit/cluster_test.cpp 
+ls ../Build/bin/
+rm -rf ../Build/*
+nvim .vscode/tasks.json 
+nvim audio_server/test/unit/cluster_test.cpp 
+nvim .vscode/tasks.json 
+nvim audio_server/test/unit/cluster_test.cpp 
+gt
+git diff
+nvim audio_server/test/unit/cluster_test.cpp 
+git diff
+git add --all && git commit -m "test stubs"
+git push origin dev/oscar/DVMS-6415-cluster-unittests
+cdproj 
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim audio_server/src/dvaudio_server/processing_thread.cpp 
+hy
+nvim audio_server/src/dvaudio_server/processing_thread.cpp 
+gt
+git diff
+git add --all && git commit -m "ahmad feedback"
+git push origin dev/oscar/DVMS-6421_proc_client_global_positions
+nvim audio_server/src/dvaudio_server/processing_thread.cpp 
+nvim audio_server/src/dvaudio_server/audio_server.cpp 
+gt
+git diff
+git add --all && git commit -m "changed impl because msml may send multiple gps for multiple clients"
+git push origin dev/oscar/DVMS-6421_proc_client_global_positions
+git fetch
+nvim audio_server/test/sys/spatial_test.cpp
+nvim audio_server/src/dvaudio_server/audio_server.cpp 
+nvim audio_server/src/common/global_position_manager.h 
+nvim audio_server/src/common/global_position_manager.cpp 
+nvim ../Build/bin/Debug/system_test_results/SpatialTest.SetGlobalPositionsTest/dvaudio_server_0/dvaudio_server_0.log 
+nvim ../Build/bin/Debug/system_test_results/SpatialTest.SetGlobalPositionsTest/dvaudio_server_4/dvaudio_server_4.log 
+nvim ../Build/bin/Debug/system_test_results/SpatialTest.SetGlobalPositionsTest/dvaudio_server_0/dvaudio_server_0.log 
+nvim audio_server/test/sys/spatial_test.cpp
+nvim ../Build/bin/Debug/system_test_results/SpatialTest.SetGlobalPositionsTest/dvaudio_server_0/dvaudio_server_0.log 
+gt
+git stash
+git checkout develop
+git pull
+git checkout dev/oscar/DVMS-6415-cluster-unittests
+nvim audio_server/src/dvaudio_server/cluster.
+nvim audio_server/src/dvaudio_server/cluster.cpp 
+nvim audio_server/test/unit/scene_manager_test.cpp 
+git stash
+git fetch
+git checkout dev/shared/DVMS-6415_unittests
+nvim audio_server/test/unit/cluster_test.cpp 
+git add --all && git commit -m "added  MakeClusters function"
+git push origin dev/shared/DVMS-6415_unittests
+nvim audio_server/test/unit/cluster_test.cpp 
+gt
+git pull
+gt
+git diff
+git add --all && git commit -m "added positions in MixINput for MakeCluster"
+git push origin dev/shared/DVMS-6415_unittests
+git branch | grep dev/oscar
+git checkout dev/oscar/DVMS-6415-cluster-unittests
+git merge dev/shared/DVMS-6415_unittests
+gt
+nvim audio_server/test/unit/cluster_test.cpp
+gt
+git stash
+gt
+git add --all && git commit -m "merge updates"
+git checkout dev/shared/DVMS-6415_unittests
+nvim audio_server/test/unit/cluster_test.cpp
+gt
+git diff
+git add --all && git commit -m "polar position interface"
+git push origin dev/shared/DVMS-6415_unittests
+git checkout dev/oscar/DVMS-6415-cluster-unittests
+git merge dev/shared/DVMS-6415_unittests
+gt
+nvim audio_server/test/unit/cluster_test.cpp 
+gt
+git diff
+git add --all && git commit -m "added weighted angle test"
+git push origin dev/oscar/DVMS-6415-cluster-unittests
+gt
+nvim audio_server/test/unit/cluster_test.cpp 
+gt
+git add --all && git commit -m "changes"
+git push origin dev/oscar/DVMS-6415-cluster-unittests
+nvim audio_server/test/unit/cluster_test.cpp 
+gt
+git push origin dev/oscar/DVMS-6415-cluster-unittests
+git fetch
+git checkout dev/shared/DVMS-6415_unittests
+git pull
+git checkout dev/oscar/DVMS-6415-cluster-unittests
+git merge dev/shared/DVMS-6415_unittests
+gt
+nvim
+nvim audio_server/test/unit/cluster_test.cpp 
+git branch | grep -i 'brendon'
+git branch | grep -i 'bcost'
+gt
+git diff
+gt
+git add --all && git commit -m "merge updates"
+git push origin dev/oscar/DVMS-6415-cluster-unittests
+git checkout dev/bcost/DVMS-6415-jumpdoubletalk
+git pull
+git merge dev/oscar/DVMS-6415-cluster-unittests
+gt
+nvim
+gt
+git diff
+nvim audio_server/test/unit/cluster_test.cpp 
+git add --all && git commit -m "merge updates"
+git push origin dev/bcost/DVMS-6415-jumpdoubletalk
+nvim audio_server/test/unit/cluster_test.cpp 
+gt
+git diff
+;s
+ls
+rpm --help
+rpm --help | grep -i '\-e'
+cd dev/dvcs/
+sudo docker run -v /home/axon:/home/axon -it 3e1ad7b3e6a3 bin/bash
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon -it 10467c15b748 bin/bash
+docker ps -a -q
+sudo docker ps -a -q
+sudo docker run -v /home/axon:/home/axon -it 10467c15b748 bin/bashdocker rm -f $(docker ps -a -q)
+docker rm -f $(docker ps -a -q)
+sudo docker rm -f $(docker ps -a -q)
+sudo docker rm -f $(sudo docker ps -a -q)
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon -it 10467c15b748 bin/bash
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim
+\\\\
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+rpm --help
+rpm --help | grep deps
+rpm --help | grep dep
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+rpm --help 
+rpm --help | grep -i 'no'
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker run -v /home/axon:/home/axon -it 10467c15b748 bin/bash
+cd /home/axon/projects/
+ls
+git clone git@gitlab-sfo.dolby.net:comms-cs/dvcs-docker.git
+sudo git clone git@gitlab-sfo.dolby.net:comms-cs/dvcs-docker.git
+cd ~/
+sudo git clone git@gitlab-sfo.dolby.net:comms-cs/dvcs-docker.git
+git clone git@gitlab-sfo.dolby.net:comms-cs/dvcs-docker.git
+rsync -av dvcs-docker/ /home/axon/projects/
+sudo rsync -av dvcs-docker/ /home/axon/projects/
+cd /home/axon/projects/
+ls
+rm -rf .git/ data/ Dockerfile 
+gt
+ls
+ls -al
+cd 
+cd dvcs-docker/
+cd ..
+sudo rsync -av dvcs-docker/ /home/axon/projects/dvcs-docker
+cd /home/axon/projects/dvcs-docker
+cd ..
+cd dvcs-docker/
+cd data/rpms/
+ls
+pwd
+cd ~/dev/dvcs/
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon -it 10467c15b748 bin/bash
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker run -v /home/axon:/home/axon -it 10467c15b748 bin/bash
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon -it 10467c15b748 bin/bash
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker run -v /home/axon:/home/axon -it 10467c15b748 bin/bash
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+git stash
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+nvim ../../dvcs-docker/Dockerfile 
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+gt
+rsync -av ~/dvcs-docker/data ./data
+gt
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim .gitlab-ci.yml 
+gt
+git add audio_server/
+git commit -m "working rpms"
+git push origin dev/oscar/DVMS-6338_dockerfile_curl_fix
+git checkout dev/shared/gitlab_ci 
+git pull 
+git checkout dev/oscar/DVMS-6338_dockerfile_curl_fix
+gt
+git merge dev/shared/gitlab_ci
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+nvim .gitlab-ci.yml 
+gt
+git diff
+git add audio_server/
+git commit -m "copy rpms in gitlab yaml oel7 build task"
+gt
+git add .gitlab-ci.yml 
+git commit -m "copy rpms in gitlab yaml oel7 build task"
+git push origin dev/oscar/DVMS-6338_dockerfile_curl_fix
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+cd dev/dvcs/
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+clswaps 
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+cd dev/dvcs/
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+git add .gitlab-ci.yml 
+nvim .gitlab-ci.yml 
+gt
+git diff
+gt
+git add .gitlab-ci.yml  audio_server/
+git commit -m "zita feedback"
+git push origin dev/oscar/DVMS-6338_dockerfile_curl_fix
+docker images
+sudo docker images
+nvim .gitlab-ci.yml 
+git add .gitlab-ci.yml  audio_server/
+git commit -m "docker images"
+git push origin dev/oscar/DVMS-6338_dockerfile_curl_fix
+h
+hy
+gt
+cd dev/dvcs/
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+clswaps 
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+git add .gitlab-ci.yml 
+gt
+git add audio_server/
+git commit -m "cleanup"
+git push origin dev/oscar/DVMS-6338_dockerfile_curl_fix
+docker rm -f $(docker ps -a -q)
+sudo docker rm -f $(docker ps -a -q)
+sudo docker rm -f $(sudo docker ps -a -q)
+gt
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+nvim .gitlab-ci.yml 
+gt
+git diff
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+git diff
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+git add .gitlab-ci.yml 
+git add audio_server/
+git commit -m "fixes"
+git push origin dev/oscar/DVMS-6338_dockerfile_curl_fix
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+nvim .gitlab-ci.yml 
+git add .gitlab-ci.yml  && git commit -m "install git before"
+git push origin dev/oscar/DVMS-6338_dockerfile_curl_fix
+nvim .gitlab-ci.yml 
+git add .gitlab-ci.yml 
+git commit -m "rsync added"
+git push origin dev/oscar/DVMS-6338_dockerfile_curl_fix
+nvim .gitlab-ci.yml 
+git add .gitlab-ci.yml 
+git commit -m "minor fix
+git commit -m "minor fix"
+git push origin dev/oscar/DVMS-6338_dockerfile_curl_fix
+cdproj 
+gt
+git stash
+git checkout develop
+git pull
+git branch | grep shared
+git checkout feature/shared-spatial-scene-stage-2
+git pull
+git diff HEAD HEAD~1
+git diff HEAD~1 HEAD
+nvim
+find . -name manager
+find . -name manager -print
+find ./ -name manager -print
+find ./ -name 'man' -print
+find ./ -name 'cpp'
+cd
 cd ~/Documents/Gitlab/dvcs/Project
 gt
-ls
-ght
-git
-git diff
-git add audio_server/
-git commit -m "hui san's feedback"
+git checkout -b dev/oscar/DVMS-6422-remove-stage-1
+rm audio_server/src/common/global_position_manager.*
 gt
-git push origin dev/oscar/DVMS-6282_scale_client_stats
-git checkout 
-git checkout feature/shared-spatial-scene
+nvim
+nvim /home/centos/Documents/Gitlab/dvcs/Project/audio_server/src/dvaudio_server/audio_server.h
+nvim ./audio_server/src/dvaudio_server/audio_server.h
+cdproj 
+nvim ./audio_server/src/dvaudio_server/audio_server.h
+cdproj 
+nvim ./audio_server/src/dvaudio_server/audio_server.h
+clswaps 
+nvim audio_server/test/unit/audio_server_test.cpp 
+git diff
+git diff audio_server/test/
+nvim audio_server/test/unit/audio_server_test.cpp 
+gt
+git add audio_server/
+git commit -m "removed global position manager and timer and processing "
+git push origin dev/oscar/DVMS-6422-remove-stage-1
+cd ~/dev/dvcs/
+gt
+git checkout dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+git checkout  dev/shared/gitlab_ci
 git pull
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim conference_server/src/dvconference_controller/dvconference_controller.cpp
+git checkout dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+git merge   dev/shared/gitlab_ci
 gt
-git diff
-nvim conference_server/src/dvconference_controller/dvconference_controller.cpp
-gt
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim conference_server/src/dvconference_controller/dvconference_controller.cpp
-t
-git checkout -b dev/oscar/DVMS-6348_feedback
-gt
-git diff
-gt
-git add --all 
-git commit -m "small feedback change"
-git push origin dev/oscar/DVMS-6348_feedback
-git checkout feature/shared-spatial-scene 
-git checkout -b dev/oscar/DVMS-6346_better_clear
-nvim
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
-git checkout dev/oscar/DVMS-6348_feedback 
-nvim ~/.vimrc
-fzf
-nvim ~/.vimrc
-[A
-nvim ~/.vimrc
-nvim
-nvim ~/.vimrc
-cdproj 
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
-git diff
-git add audio_server/
-git commit -m "typo"
-git push origin dev/oscar/DVMS-6282_scale_client_stats
-cdproj 
-hyt
-gt
-git checkout -b dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+nvim .gitlab-ci.yml 
 gt
 git add .gitlab-ci.yml 
-git commit -m "added as unit tests"
+git commit -m "remove ssl stuff not needed anymore"
+gt
+git push origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+gt
+git reset --soft HEAD~41
+gt
+git diff HEAD
+gt
+nvim .gitlab-ci.yml 
+git add .gitlab-ci.yml 
+gt
+git add scripts/
+gt
+git commit -m "added AS unit tests to gitlab yaml"
+gt
+git push origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+git push -f origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+git merge dev/shared/gitlab_ci 
+gt
+nvim
+gt
+git add .gitlab-ci.yml scripts/
+git commit -m "merge updates"
+git push origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+git checkout dev/shared/gitlab_ci audio_server/src/tools/docker/oel7/Dockerfile
+gt
+git diff HEAD
+git checkout dev/shared/gitlab_ci scripts/common_helper.py
+nvim .gitlab-ci.yml 
+gt
+git add  .gitlab-ci.yml 
+gt
+git commit -m "minor fixes"
+git push origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+git checkout dev/oscar/DVMS-6338_dockerfile_curl_fix
+nvim .gitlab-ci.yml 
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+gt
+git diff
+git add .gitlab-ci.yml audio_server/
+gt
+git commit -m "added docker image push"
+git push origin dev/oscar/DVMS-6338_dockerfile_curl_fix
+nvim .gitlab-ci.yml 
+gt
+git add .gitlab-ci.yml 
+git commit -m "updated global image version var"
+git push origin dev/oscar/DVMS-6338_dockerfile_curl_fix
+cd dev/dvcs/
+gt'
+nvim .gitlab-ci.yml 
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+sudo docker run -v /home/axon:/home/axon -it 10467c15b748 bin/bash
+sudo systemctl start docker
+gt
+git diff
+git stash
+gt
+git checkout dev/oscar/DVMS-6338_dockerfile_curl_fix
+git checkout dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+git merge dev/oscar/DVMS-6338_dockerfile_curl_fix
+gt
+git push origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+git checkout dev/oscar/DVMS-6338_dockerfile_curl_fix
+nvim .gitlab-ci.yml 
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+gt
+git diff
+gt
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon -it 6fbd974591a6 bin/bash
+gt
+git diff
+cdproj 
+nvim ~/.vimrc
+cp ~/.config/nvim/lua/lsp-status.lua ~/.config/nvim/lua/treesitter-context.lua
+nvim ~/.config/nvim/lua/treesitter-context.lua 
+nvim ~/.vimrc
+nvim ~/.config/nvim/lua/treesitter-context.lua 
+nvim audio_server/test/unit/audio_server_test.cpp 
+nvim ~/.config/nvim/lua/treesitter-context.lua 
+nvim audio_server/test/unit/audio_server_test.cpp 
+nvim ~/.vimrc
+grep ~/.config/ 'NormalFloat'
+grep 'NormalFloat' ~/.config/
+grep -RIn 'NormalFloat' ~/.config/
+grep -RIn 'NormalFloat' ~/.config/nvim/
+nvim /home/centos/.config/nvim/lua/toggleterm.lua
+grep -RIn 'NormalFloat' ~/.config/nvim/
+grep -RIn 'NormalFloat' ~/.config/
+grep -RIn 'hl NormalFloat' ~/.config/
+grep -RIn 'hl* NormalFloat' ~/.config/
+grep -RIn 'hl.*NormalFloat' ~/.config/
+grep -RIn 'hl.*NormalFloat' ~/.local/
+nvim ~/.vimrc
+nvim audio_server/test/unit/audio_server_test.cpp 
+nvim ~/.vimrc
+nvim audio_server/test/unit/audio_server_test.cpp 
+nvim ~/.vimrc
+nvim audio_server/test/unit/audio_server_test.cpp 
+nvim ~/.vimrc
+nvim audio_server/test/unit/audio_server_test.cpp 
+nvim ~/.vimrc
+nvim audio_server/test/unit/audio_server_test.cpp 
+nvim ~/.vimrc
+nvim audio_server/test/unit/audio_server_test.cpp 
+cd ~/dev/dvcs/
+cdproj 
+git checkout dev/oscar/DVMS-6338_dockerfile_curl_fix
+git pull
+git checkout dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+git pull
+git pull origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+gt
+git stash
+gt
+git checkout HEAD
+nvim .gitlab-ci.yml 
+gt
+nvim .gitlab-ci.yml 
+git add .gitlab-ci.yml 
+gt
+git stash
+git pull origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+gt
+nvim .gitlab-ci.yml 
+git add .gitlab-ci.yml 
+git stash 
+git checkout dev/oscar/DVMS-6422-remove-stage-1
+cd ~/dev/d
+cd ~/dev/dvcs/
+gt
+git add audio_server/ cmake_common/
+git commit -m "stuff for gcc 8"
+git push origin dev/oscar/cpp_20_stl_support
+git checkotu dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+git checkout dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+nvim audio_server/src/tools/docker/oel7/Dockerfile
+git checkout dev/oscar/DVMS-6338_dockerfile_curl_fix
+git pull
+gt
+git checkout dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+git merge dev/oscar/DVMS-6338_dockerfile_curl_fix
+gt
+git push origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+cdproj 
+cd ~/dev/
+cd dvcs/
+ls
+gt
+git fetch
+git checkout dev/shared/gitlab_ci
+git pull
+gt
+git checkout dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+git merge dev/shared/gitlab_ci
+ls
+gt
+git push origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+gt
+nvim .gitlab-ci.yml 
+gt
+git diff
+gt
+git add .gitlab-ci.yml 
+git commit -m "added asan_debug and release AS unit test to pipeline jobs"
+nvim .gitlab-ci.yml 
+gt
 git push origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
 nvim .gitlab-ci.yml 
-python3 scripts/tests/as_unit_test.py 
-pip3 install --user test_helpers
-pip3 install --user gtest
-python3 scripts/tests/as_unit_test.py 
-pip3 install --user pytest
-python3 scripts/tests/as_unit_test.py 
-python scripts/tests/as_unit_test.py 
-python3 scripts/tests/as_unit_test.py 
-sudo pip3 install pytest
-python3 scripts/tests/as_unit_test.py 
-pip3 install --user test-helpers
-pip install --user test-helpers
-python3 scripts/tests/as_unit_test.py 
-./scripts/tests/as_unit_test.py 
+gt
+git diff
+nvim .gitlab-ci.yml 
+git diff
+git add .gitlab-ci.yml 
+git commit -m "added build platform for as unit test py script"
+git push origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+gt
+cdproj 
+nvim audio_server/src/dvaudio_server/audio_server.cpp
+nvim audio_server/test/unit/audio_server_test.cpp
+gt
+git diff
+git add audio_server/
+gt
+git commit -m "josh feedback - remove more old logs"
+git push origin dev/oscar/DVMS-6422-remove-stage-1
+cd ~/dev/dvcs/
+nvim .gitlab-ci.yml 
+gt
+git diff
+git add .gitlab-ci.yml 
+git commit -m "correct paths + publish script"
+git push origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+git fetch
+git checkout dev/shared/gitlab_ci 
+git pull
+git checkout dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+git merge dev/shared/gitlab_ci
+git push origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
+cd dev/dvcs/`
+cd dev/dvcs/
+python3 scripts/tests/as_unit_test.py
+python3 scripts/tests/as_unit_test.py --help
+nvim scripts/tests/as_unit_test.py 
+nvim .gitlab-ci.yml 
 nvim scripts/tests/as_unit_test.py 
 cd scripts/tests/
 ls
-./as_unit_test.py 
 nvim test_helpers.py 
-pip3 remove --user test-helpers
-pip3 uninstall --user test-helpers
-pip3 uninstall  test-helpers
-pip uninstall  test-helpers
-./as_unit_test.py 
-cd ..
-ls
-./as_unit_test.py 
-./tests/as_unit_test.py 
-./build.py 
-ls
-nvim common_helper.py 
-cd ..
-ls
-./scripts/tests/as_unit_test.py --help
-nvim ./scripts/tests/as_unit_test.py
+nvim .gitlab-ci.yml 
+cd3
+cd dvcs/
 nvim .gitlab-ci.yml 
 gt
-git diff
-git add --all 
-git commit -m "comment fix"
+git add .gitlab-ci.yml 
+git commit -m "asan fix"
 git push origin dev/oscar/dev/DVMS-6338_as_unittest_gitlab_ci
-gt
-git checkout -b dev/oscar/dev/DVMS-6338_coverage_test_gitlab_ci
-cdproj 
-git checkout dev/oscar/DVMS-6346_better_clear
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-git checkout dev/oscar/DVMS-6348_feedback
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim conference_server/src/dvconference_controller/dvconference_controller.cpp
-nvim conference_server/src/dvconference_server/msml_layer.cpp
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
-git diff
-git add audio_server/
-git commit -m "feedback"
-gt
-git add conference_server/
-git commit -m "feedback"
-git push origin dev/oscar/DVMS-6348_feedback
-git checkout feature/shared-spatial-scene 
-git pull
-git checkout dev/oscar/DVMS-6348_feedback
-git merge feature/shared-spatial-scene 
-gt
-git diff
-git commit -m "merge updates"
-gt
-git push origin dev/oscar/DVMS-6348_feedback
-nvim audio_server/src/common/global_position_manager.cpp 
-gt
-git merge feature/shared-spatial-scene 
-nvim audio_server/src/common/global_position_manager.cpp 
-gt
-git add audio_server/
-git commit -m "feedback"
-gt
-git push origin dev/oscar/DVMS-6348_feedback 
-git checkout feature/shared-spatial-scene 
-git checkout dev/oscar/DVMS-6282_scale_client_stats
-git merge feature/shared-spatial-scene 
-gt
-nvim audio_server/src/common/global_position_manager.cpp 
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
-git checkout dev/oscar/DVMS-6348_feedback
-git merge dev/oscar/DVMS-6282_scale_client_stats
-gt
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-[A
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-[A
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
-git add audio_server/
-git commit -m "more feedback changes"
-git push origin dev/oscar/DVMS-6348_feedback
-ls ~/.local/share/nvim/databases/
-which lua
-which sumneko
-cdproj 
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim /home/centos/.vim/plugged/sqlite.lua/lua/sqlite/defs.lua
-ls -al /home/centos/.vim/plugged/sqlite.lua/lua/sqlite/
-nvim ~/.vimrc
-ls -al /home/centos/.vim/plugged/sqlite.lua/lua/sqlite/
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim /home/centos/.vim/plugged/sqlite.lua/lua/sqlite/defs.lua
-ls /usr/local/opt/sqlite3/
-mkdir /usr/local/opt
-sudo mkdir /usr/local/opt
-ls -la /usr/bin/sqlite3 
-ls -la /usr/local/etc/
-sudo yum install sqlite3 libsqlite3-dev
-sudo  yum list | grep sqlite
-sudo  yum list | grep sqlite3
-sudo yum install libsqlite3x-devel.x86_64
-ls /usr/local/opt/
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-gt
-nvim ~/.vimrc
-nvim ~/.vim/plugged/lua-language-server/README.md 
-nvim ~/.vimrc
-find /usr/ -name 'lua-language-server'
-find ~/ -name 'lua-language-server'
-ls -al /home/centos/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin/lua-language-server
-cl
-ls -al /home/centos/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin/lua-language-server
-find ~/ -name 'vim-language-server'
-ls /home/centos/.local/share/nvim/lsp_servers/vimls/node_modules/vim-language-serv
-ls -al /home/centos/.local/share/nvim/lsp_servers/vimls/node_modules/.bin/vim-language-server 
-cdproj 
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-~/.vimrc
-nvim ~/.vimrc
-cdproj 
-nvim ~/.vimrc
-nvim ~/.bash_aliases 
-clswaps 
-nvim ~/.bash_aliases 
-nvim ~/.vimrc
-nvim ~/.bash_aliases 
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-git diff audio_server/src/dvaudio_server/audio_server.cpp
-git checkout HEAD audio_server/src/dvaudio_server/audio_server.cpp
-gt
-rm -rf .ccls-cache/
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-rm -rf .ccls-cache/
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.vimrc
-nvim ~/.config/nvim/lua/lualine.lua
-cp -r ~/.bash* ~/.vim* ~/.config ~/.git* ./.vim*  ~/dev/dotfiles/
+cd ~/dev/dvcs/
 ls
-cd ~/dev/d
-cd ~/dev/dotfiles/
+nvim .gitlab-ci.yml 
 gt
-git add --all && git commit -m "updates" && git push origin master 
-nvim .gitignore 
-git rm .config/coc/extensions/
-git rm -r .config/coc/extensions/
+git stash
 gt
-git add --all && git commit -m "updates" && git push origin master 
+git checkout dev/shared/gitlab_ci 
+git pull
+git checkout -b dev/oscar/DVMS-6049-asan-release-build
+git stash pop
+gt
+nvim .gitlab-ci.yml 
+git diff
+git add .gitlab-ci.yml 
+git commit -m " added asan release build"
+git push origin dev/oscar/DVMS-6049-asan-release-build
 cdproj 
-nvim ~/.config/nvim/lua/lualine.lua
-nvim ~/.config/nvim/lua/lspconfig.lua 
-nvim audio_server/src/dvaudio_server/audio_server.cpp
-nvim ~/.config/nvim/lua/lspconfig.lua 
-nvim ~/.bashrc 
-nvim ~/.config/nvim/lua/lspconfig.lua 
-ls /home/centos/.local/share/nvim/lsp_servers/
+ls ../Build/bin/Debug/scale_app_server --help
+cd ../Build/bin/Debug/
+cd ../../../Project
+nvim .vimspector.json 
+nvim
+nvim .vimspector.json 
+gt
+git checkout develop
+git pull
+nvim .vimspector.json 
+cd dev/dotfiles/
+gt
+ls -al
+sudo yum install -y gitlab-runner
+cd dev/dvcs/
+nvim .gitlab-ci.yml 
+# gitlab-runner exec docker dvcs_
+nvim .gitlab-ci.yml 
+gitlab-runner exec docker dvcs_debug_build
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo systemctl start docker
+gitlab-runner exec docker dvcs_debug_build
+sudo docker build -f  audio_server/src/tools/docker/oel7/Dockerfile -t iapi-dvcs-docker-dev-sfo.jfrog-sfo.dolby.net/dvcs_build_oel7:v1.1  .
+sudo docker run -v /home/axon:/home/axon -it 6fbd974591a6 bin/bash
+docker exec -it -w $PWD 6fbd974591a6 gitlab-runner exec docker dvcs_debug_build
+docker exec -it $PWD 6fbd974591a6 gitlab-runner exec docker dvcs_debug_build
+sudo docker exec -it $PWD 6fbd974591a6 gitlab-runner exec docker dvcs_debug_build
+sudo docker exec -it 6fbd974591a6 . gitlab-runner exec docker dvcs_debug_build
+sudo docker exec -it 6fbd974591a6 gitlab-runner exec docker dvcs_debug_build
+sudo docker exec -v /home/axon:/home/axon -it 6fbd974591a6 gitlab-runner exec docker dvcs_debug_buildsudo docker exec -it 6fbd974591a6 gitlab-runner exec docker dvcs_debug_build
+sudo docker exec -it 6fbd974591a6 gitlab-runner exec docker dvcs_debug_build
+sudo gitlab-runner register   --url "https://gitlab.example.com/"   --registration-token "PROJECT_REGISTRATION_TOKEN"   --description "docker-ruby:2.6"   --executor "docker"   --template-config /tmp/test-config.template.toml \
+sudo gitlab-runner register --docker-image 6fbd974591a6
+sudo gitlab-runner register --url "localhost" --docker-image 6fbd974591a6
+sudo gitlab-runner register --docker-image 6fbd974591a6
+sudo gitlab-runner register
+gitlab-runner exec docker my-job-name
+gitlab-runner exec docker build
+sudo gitlab-runner exec docker build
+gitlab-runner --help
+gitlab-runner exec --help
+gitlab-runner exec docker --help
+gitlab-runner start
+sudo gitlab-runner start
