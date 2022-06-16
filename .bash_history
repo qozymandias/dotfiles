@@ -1,77 +1,3 @@
-sudo ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
-sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
-sudo ln -s ~/dev/dvcs/ /home/axon/projects
-sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
-sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
-cd /home/axon/
-ls
-ls projects/
-cd projects/
-ls
-rm -rf dvcs/
-sudo rm -rf dvcs/
-ls
-cp -r ~/Documents/Gitlab ./
-sudo cp -r ~/Documents/Gitlab ./
-sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
-curl --version
-sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
-sudo docker run -v /home/axon:/home/axon -it 8fa149e7d4f3 bin/bash
-cd ~/dev/dvcs/
-sudo docker run -it 8fa149e7d4f3 /bin/bash
-sudo systemctl start docker
-sudo docker run -it 8fa149e7d4f3 /bin/bash
-sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
-ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
-sudo ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
-sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
-sudo ln -s ~/dev/dvcs/ /home/axon/projects
-sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
-sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
-cd /home/axon/
-ls
-ls projects/
-cd projects/
-ls
-rm -rf dvcs/
-sudo rm -rf dvcs/
-ls
-cp -r ~/Documents/Gitlab ./
-sudo cp -r ~/Documents/Gitlab ./
-sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
-curl --version
-sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
-sudo docker run -v /home/axon:/home/axon -it 8fa149e7d4f3 bin/bash
-cd ~/dev/dvcs/
-sudo docker run -it 8fa149e7d4f3 /bin/bash
-sudo systemctl start docker
-sudo docker run -it 8fa149e7d4f3 /bin/bash
-sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
-ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
-sudo ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
-sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
-sudo ln -s ~/dev/dvcs/ /home/axon/projects
-sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
-sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
-cd /home/axon/
-ls
-ls projects/
-cd projects/
-ls
-rm -rf dvcs/
-sudo rm -rf dvcs/
-ls
-cp -r ~/Documents/Gitlab ./
-sudo cp -r ~/Documents/Gitlab ./
-sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
-curl --version
-sudo docker run -v /home/axon:/home/axon --name as_unittest_debug -it 8fa149e7d4f3 bin/bash
-sudo docker run -v /home/axon:/home/axon -it 8fa149e7d4f3 bin/bash
-cd ~/dev/dvcs/
-sudo docker run -it 8fa149e7d4f3 /bin/bash
-sudo systemctl start docker
-sudo docker run -it 8fa149e7d4f3 /bin/bash
-sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
 ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
 sudo ln -s ~/dev/dvcs/ /home/axon/projects/dvcs/
 sudo docker run -v /home/axon:/home/axon  -it 8fa149e7d4f3 bin/bash
@@ -1998,3 +1924,77 @@ gitlab-runner exec --help
 gitlab-runner exec docker --help
 gitlab-runner start
 sudo gitlab-runner start
+cd dev/dolby/
+cd
+cd dev/dotfiles/
+history | grep rsync
+rsync -av ~/.vim* ~/.config ./
+gt
+rsync --help
+rsync --help | grep ignore
+rsync -av ~/.vim* ~/.config ./
+du -h
+ls
+ls .config/
+rm -rf .config/coc/ .config/cppman/
+du -h
+ls
+rm -rf .vim/plugged/
+rsync -av --exclude '*plugged*' ~/.vim* ~/.config ./
+rm -rf ~/.config/coc/
+rm -rf .config/coc
+ls .config/
+rsync -av --exclude '*plugged*' ~/.vim* ~/.config ./
+rsync -av --exclude '*plugged*' ~/.vim* ~/.config ~/.bash* ./
+gt
+ls -al
+rsync -av --exclude '*plugged*' ~/.vim* ~/.config ~/.bash* ~/Documents/Gitlab/dvcs/Project/.vim* ~/Documents/Gitlab/dvcs/Project/.vscode/ ./
+gt
+rsync -av --exclude '*plugged*' ~/.vim* ~/.config ~/.bash* ~/Documents/Gitlab/dvcs/Project/.vim* ~/Documents/Gitlab/dvcs/Project/.vscode ./
+gt
+git status --untracked-files 
+git status --untracked-files --short
+git status --short
+git status --short --column 
+git status --short --branch 
+rm argv.json configurationCache.log dryrun.log launch.json settings.json targets.log tasks.json 
+gt
+rm -rf .config/cppman/
+gt
+rsync -av --exclude '*plugged*' --exclude '*cppman*' ~/.vim* ~/.config ~/.bash* ~/Documents/Gitlab/dvcs/Project/.vim* ~/Documents/Gitlab/dvcs/Project/.vscode ./
+gt
+nvim gather.sh
+chmod u+x gather.sh 
+./gather.sh 
+gt
+git diff
+ght
+gt
+nvim .gitignore 
+gt
+nvim .gitignore 
+git diff .vim
+git diff .vim*
+gt
+nvim ~/.gitconfig 
+nvim ~/.gitignore 
+gt
+nvim ~/.vimrc
+gt
+./gather.sh 
+gt
+git diff .vim*
+git add --all 
+gt
+git commit -m "jun update"
+git push origin master
+gt
+nvim README.md 
+gt
+git add --all 
+git commit -m "fancy readme"
+git push origin master
+nvim README.md 
+ls .config/
+ls .config/nvim/
+cat .config/nvim/coc-settings.json 
