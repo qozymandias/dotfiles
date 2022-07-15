@@ -143,16 +143,16 @@
                 }
             }
         },
-        "Sys Tests NTL": {
+        "Sys Tests ThreeSoundfield ASAN": {
             "adapter": "vscode-cpptools",
             "configuration": {
                 "name": "sys test",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
-                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_systest",
+                "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
                 "args": [
-                    "--gtest_filter=*NtlRtpdumpTest*",
+                    "--gtest_filter=*ThreeSoundfield*",
                     "--gtest_catch_exceptions=0"
                 ],
                 "stopAtEntry": false,
@@ -334,7 +334,7 @@
                 }
             }
         },
-        "Sys Tests SpatialTest ASAN": {
+        "Sys Tests patialTest.AllTalkerExplicitSplitCascadeIndividualScene ASAN": {
             "adapter": "vscode-cpptools",
             "breakpoints": {
                 "exception": {
@@ -351,7 +351,7 @@
                 "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_systest",
                 "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
                 "args": [
-                    "--gtest_filter=*ClearGlobalPositionsTest*",
+                    "--gtest_filter=*SpatialTest.AllTalkerExplicitSplitCascadeIndividualScene*",
                     "--gtest_catch_exceptions=0",
                     "-run_until_fail"
                 ],
@@ -369,6 +369,81 @@
                         "description": "Enable pretty-printing for gdb",
                         "text": "-enable-pretty-printing",
                         "ignoreFailures": true
+                    }
+                ],
+                "logging": {
+                    "engineLogging": false
+                }
+            }
+        },
+        "Sys Tests spatialTest ASAN": {
+            "adapter": "vscode-cpptools",
+            "breakpoints": {
+                "exception": {
+                    "caught": "N",
+                    "uncaught": "N",
+                    "cpp_throw": "N",
+                    "cpp_catch": "N"
+                }
+            },
+            "configuration": {
+                "name": "sys test",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_systest",
+                "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+                "args": [
+                    "--gtest_filter=*SpatialTest*",
+                    "--gtest_catch_exceptions=0",
+                    "-run_until_fail"
+                ],
+                "stopAtEntry": false,
+                "environment": [
+                    {
+                        "name": "VIMRUNTIME",
+                        "value": "${workspaceRoot}/runtime"
+                    }
+                ],
+                "externalConsole": true,
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ],
+                "logging": {
+                    "engineLogging": false
+                }
+            }
+        },
+        "Sys Tests ClientTest": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "name": "sys test",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
+                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "args": [
+                    "--gtest_filter=*ClientTest*",
+                    "--gtest_catch_exceptions=0"
+                ],
+                "stopAtEntry": false,
+                "environment": [
+                    {
+                        "name": "VIMRUNTIME",
+                        "value": "${workspaceRoot}/runtime"
+                    }
+                ],
+                "externalConsole": true,
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": false
                     }
                 ],
                 "logging": {

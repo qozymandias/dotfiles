@@ -53,16 +53,16 @@ RUN rpm --import https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 \
     && yum -y clean all
 
 # Install libraries for test_client (dvclient)
-RUN yum install -y pulseaudio-libs-devel.x86_64 \
-    && rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro \
-    && rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm \
-    && yum install ffmpeg ffmpeg-devel -y \
-    && curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /bin/youtube-dl \
-    && chmod a+rx /bin/youtube-dl \
-    && yum -y clean all
+# RUN yum install -y pulseaudio-libs-devel.x86_64 \
+#     && rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro \
+#     && rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm \
+#     && yum install ffmpeg ffmpeg-devel -y \
+#     && curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /bin/youtube-dl \
+#     && chmod a+rx /bin/youtube-dl \
+#     && yum -y clean all
 
 # Install doxygen for mixer
-RUN yum install -y doxygen doxygen-latex doxygen-doxywizard \
-    && yum -y clean all
+# RUN yum install -y doxygen doxygen-latex doxygen-doxywizard \
+#     && yum -y clean all
 
 RUN (cd /opt/rh/devtoolset-7/root/usr/bin && ln -s /usr/bin/make gmake)

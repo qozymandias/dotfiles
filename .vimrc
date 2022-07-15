@@ -34,7 +34,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'stefandtw/quickfix-reflector.vim'
     Plug 'startup-nvim/startup.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'SmiteshP/nvim-gps'
+    " Plug 'SmiteshP/nvim-gps'
+    Plug 'SmiteshP/nvim-navic'
     Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
     Plug 'kyazdani42/nvim-tree.lua'
     Plug 'vijaymarupudi/nvim-fzf'
@@ -272,7 +273,7 @@ map <leader>2 :set rnu!<cr>
 " => My Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <c-u> <NOP>
-nnoremap <Space> <NOP>
+nnoremap <space> <NOP>
 noremap Q gq<CR>
 
 " set map leader (like ctrl key)
@@ -353,7 +354,7 @@ let g:bookmark_auto_save = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VS Tasks
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <Leader>B :lua require("telescope").extensions.vstask.tasks()<CR>
+nmap <leader>b :lua require("telescope").extensions.vstask.tasks()<CR>
 "nnoremap <Leader>ti :lua require("telescope").extensions.vstask.inputs()<CR>
 "nnoremap <Leader>tt :lua require("telescope").extensions.vstask.close()<CR>
 
@@ -400,8 +401,8 @@ nnoremap <leader>dw :call AddToWatch()<CR>
 nnoremap <leader>dl :call vimspector#Launch()<CR>
 nnoremap <leader>dp :call vimspector#Pause()<CR>
 nnoremap <leader>dk :call vimspector#Stop()<CR>
-nnoremap <leader>dr :call vimspector#Restart()<CR>
-nnoremap <leader>drr :call vimspector#Reset()<CR>
+nnoremap <leader>drr :call vimspector#Restart()<CR>
+nnoremap <leader>dr :call vimspector#Reset()<CR>
 " key mapping for step into, next, finish until, continue
 nnoremap <leader>dst :call vimspector#StepInto()<CR>
 nnoremap <leader>dso :call vimspector#StepOver()<CR>
@@ -425,7 +426,7 @@ nnoremap <leader>h/ :Telescope resume<cr>
 nnoremap <leader>h// :Telescope pickers<cr>
 nnoremap <leader>y :Telescope neoclip<cr>
 " Pick from all bookmarks
-nnoremap <leader>b :Telescope vim_bookmarks all<cr>
+" nnoremap <leader>b :Telescope vim_bookmarks all<cr>
 " Only pick from bookmarks in current file
 nnoremap <leader>bc :Telescope vim_bookmarks current_file<cr>
 nnoremap <leader>c :Telescope command_history<cr>
@@ -474,7 +475,7 @@ lua require('telescope').load_extension('file_browser')
 lua require('telescope').load_extension('vim_bookmarks')
 lua require('telescope').load_extension('fzy_native')
 lua require('telescope').load_extension('smart_history')
-lua require("nvim-gps").setup()
+" lua require("nvim-gps").setup()
 
 luafile /home/centos/.config/nvim/lua/telescope.lua
 luafile /home/centos/.config/nvim/lua/neoclip.lua

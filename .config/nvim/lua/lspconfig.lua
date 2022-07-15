@@ -5,8 +5,10 @@ vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', op
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 --  vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
+local navic = require("nvim-navic")
 local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    navic.attach(client, bufnr)
 end
 
 local cmp = require 'cmp'
@@ -45,7 +47,6 @@ cmp.setup {
         expand = function(args)
             require('luasnip').lsp_expand(args.body)
         end,
-
     },
     window = {
         completion = cmp.config.window.bordered(),
@@ -254,6 +255,7 @@ lspconfig.html.setup {
     on_attach = on_attach,
     flags = flag_args
 }
+
 
 local lsp_status = require('lsp-status')
 lsp_status.register_progress()
