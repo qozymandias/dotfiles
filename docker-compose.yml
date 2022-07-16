@@ -1,0 +1,14 @@
+version: '3'
+services:
+  base:
+    # will build ./docker/web/Dockerfile
+    build: ./docker/base
+    ports:
+     - "5000:5000"
+    volumes:
+     - .:/home/axon
+  neovim:
+    # will build ./docker/db/Dockerfile
+    build: ./docker/neovim
+    ports:
+      - "3306:3306"
