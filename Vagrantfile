@@ -9,7 +9,21 @@ Vagrant.configure("2") do |config|
   	v.cpus = 8
   end
   config.vm.disk :disk, size: "100GB", primary: true
+  config.vm.provision "file", source: "~/.ssh/id_rsa", destination: "~/.ssh/id_rsa"
+  config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
   config.vm.provision :shell, path: "bootstrap.sh"
+
+  # config.vm.network :private_network, ip: "192.168.33.10"
+  # config.ssh.forward_agent = true
+  # config.vm.network :forwarded_port, host: 8001, guest: 8001
+
+  # config.vm.provision "shell" do |s|
+  # ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
+  # s.inline = <<-SHELL
+  #     echo #{ssh_pub_key} >> /home/vagrant/.ssh/authorized_keys
+  #     echo #{ssh_pub_key} >> /root/.ssh/authorized_keys
+  #   SHELL
+  # end
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -41,5 +55,6 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
+  
   
 end
