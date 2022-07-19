@@ -2,7 +2,7 @@
 
 ## Nvim setup
 NVIM_NAME="nvim.appimage"
-NVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/"$NVIM_NAME
+NVIM_URL="https://github.com/neovim/neovim/releases/download/stable/"$NVIM_NAME
 
 sudo yum install -y nodejs npm;
 

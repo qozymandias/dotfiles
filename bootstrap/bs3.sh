@@ -20,6 +20,8 @@ sudo npm install -g tree-sitter;
 
 mkdir -p ~/Documents/Gitlab/dvcs/Build;
 
+echo "=======================================\nFinished!!!\n";
+
 # cd ~/Documents/Gitlab/dvcs \
 #     && git clone git@gitlab-sfo.dolby.net:comms-cs/dvcs.git \
 #     && mv dvcs/ Project;
