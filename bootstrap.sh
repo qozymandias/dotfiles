@@ -47,10 +47,11 @@ sudo yum install -y \
         libpcap-devel \
         zlib-devel \
         cppcheck \
-        libtool \
-        doxygen \
-        doxygen-latex \
-        doxygen-doxywizard;
+        libtool;
+
+        # doxygen \
+        # doxygen-latex \
+        # doxygen-doxywizard;
 
         # && sudo yum -y clean all;
 
@@ -64,16 +65,17 @@ pip3 install junit-xml 'pytest==3.5' 'conan==1.45.0' boto cppcheck-junit junit-x
 
 wget https://bootstrap.pypa.io/pip/2.7/get-pip.py \
     && python2 get-pip.py \
-    && pip install lxml python-prctl 'matplotlib==2.2.4';
+    && pip install lxml  'matplotlib==2.2.4';
+# python-prctl
 
 # Install libraries for test_client (dvclient)
-sudo yum install -y pulseaudio-libs-devel.x86_64 \
-    && rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro \
-    && rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm \
-    && sudo yum install ffmpeg ffmpeg-devel -y \
-    && curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /bin/youtube-dl \
-    && chmod a+rx /bin/youtube-dl \
-    && sudo yum -y clean all;
+# sudo yum install -y pulseaudio-libs-devel.x86_64 \
+#     && rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro \
+#     && rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm \
+#     && sudo yum install ffmpeg ffmpeg-devel -y \
+#     && curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /bin/youtube-dl \
+#     && chmod a+rx /bin/youtube-dl \
+#     && sudo yum -y clean all;
 
 cd /opt/rh/devtoolset-7/root/usr/bin \
     && ln -s /usr/bin/make gmake \
@@ -87,16 +89,14 @@ NVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/"$NVIM_NAME
 
 sudo yum install -y nodejs npm;
 
-sudo pip3 install pynvim;
+pip3 install pynvim;
 
 cd /opt \
     && curl -LO $NVIM_URL \
     && chmod +x ./nvim.appimage \
     && mv ./nvim.appimage /usr/local/bin/nvim;
 
-cd /opt/dotfiles \
-    && ./push.sh \
-    && cd ~/;
+cp -r /opt/dotfiles/.vimrc /opt/dotfiles/.config $HOME;
 
 RIPGREP_URL='https://github.com/BurntSushi/ripgrep/releases/download/0.5.2/ripgrep-0.5.2-x86_64-unknown-linux-musl.tar.gz'; 
 FD_URL="https://github.com/sharkdp/fd/releases/download/v7.3.0/fd-v7.3.0-x86_64-unknown-linux-musl.tar.gz";
@@ -117,8 +117,9 @@ sudo wget http://public-yum.oracle.com/RPM-GPG-KEY-oracle-ol6 -O /etc/pki/rpm-gp
 sudo yum install -y snapd \
     && sudo systemctl enable --now snapd.socket \
     && sudo ln -s /var/lib/snapd/snap /snap \
-    && sleep 30 \
-    && sudo snap install ccls --classic \
+    && sleep 60;
+
+sudo snap install ccls --classic \
     && sudo ln -s /var/lib/snapd/snap/ccls/current/bin/ccls /usr/local/bin/ccls;
 
 
