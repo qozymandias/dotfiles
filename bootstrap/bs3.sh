@@ -1,13 +1,12 @@
 #!/bin/sh
 
 # snap daemon needs to be up 
-# @todo some form of polling
-
 sudo systemctl restart snapd.seeded.service \
     && sudo snap install ccls --classic \
     && sudo ln -s /var/lib/snapd/snap/ccls/current/bin/ccls /usr/local/bin/ccls;
 
-
+sudo ln -sf /opt/rh/devtoolset-7/root/usr/bin/g++ /usr/bin/g++;
+sudo ln -sf /opt/rh/devtoolset-7/root/usr/bin/gcc /usr/bin/gcc;
 
 # MIGHT NEED TO RERUN THESE 
 cp -r /opt/dotfiles/.vimrc /opt/dotfiles/.config $HOME;
@@ -15,14 +14,12 @@ cp -r /opt/dotfiles/.vimrc /opt/dotfiles/.config $HOME;
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim';
 
+sudo /usr/bin/python3 -m pip install pynvim;
 
+sudo npm install -g tree-sitter;
 
-# sudo yum install -y gcc-c++;
-# 
-# mkdir ~/Documents/Gitlab/           # To store all cloned repositories
-# mkdir ~/Documents/Gitlab/dvcs       # To store everything related to our system
-# mkdir ~/Documents/Gitlab/dvcs/Build # To store all build materials
-# 
+mkdir -p ~/Documents/Gitlab/dvcs/Build;
+
 # cd ~/Documents/Gitlab/dvcs \
 #     && git clone git@gitlab-sfo.dolby.net:comms-cs/dvcs.git \
 #     && mv dvcs/ Project;

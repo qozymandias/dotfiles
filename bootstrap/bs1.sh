@@ -54,11 +54,13 @@ sudo yum install -y \
         # doxygen-doxywizard;
         # && sudo yum -y clean all;
 
-# . /opt/rh/rh-python36/enable \
-#       && . /opt/rh/rh-git29/enable \
-pip3 install --upgrade pip;
+sudo . /opt/rh/rh-python36/enable \
+&& sudo . /opt/rh/rh-git29/enable \
+&& sudo source /opt/rh/rh-python36/enable;
 
-pip3 install junit-xml 'pytest==3.5' 'conan==1.45.0' boto cppcheck-junit junit-xml Pebble virtualenv six==1.14 psutil matplotlib;
+sudo pip3 install --upgrade pip;
+
+sudo pip3 install 'pytest==3.5' 'conan==1.45.0' boto cppcheck-junit junit-xml Pebble virtualenv six==1.14 psutil matplotlib;
 # python-prctl 
 
 wget https://bootstrap.pypa.io/pip/2.7/get-pip.py \
@@ -75,6 +77,5 @@ wget https://bootstrap.pypa.io/pip/2.7/get-pip.py \
 #     && chmod a+rx /bin/youtube-dl \
 #     && sudo yum -y clean all;
 
-# cd /opt/rh/devtoolset-7/root/usr/bin \
-#     && ln -sf /usr/bin/make gmake \
-#     && cd /opt/;
+cd /opt/rh/devtoolset-7/root/usr/bin \
+    && ln -sf /usr/bin/make gmake ;

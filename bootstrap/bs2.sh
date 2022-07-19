@@ -6,7 +6,7 @@ NVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/"$NVIM_NAME
 
 sudo yum install -y nodejs npm;
 
-pip3 install pynvim;
+sudo pip3 install pynvim;
 
 cd /opt \
     && curl -LO $NVIM_URL \
@@ -34,19 +34,3 @@ sudo yum install -y snapd \
     && sudo ln -sf /var/lib/snapd/snap /snap;
 
 sudo yum install -y libstdc++
-
-# sudo yum install -y gcc-c++;
-# 
-# mkdir ~/Documents/Gitlab/           # To store all cloned repositories
-# mkdir ~/Documents/Gitlab/dvcs       # To store everything related to our system
-# mkdir ~/Documents/Gitlab/dvcs/Build # To store all build materials
-# 
-# cd ~/Documents/Gitlab/dvcs \
-#     && git clone git@gitlab-sfo.dolby.net:comms-cs/dvcs.git \
-#     && mv dvcs/ Project;
-
-# DONE Manually ATM
-# conan config install --type=git git@gitlab-sfo.dolby.net:comms-cs/conan-config.git  #Make sure you have been granted access to the branch manually
-# conan user <username> -p <password> -r dvsc # Replace the username and password with your Dolby Credentials
-
-# git clone git@gitlab-sfo.dolby.net:comms-cs/dvcs.git;

@@ -3,6 +3,7 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
+  config.vm.synced_folder ".", "/vagrant", type: "nfs"
   config.vm.provider "vmware_desktop" do |v|
     v.gui = true
   	v.memory = "16384"
