@@ -11,7 +11,9 @@ Vagrant.configure("2") do |config|
   config.vm.disk :disk, size: "100GB", primary: true
   config.vm.provision "file", source: "~/.ssh/id_rsa", destination: "~/.ssh/id_rsa"
   config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
-  config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.provision :shell, path: "bootstrap/bs1.sh"
+  config.vm.provision :shell, path: "bootstrap/bs2.sh"
+  config.vm.provision :shell, path: "bootstrap/bs3.sh"
 
   # config.vm.network :private_network, ip: "192.168.33.10"
   # config.ssh.forward_agent = true

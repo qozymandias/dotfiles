@@ -22,8 +22,8 @@ rpm --import https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 \
     && mkdir -p /opt/cmake;
 
 wget -q -O- https://github.com/Kitware/CMake/releases/download/v3.16.5/cmake-3.16.5-Linux-x86_64.tar.gz | tar xz --strip-components 1 -C /opt/cmake \
-    && ln -s /opt/cmake/bin/cmake /usr/bin/cmake \
-    && ln -s /opt/cmake/bin/cpack /usr/bin/cpack \
+    && ln -sf /opt/cmake/bin/cmake /usr/bin/cmake \
+    && ln -sf /opt/cmake/bin/cpack /usr/bin/cpack \
     && wget -q -O- http://downloads.sourceforge.net/ltp/lcov-1.13.tar.gz | tar xz -C /opt \
     && cd /opt/lcov-1.13 && make install \
     && cd -\
@@ -52,9 +52,7 @@ sudo yum install -y \
         # doxygen \
         # doxygen-latex \
         # doxygen-doxywizard;
-
         # && sudo yum -y clean all;
-
 
 # . /opt/rh/rh-python36/enable \
 #       && . /opt/rh/rh-git29/enable \
@@ -77,69 +75,6 @@ wget https://bootstrap.pypa.io/pip/2.7/get-pip.py \
 #     && chmod a+rx /bin/youtube-dl \
 #     && sudo yum -y clean all;
 
-cd /opt/rh/devtoolset-7/root/usr/bin \
-    && ln -s /usr/bin/make gmake \
-    && cd /opt/;
-
-# source /opt/rh/rh-python36/enable;
-
-## Nvim setup
-NVIM_NAME="nvim.appimage"
-NVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/"$NVIM_NAME
-
-sudo yum install -y nodejs npm;
-
-pip3 install pynvim;
-
-cd /opt \
-    && curl -LO $NVIM_URL \
-    && chmod +x ./nvim.appimage \
-    && mv ./nvim.appimage /usr/local/bin/nvim;
-
-cp -r /opt/dotfiles/.vimrc /opt/dotfiles/.config $HOME;
-
-RIPGREP_URL='https://github.com/BurntSushi/ripgrep/releases/download/0.5.2/ripgrep-0.5.2-x86_64-unknown-linux-musl.tar.gz'; 
-FD_URL="https://github.com/sharkdp/fd/releases/download/v7.3.0/fd-v7.3.0-x86_64-unknown-linux-musl.tar.gz";
-
-cd /opt \
-    && curl -LO $RIPGREP_URL \
-    && tar xf ripgrep-0.5.2-x86_64-unknown-linux-musl.tar.gz \
-    && cp ripgrep-0.5.2-x86_64-unknown-linux-musl/rg /usr/local/bin/rg;
-
-cd /opt \
-    && curl -LO $FD_URL \
-    && tar xf fd-v7.3.0-x86_64-unknown-linux-musl.tar.gz \
-    && cp fd-v7.3.0-x86_64-unknown-linux-musl/fd /usr/local/bin/fd \
-    && source fd-v7.3.0-x86_64-unknown-linux-musl/autocomplete/fd.bash-completion;
-
-sudo wget http://public-yum.oracle.com/RPM-GPG-KEY-oracle-ol6 -O /etc/pki/rpm-gpg/RPM-GPG-KEY-oracle;
-
-sudo yum install -y snapd \
-    && sudo systemctl enable --now snapd.socket \
-    && sudo ln -s /var/lib/snapd/snap /snap \
-    && sleep 60;
-
-sudo snap install ccls --classic \
-    && sudo ln -s /var/lib/snapd/snap/ccls/current/bin/ccls /usr/local/bin/ccls;
-
-
-# sudo yum install -y gcc-c++;
-# 
-# mkdir ~/Documents/Gitlab/           # To store all cloned repositories
-# mkdir ~/Documents/Gitlab/dvcs       # To store everything related to our system
-# mkdir ~/Documents/Gitlab/dvcs/Build # To store all build materials
-# 
-# cd ~/Documents/Gitlab/dvcs \
-#     && git clone git@gitlab-sfo.dolby.net:comms-cs/dvcs.git \
-#     && mv dvcs/ Project;
-
-sudo yum install -y libstdc++
-
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim';
-
-# DONE Manually ATM
-# conan config install --type=git git@gitlab-sfo.dolby.net:comms-cs/conan-config.git  #Make sure you have been granted access to the branch manually
-# conan user <username> -p <password> -r dvsc # Replace the username and password with your Dolby Credentials
-
-# git clone git@gitlab-sfo.dolby.net:comms-cs/dvcs.git;
+# cd /opt/rh/devtoolset-7/root/usr/bin \
+#     && ln -sf /usr/bin/make gmake \
+#     && cd /opt/;
