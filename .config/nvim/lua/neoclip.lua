@@ -2,7 +2,7 @@ require('neoclip').setup{
       history = 1000,
       enable_persistent_history = true,
       continuous_sync = false,
-      db_path = "/tmp/databases/neoclip.sqlite3",
+     -- db_path = "/tmp/databases/neoclip.sqlite3",
       filter = nil,
       preview = true,
       default_register = '"',

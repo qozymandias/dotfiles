@@ -23,7 +23,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'altercation/vim-colors-solarized'
     Plug 'tpope/vim-fugitive'
     Plug 'AckslD/nvim-neoclip.lua'
-    Plug 'tami5/sqlite.lua'
+    " Plug 'tami5/sqlite.lua'
     Plug 'puremourning/vimspector'
     Plug 'neovim/pynvim'
     Plug 'nvim-telescope/telescope-vimspector.nvim'
