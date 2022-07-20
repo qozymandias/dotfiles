@@ -6,7 +6,7 @@ NVIM_URL="https://github.com/neovim/neovim/releases/download/stable/"$NVIM_NAME
 
 sudo yum install -y nodejs npm;
 
-sudo pip3 install pynvim;
+pip3 install --user pynvim;
 
 cd /opt \
     && curl -LO $NVIM_URL \

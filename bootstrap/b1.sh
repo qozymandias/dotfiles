@@ -22,8 +22,8 @@ rpm --import https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 \
     && mkdir -p /opt/cmake;
 
 wget -q -O- https://github.com/Kitware/CMake/releases/download/v3.16.5/cmake-3.16.5-Linux-x86_64.tar.gz | tar xz --strip-components 1 -C /opt/cmake \
-    && ln -sf /opt/cmake/bin/cmake /usr/bin/cmake \
-    && ln -sf /opt/cmake/bin/cpack /usr/bin/cpack \
+    && sudo ln -sf /opt/cmake/bin/cmake /usr/bin/cmake \
+    && sudo ln -sf /opt/cmake/bin/cpack /usr/bin/cpack \
     && wget -q -O- http://downloads.sourceforge.net/ltp/lcov-1.13.tar.gz | tar xz -C /opt \
     && cd /opt/lcov-1.13 && make install \
     && cd -\
@@ -58,14 +58,14 @@ sudo . /opt/rh/rh-python36/enable \
 && sudo . /opt/rh/rh-git29/enable \
 && sudo source /opt/rh/rh-python36/enable;
 
-sudo pip3 install --upgrade pip;
+pip3 install --upgrade pip;
 
-sudo pip3 install 'pytest==3.5' 'conan==1.45.0' boto cppcheck-junit junit-xml Pebble virtualenv six==1.14 psutil matplotlib;
+pip3 install --user 'pytest==3.5' 'conan==1.45.0' boto cppcheck-junit junit-xml Pebble virtualenv six==1.14 psutil matplotlib;
 # python-prctl 
 
-wget https://bootstrap.pypa.io/pip/2.7/get-pip.py \
-    && python2 get-pip.py \
-    && pip install lxml  'matplotlib==2.2.4';
+sudo wget https://bootstrap.pypa.io/pip/2.7/get-pip.py \
+    && sudo python2 get-pip.py \
+    && pip install --user lxml  'matplotlib==2.2.4';
 # python-prctl
 
 # Install libraries for test_client (dvclient)
@@ -78,4 +78,4 @@ wget https://bootstrap.pypa.io/pip/2.7/get-pip.py \
 #     && sudo yum -y clean all;
 
 cd /opt/rh/devtoolset-7/root/usr/bin \
-    && ln -sf /usr/bin/make gmake ;
+    && sudo ln -sf /usr/bin/make gmake ;
