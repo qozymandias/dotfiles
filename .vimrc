@@ -22,7 +22,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'jnurmine/Zenburn'
     Plug 'altercation/vim-colors-solarized'
     Plug 'tpope/vim-fugitive'
-    Plug 'AckslD/nvim-neoclip.lua'
+    " Plug 'AckslD/nvim-neoclip.lua'
     " Plug 'tami5/sqlite.lua'
     Plug 'puremourning/vimspector'
     Plug 'neovim/pynvim'
@@ -478,7 +478,7 @@ lua require('telescope').load_extension('smart_history')
 " lua require("nvim-gps").setup()
 
 luafile $HOME/.config/nvim/lua/telescope.lua
-luafile $HOME/.config/nvim/lua/neoclip.lua
+" luafile $HOME/.config/nvim/lua/neoclip.lua
 luafile $HOME/.config/nvim/lua/startup.lua
 luafile $HOME/.config/nvim/lua/bufferline.lua
 luafile $HOME/.config/nvim/lua/nvim-tree.lua
