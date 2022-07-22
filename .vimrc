@@ -469,16 +469,16 @@ nnoremap ZX :qa<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Lua
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-lua require('telescope').load_extension('neoclip')
 lua require('telescope').load_extension('vimspector')
 lua require('telescope').load_extension('file_browser')
 lua require('telescope').load_extension('vim_bookmarks')
 lua require('telescope').load_extension('fzy_native')
-lua require('telescope').load_extension('smart_history')
+" lua require('telescope').load_extension('neoclip')
+" lua require('telescope').load_extension('smart_history')
 " lua require("nvim-gps").setup()
 
-luafile $HOME/.config/nvim/lua/telescope.lua
 " luafile $HOME/.config/nvim/lua/neoclip.lua
+luafile $HOME/.config/nvim/lua/telescope.lua
 luafile $HOME/.config/nvim/lua/startup.lua
 luafile $HOME/.config/nvim/lua/bufferline.lua
 luafile $HOME/.config/nvim/lua/nvim-tree.lua
