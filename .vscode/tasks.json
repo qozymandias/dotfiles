@@ -3,32 +3,47 @@
     "tasks": [
         {
             "type": "shell",
+            "label": "py_build_debug_asan",
+            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/ASAN_Build --build-type=debug --build-platform=linux64_gcc7_asan"
+        },
+        {
+            "type": "shell",
+            "label": "py_build_debug",
+            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Build --build-type=debug --build-platform=linux64_gcc7"
+        },
+        {
+            "type": "shell",
+            "label": "py_build_release",
+            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Release --build-type=release --build-platform=linux64_gcc7_release"
+        },
+        {
+            "type": "shell",
             "label": "vim_build_lite",
-            "command": "cd /home/centos/Documents/Gitlab/dvcs/Build && time cmake /home/centos/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=/home/centos/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && time make -j8"
+            "command": "cd $HOME/Documents/Gitlab/dvcs/Build && time cmake $HOME/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && time make -j8"
         },{
             "type": "shell",
             "label": "vim_build",
-            "command": " cd /home/centos/Documents/Gitlab/dvcs/Build && conan install /home/centos/Documents/Gitlab/dvcs/Project -pr=/home/centos/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_debug.conanprofile --build=missing --update && cmake /home/centos/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=/home/centos/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && make -j8"
+            "command": " cd $HOME/Documents/Gitlab/dvcs/Build && conan install $HOME/Documents/Gitlab/dvcs/Project -pr=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_debug.conanprofile --build=missing --update && cmake $HOME/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && make -j8"
         },
         {
             "type": "shell",
             "label": "vim_build_asan_lite",
-            "command": " cd /home/centos/Documents/Gitlab/dvcs/ASAN_Build && cmake /home/centos/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=/home/centos/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && make -j8"
+            "command": " cd $HOME/Documents/Gitlab/dvcs/ASAN_Build && cmake $HOME/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && make -j8"
         },
         {
             "type": "shell",
             "label": "vim_build_asan",
-            "command": " cd /home/centos/Documents/Gitlab/dvcs/ASAN_Build && conan install /home/centos/Documents/Gitlab/dvcs/Project -pr=/home/centos/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_asan_debug.conanprofile --build=missing --update && cmake /home/centos/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=/home/centos/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && make -j8"
+            "command": " cd $HOME/Documents/Gitlab/dvcs/ASAN_Build && conan install $HOME/Documents/Gitlab/dvcs/Project -pr=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_asan_debug.conanprofile --build=missing --update && cmake $HOME/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && make -j8"
         },
         {
             "type": "shell",
             "label": "vim_build_release",
-            "command": " cd /home/centos/Documents/Gitlab/dvcs/Release && conan install /home/centos/Documents/Gitlab/dvcs/Project -pr=/home/centos/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_release.conanprofile --build=missing --update && cmake /home/centos/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=/home/centos/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && make -j8"
+            "command": " cd $HOME/Documents/Gitlab/dvcs/Release && conan install $HOME/Documents/Gitlab/dvcs/Project -pr=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_release.conanprofile --build=missing --update && cmake $HOME/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && make -j8"
         },
         {
             "type": "shell",
             "label": "vim_build_scale",
-            "command": " cd /home/centos/Documents/Gitlab/dvcs/Project && ./scripts/build.py --build-dir=/home/centos/Documents/Gitlab/dvcs/Build --build-type=release --build-platform=linux64_gcc7"
+            "command": " cd $HOME/Documents/Gitlab/dvcs/Project && ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Build --build-type=release --build-platform=linux64_gcc7"
         },
         {
             "type": "shell",
