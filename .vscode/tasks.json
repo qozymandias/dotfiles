@@ -4,17 +4,17 @@
         {
             "type": "shell",
             "label": "py_build_debug_asan",
-            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/ASAN_Build --build-type=debug --build-platform=linux64_gcc7_asan"
+            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/ASAN_Build --build-type=debug --build-platform=linux64_gcc7_asan --build-threads=8"
         },
         {
             "type": "shell",
             "label": "py_build_debug",
-            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Build --build-type=debug --build-platform=linux64_gcc7"
+            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Build --build-type=debug --build-platform=linux64_gcc7 --build-threads=8"
         },
         {
             "type": "shell",
             "label": "py_build_release",
-            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Release --build-type=release --build-platform=linux64_gcc7_release"
+            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Release --build-type=release --build-platform=linux64_gcc7 --build-threads=8"
         },
         {
             "type": "shell",

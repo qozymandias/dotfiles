@@ -7,8 +7,8 @@
                 "request": "launch",
                 "name": "conference server",
                 "label": "conference_server",
-                "program": "${workspaceFolder}/../Build/bin/Debug/dvconference_server",
-                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "program": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug/dvconference_server",
+                "cwd": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug",
                 "environment": [
                     {
                         "name": "VIMRUNTIME",
@@ -37,8 +37,8 @@
                 "request": "launch",
                 "name": "scale app server",
                 "label": "scale_app_server",
-                "program": "${workspaceFolder}/../Build/bin/Debug/scale_app_server",
-                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "program": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug/scale_app_server",
+                "cwd": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug",
                 "args": [
                     "-sip_ip 10.204.66.87",
                     "-confserver_ip 10.204.66.87",
@@ -82,8 +82,8 @@
                 "request": "launch",
                 "name": "audio server",
                 "label": "audio_server",
-                "program": "${workspaceFolder}/../Build/bin/Debug/dvaudio_server",
-                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "program": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug/dvaudio_server",
+                "cwd": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug",
                 "args": [
                     "--internal_cascade_mode=forward",
                     "--log_level=debug1"
@@ -116,8 +116,8 @@
                 "request": "launch",
                 "name": "audio server",
                 "label": "audio_server",
-                "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvaudio_server",
-                "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+                "program": "${workspaceFolder}/../ASAN_Build/linux64_gcc7_asan_debug/bin/Debug/dvaudio_server",
+                "cwd": "${workspaceFolder}/../ASAN_Build/linux64_gcc7_asan_debug/bin/Debug",
                 "args": [
                     "--internal_cascade_mode=forward",
                     "--log_level=debug1"
@@ -149,8 +149,8 @@
                 "name": "sys test",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_systest",
-                "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+                "program": "${workspaceFolder}/../ASAN_Build/linux64_gcc7_asan_debug/bin/Debug/dvrts_systest",
+                "cwd": "${workspaceFolder}/../ASAN_Build/linux64_gcc7_asan_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*ThreeSoundfield*",
                     "--gtest_catch_exceptions=0"
@@ -182,8 +182,8 @@
                 "name": "unit test",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_unittest",
-                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "program": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug/dvrts_unittest",
+                "cwd": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*ClusterTest*",
                     "--gtest_catch_exceptions=0"
@@ -223,8 +223,8 @@
                 "name": "sys test",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
-                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "program": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug/dvrts_systest",
+                "cwd": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*SpatialTest*",
                     "--gtest_catch_exceptions=0"
@@ -264,8 +264,8 @@
                 "name": "unit test",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_unittest",
-                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "program": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug/dvrts_unittest",
+                "cwd": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*ClearGlobalPositionsClientInSingleConf*",
                     "--gtest_catch_exceptions=0",
@@ -306,8 +306,8 @@
                 "name": "sys test",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
-                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "program": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug/dvrts_systest",
+                "cwd": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*SetGlobalPositionRequestAfterClientLeaveConf*",
                     "--gtest_catch_exceptions=0",
@@ -348,8 +348,8 @@
                 "name": "sys test",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_systest",
-                "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+                "program": "${workspaceFolder}/../ASAN_Build/linux64_gcc7_asan_debug/bin/Debug/dvrts_systest",
+                "cwd": "${workspaceFolder}/../ASAN_Build/linux64_gcc7_asan_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*SpatialTest.AllTalkerExplicitSplitCascadeIndividualScene*",
                     "--gtest_catch_exceptions=0",
@@ -390,8 +390,8 @@
                 "name": "sys test",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_systest",
-                "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+                "program": "${workspaceFolder}/../ASAN_Build/linux64_gcc7_asan_debug/bin/Debug/dvrts_systest",
+                "cwd": "${workspaceFolder}/../ASAN_Build/linux64_gcc7_asan_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*SpatialTest*",
                     "--gtest_catch_exceptions=0",
@@ -424,8 +424,8 @@
                 "name": "sys test",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
-                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "program": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug/dvrts_systest",
+                "cwd": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*ClientTest*",
                     "--gtest_catch_exceptions=0"
@@ -457,8 +457,8 @@
                 "name": "sys test",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_systest",
-                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "program": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug/dvrts_systest",
+                "cwd": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*",
                     "--gtest_catch_exceptions=0"
@@ -490,8 +490,8 @@
                 "name": "sys test asan",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_systest",
-                "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+                "program": "${workspaceFolder}/../ASAN_Build/linux64_gcc7_asan_debug/bin/Debug/dvrts_systest",
+                "cwd": "${workspaceFolder}/../ASAN_Build/linux64_gcc7_asan_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*",
                     "--gtest_catch_exceptions=0"
@@ -523,8 +523,8 @@
                 "name": "unit test debug",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_unittest",
-                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "program": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug/dvrts_unittest",
+                "cwd": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*:-ChunkedCurlFileServiceTest.FileDoesNotExistSync/1:-ChunkedCurlFileServiceTest.RandomCallbackHandling:-ChunkedCurlFileServiceTest.RandomCallbackHandling",
                     "--gtest_catch_exceptions=0"
@@ -556,8 +556,8 @@
                 "name": "unit test asan",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_unittest",
-                "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+                "program": "${workspaceFolder}/../ASAN_Build/linux64_gcc7_asan_debug/bin/Debug/dvrts_unittest",
+                "cwd": "${workspaceFolder}/../ASAN_Build/linux64_gcc7_asan_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*",
                     "--gtest_catch_exceptions=0"
@@ -589,8 +589,8 @@
                 "name": "unit test debug",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_unittest",
-                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "program": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug/dvrts_unittest",
+                "cwd": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*FileServiceTest.WriteRead*",
                     "--gtest_catch_exceptions=0"
@@ -622,8 +622,8 @@
                 "name": "unit test asan",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_unittest",
-                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "program": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug/dvrts_unittest",
+                "cwd": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*UpdateGlobalPositionsClientInMultiConf*",
                     "--gtest_catch_exceptions=0"
@@ -655,8 +655,8 @@
                 "name": "unit test asan",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../Build/bin/Debug/dvrts_unittest",
-                "cwd": "${workspaceFolder}/../Build/bin/Debug",
+                "program": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug/dvrts_unittest",
+                "cwd": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*AudioServer3Test*",
                     "--gtest_catch_exceptions=0"
@@ -688,8 +688,8 @@
                 "name": "unit test asan",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/../ASAN_Build/bin/Debug/dvrts_unittest",
-                "cwd": "${workspaceFolder}/../ASAN_Build/bin/Debug",
+                "program": "${workspaceFolder}/../ASAN_Build/linux64_gcc7_asan_debug/bin/Debug/dvrts_unittest",
+                "cwd": "${workspaceFolder}/../ASAN_Build/linux64_gcc7_asan_debug/bin/Debug",
                 "args": [
                     "--gtest_filter=*AudioServer3Test*",
                     "--gtest_catch_exceptions=0"
