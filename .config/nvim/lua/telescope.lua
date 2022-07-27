@@ -82,20 +82,19 @@ end
                fzy_native = {
                    override_generic_sorter = false,
                    override_file_sorter = true,
-               },
-               frecency = {
-                  db_root = "/home/centos/.local/share/nvim/databases",
-                  show_scores = false,
-                  show_unindexed = false,
-                  ignore_patterns = {"*.git/*", "*/tmp/*"},
-                  disable_devicons = false,
-                  workspaces = {
-                    ["conf"]    = "/home/centos/.config",
-                    ["data"]    = "/home/centos/.local/share",
-                    ["project"] = "/home/centos/Documents",
-                    ["wiki"]    = "/home/centos/wiki"
-                  }
-              }
+               }
+               -- frecency = {
+               --    db_root = "/home/centos/.local/share/nvim/databases",
+               --    show_scores = false,
+               --    show_unindexed = false,
+               --    ignore_patterns = {"*.git/*", "*/tmp/*"},
+               --    disable_devicons = false,
+               --    workspaces = {
+               --      ["conf"]    = "/home/centos/.config",
+               --      ["data"]    = "/home/centos/.local/share",
+               --      ["project"] = "/home/centos/Documents",
+               --      ["wiki"]    = "/home/centos/wiki"
+               --    }
            }
     },
  }

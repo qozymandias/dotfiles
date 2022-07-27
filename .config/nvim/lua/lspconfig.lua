@@ -112,7 +112,7 @@ vim.diagnostic.config({
     severity_sort = false,
 })
 
-local lsp_path = "/home/centos/.local/share/nvim/lsp_servers/"
+local lsp_path = "~/.local/share/nvim/lsp_servers/"
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local flag_args = { debounce_text_changes = 150 }
@@ -173,7 +173,7 @@ lspconfig.sumneko_lua.setup {
                 -- Make the server aware of Neovim runtime files
                 -- library = vim.api.nvim_get_runtime_file("", true),
                 checkThirdParty = false,
-                ignoreDir = { "/home/centos/.local" }
+                ignoreDir = { "~/.local" }
             },
             -- Do not send telemetry data containing a randomized but unique identifier
             telemetry = {
