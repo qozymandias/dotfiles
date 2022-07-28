@@ -262,14 +262,14 @@ lsp_status.register_progress()
 
 local ccls_init = {
     rootPatterns = {
-        "../Build/compile_commands.json",
+        "../Build/linux64_gcc7_debug/compile_commands.json",
     };
     cache = {
         directory = "../.ccls-cache";
         hierarchicalPath = true;
         retainInMemory = 1;
     };
-    compilationDatabaseDirectory = "../Build";
+    compilationDatabaseDirectory = "../Build/linux64_gcc7_debug/";
     client = {
         snippetSupport = true
     },
