@@ -119,21 +119,21 @@ local flag_args = { debounce_text_changes = 150 }
 
 local lspconfig = require 'lspconfig'
 lspconfig.bashls.setup {
-    cmd = { lsp_path .. "bashls/node_modules/.bin/bash-language-server" },
+    cmd = { lsp_path .. "bashls/node_modules/.bin/bash-language-server", "--stdio" },
     capabilities = capabilities,
     on_attach = on_attach,
     flags = flag_args
 }
 
 lspconfig.yamlls.setup {
-    cmd = { lsp_path .. "yamlls/node_modules/.bin/yaml-language-server" },
+    cmd = { lsp_path .. "yamlls/node_modules/.bin/yaml-language-server", "--stdio" },
     capabilities = capabilities,
     on_attach = on_attach,
     flags = flag_args
 }
 
 lspconfig.pyright.setup {
-    cmd = { lsp_path .. "pyright/node_modules/.bin/pyright-langserver" },
+    cmd = { lsp_path .. "pyright/node_modules/.bin/pyright-langserver", "--stdio" },
     settings = {
         python = {
             analysis = {
