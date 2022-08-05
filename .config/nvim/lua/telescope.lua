@@ -23,10 +23,10 @@ end
 
  require'telescope'.setup{
      defaults = {
-         history = {
-          -- path = '~/.local/share/nvim/databases/telescope_history.sqlite3',
-          limit = 100,
-         },
+         -- history = {
+         --  -- path = '~/.local/share/nvim/databases/telescope_history.sqlite3',
+         --  limit = 100,
+         -- },
          prompt_prefix = '=> ',
          selection_caret = '-> ',
          mappings = {
@@ -38,17 +38,17 @@ end
            "--line-number",
            "--column",
            "--smart-case",
-           "--trim" -- add this value
+           -- "--trim" -- add this value
          },
          buffer_previewer_maker = new_maker,
            entry_prefix = " ",
            initial_mode = "insert",
            selection_strategy = "closest",
-           sorting_strategy = "descending",
+           sorting_strategy = "ascending",
            layout_strategy = "horizontal",
            layout_config = {
               horizontal = {
-                 prompt_position = "bottom",
+                 prompt_position = "top",
                  preview_width = 0.55,
                  results_width = 0.8,
               },
