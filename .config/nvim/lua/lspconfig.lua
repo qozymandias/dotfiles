@@ -119,21 +119,18 @@ local flag_args = { debounce_text_changes = 150 }
 
 local lspconfig = require 'lspconfig'
 lspconfig.bashls.setup {
-    cmd = { lsp_path .. "bashls/node_modules/.bin/bash-language-server", "--stdio" },
     capabilities = capabilities,
     on_attach = on_attach,
     flags = flag_args
 }
 
 lspconfig.yamlls.setup {
-    cmd = { lsp_path .. "yamlls/node_modules/.bin/yaml-language-server", "--stdio" },
     capabilities = capabilities,
     on_attach = on_attach,
     flags = flag_args
 }
 
 lspconfig.pyright.setup {
-    cmd = { lsp_path .. "pyright/node_modules/.bin/pyright-langserver", "--stdio" },
     settings = {
         python = {
             analysis = {
@@ -150,9 +147,6 @@ lspconfig.pyright.setup {
 
 lspconfig.sumneko_lua.setup {
     projectRootPatterns = { "~/.config", "lua" },
-    cmd = { lsp_path .. "sumneko_lua/extension/server/bin/lua-language-server",
-        "-E",
-        lsp_path .. "sumneko_lua/extension/server/" .. "main.lua" };
     settings = {
         Lua = {
             runtime = {
@@ -190,7 +184,6 @@ lspconfig.sumneko_lua.setup {
 }
 
 lspconfig.vimls.setup {
-    cmd = { lsp_path .. "vimls/node_modules/.bin/vim-language-server", "--stdio" },
     diagnostic = {
         enable = true
     },
@@ -211,7 +204,6 @@ lspconfig.vimls.setup {
 }
 
 lspconfig.jsonls.setup {
-    cmd = { lsp_path .. "jsonls/node_modules/.bin/json-language-server" },
     init_options = {
         provideFormatter = true
     },
@@ -221,28 +213,24 @@ lspconfig.jsonls.setup {
 }
 
 lspconfig.tsserver.setup {
-    cmd = { lsp_path .. "tsserver/node_modules/.bin/typescript-language-server", "--stdio" },
     capabilities = capabilities,
     on_attach = on_attach,
     flags = flag_args
 }
 
 -- lspconfig.eslint.setup {
---     cmd = { lsp_path .. "eslint/node_modules/.bin/vscode-eslint-language-server", "--stdio" },
 --     capabilities = capabilities,
 --     on_attach = on_attach,
 --     flags = flag_args
 -- }
 
 lspconfig.emmet_ls.setup {
-    cmd = { lsp_path .. "emmet_ls/node_modules/.bin/emmet_ls", "--stdio" },
     capabilities = capabilities,
     on_attach = on_attach,
     flags = flag_args
 }
 
 lspconfig.html.setup {
-    cmd = { lsp_path .. "html/node_modules/.bin/vscode-html-language-server", "--stdio" },
     init_options = {
         configurationSection = { "html", "css", "javascript" },
         embeddedLanguages = {
