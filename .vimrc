@@ -446,6 +446,7 @@ nmap <silent> gr :Telescope lsp_references<cr>
 nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>ca :lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>fo :lua vim.lsp.buf.formatting()<CR>
+nnoremap <leader>fm :ClangFormat<CR>
 nnoremap <silent>K  :lua vim.lsp.buf.hover()<CR>
 nnoremap <silent>gy :lua vim.lsp.buf.type_definition()<CR>
 nnoremap <silent>gD :lua vim.lsp.buf.declaration()<CR>
