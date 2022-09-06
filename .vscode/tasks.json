@@ -3,43 +3,43 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "vim_build_lite",
-            "command": "cd $HOME/Documents/Gitlab/dvcs/Build && time cmake $HOME/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && time make -j8"
+            "label": "lite_build",
+            "command": "cp scripts/build.py scripts/.build.py.bak && sed -i -e '/if not install_conan/,+1d' scripts/build.py && time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Build --build-type=debug --build-platform=linux64_gcc7 --build-threads=8 && mv scripts/build.py.bak scripts/build.py;"
         },
         {
             "type": "shell",
             "label": "py_build_debug",
-            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Build --build-type=debug --build-platform=linux64_gcc7 --build-threads=8"
+            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Build --build-type=debug --build-platform=linux64_gcc7 --build-threads=8;"
         },
         {
             "type": "shell",
             "label": "py_build_debug_asan",
-            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/ASAN_Build --build-type=debug --build-platform=linux64_gcc7_asan --build-threads=8"
+            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/ASAN_Build --build-type=debug --build-platform=linux64_gcc7_asan --build-threads=8;"
         },
         {
             "type": "shell",
             "label": "lite_build_asan",
-            "command": "cd $HOME/Documents/Gitlab/dvcs/ASAN_Build && cmake $HOME/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_asan.cmake && make -j8"
+            "command": "cp scripts/build.py scripts/.build.py.bak && sed -i -e '/if not install_conan/,+1d' scripts/build.py && time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/ASAN_Build --build-type=debug --build-platform=linux64_gcc7_asan --build-threads=8 && mv scripts/build.py.bak scripts/build.py;"
         },
         {
             "type": "shell",
             "label": "py_build_release",
-            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Release --build-type=release --build-platform=linux64_gcc7 --build-threads=8"
+            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Release --build-type=release --build-platform=linux64_gcc7 --build-threads=8;"
         },
         {
             "type": "shell",
             "label": "sipp raw cs_integration_test",
-            "command": "$HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/cs_integration_test/sipp/sipp 127.0.0.1:5080 -sf $HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/cs_integration_test/create_client/destroy_client_before_leave.xml -trace_msg -message_file destroy_client_before_leave.sip.log -trace_logs -log_file destroy_client_before_leave.log -trace_err -error_file destroy_client_before_leave.err.log -timeout 30s -timeout_error -l 1 -m 1 -i 127.0.0.1 -mi 127.0.0.1 -f 99999"
+            "command": "$HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/cs_integration_test/sipp/sipp 127.0.0.1:5080 -sf $HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/cs_integration_test/create_client/destroy_client_before_leave.xml -trace_msg -message_file destroy_client_before_leave.sip.log -trace_logs -log_file destroy_client_before_leave.log -trace_err -error_file destroy_client_before_leave.err.log -timeout 30s -timeout_error -l 1 -m 1 -i 127.0.0.1 -mi 127.0.0.1 -f 99999;"
         },
         {
             "type": "shell",
             "label": "cs_integration_test",
-            "command": "time ./scripts/tests/cs_integration_test.py --run-only-specific-testcases create_client::test_destroy_client_before_leave --build-dir=$HOME/Documents/Gitlab/dvcs/Build --build-type=debug --build-platform=linux64_gcc7"
+            "command": "time ./scripts/tests/cs_integration_test.py --run-only-specific-testcases create_client::test_destroy_client_before_leave --build-dir=$HOME/Documents/Gitlab/dvcs/Build --build-type=debug --build-platform=linux64_gcc7;"
         },
         {
             "type": "shell",
             "label": "cs_dummy_audio_server",
-            "command": "python3 $HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/cs_integration_test/dvaudio_server.py $HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/cs_integration_test/create_client/destroy_client_before_leave.txt"
+            "command": "python3 $HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/cs_integration_test/dvaudio_server.py $HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/cs_integration_test/create_client/destroy_client_before_leave.txt;"
         }
     ]
 }
