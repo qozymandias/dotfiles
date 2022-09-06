@@ -30,6 +30,40 @@
                 }
             }
         },
+        "Conference Server Integration Test": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "type": "cppdbg",
+                "request": "launch",
+                "name": "conference server",
+                "label": "conference_server",
+                "program": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug/dvconference_server",
+                "cwd": "${workspaceFolder}/../Build/linux64_gcc7_debug/bin/Debug",
+                "args": [
+                    "--dvmsp_schema_path=$HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/dvmsp.fbs",
+                    "--config=$HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/dvconference_server.cfg"
+                ],
+                "environment": [
+                    {
+                        "name": "VIMRUNTIME",
+                        "value": "${workspaceRoot}/runtime"
+                    }
+                ],
+                "externalConsole": true,
+                "stopAtEntry": true,
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": false
+                    }
+                ],
+                "logging": {
+                    "engineLogging": false
+                }
+            }
+        },
         "Scale App Server": {
             "adapter": "vscode-cpptools",
             "configuration": {

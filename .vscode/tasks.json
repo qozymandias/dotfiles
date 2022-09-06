@@ -3,8 +3,8 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "py_build_debug_asan",
-            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/ASAN_Build --build-type=debug --build-platform=linux64_gcc7_asan --build-threads=8"
+            "label": "vim_build_lite",
+            "command": "cd $HOME/Documents/Gitlab/dvcs/Build && time cmake $HOME/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && time make -j8"
         },
         {
             "type": "shell",
@@ -13,151 +13,33 @@
         },
         {
             "type": "shell",
+            "label": "py_build_debug_asan",
+            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/ASAN_Build --build-type=debug --build-platform=linux64_gcc7_asan --build-threads=8"
+        },
+        {
+            "type": "shell",
+            "label": "lite_build_asan",
+            "command": "cd $HOME/Documents/Gitlab/dvcs/ASAN_Build && cmake $HOME/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_asan.cmake && make -j8"
+        },
+        {
+            "type": "shell",
             "label": "py_build_release",
             "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Release --build-type=release --build-platform=linux64_gcc7 --build-threads=8"
         },
         {
             "type": "shell",
-            "label": "vim_build_lite",
-            "command": "cd $HOME/Documents/Gitlab/dvcs/Build && time cmake $HOME/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && time make -j8"
-        },{
-            "type": "shell",
-            "label": "vim_build",
-            "command": " cd $HOME/Documents/Gitlab/dvcs/Build && conan install $HOME/Documents/Gitlab/dvcs/Project -pr=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_debug.conanprofile --build=missing --update && cmake $HOME/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && make -j8"
+            "label": "sipp raw cs_integration_test",
+            "command": "$HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/cs_integration_test/sipp/sipp 127.0.0.1:5080 -sf $HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/cs_integration_test/create_client/destroy_client_before_leave.xml -trace_msg -message_file destroy_client_before_leave.sip.log -trace_logs -log_file destroy_client_before_leave.log -trace_err -error_file destroy_client_before_leave.err.log -timeout 30s -timeout_error -l 1 -m 1 -i 127.0.0.1 -mi 127.0.0.1 -f 99999"
         },
         {
             "type": "shell",
-            "label": "vim_build_asan_lite",
-            "command": " cd $HOME/Documents/Gitlab/dvcs/ASAN_Build && cmake $HOME/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && make -j8"
+            "label": "cs_integration_test",
+            "command": "time ./scripts/tests/cs_integration_test.py --run-only-specific-testcases create_client::test_destroy_client_before_leave --build-dir=$HOME/Documents/Gitlab/dvcs/Build --build-type=debug --build-platform=linux64_gcc7"
         },
         {
             "type": "shell",
-            "label": "vim_build_asan",
-            "command": " cd $HOME/Documents/Gitlab/dvcs/ASAN_Build && conan install $HOME/Documents/Gitlab/dvcs/Project -pr=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_asan_debug.conanprofile --build=missing --update && cmake $HOME/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && make -j8"
-        },
-        {
-            "type": "shell",
-            "label": "vim_build_release",
-            "command": " cd $HOME/Documents/Gitlab/dvcs/Release && conan install $HOME/Documents/Gitlab/dvcs/Project -pr=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7_release.conanprofile --build=missing --update && cmake $HOME/Documents/Gitlab/dvcs/Project -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=$HOME/Documents/Gitlab/dvcs/Project/cmake_common/toolchains/linux64_gcc7.cmake && make -j8"
-        },
-        {
-            "type": "shell",
-            "label": "vim_build_scale",
-            "command": " cd $HOME/Documents/Gitlab/dvcs/Project && ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Build --build-type=release --build-platform=linux64_gcc7"
-        },
-        {
-            "type": "shell",
-            "label": "conan",
-            "command": "conan",
-            "args": [
-                "install",
-                "${workspaceFolder}",
-                "-pr=${workspaceFolder}/cmake_common/toolchains/linux64_gcc7_debug.conanprofile",
-                "--build=missing"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/../Build"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": "build",
-            "detail": "compiler: /usr/bin/g++"
-        },
-        {
-            "type": "shell",
-            "label": "cmake",
-            "command": "cmake",
-            "args": [
-                "${workspaceFolder}",
-                "-DCMAKE_BUILD_TYPE=Debug",
-                "-DCMAKE_TOOLCHAIN_FILE=${workspaceFolder}/cmake_common/toolchains/linux64_gcc7.cmake"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/../Build"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": "build",
-            "dependsOn": "conan"
-        },
-        {
-            "type": "shell",
-            "label": "make",
-            "command": "make",
-            "args": [
-                "-j8"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/../Build"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "detail": "compiler: /usr/bin/g++",
-            "dependsOn": "cmake"
-        },
-        {
-            "type": "shell",
-            "label": "asan_conan",
-            "command": "conan",
-            "args": [
-                "install",
-                "${workspaceFolder}",
-                "-pr=${workspaceFolder}/cmake_common/toolchains/linux64_gcc7_asan_debug.conanprofile",
-                "--build=missing"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/../ASAN_Build"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": "build",
-            "detail": "compiler: /usr/bin/g++"
-        },
-        {
-            "type": "shell",
-            "label": "asan_cmake",
-            "command": "cmake",
-            "args": [
-                "${workspaceFolder}",
-                "-DCMAKE_BUILD_TYPE=Debug",
-                "-DCMAKE_TOOLCHAIN_FILE=${workspaceFolder}/cmake_common/toolchains/linux64_gcc7_asan.cmake"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/../ASAN_Build"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": "build",
-            "dependsOn": "asan_conan"
-        },
-        {
-            "type": "shell",
-            "label": "asan make",
-            "command": "make",
-            "args": [
-                "-j8"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/../ASAN_Build"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "detail": "compiler: /usr/bin/g++",
-            "dependsOn": "asan_cmake"
+            "label": "cs_dummy_audio_server",
+            "command": "python3 $HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/cs_integration_test/dvaudio_server.py $HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/cs_integration_test/create_client/destroy_client_before_leave.txt"
         }
     ]
 }
