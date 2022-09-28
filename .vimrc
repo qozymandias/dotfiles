@@ -371,7 +371,7 @@ nnoremap <leader>gm :Git mergetool<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Terminal
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <leader>tt :ToggleTerm direction=tab<cr>
+nmap <leader>tt :ToggleTerm<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Vimspector
@@ -492,3 +492,4 @@ luafile $HOME/.config/nvim/lua/lspconfig.lua
 luafile $HOME/.config/nvim/lua/lualine.lua
 luafile $HOME/.config/nvim/lua/vstask.lua
 luafile $HOME/.config/nvim/lua/treesitter-context.lua
+luafile $HOME/.config/nvim/lua/toggleterm.lua

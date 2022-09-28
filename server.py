@@ -4,7 +4,7 @@ import sys
 import BaseHTTPServer
 from SimpleHTTPServer import SimpleHTTPRequestHandler
 
-ADDR ='127.0.0.1'
+ADDR ='10.204.65.193'
 # ADDR ='10.120.232.50'
 
 HandlerClass = SimpleHTTPRequestHandler
