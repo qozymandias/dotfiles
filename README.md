@@ -27,6 +27,9 @@ _-_ _,,
 ```
 
 ---
+# Showcase
+
+![example](./showcase.png)
 
 # Setup 
 ## Quick Setup

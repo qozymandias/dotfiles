@@ -56,6 +56,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'folke/lsp-colors.nvim'
     Plug 'onsails/lspkind.nvim'
     Plug 'ishan9299/nvim-solarized-lua'
+    " Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
