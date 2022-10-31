@@ -197,7 +197,9 @@ nnoremap <C-tab> <C-w>w
 ":call CheckInsertAndEsc()<cr>
 "call CheckInsertAndEsc()<CR>
 nnoremap <C-S-tab> <C-w>W 
+
 ":call CheckInsertAndEsc()<cr>
+nnoremap <C-A-tab> <C-w>r
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -414,6 +416,7 @@ nnoremap <leader>ds :Telescope vimspector configurations<cr>
 " up or down a frame
 nnoremap <leader>du :call vimspector#UpFrame()<CR>
 nnoremap <leader>dd :call vimspector#DownFrame()<CR>
+nnoremap <leader>dbc <Plug>VimspectorToggleConditionalBreakpoint
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> VSnip
@@ -454,7 +457,15 @@ nnoremap <silent>gD :lua vim.lsp.buf.declaration()<CR>
 nnoremap <C-k>      :lua vim.lsp.buf.signature_help()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ==> Misc
+" ==> Save & Quiting extras
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" missing ZZ and ZQ counterparts:
+" quick save-buffer and quit-everything
+nnoremap ZS :w<CR>
+nnoremap ZX :qa<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ==> Folds
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set foldmethod=manual
 nnoremap <leader>f} zfa}
@@ -463,12 +474,12 @@ inoremap <F9> <C-O>za
 nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
-" missing ZZ and ZQ counterparts:
-" quick save-buffer and quit-everything
-nnoremap ZS :w<CR>
-nnoremap ZX :qa<CR>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ==> Misc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set signcolumn=yes
+set mouse=c
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Lua
@@ -494,3 +505,5 @@ luafile $HOME/.config/nvim/lua/lualine.lua
 luafile $HOME/.config/nvim/lua/vstask.lua
 luafile $HOME/.config/nvim/lua/treesitter-context.lua
 luafile $HOME/.config/nvim/lua/toggleterm.lua
+
+NvimTreeToggle
