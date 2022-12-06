@@ -56,6 +56,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'folke/lsp-colors.nvim'
     Plug 'onsails/lspkind.nvim'
     Plug 'ishan9299/nvim-solarized-lua'
+    Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
     " Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 call plug#end()
 
@@ -480,6 +481,11 @@ vnoremap <F9> zf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set signcolumn=yes
 set mouse=c
+
+let g:minimap_width = 10
+let g:minimap_auto_start = 1
+let g:minimap_auto_start_win_enter = 1
+let g:minimap_git_colors = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Lua
