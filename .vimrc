@@ -34,7 +34,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'stefandtw/quickfix-reflector.vim'
     Plug 'startup-nvim/startup.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
-    " Plug 'SmiteshP/nvim-gps'
     Plug 'SmiteshP/nvim-navic'
     Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
     Plug 'kyazdani42/nvim-tree.lua'
@@ -47,7 +46,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'nvim-lua/lsp-status.nvim'
-    Plug 'nvim-telescope/telescope-smart-history.nvim'
+    " Plug 'nvim-telesope/telescope-smart-history.nvim'
     Plug 'nvim-telescope/telescope-frecency.nvim'
     Plug 'williamboman/nvim-lsp-installer'
     Plug 'gauteh/vim-cppman'
@@ -56,7 +55,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'folke/lsp-colors.nvim'
     Plug 'onsails/lspkind.nvim'
     Plug 'ishan9299/nvim-solarized-lua'
-    Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
+    Plug 'echasnovski/mini.nvim'
+    Plug 'echasnovski/mini.map'
     " Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 call plug#end()
 
@@ -72,7 +72,11 @@ colorscheme solarized-high
 
 set completeopt=menu,menuone,noselect
 
-highlight Pmenu guibg=#7f9f7f guifg=white
+" highlight Pmenu guibg=#7f9f7f guifg=grey
+highlight Pmenu guibg=LightYellow guifg=Magenta
+
+" MiniMapNormal
+"
 highlight TreesitterContext guibg=white
 " guifg=#222222 guibg=black
 " ctermbg=gray 
@@ -482,10 +486,11 @@ vnoremap <F9> zf
 set signcolumn=yes
 set mouse=c
 
-let g:minimap_width = 10
-let g:minimap_auto_start = 1
-let g:minimap_auto_start_win_enter = 1
-let g:minimap_git_colors = 1
+" let g:minimap_width = 10
+" let g:unfocusable = 1
+" let g:minimap_auto_start = 1
+" let g:minimap_auto_start_win_enter = 0
+" let g:minimap_git_colors = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Lua
@@ -511,3 +516,7 @@ luafile $HOME/.config/nvim/lua/lualine.lua
 luafile $HOME/.config/nvim/lua/vstask.lua
 luafile $HOME/.config/nvim/lua/treesitter-context.lua
 luafile $HOME/.config/nvim/lua/toggleterm.lua
+luafile $HOME/.config/nvim/lua/minimap.lua
+
+autocmd BufEnter * :lua MiniMap.open()
+
