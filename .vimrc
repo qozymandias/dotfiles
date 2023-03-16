@@ -479,6 +479,7 @@ inoremap <F9> <C-O>za
 nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
+nnoremap <C-Z> <NOP>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Misc
@@ -520,3 +521,4 @@ luafile $HOME/.config/nvim/lua/minimap.lua
 
 autocmd BufEnter * :lua MiniMap.open()
 
+nnoremap <leader>e :lua MiniMap.toggle()<cr>
