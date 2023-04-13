@@ -480,6 +480,7 @@ nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
 nnoremap <C-Z> <NOP>
+nnoremap <C-S-Z> <nop>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Misc
