@@ -30,6 +30,11 @@
             "type": "shell",
             "label": "cs_dummy_audio_server",
             "command": "python3 $HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/cs_integration_test/dvaudio_server.py $HOME/Documents/Gitlab/dvcs/Build/linux64_gcc7_debug/bin/Debug/cs_integration_test/create_client/destroy_client_before_leave.txt;"
+        },
+        {
+            "type": "shell",
+            "label": "py_build_debug_new_env",
+            "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Build --build-type=debug --build-platform=linux64_gcc7 --build-threads=4 --conan-user=kxhuan --conan-channel=new_env"
         }
     ]
 }
