@@ -8,11 +8,6 @@
  |  '-'  /   '  '-'  '   |  |      `|  |_)   |  |'->  |     |'  |  `---. \       / 
  `------'     `-----'    `--'       `--'     `--'     `-----'   `------'  `-----'  
 ```
----
-# Showcase
-
-![example](./showcase.png)
-
 # Setup 
 ## Quick Setup
 Copy the config files in your home directory.
@@ -24,5 +19,4 @@ cp -r .config/nvim ~/.config/
 Install plugins and LSP
 ```
 nvim --headless +PlugInstall +TSUpdate +qa;
-nvim --headless +TSInstall cpp +qa;
 ```
