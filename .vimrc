@@ -57,6 +57,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'ishan9299/nvim-solarized-lua'
     Plug 'echasnovski/mini.nvim'
     Plug 'echasnovski/mini.map'
+    Plug 'HampusHauffman/block.nvim'
+    Plug 'mfussenegger/nvim-jdtls'
     " Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 call plug#end()
 
@@ -454,7 +456,7 @@ nmap <silent> gr :Telescope lsp_references<cr>
 " call <SID>show_documentation()<CR>
 nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>ca :lua vim.lsp.buf.code_action()<CR>
-nnoremap <leader>fo :lua vim.lsp.buf.formatting()<CR>
+nnoremap <leader>fo :lua vim.lsp.buf.format()<CR>
 nnoremap <leader>fm :ClangFormat<CR>
 nnoremap <silent>K  :lua vim.lsp.buf.hover()<CR>
 nnoremap <silent>gy :lua vim.lsp.buf.type_definition()<CR>
@@ -519,6 +521,8 @@ luafile $HOME/.config/nvim/lua/vstask.lua
 luafile $HOME/.config/nvim/lua/treesitter-context.lua
 luafile $HOME/.config/nvim/lua/toggleterm.lua
 luafile $HOME/.config/nvim/lua/minimap.lua
+
+lua require("block").setup({ percent = 0.8, depth = 4, colors = { "E8DE87" }, automatic = false })
 
 autocmd BufEnter * :lua MiniMap.open()
 

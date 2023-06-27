@@ -1,3 +1,8 @@
+
+--
+--
+--
+--
 -- -- Mappings.
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<leader>i', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
@@ -145,43 +150,43 @@ lspconfig.pyright.setup {
     flags = flag_args
 }
 
-lspconfig.sumneko_lua.setup {
-    projectRootPatterns = { "~/.config", "lua" },
-    settings = {
-        Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                version = 'LuaJIT',
-                -- Setup your lua path
-                path = '/usr/bin/lua',
-            },
-            diagnostics = {
-                enable = true,
-                -- Get the language server to recognize the `vim` global
-                globals = { 'vim' },
-                neededFileStatus = {
-                    ["codestyle-check"] = "Any",
-                },
-            },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                -- library = vim.api.nvim_get_runtime_file("", true),
-                checkThirdParty = false,
-                ignoreDir = { "~/.local" }
-            },
-            -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-                enable = false,
-            },
-            format = {
-                enable = true,
-            }
-        },
-    },
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
+-- lspconfig.sumneko_lua.setup {
+--     projectRootPatterns = { "~/.config", "lua" },
+--     settings = {
+--         Lua = {
+--             runtime = {
+--                 -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+--                 version = 'LuaJIT',
+--                 -- Setup your lua path
+--                 path = '/usr/bin/lua',
+--             },
+--             diagnostics = {
+--                 enable = true,
+--                 -- Get the language server to recognize the `vim` global
+--                 globals = { 'vim' },
+--                 neededFileStatus = {
+--                     ["codestyle-check"] = "Any",
+--                 },
+--             },
+--             workspace = {
+--                 -- Make the server aware of Neovim runtime files
+--                 -- library = vim.api.nvim_get_runtime_file("", true),
+--                 checkThirdParty = false,
+--                 ignoreDir = { "~/.local" }
+--             },
+--             -- Do not send telemetry data containing a randomized but unique identifier
+--             telemetry = {
+--                 enable = false,
+--             },
+--             format = {
+--                 enable = true,
+--             }
+--         },
+--     },
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = flag_args
+-- }
 
 lspconfig.vimls.setup {
     diagnostic = {
@@ -218,17 +223,47 @@ lspconfig.tsserver.setup {
     flags = flag_args
 }
 
+lspconfig.jdtls.setup {
+    -- cmd = { 'java', },
+    settings = {
+        java = {
+            signatureHelp = { enabled = true },
+            contentProvider = { preferred = 'fernflower' },
+            configuration = {
+                maven = {
+                    globalSettings = "$HOME/.m2/settings.json",
+                    userSettings = "$HOME/.m2/settings.json",
+                }
+            },
+            maven = {
+                downloadSources = true
+            },
+            sources = {
+                organizeImports = true,
+                format = { enabled = true }
+            }
+        }
+    },
+    -- java.configuration.maven.globalSettings
+    root_dir = function()
+        return vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
+    end,
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flag_args
+}
+
 -- lspconfig.eslint.setup {
 --     capabilities = capabilities,
 --     on_attach = on_attach,
 --     flags = flag_args
 -- }
 
-lspconfig.emmet_ls.setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
+-- lspconfig.emmet_ls.setup {
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = flag_args
+-- }
 
 lspconfig.html.setup {
     init_options = {
