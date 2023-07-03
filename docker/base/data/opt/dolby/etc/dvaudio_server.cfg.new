@@ -1,0 +1,54 @@
+# This is an example configuration file for dvaudio_server (version 3)
+
+# If quite_mode is true. Logging and stats to console will be suppressed
+quiet_mode=true
+
+# Logging level (emergency, alert, critical, error, warning, notice, info, debug)
+log_level=info
+
+# File path to the log file
+log_file=/proc/1/fd/1
+
+# The period in seconds. This is the interval pre-defined duplicate messages
+# will be summarized and logged. 
+log_batching_period=60
+
+# The facility to use for syslog logging. -1 is to disable syslog logging
+# The value of 16 means to use the local0 syslog target.
+syslog_facility=-1
+
+# The path to a directory the state dump file will be written to. If dump_path
+# is empty, state dump files will be created under the current working
+# directory
+dump_path=/opt/dolby/dump/
+
+# The start of the range of ports to use for media connections.
+port_range_start=20000
+
+# The end of the range of ports to use for media connections.
+port_range_end=50000
+ 
+# The IP endpoint address (IP and port) the conference server is listening at
+cs_address=127.0.0.1:54321
+
+# Enable detection of in-band DTMF
+enable_inband_dtmf=false
+
+# Enable strict mode client address handling
+enable_strict_mode=false
+
+# Enable RTCP
+enable_rtcp=false
+
+# HTTP method being used to transfer recording to remote server. Valid values are post and put
+recording_http_method=post
+
+# HTTP mode. Valid values are chunk and multishot
+recording_http_mode=chunk
+
+# Run the server as a daemon
+daemonized=true
+
+# PID file
+pid_file=/opt/dolby/pid/dvaudio_server.pid
+

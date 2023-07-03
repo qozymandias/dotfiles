@@ -1,0 +1,84 @@
+# Configuration file template for dvconference_server
+
+# The location of the Dolby installation
+dolby_home=/opt/dolby
+
+# Local SIP IP/port binding.
+sip_ip=a.b.c.d
+sip_port=5060
+
+# IP/port to reach the audio server.
+as_ip=127.0.0.1
+as_port=54321
+
+# Set the encoding name used for DVC-2 in SIP exchanges
+dvc2_encoding_name=DVC-2
+
+# Media path manipulation.
+# media_paths=file://provisioned/media/path/=file:///opt/dolby/media/dvcr/,file://temporary/media/path/=file:///opt/dolby/tmp/
+media_postfix=.dvcr
+
+# IP address to use for media streams.
+media_ip=a.b.c.d
+
+# If true, send a BYE to all SIP connections if the conference server is down
+force_disconnect=false
+
+# Number of seconds between status reports
+# 0 means print only when the status changes and no more frequently than once per second.
+status_report_rate=0
+
+# Scalability factors for various client types
+scalability_factor_dv=1.0
+scalability_factor_dcp=1.0
+scalability_factor_g711=1.0
+scalability_factor_g711_echo=1.0
+scalability_factor_g711_sub20ms=1.0
+scalability_factor_g711_sub20ms_echo=1.0
+scalability_factor_g722=1.0
+scalability_factor_g722_echo=1.0
+scalability_factor_g722_sub20ms=1.0
+scalability_factor_g722_sub20ms_echo=1.0
+scalability_factor_opus_16khz=1.0
+scalability_factor_opus_24khz=1.0
+scalability_factor_opus_stereo_16khz=1.0
+scalability_factor_opus_stereo_24khz=1.0
+scalability_factor_g7221=1.0
+scalability_factor_g7221c=1.0
+scalability_factor_l16=1.0
+scalability_factor_amr=1.0
+scalability_factor_amr_wb=1.0
+scalability_factor_conference_recording=1.0
+
+#codec info
+enable_opus_swb = false
+enable_amr = false
+enable_amr_wb = false
+
+# Logging configuration.
+log_level=info
+sip_log_level=info
+msml_log_level=info
+
+# Log Files.
+log_file=/proc/1/fd/1
+auditing_log_file=/proc/1/fd/2
+# sip_log_file=/opt/dolby/log/dvconference_server.sip.log
+# msml_log_file=/opt/dolby/log/dvconference_server.msml.log
+
+#
+# Syslog support.
+syslog_facility=-1
+auditing_syslog_facility=-1
+
+# Where to write dump files.
+dump_path=/opt/dolby/dump/
+
+# The Agent-X connection description to interface to the SNMP daemon.
+agentx_connection=/var/agentx/master
+
+# Daemonization options. Do not change these.
+daemonized=true
+quiet_mode=true
+pid_file=/opt/dolby/pid/dvconference_server.pid
+#

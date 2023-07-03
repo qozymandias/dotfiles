@@ -1,0 +1,15 @@
+###############################################################################
+## Monit control file
+###############################################################################
+set daemon 2                           # check services at 2 second intervals
+set logfile syslog facility log_local0 # Use local0 facility for syslog logging
+#
+set idfile /var/monit/id
+set statefile /var/monit/state
+#
+set httpd port 2812 and
+    use address localhost  # only bind to the loopback interface.
+    allow localhost        # allow localhost to issue commands.
+#
+include /etc/monit.d/*
+#
