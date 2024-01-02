@@ -223,6 +223,16 @@ lspconfig.tsserver.setup {
     flags = flag_args
 }
 
+lspconfig.rust_analyzer.setup{
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      }
+    }
+  }
+}
+
 lspconfig.jdtls.setup {
     -- cmd = { 'java', },
     settings = {

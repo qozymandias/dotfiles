@@ -25,6 +25,7 @@ call plug#begin('~/.vim/plugged')
     " Plug 'AckslD/nvim-neoclip.lua'
     " Plug 'tami5/sqlite.lua'
     Plug 'puremourning/vimspector'
+    Plug 'puuuuh/vimspector-rust'
     Plug 'neovim/pynvim'
     Plug 'nvim-telescope/telescope-vimspector.nvim'
     Plug 'nvim-telescope/telescope-file-browser.nvim'
@@ -524,6 +525,6 @@ luafile $HOME/.config/nvim/lua/minimap.lua
 
 lua require("block").setup({ percent = 0.8, depth = 4, colors = { "E8DE87" }, automatic = false })
 
-autocmd BufEnter * :lua MiniMap.open()
-
-nnoremap <leader>e :lua MiniMap.toggle()<cr>
+" autocmd BufEnter * :lua MiniMap.open()
+" 
+" nnoremap <leader>e :lua MiniMap.toggle()<cr>
