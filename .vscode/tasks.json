@@ -35,6 +35,37 @@
             "type": "shell",
             "label": "py_build_debug_new_env",
             "command": "time ./scripts/build.py --build-dir=$HOME/Documents/Gitlab/dvcs/Build --build-type=debug --build-platform=linux64_gcc7 --build-threads=4 --conan-user=kxhuan --conan-channel=new_env"
+        },
+        {
+            "type": "shell",
+            "label": "tests::load_test_poly_eval",
+            "command": "time cargo test tests::load_test_poly_eval -- --nocapture"
+        },
+
+        {
+            "type": "shell",
+            "label": "build",
+            "command": "time cargo build"
+        },
+        {
+            "type": "shell",
+            "label": "build & run",
+            "command": "time cargo run"
+        },
+        {
+            "type": "shell",
+            "label": "build & run (full trace)",
+            "command": "export RUST_BACKTRACE=full && time cargo run -- --nocapture"
+        },
+        {
+            "type": "shell",
+            "label": "build & test (full trace)",
+            "command": "export RUST_BACKTRACE=full && time cargo test -- --nocapture"
+        },
+        {
+            "type": "shell",
+            "label": "build & test",
+            "command": "time cargo test -- --nocapture"
         }
     ]
 }

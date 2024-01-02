@@ -1,5 +1,23 @@
 {
     "configurations": {
+        "Test": {
+            "adapter": "CodeLLDB",
+            "configuration": {
+                "request": "launch",
+                "name": "test",
+                "label": "test",
+                "program": "${workspaceFolder}/target/debug/deps/poly_optimizer-bf2c8ac050f1edb6",
+                "args": [
+                    "tests::load_test_poly_eval"
+                ],
+                "environment": [
+                    {
+                        "name": "VIMRUNTIME",
+                        "value": "${workspaceRoot}/runtime"
+                    }
+                ]
+            }
+        },
         "Conference Server Debug": {
             "adapter": "vscode-cpptools",
             "configuration": {
