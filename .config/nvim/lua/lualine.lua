@@ -13,9 +13,6 @@ local colors = {
 
 local custom_gruvbox = require 'lualine.themes.gruvbox_light'
 
--- Change the background of lualine_c section for normal mode
--- custom_gruvbox.normal.x.fg = colors.black
--- custom_gruvbox.normal.b.fg = colors.black
 custom_gruvbox.normal.c.fg = colors.black
 custom_gruvbox.normal.c.gui = "bold"
 custom_gruvbox.insert.c.fg = colors.black

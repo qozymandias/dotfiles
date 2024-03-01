@@ -1,6 +1,6 @@
 local previewers = require("telescope.previewers")
 
-local _bad = { "node_modules", ".*%.txt", ".*%.csv", ".*%.lua", "*conan*" } -- Put all filetypes that slow you down in this array
+local _bad = { "node_modules", ".*%.txt", ".*%.csv", ".*%.lua", "*conan*" } 
 local bad_files = function(filepath)
     for _, v in ipairs(_bad) do
         if filepath:match(v) then
@@ -31,7 +31,6 @@ require 'telescope'.setup {
             "--line-number",
             "--column",
             "--smart-case",
-            -- "--trim" -- add this value
         },
         buffer_previewer_maker = new_maker,
         entry_prefix = " ",

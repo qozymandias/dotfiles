@@ -1,14 +1,8 @@
-
---
---
---
---
 -- -- Mappings.
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<leader>i', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
---  vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
 local navic = require("nvim-navic")
 local on_attach = function(client, bufnr)
@@ -23,9 +17,8 @@ local lspkind = require('lspkind')
 local confirm_select = function(fallback)
     if cmp.visible() then
         cmp.confirm()
-        --cmp.mapping.confirm()
     else
-        fallback() -- If you are using vim-endwise, this fallback function will be behaive as the vim-endwise.
+        fallback()
     end
 end
 local tab_next = function(fallback)
@@ -33,8 +26,6 @@ local tab_next = function(fallback)
         cmp.select_next_item()
     elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
-        --  elseif cmp.has_words_before() then
-        --      cmp.complete()
     else
         fallback()
     end
@@ -48,7 +39,6 @@ cmp.setup {
         })
     },
     snippet = {
-        -- REQUIRED - you must specify a snippet engine
         expand = function(args)
             require('luasnip').lsp_expand(args.body)
         end,
@@ -76,7 +66,7 @@ cmp.setup {
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
-        { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+        { name = 'cmp_git' },
     }, {
         { name = 'buffer' },
     })
@@ -150,44 +140,6 @@ lspconfig.pyright.setup {
     flags = flag_args
 }
 
--- lspconfig.sumneko_lua.setup {
---     projectRootPatterns = { "~/.config", "lua" },
---     settings = {
---         Lua = {
---             runtime = {
---                 -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
---                 version = 'LuaJIT',
---                 -- Setup your lua path
---                 path = '/usr/bin/lua',
---             },
---             diagnostics = {
---                 enable = true,
---                 -- Get the language server to recognize the `vim` global
---                 globals = { 'vim' },
---                 neededFileStatus = {
---                     ["codestyle-check"] = "Any",
---                 },
---             },
---             workspace = {
---                 -- Make the server aware of Neovim runtime files
---                 -- library = vim.api.nvim_get_runtime_file("", true),
---                 checkThirdParty = false,
---                 ignoreDir = { "~/.local" }
---             },
---             -- Do not send telemetry data containing a randomized but unique identifier
---             telemetry = {
---                 enable = false,
---             },
---             format = {
---                 enable = true,
---             }
---         },
---     },
---     capabilities = capabilities,
---     on_attach = on_attach,
---     flags = flag_args
--- }
-
 lspconfig.vimls.setup {
     diagnostic = {
         enable = true
@@ -228,52 +180,13 @@ lspconfig.rust_analyzer.setup{
     ['rust-analyzer'] = {
       diagnostics = {
         enable = false;
-      }
+      },
+      cargo = {
+        allFeatures = true,
+      },
     }
   }
 }
-
-lspconfig.jdtls.setup {
-    -- cmd = { 'java', },
-    settings = {
-        java = {
-            signatureHelp = { enabled = true },
-            contentProvider = { preferred = 'fernflower' },
-            configuration = {
-                maven = {
-                    globalSettings = "$HOME/.m2/settings.json",
-                    userSettings = "$HOME/.m2/settings.json",
-                }
-            },
-            maven = {
-                downloadSources = true
-            },
-            sources = {
-                organizeImports = true,
-                format = { enabled = true }
-            }
-        }
-    },
-    -- java.configuration.maven.globalSettings
-    root_dir = function()
-        return vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
-    end,
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
-
--- lspconfig.eslint.setup {
---     capabilities = capabilities,
---     on_attach = on_attach,
---     flags = flag_args
--- }
-
--- lspconfig.emmet_ls.setup {
---     capabilities = capabilities,
---     on_attach = on_attach,
---     flags = flag_args
--- }
 
 lspconfig.html.setup {
     init_options = {
@@ -289,48 +202,133 @@ lspconfig.html.setup {
     flags = flag_args
 }
 
-
-local lsp_status = require('lsp-status')
-lsp_status.register_progress()
-
-local ccls_init = {
-    rootPatterns = {
-        "../Build/linux64_gcc7_debug/compile_commands.json",
-    };
-    cache = {
-        directory = "../.ccls-cache";
-        hierarchicalPath = true;
-        retainInMemory = 1;
-    };
-    compilationDatabaseDirectory = "../Build/linux64_gcc7_debug/";
-    client = {
-        snippetSupport = true
-    },
-    completion = {
-        enableSnippetInsertion = true
-    },
-    index = {
-        threads = 8;
-    };
-    clang = {
-        extraArgs = { "-std=c++17" };
-    };
-    diagnostics = {
-        onChange = 100,
-        onSave = 100,
-        onOpen = 100
-    },
-    highlight = { lsRanges = true }
+lspconfig.clangd.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flag_args
 }
 
-local servers = { 'ccls' }
-local inits = { ccls_init }
-for i, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-        --handlers = hs[i],
-        init_options = inits[i],
-        capabilities = capabilities,
-        on_attach = on_attach,
-        flags = flag_args
-    }
-end
+-- local lsp_status = require('lsp-status')
+-- lsp_status.register_progress()
+-- local ccls_init = {
+--     rootPatterns = {
+--         "../Build/linux64_gcc7_debug/compile_commands.json",
+--     };
+--     cache = {
+--         directory = "../.ccls-cache";
+--         hierarchicalPath = true;
+--         retainInMemory = 1;
+--     };
+--     compilationDatabaseDirectory = "../Build/linux64_gcc7_debug/";
+--     client = {
+--         snippetSupport = true
+--     },
+--     completion = {
+--         enableSnippetInsertion = true
+--     },
+--     index = {
+--         threads = 8;
+--     };
+--     clang = {
+--         extraArgs = { "-std=c++17" };
+--     };
+--     diagnostics = {
+--         onChange = 100,
+--         onSave = 100,
+--         onOpen = 100
+--     },
+--     highlight = { lsRanges = true }
+-- }
+-- 
+-- local servers = { 'ccls' }
+-- local inits = { ccls_init }
+-- for i, lsp in ipairs(servers) do
+--     lspconfig[lsp].setup {
+--         --handlers = hs[i],
+--         init_options = inits[i],
+--         capabilities = capabilities,
+--         on_attach = on_attach,
+--         flags = flag_args
+--     }
+-- end
+-- 
+-- lspconfig.jdtls.setup {
+--     -- cmd = { 'java', },
+--     settings = {
+--         java = {
+--             signatureHelp = { enabled = true },
+--             contentProvider = { preferred = 'fernflower' },
+--             configuration = {
+--                 maven = {
+--                     globalSettings = "$HOME/.m2/settings.json",
+--                     userSettings = "$HOME/.m2/settings.json",
+--                 }
+--             },
+--             maven = {
+--                 downloadSources = true
+--             },
+--             sources = {
+--                 organizeImports = true,
+--                 format = { enabled = true }
+--             }
+--         }
+--     },
+--     -- java.configuration.maven.globalSettings
+--     root_dir = function()
+--         return vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
+--     end,
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = flag_args
+-- }
+
+-- lspconfig.eslint.setup {
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = flag_args
+-- }
+
+-- lspconfig.emmet_ls.setup {
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = flag_args
+-- }
+
+-- lspconfig.sumneko_lua.setup {
+--     projectRootPatterns = { "~/.config", "lua" },
+--     settings = {
+--         Lua = {
+--             runtime = {
+--                 -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+--                 version = 'LuaJIT',
+--                 -- Setup your lua path
+--                 path = '/usr/bin/lua',
+--             },
+--             diagnostics = {
+--                 enable = true,
+--                 -- Get the language server to recognize the `vim` global
+--                 globals = { 'vim' },
+--                 neededFileStatus = {
+--                     ["codestyle-check"] = "Any",
+--                 },
+--             },
+--             workspace = {
+--                 -- Make the server aware of Neovim runtime files
+--                 -- library = vim.api.nvim_get_runtime_file("", true),
+--                 checkThirdParty = false,
+--                 ignoreDir = { "~/.local" }
+--             },
+--             -- Do not send telemetry data containing a randomized but unique identifier
+--             telemetry = {
+--                 enable = false,
+--             },
+--             format = {
+--                 enable = true,
+--             }
+--         },
+--     },
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = flag_args
+-- }
+

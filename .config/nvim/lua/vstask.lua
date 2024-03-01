@@ -1,5 +1,4 @@
 require("vstask").setup({
-  -- use_harpoon = true,
   telescope_keys = {
       vertical = '<C-v>',
       split = '<CR>',

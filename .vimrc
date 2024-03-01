@@ -7,60 +7,57 @@
 " ==> Vim Plug
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
-    Plug 'BurntSushi/ripgrep'
-    Plug 'rhysd/vim-clang-format'
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'nvim-treesitter/nvim-treesitter-context'
-    Plug 'nvim-lua/popup.nvim'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
-    Plug 'nvim-lualine/lualine.nvim'
-    Plug 'mhinz/vim-signify'
-    Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-    Plug 'EthanJWright/vs-tasks.nvim'
-    Plug 'akinsho/toggleterm.nvim'
-    Plug 'jnurmine/Zenburn'
-    Plug 'altercation/vim-colors-solarized'
-    Plug 'tpope/vim-fugitive'
-    " Plug 'AckslD/nvim-neoclip.lua'
-    " Plug 'tami5/sqlite.lua'
-    Plug 'puremourning/vimspector'
-    Plug 'puuuuh/vimspector-rust'
-    Plug 'neovim/pynvim'
-    Plug 'nvim-telescope/telescope-vimspector.nvim'
-    Plug 'nvim-telescope/telescope-file-browser.nvim'
-    Plug 'sumneko/lua-language-server', { 'do' : 'make' }
-    Plug 'MattesGroeger/vim-bookmarks'
-    Plug 'tom-anders/telescope-vim-bookmarks.nvim'
-    Plug 'stefandtw/quickfix-reflector.vim'
-    Plug 'startup-nvim/startup.nvim'
-    Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'SmiteshP/nvim-navic'
-    Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
-    Plug 'kyazdani42/nvim-tree.lua'
-    Plug 'vijaymarupudi/nvim-fzf'
-    Plug 'nvim-telescope/telescope-fzy-native.nvim', { 'do': 'make' }
+    Plug 'ishan9299/nvim-solarized-lua'
     Plug 'neovim/nvim-lspconfig'
+    Plug 'neovim/pynvim'
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'hrsh7th/nvim-cmp'
-    Plug 'nvim-lua/lsp-status.nvim'
-    " Plug 'nvim-telesope/telescope-smart-history.nvim'
-    Plug 'nvim-telescope/telescope-frecency.nvim'
     Plug 'williamboman/nvim-lsp-installer'
-    Plug 'gauteh/vim-cppman'
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-lua/lsp-status.nvim'
+    Plug 'nvim-lualine/lualine.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter-context'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope-vimspector.nvim'
+    Plug 'nvim-telescope/telescope-file-browser.nvim'
+    Plug 'nvim-telescope/telescope-fzy-native.nvim', { 'do': 'make' }
+    Plug 'nvim-telescope/telescope-frecency.nvim'
+    Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+    Plug 'startup-nvim/startup.nvim'
+    Plug 'EthanJWright/vs-tasks.nvim'
+    Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
+    Plug 'akinsho/toggleterm.nvim'
+    Plug 'tpope/vim-fugitive'
+    Plug 'puremourning/vimspector'
+    Plug 'puuuuh/vimspector-rust'
+    Plug 'mhinz/vim-signify'
+    Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'vijaymarupudi/nvim-fzf'
+    Plug 'onsails/lspkind.nvim'
+    Plug 'SmiteshP/nvim-navic'
     Plug 'L3MON4D3/LuaSnip'
     Plug 'saadparwaiz1/cmp_luasnip'
     Plug 'folke/lsp-colors.nvim'
-    Plug 'onsails/lspkind.nvim'
-    Plug 'ishan9299/nvim-solarized-lua'
-    Plug 'echasnovski/mini.nvim'
-    Plug 'echasnovski/mini.map'
-    Plug 'HampusHauffman/block.nvim'
-    Plug 'mfussenegger/nvim-jdtls'
-    " Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
+    Plug 'tom-anders/telescope-vim-bookmarks.nvim'
+    Plug 'MattesGroeger/vim-bookmarks'
+    " Plug 'echasnovski/mini.nvim'
+    " Plug 'echasnovski/mini.map'
+    " Plug 'mfussenegger/nvim-jdtls'
+    " Plug 'nvim-telesope/telescope-smart-history.nvim'
+    " Plug 'stefandtw/quickfix-reflector.vim'
+    " Plug 'jnurmine/Zenburn'
+    " Plug 'sumneko/lua-language-server', { 'do' : 'make' }
+    " Plug 'rhysd/vim-clang-format'
+    " Plug 'BurntSushi/ripgrep'
+    " Plug 'altercation/vim-colors-solarized'
+    " Plug 'AckslD/nvim-neoclip.lua'
+    " Plug 'tami5/sqlite.lua'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -89,17 +86,17 @@ highlight TreesitterContext guibg=white
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-  augroup templates
-    autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
-    autocmd BufNewFile *.md 0r ~/.vim/templates/skeleton.md
-    autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
-    autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
-    autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
-    autocmd BufNewFile *.h 0r ~/.vim/templates/skeleton.h
-    autocmd BufNewFile *.java 0r ~/.vim/templates/skeleton.java
-    autocmd BufNewFile *.kt 0r ~/.vim/templates/skeleton.kt
-    autocmd BufNewFile *.tex 0r ~/.vim/templates/skeleton.tex
-  augroup END
+  " augroup templates
+  "   autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
+  "   autocmd BufNewFile *.md 0r ~/.vim/templates/skeleton.md
+  "   autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
+  "   autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
+  "   autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
+  "   autocmd BufNewFile *.h 0r ~/.vim/templates/skeleton.h
+  "   autocmd BufNewFile *.java 0r ~/.vim/templates/skeleton.java
+  "   autocmd BufNewFile *.kt 0r ~/.vim/templates/skeleton.kt
+  "   autocmd BufNewFile *.tex 0r ~/.vim/templates/skeleton.tex
+  " augroup END
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -142,6 +139,7 @@ syntax enable
 au BufNewFile,BufRead *.cogent so $VIM_FILES/cogent.vim
 au BufNewFile,BufRead *.thy so $VIM_FILES/isabelle.vim
 autocmd BufEnter *.ac :setlocal filetype=c
+autocmd BufEnter *.cl :setlocal filetype=cuda
 autocmd BufEnter *.hsc :setlocal filetype=haskell
 autocmd BufEnter *.pbt :setlocal filetype=haskell
 autocmd BufEnter xmobarrc :setlocal filetype=haskell
@@ -305,8 +303,9 @@ command W w !sudo tee % > /dev/null
 " make Y yank to end of line
 nnoremap Y y$
 " copy/paste externally
-vnoremap <C-c> "+y
-map <C-p> "+P
+"vnoremap <C-c> "+y
+"map <C-p> "+P
+vnoremap <C-c> ::w !clip.exe<CR><CR>
 " Highlight in search toggle shortcut
 nnoremap <silent> <C-_> :set hlsearch!<cr>
 " nnoremap <leader>_ :set hlsearch!<cr>
@@ -521,10 +520,6 @@ luafile $HOME/.config/nvim/lua/lualine.lua
 luafile $HOME/.config/nvim/lua/vstask.lua
 luafile $HOME/.config/nvim/lua/treesitter-context.lua
 luafile $HOME/.config/nvim/lua/toggleterm.lua
-luafile $HOME/.config/nvim/lua/minimap.lua
+" luafile $HOME/.config/nvim/lua/minimap.lua
 
-lua require("block").setup({ percent = 0.8, depth = 4, colors = { "E8DE87" }, automatic = false })
 
-" autocmd BufEnter * :lua MiniMap.open()
-" 
-" nnoremap <leader>e :lua MiniMap.toggle()<cr>
