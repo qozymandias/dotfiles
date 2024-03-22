@@ -29,30 +29,40 @@ Either, update your `$PATH` and `$LD_LIBRARY_PATH`:
 export PATH="$PATH:/home/oscar/nvim-linux64/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/oscar/nvim-linux64/lib"
 ```
-Or, copy in `/usr` paths:
+Or, copy in `/usr` paths (requires sudo):
 ```
 # e.g.
-cp bin/nvim /usr/bin/
-cp -r lib/* /usr/lib/
+sudo cp bin/nvim /usr/bin/
+sudo cp -r lib/* /usr/lib/
 ```
 
-2) Copy the config files in your home directory.
+2) Install [vim-plug](https://github.com/junegunn/vim-plug):
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+3) Install [pynvim](https://github.com/neovim/pynvim) (required for some plugins):
+```
+pip3 install pynvim
+```
+
+4) Copy the config files in your home directory:
 ```
 cp .vimrc ~/.vimrc
 cp -r .config/nvim ~/.config/
 ```
 
-3) Install plugins and LSP (you can also run this normally with nvim cmd line)
+5) Install plugins and LSP (you can also run this normally with nvim cmd line):
 ```
 nvim --headless +PlugInstall +TSUpdate +qa;
 ```
 
-4) Your done! 
+6) Your done! 
 ```
 nvim
 ```
-
-Run healthcheck
+Run healthcheck:
 ```
 :checkhealth
 ```
