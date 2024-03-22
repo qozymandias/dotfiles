@@ -17,18 +17,37 @@ Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~
 - [vim-plug](https://github.com/junegunn/vim-plug)
 
 ## Quick Setup
-1) Copy the config files in your home directory.
+1) Install [nvim](https://github.com/neovim/neovim/releases) (greater than `0.9`):
+```
+wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
+tar xvf nvim-linux64.tar.gz
+cd nvim-linux64
+```
+Either, update your `$PATH` and `$LD_LIBRARY_PATH`:
+```
+# e.g.
+export PATH="$PATH:/home/oscar/nvim-linux64/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/oscar/nvim-linux64/lib"
+```
+Or, copy in `/usr` paths:
+```
+# e.g.
+cp bin/nvim /usr/bin/
+cp -r lib/* /usr/lib/
+```
+
+2) Copy the config files in your home directory.
 ```
 cp .vimrc ~/.vimrc
 cp -r .config/nvim ~/.config/
 ```
 
-2) Install plugins and LSP (you can also run this normally with nvim cmd line)
+3) Install plugins and LSP (you can also run this normally with nvim cmd line)
 ```
 nvim --headless +PlugInstall +TSUpdate +qa;
 ```
 
-3) Your done! 
+4) Your done! 
 ```
 nvim
 ```
