@@ -1,6 +1,6 @@
 local previewers = require("telescope.previewers")
 
-local _bad = { "node_modules", ".*%.txt", ".*%.csv", ".*%.lua", "*conan*" } 
+local _bad = { "package-lock.*", "node_modules", ".*%.txt", ".*%.csv", ".*%.lua", "*conan*" }
 local bad_files = function(filepath)
     for _, v in ipairs(_bad) do
         if filepath:match(v) then
@@ -18,11 +18,38 @@ local new_maker = function(filepath, bufnr, opts)
     previewers.buffer_previewer_maker(filepath, bufnr, opts)
 end
 
+local multiopen = function(prompt_bufnr)
+    local picker = require('telescope.actions.state').get_current_picker(prompt_bufnr)
+    local multi = picker:get_multi_selection()
+
+    if vim.tbl_isempty(multi) then
+        require('telescope.actions').select_default(prompt_bufnr)
+        return
+    end
+
+    require('telescope.actions').close(prompt_bufnr)
+    for _, entry in pairs(multi) do
+        local filename = entry.filename or entry.value
+        local lnum = entry.lnum or 1
+        local lcol = entry.col or 1
+        if filename then
+            vim.cmd(string.format("tabnew +%d %s", lnum, filename))
+            vim.cmd(string.format("normal! %dG%d|", lnum, lcol))
+        end
+    end
+end
+
 require 'telescope'.setup {
     defaults = {
         prompt_prefix = '=> ',
         selection_caret = '-> ',
         mappings = {
+          i = {
+            ["<C-t>"] = multiopen,
+          },
+          n = {
+            ["<C-t>"] = multiopen,
+          }
         },
         vimgrep_arguments = {
             "rg",
@@ -41,8 +68,8 @@ require 'telescope'.setup {
         layout_config = {
             horizontal = {
                 prompt_position = "top",
-                preview_width = 0.8,
-                results_width = 0.2,
+                preview_width = 0.7,
+                results_width = 0.3,
             },
             vertical = {
                 mirror = false,
@@ -66,7 +93,8 @@ require 'telescope'.setup {
         qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
         cache_picker = {
             num_pickers = 128,
-            limit_entries = 1000
+            limit_entries = 1000,
+            ignore_empty_prompt = false,
         },
         extensions = {
             fzy_native = {
