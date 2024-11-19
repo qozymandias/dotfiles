@@ -157,6 +157,8 @@ set tabstop=4
 set shiftwidth=4 
 " Use spaces instead of tabs 
 set expandtab           
+autocmd FileType javascript,typescript,typescriptreact setlocal tabstop=2 shiftwidth=2 expandtab
+
 " Be smart when using tabs ;)
 set smarttab            
 " Linebreak on 500 characters

@@ -110,8 +110,6 @@ if [ -e $HOME/.bash_functions ]; then
     source $HOME/.bash_functions
 fi
 
-PATH=$PATH'/usr/bin/:/opt/rh/devtoolset-9/root/usr/bin/:/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/'
-
 # sudo /etc/init.d/bluetooth start
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
@@ -129,3 +127,20 @@ export ASAN_OPTIONS=detect_leaks=0
 # export ASAN_OPTIONS=detect_leaks=0
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+. "$HOME/.cargo/env"
+
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
+export NVIM_PYTHON_LOG_FILE=$HOME/.cache/nvim/nvim-python.log
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# https://developer.nvidia.com/cuda-downloads
+export CUDA_HOME=/usr/local/cuda
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH

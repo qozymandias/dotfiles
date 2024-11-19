@@ -29,6 +29,9 @@ Or, copy in `/usr` paths (requires sudo):
 # e.g.
 sudo cp bin/nvim /usr/bin/
 sudo cp -r lib/* /usr/lib/
+
+sudo rm -rf /usr/share/nvim/runtime
+sudo cp -r share/nvim/runtime /usr/share/nvim/
 ```
 
 2) Install [vim-plug](https://github.com/junegunn/vim-plug):
@@ -60,4 +63,10 @@ nvim
 Run healthcheck:
 ```
 :checkhealth
+```
+
+
+
+```
+npm install -g neovim
 ```

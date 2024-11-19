@@ -5,7 +5,7 @@ require 'toggleterm'.setup {
     close_on_exit = true,
     insert_mappings = true,
     terminal_mappings = true,
-    direction =  'float' ,
+    direction =  'horizontal' ,
     size = function(term)
         if term.direction == "horizontal" then
             return 15

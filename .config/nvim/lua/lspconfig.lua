@@ -57,9 +57,14 @@ cmp.setup {
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
     }),
-    sources = cmp.config.sources({ { name = 'nvim_lsp' }, { name = 'luasnip' }
+    sources = cmp.config.sources({
+        { name = "nvim_lsp",
+            entry_filter = function(entry, ctx)
+                return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
+            end },
     }, {
-        { name = 'buffer' },
+      { name = 'buffer' },
+      { name = 'luasnip' },
     })
 };
 
@@ -87,8 +92,6 @@ cmp.setup.cmdline(':', {
     }, {
         { name = 'cmdline' }
     })
-
-
 });
 
 require("lsp-colors").setup({
@@ -169,7 +172,7 @@ lspconfig.jsonls.setup {
     flags = flag_args
 }
 
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
     flags = flag_args
@@ -185,7 +188,10 @@ lspconfig.rust_analyzer.setup{
         allFeatures = true,
       },
     }
-  }
+  },
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = flag_args
 }
 
 lspconfig.html.setup {
