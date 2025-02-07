@@ -127,7 +127,7 @@ export ASAN_OPTIONS=detect_leaks=0
 # export ASAN_OPTIONS=detect_leaks=0
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -144,3 +144,6 @@ export NVM_DIR="$HOME/.nvm"
 export CUDA_HOME=/usr/local/cuda
 export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+export PATH="$PATH:/home/oscar/nvim-linux64/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/oscar/nvim-linux64/lib"
+export PATH=~/.npm-global/bin:$PATH

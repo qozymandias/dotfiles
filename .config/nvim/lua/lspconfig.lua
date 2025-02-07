@@ -116,6 +116,7 @@ capabilities = require('cmp_nvim_lsp').default_capabilities()
 local flag_args = { debounce_text_changes = 150 }
 
 local lspconfig = require 'lspconfig'
+
 lspconfig.bashls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
@@ -186,6 +187,10 @@ lspconfig.rust_analyzer.setup{
       },
       cargo = {
         allFeatures = true,
+      },
+      checkOnSave = {
+        command = "clippy",
+        extraArgs = {"--no-deps", "--", "-Dwarnings"},
       },
     }
   },

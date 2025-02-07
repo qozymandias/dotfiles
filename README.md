@@ -60,13 +60,7 @@ nvim --headless +PlugInstall +TSUpdate +qa;
 ```
 nvim
 ```
-Run healthcheck:
+Run healthcheck and follow any install recommendations:
 ```
 :checkhealth
-```
-
-
-
-```
-npm install -g neovim
 ```
