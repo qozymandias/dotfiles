@@ -14,15 +14,17 @@ Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~
 ## Quick Setup
 1) Install [nvim](https://github.com/neovim/neovim/releases) (greater than `0.9`):
 ```
+mkdir -p dev/nvim
+cd dev/nvim
 wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
-tar xvf nvim-linux64.tar.gz
-cd nvim-linux64
+tar xvf nvim-linux-x86_64.tar.gz
+cd nvim-linux-x86_64
 ```
 Either, update your `$PATH` and `$LD_LIBRARY_PATH`:
 ```
 # e.g.
-export PATH="$PATH:/home/oscar/nvim-linux64/bin"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/oscar/nvim-linux64/lib"
+export PATH="$PATH:/home/oscar/dev/nvim/nvim-linux-x86_64/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/oscar/dev/nvim/nvim-linux-x86_64/lib"
 ```
 Or, copy in `/usr` paths (requires sudo):
 ```
@@ -40,20 +42,37 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-3) Install [pynvim](https://github.com/neovim/pynvim) (required for some plugins):
+3) Install deps:
 ```
-pip3 install pynvim
+mkdir -p /home/oscar/.cache/nvim/
+touch /home/oscar/.cache/nvim/lsp-installer.log
+touch /home/oscar/.npm-global
+
+sudo apt update && sudo apt upgrade -y
+sudo apt install python3 python3-pip python3-venv nodejs npm -y
+
+python3 -m venv ~/.venvs/pynvim
+source ~/.venvs/pynvim/bin/activate
+pip install pynvim
 ```
 
 4) Copy the config files in your home directory:
 ```
-cp .vimrc ~/.vimrc
+cp .bashrc ~/
+cp .bash_functions ~/
+cp .bash_aliases ~/
+cp .vimrc ~/
 cp -r .config/nvim ~/.config/
 ```
 
 5) Install plugins and LSP (you can also run this normally with nvim cmd line):
 ```
-nvim --headless +PlugInstall +TSUpdate +qa;
+nvim PlugInstall +TSUpdate +qa;
+```
+
+```
+:PlugInstall 
+:TSUpdate
 ```
 
 6) Your done! 

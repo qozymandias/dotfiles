@@ -37,7 +37,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'puuuuh/vimspector-rust'
     Plug 'mhinz/vim-signify'
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'kyazdani42/nvim-tree.lua'
+    " Plug 'kyazdani42/nvim-tree.lua'
     Plug 'vijaymarupudi/nvim-fzf'
     Plug 'onsails/lspkind.nvim'
     Plug 'SmiteshP/nvim-navic'
@@ -128,7 +128,7 @@ filetype indent on
 " set explicit line numbering
 set number              
 " toggle for recognising format from clipboard paste
-set pastetoggle=<F12>   
+" set pastetoggle=<F12>   
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -498,6 +498,8 @@ set mouse=c
 " let g:minimap_auto_start_win_enter = 0
 " let g:minimap_git_colors = 1
 
+let g:python3_host_prog = expand("~/.venvs/pynvim/bin/python")
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Lua
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -513,7 +515,7 @@ lua require('telescope').load_extension('fzy_native')
 luafile $HOME/.config/nvim/lua/telescope.lua
 luafile $HOME/.config/nvim/lua/startup.lua
 luafile $HOME/.config/nvim/lua/bufferline.lua
-luafile $HOME/.config/nvim/lua/nvim-tree.lua
+" luafile $HOME/.config/nvim/lua/nvim-tree.lua
 luafile $HOME/.config/nvim/lua/nvim-treesitter.lua
 luafile $HOME/.config/nvim/lua/nvim-lsp-installer.lua
 luafile $HOME/.config/nvim/lua/luasnip.lua
