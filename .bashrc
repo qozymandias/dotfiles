@@ -142,8 +142,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # https://developer.nvidia.com/cuda-downloads
 export CUDA_HOME=/usr/local/cuda
-export PATH=$CUDA_HOME/bin:$PATH
-export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
-export PATH="$PATH:/home/oscar/dev/nvim/nvim-linux64/bin"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/oscar/dev/nvim/nvim-linux64/lib"
+export PATH="$PATH:$CUDA_HOME/bin:$HOME/dev/nvim/nvim-linux-x86_64/bin:$HOME/.npm-global/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$CUDA_HOME/lib64:$HOME/dev/nvim/nvim-linux-x86_64/lib"
 export NPM_CONFIG_PREFIX=$HOME/.npm-global
+source $HOME/.cargo/env

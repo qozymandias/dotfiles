@@ -129,6 +129,18 @@ lspconfig.yamlls.setup {
     flags = flag_args
 }
 
+lspconfig.ts_ls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flag_args
+}
+
+lspconfig.clangd.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flag_args
+}
+
 lspconfig.pyright.setup {
     settings = {
         python = {
@@ -173,12 +185,6 @@ lspconfig.jsonls.setup {
     flags = flag_args
 }
 
-lspconfig.ts_ls.setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
-
 lspconfig.rust_analyzer.setup{
   settings = {
     ['rust-analyzer'] = {
@@ -213,133 +219,32 @@ lspconfig.html.setup {
     flags = flag_args
 }
 
-lspconfig.clangd.setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
+function LiveGrepVisualSelection()
+  local start_pos = vim.fn.getpos("'<")
+  local end_pos = vim.fn.getpos("'>")
 
--- local lsp_status = require('lsp-status')
--- lsp_status.register_progress()
--- local ccls_init = {
---     rootPatterns = {
---         "../Build/linux64_gcc7_debug/compile_commands.json",
---     };
---     cache = {
---         directory = "../.ccls-cache";
---         hierarchicalPath = true;
---         retainInMemory = 1;
---     };
---     compilationDatabaseDirectory = "../Build/linux64_gcc7_debug/";
---     client = {
---         snippetSupport = true
---     },
---     completion = {
---         enableSnippetInsertion = true
---     },
---     index = {
---         threads = 8;
---     };
---     clang = {
---         extraArgs = { "-std=c++17" };
---     };
---     diagnostics = {
---         onChange = 100,
---         onSave = 100,
---         onOpen = 100
---     },
---     highlight = { lsRanges = true }
--- }
--- 
--- local servers = { 'ccls' }
--- local inits = { ccls_init }
--- for i, lsp in ipairs(servers) do
---     lspconfig[lsp].setup {
---         --handlers = hs[i],
---         init_options = inits[i],
---         capabilities = capabilities,
---         on_attach = on_attach,
---         flags = flag_args
---     }
--- end
--- 
--- lspconfig.jdtls.setup {
---     -- cmd = { 'java', },
---     settings = {
---         java = {
---             signatureHelp = { enabled = true },
---             contentProvider = { preferred = 'fernflower' },
---             configuration = {
---                 maven = {
---                     globalSettings = "$HOME/.m2/settings.json",
---                     userSettings = "$HOME/.m2/settings.json",
---                 }
---             },
---             maven = {
---                 downloadSources = true
---             },
---             sources = {
---                 organizeImports = true,
---                 format = { enabled = true }
---             }
---         }
---     },
---     -- java.configuration.maven.globalSettings
---     root_dir = function()
---         return vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
---     end,
---     capabilities = capabilities,
---     on_attach = on_attach,
---     flags = flag_args
--- }
+  if not start_pos or not end_pos then
+    print("No visual selection found")
+    return
+  end
 
--- lspconfig.eslint.setup {
---     capabilities = capabilities,
---     on_attach = on_attach,
---     flags = flag_args
--- }
+  local _, ls, cs = unpack(start_pos)
+  local _, le, ce = unpack(end_pos)
 
--- lspconfig.emmet_ls.setup {
---     capabilities = capabilities,
---     on_attach = on_attach,
---     flags = flag_args
--- }
+  if ls == 0 or le == 0 then
+    print("Invalid selection")
+    return
+  end
 
--- lspconfig.sumneko_lua.setup {
---     projectRootPatterns = { "~/.config", "lua" },
---     settings = {
---         Lua = {
---             runtime = {
---                 -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
---                 version = 'LuaJIT',
---                 -- Setup your lua path
---                 path = '/usr/bin/lua',
---             },
---             diagnostics = {
---                 enable = true,
---                 -- Get the language server to recognize the `vim` global
---                 globals = { 'vim' },
---                 neededFileStatus = {
---                     ["codestyle-check"] = "Any",
---                 },
---             },
---             workspace = {
---                 -- Make the server aware of Neovim runtime files
---                 -- library = vim.api.nvim_get_runtime_file("", true),
---                 checkThirdParty = false,
---                 ignoreDir = { "~/.local" }
---             },
---             -- Do not send telemetry data containing a randomized but unique identifier
---             telemetry = {
---                 enable = false,
---             },
---             format = {
---                 enable = true,
---             }
---         },
---     },
---     capabilities = capabilities,
---     on_attach = on_attach,
---     flags = flag_args
--- }
+  local text = vim.api.nvim_buf_get_text(0, ls - 1, cs - 1, le - 1, ce, {})
+  local query = table.concat(text, " ")
 
+  if query == "" then
+    print("Empty selection")
+    return
+  end
+
+  require("telescope.builtin").live_grep({ default_text = query })
+end
+
+vim.keymap.set("v", "<leader>fg", ":lua LiveGrepVisualSelection()<CR>", { noremap = true, silent = true })

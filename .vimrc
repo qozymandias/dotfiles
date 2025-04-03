@@ -41,8 +41,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'vijaymarupudi/nvim-fzf'
     Plug 'onsails/lspkind.nvim'
     Plug 'SmiteshP/nvim-navic'
-    " Plug 'L3MON4D3/LuaSnip'
-    " Plug 'saadparwaiz1/cmp_luasnip'
+    Plug 'L3MON4D3/LuaSnip'
+    Plug 'saadparwaiz1/cmp_luasnip'
     Plug 'folke/lsp-colors.nvim'
     Plug 'tom-anders/telescope-vim-bookmarks.nvim'
     Plug 'MattesGroeger/vim-bookmarks'
@@ -146,7 +146,7 @@ autocmd BufEnter xmobarrc :setlocal filetype=haskell
 autocmd BufReadPost *.kt setlocal filetype=kotlin
 " LaTeX syntax fix
 au BufRead,BufNewFile *.tex,*.sty,*.cls set filetype=tex
-au FileType tex syntax on
+" au FileType tex syntax on
 au filetype tex syntax region texZone start='\\begin{lstlisting}' end='\\end{lstlisting}'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -518,7 +518,7 @@ luafile $HOME/.config/nvim/lua/bufferline.lua
 " luafile $HOME/.config/nvim/lua/nvim-tree.lua
 luafile $HOME/.config/nvim/lua/nvim-treesitter.lua
 luafile $HOME/.config/nvim/lua/nvim-lsp-installer.lua
-" luafile $HOME/.config/nvim/lua/luasnip.lua
+luafile $HOME/.config/nvim/lua/luasnip.lua
 luafile $HOME/.config/nvim/lua/lspconfig.lua
 luafile $HOME/.config/nvim/lua/lualine.lua
 luafile $HOME/.config/nvim/lua/vstask.lua
