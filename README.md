@@ -14,8 +14,8 @@ Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~
 ## Quick Setup
 - 1) Install [nvim](https://github.com/neovim/neovim/releases/tag/v0.10.4) (greater than `0.9`, recommended `0.10.4`):
     ```
-    mkdir -p dev/nvim
-    cd dev/nvim
+    mkdir -p $HOME/dev/nvim
+    cd $HOME/dev/nvim
     wget https://github.com/neovim/neovim/releases/download/v0.10.4/nvim-linux-x86_64.tar.gz
     tar xvf nvim-linux-x86_64.tar.gz
     cd nvim-linux-x86_64
@@ -51,7 +51,7 @@ Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~
     touch /home/oscar/.npm-global
 
     sudo apt update && sudo apt upgrade -y
-    sudo apt install python3 python3-pip python3-venv nodejs npm ripgrep pkg-config libssl-dev cmake libclang-dev -y
+    sudo apt install python3 python3-pip python3-venv nodejs npm ripgrep pkg-config libssl-dev cmake libclang-dev ninja-build shellcheck -y
 
     python3 -m venv ~/.venvs/pynvim
     source ~/.venvs/pynvim/bin/activate
@@ -61,6 +61,13 @@ Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~
     ~/.fzf/install
 
     npm install -g neovim vim-language-server
+
+    mkdir -p $HOME/dev/nvim
+    cd $HOME/dev/nvim
+    git clone https://github.com/LuaLS/lua-language-server
+    cd lua-language-server
+    ./make.sh
+    cd 
     ```
 
 - 4) Copy the config files in your home directory:
@@ -80,7 +87,7 @@ Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~
     ```
     :PlugInstall 
     :TSUpdate
-    :TSInstall python vim json bash yaml html typescript tsx javascript html rust markdown
+    :TSInstall python vim json bash yaml html typescript tsx javascript html rust markdown lua
     ```
 
     - 6) Check health
@@ -125,4 +132,8 @@ rustup override set $(cat rust-toolchain)
 
 ## Cuda/Nvidia specific
 
-Follow installation instructions: [here](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=deb_local)
+Follow installation instructions [here](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=deb_local)
+
+## Lsp config docs 
+
+Instructions [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md)

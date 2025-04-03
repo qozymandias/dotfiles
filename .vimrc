@@ -37,15 +37,15 @@ call plug#begin('~/.vim/plugged')
     Plug 'puuuuh/vimspector-rust'
     Plug 'mhinz/vim-signify'
     Plug 'kyazdani42/nvim-web-devicons'
-    " Plug 'kyazdani42/nvim-tree.lua'
     Plug 'vijaymarupudi/nvim-fzf'
     Plug 'onsails/lspkind.nvim'
     Plug 'SmiteshP/nvim-navic'
-    Plug 'L3MON4D3/LuaSnip'
-    Plug 'saadparwaiz1/cmp_luasnip'
     Plug 'folke/lsp-colors.nvim'
     Plug 'tom-anders/telescope-vim-bookmarks.nvim'
     Plug 'MattesGroeger/vim-bookmarks'
+    " Plug 'kyazdani42/nvim-tree.lua'
+    " Plug 'L3MON4D3/LuaSnip'
+    " Plug 'saadparwaiz1/cmp_luasnip'
     " Plug 'echasnovski/mini.nvim'
     " Plug 'echasnovski/mini.map'
     " Plug 'mfussenegger/nvim-jdtls'
@@ -367,13 +367,11 @@ let g:bookmark_auto_save = 1
 " => VS Tasks
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>b :lua require("telescope").extensions.vstask.tasks()<CR>
-"nnoremap <Leader>ti :lua require("telescope").extensions.vstask.inputs()<CR>
-"nnoremap <Leader>tt :lua require("telescope").extensions.vstask.close()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => NvimTree
+" => Explore
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>e :NvimTreeToggle<cr>
+nnoremap <leader>e :Explore<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git
@@ -426,10 +424,6 @@ nnoremap <leader>ds :Telescope vimspector configurations<cr>
 nnoremap <leader>du :call vimspector#UpFrame()<CR>
 nnoremap <leader>dd :call vimspector#DownFrame()<CR>
 nnoremap <leader>dbc <Plug>VimspectorToggleConditionalBreakpoint
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ==> VSnip
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Telescope
@@ -492,12 +486,6 @@ nnoremap <C-S-Z> <nop>
 set signcolumn=yes
 set mouse=c
 
-" let g:minimap_width = 10
-" let g:unfocusable = 1
-" let g:minimap_auto_start = 1
-" let g:minimap_auto_start_win_enter = 0
-" let g:minimap_git_colors = 1
-
 let g:python3_host_prog = expand("~/.venvs/pynvim/bin/python")
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -507,23 +495,14 @@ lua require('telescope').load_extension('vimspector')
 lua require('telescope').load_extension('file_browser')
 lua require('telescope').load_extension('vim_bookmarks')
 lua require('telescope').load_extension('fzy_native')
-" lua require('telescope').load_extension('neoclip')
-" lua require('telescope').load_extension('smart_history')
-" lua require("nvim-gps").setup()
 
-" luafile $HOME/.config/nvim/lua/neoclip.lua
 luafile $HOME/.config/nvim/lua/telescope.lua
 luafile $HOME/.config/nvim/lua/startup.lua
 luafile $HOME/.config/nvim/lua/bufferline.lua
-" luafile $HOME/.config/nvim/lua/nvim-tree.lua
 luafile $HOME/.config/nvim/lua/nvim-treesitter.lua
 luafile $HOME/.config/nvim/lua/nvim-lsp-installer.lua
-luafile $HOME/.config/nvim/lua/luasnip.lua
 luafile $HOME/.config/nvim/lua/lspconfig.lua
 luafile $HOME/.config/nvim/lua/lualine.lua
 luafile $HOME/.config/nvim/lua/vstask.lua
 luafile $HOME/.config/nvim/lua/treesitter-context.lua
 luafile $HOME/.config/nvim/lua/toggleterm.lua
-" luafile $HOME/.config/nvim/lua/minimap.lua
-
-

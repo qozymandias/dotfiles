@@ -6,12 +6,10 @@ vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', op
 
 local navic = require("nvim-navic")
 local on_attach = function(client, bufnr)
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
     navic.attach(client, bufnr)
 end
 
 local cmp = require 'cmp'
-local luasnip = require 'luasnip'
 local lspkind = require('lspkind')
 
 local confirm_select = function(fallback)
@@ -24,8 +22,6 @@ end
 local tab_next = function(fallback)
     if cmp.visible() then
         cmp.select_next_item()
-    elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
     else
         fallback()
     end
@@ -37,11 +33,6 @@ cmp.setup {
             mode = 'symbol',
             maxwidth = 50,
         })
-    },
-    snippet = {
-        expand = function(args)
-            require('luasnip').lsp_expand(args.body)
-        end,
     },
     window = {
         completion = cmp.config.window.bordered(),
@@ -59,12 +50,11 @@ cmp.setup {
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp",
-            entry_filter = function(entry, ctx)
+            entry_filter = function(entry, _)
                 return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
             end },
     }, {
-      { name = 'buffer' },
-      { name = 'luasnip' },
+        { name = 'buffer' },
     })
 };
 
@@ -110,7 +100,6 @@ vim.diagnostic.config({
     severity_sort = false,
 })
 
-local lsp_path = "~/.local/share/nvim/lsp_servers/"
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities()
 local flag_args = { debounce_text_changes = 150 }
@@ -185,24 +174,24 @@ lspconfig.jsonls.setup {
     flags = flag_args
 }
 
-lspconfig.rust_analyzer.setup{
-  settings = {
-    ['rust-analyzer'] = {
-      diagnostics = {
-        enable = false;
-      },
-      cargo = {
-        allFeatures = true,
-      },
-      checkOnSave = {
-        command = "clippy",
-        extraArgs = {"--no-deps", "--", "-Dwarnings"},
-      },
-    }
-  },
-  capabilities = capabilities,
-  on_attach = on_attach,
-  flags = flag_args
+lspconfig.rust_analyzer.setup {
+    settings = {
+        ['rust-analyzer'] = {
+            diagnostics = {
+                enable = false,
+            },
+            cargo = {
+                allFeatures = true,
+            },
+            checkOnSave = {
+                command = "clippy",
+                extraArgs = { "--no-deps", "--", "-Dwarnings" },
+            },
+        }
+    },
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flag_args
 }
 
 lspconfig.html.setup {
@@ -219,32 +208,61 @@ lspconfig.html.setup {
     flags = flag_args
 }
 
+require 'lspconfig'.lua_ls.setup {
+    on_init = function(client)
+        if client.workspace_folders then
+            local path = client.workspace_folders[1].name
+            if path ~= vim.fn.stdpath('config') and (vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc')) then
+                return
+            end
+        end
+
+        client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+            runtime = {
+                version = 'LuaJIT'
+            },
+            workspace = {
+                checkThirdParty = false,
+                library = {
+                    vim.env.VIMRUNTIME
+                }
+            }
+        })
+    end,
+    settings = {
+        Lua = {}
+    },
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flag_args
+}
+
 function LiveGrepVisualSelection()
-  local start_pos = vim.fn.getpos("'<")
-  local end_pos = vim.fn.getpos("'>")
+    local start_pos = vim.fn.getpos("'<")
+    local end_pos = vim.fn.getpos("'>")
 
-  if not start_pos or not end_pos then
-    print("No visual selection found")
-    return
-  end
+    if not start_pos or not end_pos then
+        print("No visual selection found")
+        return
+    end
 
-  local _, ls, cs = unpack(start_pos)
-  local _, le, ce = unpack(end_pos)
+    local _, ls, cs = unpack(start_pos)
+    local _, le, ce = unpack(end_pos)
 
-  if ls == 0 or le == 0 then
-    print("Invalid selection")
-    return
-  end
+    if ls == 0 or le == 0 then
+        print("Invalid selection")
+        return
+    end
 
-  local text = vim.api.nvim_buf_get_text(0, ls - 1, cs - 1, le - 1, ce, {})
-  local query = table.concat(text, " ")
+    local text = vim.api.nvim_buf_get_text(0, ls - 1, cs - 1, le - 1, ce, {})
+    local query = table.concat(text, " ")
 
-  if query == "" then
-    print("Empty selection")
-    return
-  end
+    if query == "" then
+        print("Empty selection")
+        return
+    end
 
-  require("telescope.builtin").live_grep({ default_text = query })
+    require("telescope.builtin").live_grep({ default_text = query })
 end
 
 vim.keymap.set("v", "<leader>fg", ":lua LiveGrepVisualSelection()<CR>", { noremap = true, silent = true })

@@ -1,4 +1,4 @@
-require'treesitter-context'.setup{
+require 'treesitter-context'.setup {
     enable = true,
     max_lines = 5,
     min_window_height = 0,

@@ -44,12 +44,12 @@ require 'telescope'.setup {
         prompt_prefix = '=> ',
         selection_caret = '-> ',
         mappings = {
-          i = {
-            ["<C-t>"] = multiopen,
-          },
-          n = {
-            ["<C-t>"] = multiopen,
-          }
+            i = {
+                ["<C-t>"] = multiopen,
+            },
+            n = {
+                ["<C-t>"] = multiopen,
+            }
         },
         vimgrep_arguments = {
             "rg",

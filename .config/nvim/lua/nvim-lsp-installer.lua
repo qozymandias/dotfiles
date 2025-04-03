@@ -1,6 +1,6 @@
 require("nvim-lsp-installer").setup({
     ensure_installed = {
-        "pyright", "vimls", "jsonls", "bashls", "yamlls", "html", "tsserver", "rust_analyzer" 
+        "pyright", "vimls", "jsonls", "bashls", "yamlls", "html", "tsserver", "rust_analyzer"
     },
     automatic_installation = false,
     ui = {
