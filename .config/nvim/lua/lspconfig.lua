@@ -177,15 +177,18 @@ lspconfig.jsonls.setup {
 lspconfig.rust_analyzer.setup {
     settings = {
         ['rust-analyzer'] = {
-            diagnostics = {
-                enable = false,
-            },
             cargo = {
                 allFeatures = true,
             },
             checkOnSave = {
                 command = "clippy",
                 extraArgs = { "--no-deps", "--", "-Dwarnings" },
+            },
+            diagnostics = {
+                enable = false,
+            },
+            files = {
+                excludeDirs = { ".git", "target", "node_modules" },
             },
         }
     },

@@ -1,3 +1,4 @@
+#!/bin/bash
 
 #alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 #alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
@@ -15,8 +16,12 @@
 #alias la='ls -A'
 #alias l='ls -CF'
 
-# !!! ALIASES !!!
-# ---------------------------------------------------------------
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 alias ls='ls -F' #  --color=auto'
 alias l='ls'
 alias ll='ls -lh'
