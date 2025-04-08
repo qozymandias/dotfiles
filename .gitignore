@@ -1,5 +1,0 @@
-vim
-*.vim*
-extensions
-.vagrant
-.cmake/
