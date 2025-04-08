@@ -43,6 +43,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'folke/lsp-colors.nvim'
     Plug 'tom-anders/telescope-vim-bookmarks.nvim'
     Plug 'MattesGroeger/vim-bookmarks'
+    Plug 'nvimtools/none-ls.nvim'
     " Plug 'kyazdani42/nvim-tree.lua'
     " Plug 'L3MON4D3/LuaSnip'
     " Plug 'saadparwaiz1/cmp_luasnip'

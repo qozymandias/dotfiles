@@ -100,6 +100,23 @@ vim.diagnostic.config({
     severity_sort = false,
 })
 
+local null_ls = require("null-ls")
+
+null_ls.setup({
+    sources = {
+        -- null_ls.builtins.formatting.stylua,
+        null_ls.builtins.completion.spell,
+        null_ls.builtins.formatting.prettier.with({
+            filetypes = {
+                "javascript", "javascriptreact",
+                "typescript", "typescriptreact",
+                "json", "yaml", "markdown", "markdown.mdx",
+                "html", "css", "scss"
+            },
+        }),
+    },
+})
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities()
 local flag_args = { debounce_text_changes = 150 }
