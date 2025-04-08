@@ -145,6 +145,20 @@ lspconfig.pyright.setup {
     flags = flag_args
 }
 
+lspconfig.html.setup {
+    init_options = {
+        configurationSection = { "html", "css", "javascript" },
+        embeddedLanguages = {
+            css = true,
+            javascript = true
+        },
+        provideFormatter = true
+    },
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flag_args
+}
+
 lspconfig.vimls.setup {
     diagnostic = {
         enable = true
@@ -174,6 +188,12 @@ lspconfig.jsonls.setup {
     flags = flag_args
 }
 
+lspconfig.marksman.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flag_args
+}
+
 lspconfig.rust_analyzer.setup {
     settings = {
         ['rust-analyzer'] = {
@@ -188,23 +208,29 @@ lspconfig.rust_analyzer.setup {
                 enable = false,
             },
             files = {
-                excludeDirs = { ".git", "target", "node_modules" },
+                excludeDirs = {
+                    ".git",
+                    ".github",
+                    "target",
+                    "web",
+                    "web_archive",
+                    "workspace",
+                    "server_storage",
+                    "scripts",
+                    "nodeclient",
+                    "docker",
+                    "db_scripts",
+                    "client",
+                    "auto_submit_workspace",
+                    ".cargo",
+                },
+                watcherExclude = {
+                    "**/target/**",
+                    "**/.git/**",
+                    "**/node_modules/**",
+                },
             },
         }
-    },
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
-
-lspconfig.html.setup {
-    init_options = {
-        configurationSection = { "html", "css", "javascript" },
-        embeddedLanguages = {
-            css = true,
-            javascript = true
-        },
-        provideFormatter = true
     },
     capabilities = capabilities,
     on_attach = on_attach,

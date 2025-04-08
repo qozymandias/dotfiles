@@ -1,8 +1,8 @@
 #!/bin/bash
 
 HISTCONTROL=ignoreboth
-HISTSIZE=5000
-HISTFILESIZE=10000
+HISTSIZE=2500
+HISTFILESIZE=5000
 
 shopt -s histappend
 shopt -s checkwinsize
@@ -31,7 +31,7 @@ export NVIM_PYTHON_LOG_FILE=$HOME/.cache/nvim/nvim-python.log
 
 # https://developer.nvidia.com/cuda-downloads
 export CUDA_HOME=/usr/local/cuda
-export PATH="$PATH:$CUDA_HOME/bin:$HOME/dev/nvim/nvim-linux-x86_64/bin:$HOME/.npm-global/bin:$HOME/dev/nvim/lua-language-server/bin"
+export PATH="$PATH:$CUDA_HOME/bin:$HOME/dev/nvim/nvim-linux-x86_64/bin:$HOME/.npm-global/bin:$HOME/dev/nvim/lua-language-server/bin:$HOME/dev/nvim/marksman"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$CUDA_HOME/lib64:$HOME/dev/nvim/nvim-linux-x86_64/lib"
 export NPM_CONFIG_PREFIX=$HOME/.npm-global
 source "$HOME/.cargo/env"
