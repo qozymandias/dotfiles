@@ -37,3 +37,4 @@ export NPM_CONFIG_PREFIX=$HOME/.npm-global
 source "$HOME/.cargo/env"
 export RAYON_NUM_THREADS=24
 export CARGO_BUILD_JOBS=24
+export PATH=$HOME/.npm-global/bin:$PATH
