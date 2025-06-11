@@ -63,5 +63,9 @@ function tcpdump_rest_requests() {
     tcpdump -i lo -A -s 0 "tcp port $port and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)" -w capture.pcap
 }
 
+gtm() {
+    gt | grep 'M ' | awk '{print $2}'
+}
+
 # TODO: make this into function
 # alias synczkp='rsync -avz --exclude "auto_submit_workspace/" --exclude "workplace/" --exclude "server_storage/" --exclude ".git/" --exclude "target/" --exclude "node_modules/" -e "ssh -i ~/.ssh/id_ed25519" ~/dev/zkp/restservice/zkp/ oscar@138.217.142.94:~/fresh/restservice/zkp'

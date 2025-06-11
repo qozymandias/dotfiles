@@ -38,3 +38,8 @@ source "$HOME/.cargo/env"
 export RAYON_NUM_THREADS=24
 export CARGO_BUILD_JOBS=24
 export PATH=$HOME/.npm-global/bin:$PATH
+
+# Start tmux automatically if not already inside tmux
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  exec tmux
+fi

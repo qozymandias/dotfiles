@@ -40,7 +40,7 @@ Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~
 
   sudo apt update && sudo apt upgrade -y
   sudo apt install python3 python3-pip python3-venv nodejs npm ripgrep pkg-config libssl-dev cmake \
-      libclang-dev ninja-build shellcheck jq black -y
+      libclang-dev ninja-build shellcheck jq black shfmt -y
 
   python3 -m venv ~/.venvs/pynvim
   source ~/.venvs/pynvim/bin/activate
@@ -49,7 +49,7 @@ Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install
 
-  npm install -g neovim vim-language-server typescript-language-server typescript prettier
+  npm install -g neovim vim-language-server typescript-language-server typescript prettier doctoc
 
   mkdir -p $HOME/dev/nvim
   cd $HOME/dev/nvim
@@ -120,3 +120,17 @@ Follow installation instructions [here](https://developer.nvidia.com/cuda-downlo
 ## Lsp config docs
 
 Instructions [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md)
+
+## Dioxus specific
+
+```
+cargo install dioxus-cli
+```
+
+```
+sudo apt update
+sudo apt install \
+    libwebkit2gtk-4.1-dev build-essential libxdo-dev libayatana-appindicator3-dev  librsvg2-dev libglib2.0-dev \
+    libgtk-3-dev libgdk-pixbuf2.0-dev libcairo2-dev libpango1.0-dev libatk1.0-dev libgirepository1.0-dev pkg-config \
+    libjavascriptcoregtk-4.1-dev libsoup-3.0-dev pkg-config
+```
