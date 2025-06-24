@@ -40,7 +40,7 @@ Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~
 
   sudo apt update && sudo apt upgrade -y
   sudo apt install python3 python3-pip python3-venv nodejs npm ripgrep pkg-config libssl-dev cmake \
-      libclang-dev ninja-build shellcheck jq black shfmt -y
+      libclang-dev ninja-build shellcheck jq black shfmt git-lfs -y
 
   python3 -m venv ~/.venvs/pynvim
   source ~/.venvs/pynvim/bin/activate

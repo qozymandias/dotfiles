@@ -105,7 +105,8 @@ local null_ls = require("null-ls")
 null_ls.setup({
     sources = {
         -- null_ls.builtins.formatting.stylua,
-        null_ls.builtins.completion.spell,
+        -- null_ls.builtins.completion.spell,
+        null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.prettier.with({
             filetypes = {
                 "javascript", "javascriptreact",
@@ -113,6 +114,9 @@ null_ls.setup({
                 "json", "yaml", "markdown", "markdown.mdx",
                 "html", "css", "scss"
             },
+        }),
+        null_ls.builtins.formatting.shfmt.with({
+            extra_args = { "-i", "4" }
         }),
     },
 })
@@ -282,6 +286,29 @@ require 'lspconfig'.lua_ls.setup {
     on_attach = on_attach,
     flags = flag_args
 }
+
+require('lspconfig').texlab.setup({
+    settings = {
+        texlab = {
+            build = {
+                executable = "pdflatex",
+                args = { "-interaction=nonstopmode", "-synctex=1", "%f" },
+                onSave = true,
+                forwardSearchAfter = false,
+            },
+            forwardSearch = {
+                executable = "zathura", -- or "evince", "okular", "skim", etc.
+                args = { "--synctex-forward", "%l:1:%f", "%p" },
+
+            },
+            chktex = {
+
+                onEdit = true,
+                onOpenAndSave = true,
+            },
+        },
+    },
+})
 
 function LiveGrepVisualSelection()
     local start_pos = vim.fn.getpos("'<")

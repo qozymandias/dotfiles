@@ -35,7 +35,7 @@ require('lualine').setup {
         lualine_b = { 'diff', 'diagnostics' },
         -- lualine_c = {'filename'},
         --'branch',
-        lualine_c = { 'filename', 'data', "require'lsp-status'.status()", },
+        lualine_c = { { 'filename', path = 1 }, 'data', "require'lsp-status'.status()", },
 
         lualine_x = { "os.date('%a')", 'encoding', 'fileformat', 'filetype' },
         lualine_y = { 'progress' },
