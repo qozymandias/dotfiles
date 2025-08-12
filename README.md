@@ -20,7 +20,7 @@ Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~
   ```bash
   mkdir -p $HOME/dev/nvim
   cd $HOME/dev/nvim
-  wget https://github.com/neovim/neovim/releases/download/v0.10.4/nvim-linux-x86_64.tar.gz
+  wget https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x86_64.tar.gz
   tar xvf nvim-linux-x86_64.tar.gz
   ```
 

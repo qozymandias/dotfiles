@@ -1,4 +1,3 @@
-vim.opt.termguicolors = true
 require('bufferline').setup {
     options = {
         mode = "buffers",
@@ -8,7 +7,7 @@ require('bufferline').setup {
         left_mouse_command = "buffer %d",
         middle_mouse_command = nil,
         indicator = { style = '▎' },
-        buffer_close_icon = '',
+        buffer_close_icon = '',
         modified_icon = '●',
         close_icon = '',
         left_trunc_marker = '',

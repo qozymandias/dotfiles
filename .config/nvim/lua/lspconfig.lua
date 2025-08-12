@@ -151,6 +151,12 @@ lspconfig.clangd.setup {
     flags = flag_args
 }
 
+lspconfig.cssls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flag_args
+}
+
 lspconfig.pyright.setup {
     settings = {
         python = {
@@ -221,10 +227,10 @@ lspconfig.rust_analyzer.setup {
             cargo = {
                 allFeatures = true,
             },
-            checkOnSave = {
-                command = "clippy",
-                extraArgs = { "--no-deps", "--", "-Dwarnings" },
-            },
+            -- checkOnSave = {
+            --     command = "clippy",
+            --     extraArgs = { "--no-deps", "--", "-Dwarnings" },
+            -- },
             diagnostics = {
                 enable = false,
             },
