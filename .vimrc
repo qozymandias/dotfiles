@@ -44,6 +44,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tom-anders/telescope-vim-bookmarks.nvim'
     Plug 'MattesGroeger/vim-bookmarks'
     Plug 'nvimtools/none-ls.nvim'
+    Plug 'gbprod/none-ls-shellcheck.nvim'
     " Plug 'kyazdani42/nvim-tree.lua'
     " Plug 'L3MON4D3/LuaSnip'
     " Plug 'saadparwaiz1/cmp_luasnip'
@@ -68,8 +69,12 @@ call plug#end()
 " let g:zenburn_alternate_Visual = 1
 " colorscheme zenburn
 " colorscheme solarized
+set termguicolors
 set background=light
 colorscheme solarized-high
+
+highlight BufferLineTabSelected    guibg=#fdf6e3 guifg=#586e75 gui=bold
+highlight BufferLineIndicatorSelected guibg=#fdf6e3 guifg=#268bd2 gui=bold
 
 set completeopt=menu,menuone,noselect
 
@@ -383,6 +388,7 @@ nnoremap <leader>gm :Git mergetool<cr>
 " => Terminal
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>tt :ToggleTerm<cr>
+nmap <leader>tg :Telescope diagnostics<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Vimspector
@@ -499,11 +505,12 @@ lua require('telescope').load_extension('fzy_native')
 
 luafile $HOME/.config/nvim/lua/telescope.lua
 luafile $HOME/.config/nvim/lua/startup.lua
-luafile $HOME/.config/nvim/lua/bufferline.lua
 luafile $HOME/.config/nvim/lua/nvim-treesitter.lua
 luafile $HOME/.config/nvim/lua/nvim-lsp-installer.lua
 luafile $HOME/.config/nvim/lua/lspconfig.lua
-luafile $HOME/.config/nvim/lua/lualine.lua
 luafile $HOME/.config/nvim/lua/vstask.lua
 luafile $HOME/.config/nvim/lua/treesitter-context.lua
 luafile $HOME/.config/nvim/lua/toggleterm.lua
+luafile $HOME/.config/nvim/lua/lualine.lua
+luafile $HOME/.config/nvim/lua/bufferline.lua
+

@@ -67,5 +67,18 @@ gtm() {
     gt | grep 'M ' | awk '{print $2}'
 }
 
+convert_into_ascii() {
+    filename=$1
+    iconv -f utf-8 -t ascii//translit "$filename" -o out.md \
+        && mv out.md "$filename"
+}
+
+format_md() {
+    filename=$1
+    convert_into_ascii "$filename" \
+        && pandoc "$filename" -o out.md -f markdown -t markdown+fenced_code_blocks  --wrap=auto --columns=130 \
+        && mv out.md "$filename"
+}
+
 # TODO: make this into function
 # alias synczkp='rsync -avz --exclude "auto_submit_workspace/" --exclude "workplace/" --exclude "server_storage/" --exclude ".git/" --exclude "target/" --exclude "node_modules/" -e "ssh -i ~/.ssh/id_ed25519" ~/dev/zkp/restservice/zkp/ oscar@138.217.142.94:~/fresh/restservice/zkp'

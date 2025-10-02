@@ -67,6 +67,8 @@ require 'telescope'.setup {
             '!**/client/',
             '--glob',
             '!**/*.d.ts',
+            '--glob',
+            '!**/*.js',
             -- '--glob',
             -- '!**/*.ts',
             -- '--glob',

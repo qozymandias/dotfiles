@@ -50,9 +50,10 @@ cmp.setup {
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp",
-            entry_filter = function(entry, _)
-                return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
-            end },
+            -- entry_filter = function(entry, _)
+            --     return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
+            -- end
+        },
     }, {
         { name = 'buffer' },
     })
@@ -104,6 +105,8 @@ local null_ls = require("null-ls")
 
 null_ls.setup({
     sources = {
+        require("none-ls-shellcheck.diagnostics"),
+        require("none-ls-shellcheck.code_actions"),
         -- null_ls.builtins.formatting.stylua,
         -- null_ls.builtins.completion.spell,
         null_ls.builtins.formatting.black,
@@ -114,6 +117,7 @@ null_ls.setup({
                 "json", "yaml", "markdown", "markdown.mdx",
                 "html", "css", "scss"
             },
+            extra_args = { "--trailing-comma", "es5" }
         }),
         null_ls.builtins.formatting.shfmt.with({
             extra_args = { "-i", "4" }
@@ -127,11 +131,11 @@ local flag_args = { debounce_text_changes = 150 }
 
 local lspconfig = require 'lspconfig'
 
-lspconfig.bashls.setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
+-- lspconfig.bashls.setup {
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = flag_args
+-- }
 
 lspconfig.yamlls.setup {
     capabilities = capabilities,
@@ -227,10 +231,11 @@ lspconfig.rust_analyzer.setup {
             cargo = {
                 allFeatures = true,
             },
-            -- checkOnSave = {
-            --     command = "clippy",
-            --     extraArgs = { "--no-deps", "--", "-Dwarnings" },
-            -- },
+            checkOnSave = true,
+            check = {
+                command = "clippy",
+                extraArgs = { "--no-deps", "--", "-Dwarnings" },
+            },
             diagnostics = {
                 enable = false,
             },
