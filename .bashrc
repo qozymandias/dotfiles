@@ -31,12 +31,13 @@ export NVIM_PYTHON_LOG_FILE=$HOME/.cache/nvim/nvim-python.log
 
 # CUDA env variables, see installation here https://developer.nvidia.com/cuda-downloads
 export CUDA_HOME=/usr/local/cuda
-export PATH="$PATH:$CUDA_HOME/bin:$HOME/dev/nvim/nvim-linux-x86_64/bin:$HOME/.npm-global/bin:$HOME/dev/nvim/lua-language-server/bin:$HOME/dev/nvim/marksman"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$CUDA_HOME/lib64:$HOME/dev/nvim/nvim-linux-x86_64/lib"
+export PATH="$PATH:$CUDA_HOME/bin:$HOME/dev/nvim/nvim/bin:$HOME/.npm-global/bin:$HOME/dev/nvim/lua-language-server/bin:$HOME/dev/nvim/marksman"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$CUDA_HOME/lib64:$HOME/dev/nvim/nvim/lib"
 
 # Npm env variables
 export NPM_CONFIG_PREFIX=$HOME/.npm-global
 export PATH=$HOME/.npm-global/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
 
 # Cargo source setup
 source "$HOME/.cargo/env"
@@ -48,7 +49,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # Start Tmux Session
 if [[ $- == *i* ]] && [ -z "$TMUX" ]; then
-    if [[ "$TERM" == "xterm-256color" && -z "$WT_SESSION" ]]; then
-        tmux attach -t dev || tmux new -s dev
-    fi
+    tmux attach -t dev || tmux new -s dev
 fi

@@ -15,7 +15,8 @@ Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~
 
 ## Macos Notes
 
-install homebrew 
+install homebrew
+
 ```
 brew install wget tmux
 
@@ -26,10 +27,19 @@ brew install wget tmux
 - **1.** Install [nvim](https://github.com/neovim/neovim/releases/tag/v0.11.3) (greater than `0.9`, recommended `0.11.3`):
 
   ```bash
+  if [[ "$(uname)" == "Darwin" ]]; then
+    brew install wget
+    NVIM_TAR="nvim-macos-arm64"
+  else
+    sudo apt install wget
+    NVIM_TAR="nvim-linux-x86_64"
+  fi
+
   mkdir -p $HOME/dev/nvim
   cd $HOME/dev/nvim
-  wget https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x86_64.tar.gz
-  tar xvf nvim-linux-x86_64.tar.gz
+  wget https://github.com/neovim/neovim/releases/download/v0.11.3/$NVIM_TAR.tar.gz
+  tar xvf $NVIM_TAR.tar.gz
+  mv $NVIM_TAR nvim
   ```
 
 - **2.** Install [vim-plug](https://github.com/junegunn/vim-plug):
@@ -46,13 +56,23 @@ brew install wget tmux
   touch $HOME/.cache/nvim/lsp-installer.log
   touch $HOME/.npm-global
 
-  sudo apt update && sudo apt upgrade -y
-  sudo apt install python3 python3-pip python3-venv nodejs npm ripgrep pkg-config libssl-dev cmake \
-      libclang-dev ninja-build shellcheck jq black shfmt git-lfs -y
+  if [[ "$(uname)" == "Darwin" ]]; then
+    brew update && brew upgrade
+    brew install python node npm ripgrep pkg-config openssl cmake \
+        llvm ninja shellcheck jq git-lfs shfmt
+  else
+    sudo apt update && sudo apt upgrade -y
+    sudo apt install python3 python3-pip python3-venv nodejs npm ripgrep pkg-config libssl-dev cmake \
+        libclang-dev ninja-build shellcheck jq black shfmt git-lfs -y
+  fi
 
   python3 -m venv ~/.venvs/pynvim
   source ~/.venvs/pynvim/bin/activate
   pip install pynvim
+
+  if [[ "$(uname)" == "Darwin" ]]; then
+    pip install black
+  fi
 
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install
@@ -75,6 +95,7 @@ brew install wget tmux
 - **4.** Copy the config files in your home directory:
 
   ```bash
+  cd ~/dev/dotfiles
   cp .vimrc .bashrc .bash_functions .bash_aliases .tmux.conf $HOME/
   cp -r .config/nvim $HOME/.config/
   ```
@@ -83,7 +104,7 @@ brew install wget tmux
 
   ```
   :PlugInstall
-  :TSUpdate
+  :TSUpdate all
   :TSInstall python vim json bash yaml html typescript tsx javascript html rust markdown lua
   ```
 
@@ -95,6 +116,8 @@ brew install wget tmux
 ## Extras
 
 ### Alacritty Setup
+
+#### WSL
 
 For WSL [alacritty](https://alacritty.org/) with tmux is recommended. Copy [`alacritty.toml`](./alacritty.toml) in AppData directory.
 This can be determined by running `alacritty -v` in powershell.
@@ -111,6 +134,18 @@ C:\Users\odown>Created log file at "C:\Users\odown\AppData\Local\Temp\Alacritty-
                                      "C:\\Users\\odown\\AppData\\Roaming\\alacritty\\alacritty.toml"
 ```
 
+#### Mac
+
+```bash 
+# Install via homebrew
+brew install --cask alacritty
+
+# Copy config file
+mkdir -p $HOME/.config/alacritty
+cd ~/dev/dotfiles
+cp alacritty.toml $HOME/.config/alacritty/alacritty.toml
+```
+
 ### Locales fix
 
 ```bash
@@ -119,6 +154,8 @@ sudo dpkg-reconfigure locales
 ```
 
 ### SSH config file
+
+Update `$HOME/.ssh/config` with identity file config:
 
 ```bash
 Host *
