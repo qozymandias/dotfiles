@@ -13,6 +13,14 @@
 
 Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~/.config/nvim/init.lua`) actually calls `vimrc`.
 
+## Macos Notes
+
+install homebrew 
+```
+brew install wget tmux
+
+```
+
 ## Quick Setup
 
 - **1.** Install [nvim](https://github.com/neovim/neovim/releases/tag/v0.11.3) (greater than `0.9`, recommended `0.11.3`):
@@ -34,9 +42,9 @@ Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~
 - **3.** Install deps:
 
   ```bash
-  mkdir -p /home/oscar/.cache/nvim/
-  touch /home/oscar/.cache/nvim/lsp-installer.log
-  touch /home/oscar/.npm-global
+  mkdir -p $HOME/.cache/nvim/
+  touch $HOME/.cache/nvim/lsp-installer.log
+  touch $HOME/.npm-global
 
   sudo apt update && sudo apt upgrade -y
   sudo apt install python3 python3-pip python3-venv nodejs npm ripgrep pkg-config libssl-dev cmake \
