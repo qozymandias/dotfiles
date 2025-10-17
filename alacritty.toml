@@ -1,7 +1,7 @@
-# Alacritty Configuration - Windows 11 with WSL2 and Solarized Light Theme
+# Alacritty Configuration
 
 [window]
-dimensions = { columns = 120, lines = 35 }
+dimensions = { columns = 150, lines = 45 }
 padding = { x = 10, y = 10 }
 decorations = "Full"
 dynamic_title = true
@@ -11,11 +11,11 @@ startup_mode = "Windowed"
 normal = { family = "FiraCode Nerd Font", style = "Retina" }
 bold = { family = "FiraCode Nerd Font", style = "Bold" }
 italic = { family = "FiraCode Nerd Font", style = "Italic" }
-size = 12.0
+size = 16.0
 
 [terminal.shell]
-program = "wsl.exe"
-args = ["~"]  # Starts in home directory
+program = "/bin/bash"
+args = ["-l"]
 
 [colors.primary]
 background = "#fdf6e3"
@@ -42,7 +42,6 @@ cyan = "#93a1a1"
 white = "#fdf6e3"
 
 [cursor]
-# style = { shape = "Block", blinking = true }
 unfocused_hollow = true
 
 [selection]

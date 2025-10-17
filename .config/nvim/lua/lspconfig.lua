@@ -129,39 +129,37 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities()
 local flag_args = { debounce_text_changes = 150 }
 
-local lspconfig = require 'lspconfig'
-
--- lspconfig.bashls.setup {
+-- vim.lsp.config.bashls.setup {
 --     capabilities = capabilities,
 --     on_attach = on_attach,
 --     flags = flag_args
 -- }
 
-lspconfig.yamlls.setup {
+local lsp_list = { "cssls", "marksman", "ts_ls", "yamlls", "taplo", "bashls", "pyright", "html", "vimls", "jsonls", "rust_analyzer",
+    "lua_ls", "texlab" }
+
+require("mason").setup()
+require("mason-lspconfig").setup({ ensure_installed = lsp_list })
+
+vim.lsp.config('*', {
     capabilities = capabilities,
     on_attach = on_attach,
     flags = flag_args
-}
+})
 
-lspconfig.ts_ls.setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
+vim.lsp.config('cssls', {})
 
-lspconfig.clangd.setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
+vim.lsp.config('marksman', {})
 
-lspconfig.cssls.setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
+vim.lsp.config('ts_ls', {})
 
-lspconfig.pyright.setup {
+vim.lsp.config('yamlls', {})
+
+vim.lsp.config('taplo', {})
+
+vim.lsp.config('bashls', {})
+
+vim.lsp.config('pyright', {
     settings = {
         python = {
             analysis = {
@@ -171,12 +169,9 @@ lspconfig.pyright.setup {
             }
         }
     },
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
+})
 
-lspconfig.html.setup {
+vim.lsp.config('html', {
     init_options = {
         configurationSection = { "html", "css", "javascript" },
         embeddedLanguages = {
@@ -185,12 +180,9 @@ lspconfig.html.setup {
         },
         provideFormatter = true
     },
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
+})
 
-lspconfig.vimls.setup {
+vim.lsp.config('vimls', {
     diagnostic = {
         enable = true
     },
@@ -205,27 +197,15 @@ lspconfig.vimls.setup {
         fromRuntimepath = true,
         fromVimruntime = true
     },
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
+})
 
-lspconfig.jsonls.setup {
+vim.lsp.config('jsonls', {
     init_options = {
         provideFormatter = true
     },
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
+})
 
-lspconfig.marksman.setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
-
-lspconfig.rust_analyzer.setup {
+vim.lsp.config('rust_analyzer', {
     settings = {
         ['rust-analyzer'] = {
             cargo = {
@@ -264,12 +244,9 @@ lspconfig.rust_analyzer.setup {
             },
         }
     },
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
+})
 
-require 'lspconfig'.lua_ls.setup {
+vim.lsp.config('lua_ls', {
     on_init = function(client)
         if client.workspace_folders then
             local path = client.workspace_folders[1].name
@@ -293,12 +270,9 @@ require 'lspconfig'.lua_ls.setup {
     settings = {
         Lua = {}
     },
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flag_args
-}
+})
 
-require('lspconfig').texlab.setup({
+vim.lsp.config('texlab', {
     settings = {
         texlab = {
             build = {
@@ -320,6 +294,8 @@ require('lspconfig').texlab.setup({
         },
     },
 })
+
+vim.lsp.enable(lsp_list)
 
 function LiveGrepVisualSelection()
     local start_pos = vim.fn.getpos("'<")

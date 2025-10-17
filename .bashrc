@@ -39,6 +39,9 @@ export NPM_CONFIG_PREFIX=$HOME/.npm-global
 export PATH=$HOME/.npm-global/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
+source ~/.venvs/pynvim/bin/activate
+
 # Cargo source setup
 source "$HOME/.cargo/env"
 

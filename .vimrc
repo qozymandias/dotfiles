@@ -15,10 +15,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'hrsh7th/nvim-cmp'
-    Plug 'williamboman/nvim-lsp-installer'
+    Plug 'mason-org/mason.nvim'
+    Plug 'mason-org/mason-lspconfig.nvim'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-lua/lsp-status.nvim'
+    Plug 'linrongbin16/lsp-progress.nvim'
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/nvim-treesitter-context'
@@ -313,7 +314,13 @@ nnoremap Y y$
 " copy/paste externally
 "vnoremap <C-c> "+y
 "map <C-p> "+P
-vnoremap <C-c> ::w !clip.exe<CR><CR>
+
+if has('macunix')
+  vnoremap <C-c> ::w !pbcopy<CR><CR>
+else
+  vnoremap <C-c> ::w !clip.exe<CR><CR>
+endif
+
 " Highlight in search toggle shortcut
 nnoremap <silent> <C-_> :set hlsearch!<cr>
 " nnoremap <leader>_ :set hlsearch!<cr>
@@ -506,11 +513,9 @@ lua require('telescope').load_extension('fzy_native')
 luafile $HOME/.config/nvim/lua/telescope.lua
 luafile $HOME/.config/nvim/lua/startup.lua
 luafile $HOME/.config/nvim/lua/nvim-treesitter.lua
-luafile $HOME/.config/nvim/lua/nvim-lsp-installer.lua
 luafile $HOME/.config/nvim/lua/lspconfig.lua
 luafile $HOME/.config/nvim/lua/vstask.lua
 luafile $HOME/.config/nvim/lua/treesitter-context.lua
 luafile $HOME/.config/nvim/lua/toggleterm.lua
 luafile $HOME/.config/nvim/lua/lualine.lua
 luafile $HOME/.config/nvim/lua/bufferline.lua
-

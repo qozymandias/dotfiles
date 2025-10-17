@@ -13,15 +13,6 @@
 
 Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~/.config/nvim/init.lua`) actually calls `vimrc`.
 
-## Macos Notes
-
-install homebrew
-
-```
-brew install wget tmux
-
-```
-
 ## Quick Setup
 
 - **1.** Install [nvim](https://github.com/neovim/neovim/releases/tag/v0.11.3) (greater than `0.9`, recommended `0.11.3`):
@@ -58,8 +49,8 @@ brew install wget tmux
 
   if [[ "$(uname)" == "Darwin" ]]; then
     brew update && brew upgrade
-    brew install python node npm ripgrep pkg-config openssl cmake \
-        llvm ninja shellcheck jq git-lfs shfmt
+    brew install python node npm ripgrep pkg-config openssl cmake llvm ninja shellcheck jq git-lfs \
+        shfmt fd
   else
     sudo apt update && sudo apt upgrade -y
     sudo apt install python3 python3-pip python3-venv nodejs npm ripgrep pkg-config libssl-dev cmake \
@@ -77,19 +68,7 @@ brew install wget tmux
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install
 
-  npm install -g neovim vim-language-server typescript-language-server typescript prettier doctoc
-
-  mkdir -p $HOME/dev/nvim
-  cd $HOME/dev/nvim
-  git clone https://github.com/LuaLS/lua-language-server
-  cd lua-language-server
-  ./make.sh
-  cd ..
-  mkdir -p marksman
-  cd marksman
-  wget https://github.com/artempyanykh/marksman/releases/download/2024-12-18/marksman-linux-x64
-  mv marksman-linux-x64 marksman
-  chmod +x marksman
+  npm install -g neovim typescript prettier doctoc
   ```
 
 - **4.** Copy the config files in your home directory:
@@ -106,6 +85,7 @@ brew install wget tmux
   :PlugInstall
   :TSUpdate all
   :TSInstall python vim json bash yaml html typescript tsx javascript html rust markdown lua
+  :LspInstall yamlls tsserver pyright html vimls jsonls rust_analyzer sumneko_lua texlab cssls
   ```
 
 - **6.** Check health by running `healthcheck` command and following any install recommendations:
@@ -134,9 +114,9 @@ C:\Users\odown>Created log file at "C:\Users\odown\AppData\Local\Temp\Alacritty-
                                      "C:\\Users\\odown\\AppData\\Roaming\\alacritty\\alacritty.toml"
 ```
 
-#### Mac
+#### Macos
 
-```bash 
+```bash
 # Install via homebrew
 brew install --cask alacritty
 
@@ -209,4 +189,17 @@ nvm install 22
 nvm use 22
 
 node -v
+```
+
+### Install Nerd Fonts
+
+#### WSL
+
+Install via download [here](https://www.nerdfonts.com/font-downloads).
+Extract and select all .ttf or .otf files, right-click and click install for all users.
+
+#### Macos
+
+```bash
+brew install --cask font-fira-code-nerd-font
 ```
