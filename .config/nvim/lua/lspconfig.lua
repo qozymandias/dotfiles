@@ -50,9 +50,9 @@ cmp.setup {
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp",
-            -- entry_filter = function(entry, _)
-            --     return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
-            -- end
+            entry_filter = function(entry, _)
+                return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
+            end
         },
     }, {
         { name = 'buffer' },
@@ -135,7 +135,8 @@ local flag_args = { debounce_text_changes = 150 }
 --     flags = flag_args
 -- }
 
-local lsp_list = { "cssls", "marksman", "ts_ls", "yamlls", "taplo", "bashls", "pyright", "html", "vimls", "jsonls", "rust_analyzer",
+local lsp_list = { "cssls", "marksman", "ts_ls", "yamlls", "taplo", "bashls", "pyright", "html", "vimls", "jsonls",
+    "rust_analyzer",
     "lua_ls", "texlab" }
 
 require("mason").setup()
@@ -215,33 +216,52 @@ vim.lsp.config('rust_analyzer', {
             check = {
                 command = "clippy",
                 extraArgs = { "--no-deps", "--", "-Dwarnings" },
+                -- invocationStrategy = "once",
+                -- overrideCommand = {
+                --     "cargo-subspace",
+                --     "clippy",
+                --     "$saved_file",
+                -- },
             },
             diagnostics = {
                 enable = false,
             },
-            files = {
-                excludeDirs = {
-                    ".git",
-                    ".github",
-                    "target",
-                    "web",
-                    "web_archive",
-                    "workspace",
-                    "server_storage",
-                    "scripts",
-                    "nodeclient",
-                    "docker",
-                    "db_scripts",
-                    "client",
-                    "auto_submit_workspace",
-                    ".cargo",
-                },
-                watcherExclude = {
-                    "**/target/**",
-                    "**/.git/**",
-                    "**/node_modules/**",
-                },
+            workspace = {
+                -- discoverConfig = {
+                --     command = {
+                --         "cargo-subspace",
+                --         "discover",
+                --         "{arg}",
+                --     },
+                --     progressLabel = "cargo-subspace",
+                --     filesToWatch = {
+                --         "Cargo.toml",
+                --     },
+                -- },
             },
+            -- files = {
+            --     excludeDirs = {
+            --         ".git",
+            --         ".github",
+            --         "target",
+            --         "web",
+            --         "web_archive",
+            --         "workspace",
+            --         "server_storage",
+            --         "scripts",
+            --         "nodeclient",
+            --         "docker",
+            --         "db_scripts",
+            --         "client",
+            --         "auto_submit_workspace",
+            --         ".cargo",
+            --     },
+            --     watcherExclude = {
+            --         "**/target/**",
+            --         "**/.git/**",
+            --         "**/node_modules/**",
+            --     },
+            -- },
         }
     },
 })

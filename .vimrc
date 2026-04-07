@@ -46,6 +46,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'MattesGroeger/vim-bookmarks'
     Plug 'nvimtools/none-ls.nvim'
     Plug 'gbprod/none-ls-shellcheck.nvim'
+    Plug 'stevearc/oil.nvim'
+    Plug 'Isrothy/neominimap.nvim'
+
     " Plug 'kyazdani42/nvim-tree.lua'
     " Plug 'L3MON4D3/LuaSnip'
     " Plug 'saadparwaiz1/cmp_luasnip'
@@ -384,7 +387,7 @@ nmap <leader>b :lua require("telescope").extensions.vstask.tasks()<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Explore
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>e :Explore<cr>
+" nnoremap <leader>e :Explore<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git
@@ -519,3 +522,4 @@ luafile $HOME/.config/nvim/lua/treesitter-context.lua
 luafile $HOME/.config/nvim/lua/toggleterm.lua
 luafile $HOME/.config/nvim/lua/lualine.lua
 luafile $HOME/.config/nvim/lua/bufferline.lua
+luafile $HOME/.config/nvim/lua/oil.lua

@@ -50,11 +50,11 @@ Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~
   if [[ "$(uname)" == "Darwin" ]]; then
     brew update && brew upgrade
     brew install python node npm ripgrep pkg-config openssl cmake llvm ninja shellcheck jq git-lfs \
-        shfmt fd
+        shfmt fd bash-completion@2
   else
     sudo apt update && sudo apt upgrade -y
     sudo apt install python3 python3-pip python3-venv nodejs npm ripgrep pkg-config libssl-dev cmake \
-        libclang-dev ninja-build shellcheck jq black shfmt git-lfs -y
+        libclang-dev ninja-build shellcheck jq black shfmt git-lfs bash-completion@2 -y
   fi
 
   python3 -m venv ~/.venvs/pynvim
@@ -69,6 +69,8 @@ Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~
   ~/.fzf/install
 
   npm install -g neovim typescript prettier doctoc
+
+  curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
   ```
 
 - **4.** Copy the config files in your home directory:

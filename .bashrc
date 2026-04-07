@@ -1,19 +1,23 @@
 #!/bin/bash
 
 HISTCONTROL=ignoreboth
-HISTSIZE=5000
-HISTFILESIZE=10000
+HISTSIZE=90000
+HISTFILESIZE=90000
 export HISTIGNORE="*download.sh*:*remove_album_prefix.sh*:*Album*"
 
 shopt -s histappend
 shopt -s checkwinsize
 
-PS1="\[\033[01;31m\]\u\[\033[00m\]@\[\033[01;31m\]\h\[\033[00m\]:\[\033[03;34m\]\w\[\033[00m\] \[\033[35;4m\]\`parse_git_branch\`\[\033[00m\] \[\033[93;1m\][\T]\[\033[00m\]\n--> "
+PS1="\[\033[01;31m\]\u\[\033[00m\]@\[\033[01;31m\]relx\[\033[00m\]:\[\033[03;34m\]\w\[\033[00m\] \[\033[35;4m\]\`parse_git_branch\`\[\033[00m\] \[\033[93;1m\][\T]\[\033[00m\]\n--> "
 
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 [ -f "$HOME/.bash_aliases" ] && source "$HOME/.bash_aliases"
 [ -f "$HOME/.bash_functions" ] && source "$HOME/.bash_functions"
 [ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
+[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+
+export FZF_CTRL_R_COMMAND=
+bind -x '"\C-g": __fzf_history__'
 
 export VIM_FILES="$HOME.vim"
 export CC=/usr/bin/gcc
@@ -54,3 +58,18 @@ export NVM_DIR="$HOME/.nvm"
 if [[ $- == *i* ]] && [ -z "$TMUX" ]; then
     tmux attach -t dev || tmux new -s dev
 fi
+
+export RA_CACHE_DIR="$HOME/.cache/rust-analyzer"
+
+. "$HOME/.atuin/bin/env"
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
+
+# cargo-complete: package name completion for cargo
+[ -f "/Users/downingo/Library/Application Support/cargo-complete/cargo-complete.bash" ] && source "/Users/downingo/Library/Application Support/cargo-complete/cargo-complete.bash"
+
+# [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+
+export LIBCLANG_PATH=/opt/homebrew/opt/llvm/lib
+export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/opt/llvm/lib

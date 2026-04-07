@@ -68,3 +68,28 @@ chars = "\u001Cp"
 key = "N"
 mods = "Control|Shift"
 chars = "\u001Cc"
+
+[[keyboard.bindings]]
+key = "Left"
+mods = "Alt"
+chars = "\u001bb"
+
+[[keyboard.bindings]]
+key = "Right"
+mods = "Alt"
+chars = "\u001bf"
+
+[[keyboard.bindings]]
+key = "F"
+mods = "Alt"
+chars = "\u001bf"
+
+[[keyboard.bindings]]
+key = "B"
+mods = "Alt"
+chars = "\u001bb"
+
+[[keyboard.bindings]]
+key = "Back"
+mods = "Alt"
+chars = "\u0017"
