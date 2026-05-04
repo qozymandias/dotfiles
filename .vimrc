@@ -34,6 +34,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
     Plug 'akinsho/toggleterm.nvim'
     Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
     Plug 'puremourning/vimspector'
     Plug 'puuuuh/vimspector-rust'
     Plug 'mhinz/vim-signify'
@@ -48,6 +49,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'gbprod/none-ls-shellcheck.nvim'
     Plug 'stevearc/oil.nvim'
     Plug 'Isrothy/neominimap.nvim'
+    Plug 'MunifTanjim/nui.nvim'
+    Plug 'folke/snacks.nvim'
+    Plug 'nvim-neo-tree/neo-tree.nvim'
 
     " Plug 'kyazdani42/nvim-tree.lua'
     " Plug 'L3MON4D3/LuaSnip'
@@ -400,6 +404,9 @@ nnoremap <leader>gm :Git mergetool<cr>
 nmap <leader>tt :ToggleTerm<cr>
 nmap <leader>tg :Telescope diagnostics<cr>
 
+nmap <leader>nt :Neominimap Toggle<cr>
+nmap <leader>nf :Neominimap ToggleFocus<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Vimspector
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -505,6 +512,12 @@ set mouse=c
 
 let g:python3_host_prog = expand("~/.venvs/pynvim/bin/python")
 
+set fixeol
+set fileformat=unix
+
+" nnoremap <leader>sb :windo set scrollbind!<CR>
+nnoremap <leader>sb :if &scrollbind \| windo set noscrollbind nocursorbind \| else \| windo set scrollbind cursorbind \| endif<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Lua
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -523,3 +536,6 @@ luafile $HOME/.config/nvim/lua/toggleterm.lua
 luafile $HOME/.config/nvim/lua/lualine.lua
 luafile $HOME/.config/nvim/lua/bufferline.lua
 luafile $HOME/.config/nvim/lua/oil.lua
+" luafile $HOME/.config/nvim/lua/neominimap.lua
+" luafile $HOME/.config/nvim/lua/snacks.lua
+luafile $HOME/.config/nvim/lua/neo-tree.lua

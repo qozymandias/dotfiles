@@ -50,7 +50,7 @@ Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~
   if [[ "$(uname)" == "Darwin" ]]; then
     brew update && brew upgrade
     brew install python node npm ripgrep pkg-config openssl cmake llvm ninja shellcheck jq git-lfs \
-        shfmt fd bash-completion@2
+        shfmt fd bash-completion@2 binutils
   else
     sudo apt update && sudo apt upgrade -y
     sudo apt install python3 python3-pip python3-venv nodejs npm ripgrep pkg-config libssl-dev cmake \
@@ -205,3 +205,26 @@ Extract and select all .ttf or .otf files, right-click and click install for all
 ```bash
 brew install --cask font-fira-code-nerd-font
 ```
+
+### Bash backup with cron
+
+
+Run 
+```
+(crontab -l 2>/dev/null; echo "0 2 * * * /Users/downingo/dev/dotfiles/.backup_bash_history.sh") | crontab -
+```
+
+### Scan bash history backups for secrets
+
+Interactively scan the weekly backup logs for likely sensitive data (AWS / GitHub / Slack / Google
+keys, JWTs, PEM private key headers, URLs with embedded credentials, bearer tokens, and
+`key=value` style assignments such as `password=`, `secret=`, `token=`, `api_key=`). For each match
+the script prints the file, line number, matched substring and full line context, then asks whether
+to replace the match with `[REDACTED]`.
+
+```
+./.scan_bash_history.sh                       # scan default backup dir
+./.scan_bash_history.sh /path/to/other/dir    # scan a different dir
+```
+
+Answer `y` to redact, `n` (or Enter) to skip, `q` to quit.
