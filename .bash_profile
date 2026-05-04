@@ -7,6 +7,6 @@ fi
 
 alias assume=". assume"
 
-# . "$HOME/.atuin/bin/env"
-
-[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

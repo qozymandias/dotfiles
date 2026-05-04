@@ -85,9 +85,18 @@ gtm() {
 }
 
 convert_into_ascii() {
-    filename=$1
-    iconv -f UTF-8 -t ASCII//TRANSLIT//IGNORE "$filename" >out.md
-    [ -s out.md ] && mv out.md "$filename"
+    for filename in "$@"; do
+        tmp="${filename}.tmp"
+
+        iconv -f UTF-8 -t ASCII//TRANSLIT//IGNORE "$filename" > "$tmp"
+
+        if [ -s "$tmp" ]; then
+            mv "$tmp" "$filename"
+        else
+            rm -f "$tmp"
+            echo "Warning: conversion failed or produced empty file for $filename" >&2
+        fi
+    done
 }
 
 format_md() {
@@ -115,24 +124,14 @@ aws_export_credentials() {
 }
 
 devpilot() {
-    prompt=""
-
-    if [ -f $HOME/.copilot/prompt.md ]; then
-        prompt="$prompt\n# GLOBAL RULES\n$(cat $HOME/.copilot/prompt.md)\n"
-    fi
-
-    if [ -f AGENTS.md ]; then
-        prompt="$prompt\n# AGENT RULES\n$(cat AGENTS.md)\n"
-    fi
-
     gh copilot \
-        -i "$prompt" \
-        --available-tools='view,grep,glob' \
+        --available-tools='view,grep,glob,edit' \
         --allow-tool='view' \
         --allow-tool='grep' \
         --allow-tool='glob' \
+        --allow-tool='edit' \
         --allow-tool='shell(git:status|git:diff|git:log|git:blame|cargo:metadata|cargo:tree|cargo:locate-project)' \
-        --allow-tool='shell(cat|less|head|tail|wc|stat|file|grep|rg|fd|find|du)' \
+        --allow-tool='shell(cat|less|head|tail|wc|stat|file|grep|rg|fd|find|du|awk|sed|mkdir|touch)' \
         --deny-tool="shell(git:push|git:commit|git:reset|git:rebase|git:clean|rm|mv|cp|chmod|chown|curl|wget|bash)"
 }
 
@@ -141,7 +140,7 @@ update_rust_version() {
 }
 
 # TODO:
-# cargo run --release -- dependents idkit-events --github-token <github-token> --gitlab-token <gitlab-token>
+# cargo run --release -- dependents idkit-events --github-token <token> --gitlab-token <token>
 
 # TODO: make this into function
 # alias synczkp='rsync -avz --exclude "auto_submit_workspace/" --exclude "workplace/" --exclude "server_storage/" --exclude ".git/" --exclude "target/" --exclude "node_modules/" -e "ssh -i ~/.ssh/id_ed25519" ~/dev/zkp/restservice/zkp/ oscar@138.217.142.94:~/fresh/restservice/zkp'
