@@ -1,0 +1,107 @@
+# Shell functions - sourced from ~/.zshrc
+
+# get current branch in git repo
+parse_git_branch() {
+    local branch
+    branch=$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+    if [[ -n "$branch" ]]; then
+        local stat
+        stat=$(parse_git_dirty)
+        echo "[${branch}${stat}]"
+    fi
+}
+
+# get current status of git repo
+parse_git_dirty() {
+    local status_out dirty untracked ahead newfile renamed deleted bits
+    status_out=$(git status 2>&1)
+    grep -q "modified:"               <<< "$status_out" && dirty=1     || dirty=0
+    grep -q "Untracked files"         <<< "$status_out" && untracked=1 || untracked=0
+    grep -q "Your branch is ahead of" <<< "$status_out" && ahead=1     || ahead=0
+    grep -q "new file:"               <<< "$status_out" && newfile=1   || newfile=0
+    grep -q "renamed:"                <<< "$status_out" && renamed=1   || renamed=0
+    grep -q "deleted:"                <<< "$status_out" && deleted=1   || deleted=0
+
+    bits=''
+    (( renamed ))   && bits=">${bits}"
+    (( ahead ))     && bits="*${bits}"
+    (( newfile ))   && bits="+${bits}"
+    (( untracked )) && bits="?${bits}"
+    (( deleted ))   && bits="x${bits}"
+    (( dirty ))     && bits="!${bits}"
+
+    [[ -n "$bits" ]] && echo " ${bits}"
+}
+
+nonzero_return() {
+    local r=$?
+    (( r != 0 )) && echo "$r"
+}
+
+force_push_to_different_origin() {
+    local local_branch=$1
+    local remote_branch=$2
+    git push --force-with-lease origin "$local_branch":"$remote_branch"
+}
+
+tcpdump_rest_requests() {
+    local port=$1
+    tcpdump -i lo -A -s 0 "tcp port $port and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)" -w capture.pcap
+}
+
+gtm() {
+    gt | grep 'M ' | awk '{print $2}'
+}
+
+convert_into_ascii() {
+    local filename tmp
+    for filename in "$@"; do
+        tmp="${filename}.tmp"
+        iconv -f UTF-8 -t ASCII//TRANSLIT//IGNORE "$filename" > "$tmp"
+        if [[ -s "$tmp" ]]; then
+            mv "$tmp" "$filename"
+        else
+            rm -f "$tmp"
+            echo "Warning: conversion failed or produced empty file for $filename" >&2
+        fi
+    done
+}
+
+format_md() {
+    local filename=$1
+    convert_into_ascii "$filename" &&
+        pandoc "$filename" -o out.md -f markdown -t markdown+fenced_code_blocks --wrap=auto --columns=130 &&
+        mv out.md "$filename"
+}
+
+# Function for logging into AWS account "PROFILE_NAME", opens pop-up for login.
+aws_login() {
+    local PROFILE_NAME="IDVerse---Play---Oscar-Downing/AdministratorAccess"
+    aws sso login --profile "$PROFILE_NAME"
+    aws sts get-caller-identity --profile "$PROFILE_NAME"
+    aws s3 ls --profile "$PROFILE_NAME"
+}
+
+# Function for exporting AWS credentials, run every time you open a new shell.
+aws_export_credentials() {
+    local PROFILE_NAME=$1
+    eval "$(aws configure export-credentials --profile "$PROFILE_NAME" --format env)"
+    AWS_DEFAULT_REGION=$(aws configure get region --profile "$PROFILE_NAME")
+    export AWS_DEFAULT_REGION
+}
+
+devpilot() {
+    gh copilot \
+        --available-tools='view,grep,glob,edit' \
+        --allow-tool='view' \
+        --allow-tool='grep' \
+        --allow-tool='glob' \
+        --allow-tool='edit' \
+        --allow-tool='shell(git:status|git:diff|git:log|git:blame|cargo:metadata|cargo:tree|cargo:locate-project)' \
+        --allow-tool='shell(cat|less|head|tail|wc|stat|file|grep|rg|fd|find|du|awk|sed|mkdir|touch)' \
+        --deny-tool="shell(git:push|git:commit|git:reset|git:rebase|git:clean|rm|mv|cp|chmod|chown|curl|wget|bash)"
+}
+
+update_rust_version() {
+    rustup override set "$(cat ~/.rust-toolchain)"
+}

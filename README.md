@@ -11,7 +11,18 @@
 
 # Neovim dev env setup
 
-Note: Due to not wanting to convert my vimrc into lua file, nvim config file (`~/.config/nvim/init.lua`) actually calls `vimrc`.
+The nvim config now uses [lazy.nvim](https://github.com/folke/lazy.nvim).
+Layout:
+
+```
+~/.config/nvim/
+  init.lua
+  lua/config/      -- options, keymaps, autocmds, lazy bootstrap
+  lua/plugins/     -- one file per plugin spec
+  legacy/          -- previous init.vim + lua/* (kept for reference)
+```
+
+The previous `~/.vimrc` and `init.vim` remain in `legacy/` and at the repo root for backup. Plugins are installed automatically by lazy.nvim on first launch.
 
 ## Quick Setup
 

@@ -1,0 +1,51 @@
+# Aliases - sourced from ~/.zshrc
+
+alias cd1='cd ..'
+alias cd2='cd ../..'
+alias cd3='cd ../../..'
+alias cd4='cd ../../../..'
+alias cd5='cd ../../../../..'
+alias cd6='cd ../../../../../..'
+alias cd7='cd ../../../../../../..'
+alias cd8='cd ../../../../../../../..'
+alias cd9='cd ../../../../../../../../..'
+alias cd10='cd ../../../../../../../../../..'
+
+# ls colour flag differs between GNU (--color) and BSD/macOS (-G).
+if ls --color=auto >/dev/null 2>&1; then
+    alias ls='ls -F --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+else
+    alias ls='ls -FG'
+fi
+
+alias l='ls'
+alias ll='ls -lh'
+alias lt='ls --human-readable --size -1 -S --classify'
+alias left='ls -t -1'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias count='find . -type f | wc -l'
+alias h='history'
+alias gt='git status --short'
+alias gd='git diff'
+alias git_history_neat='git log --oneline --graph --decorate --first-parent'
+alias extract='tar xvf'
+alias ~='cd ~/'
+alias v='nvim'
+alias create_pyenv='python3 -m venv ./venv'
+alias activate_pyenv='source ./venv/bin/activate'
+alias cpv='rsync -ah --info=progress2'
+alias trash='mv --force -t ~/.local/share/Trash '
+alias viewcpu='watch -n.1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""'
+alias whatsenabled='systemctl list-unit-files --state=enabled'
+alias whatsrunning='systemctl list-units --type=service --state=running'
+alias clswaps='rm ~/.local/state/nvim/swap/*.swp'
+alias showmem='lshw -c memory'
+alias list_biggest_files='du -h --max-depth=1 | sort -hr'
+alias list_latest_modified='ls -altp | grep -v /'
+alias docker_cleanup='docker rmi $(docker images -q)'
