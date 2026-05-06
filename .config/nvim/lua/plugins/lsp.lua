@@ -10,8 +10,8 @@ return {
         config = function()
             local opts = { noremap = true, silent = true }
             vim.keymap.set("n", "<leader>i", vim.diagnostic.open_float, opts)
-            vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-            vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+            vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1 }) end, opts)
+            vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end, opts)
             vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
             vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -20,11 +20,21 @@ return {
             vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
 
             vim.diagnostic.config({
-                virtual_text = true,
-                signs = true,
+                virtual_text = { prefix = "●" },
+                signs = {
+                    text = {
+                        [vim.diagnostic.severity.ERROR] = "",
+                        [vim.diagnostic.severity.WARN]  = "",
+                        [vim.diagnostic.severity.INFO]  = "",
+                        [vim.diagnostic.severity.HINT]  = "",
+                    },
+                },
                 underline = true,
                 update_in_insert = false,
                 severity_sort = true,
+                jump = {
+                    on_jump = function() vim.diagnostic.open_float() end,
+                },
             })
 
             local capabilities = require("blink.cmp").get_lsp_capabilities()
@@ -37,7 +47,10 @@ return {
             }
 
             require("mason").setup()
-            require("mason-lspconfig").setup({ ensure_installed = lsp_list })
+            require("mason-lspconfig").setup({
+                ensure_installed = lsp_list,
+                automatic_enable = lsp_list,
+            })
 
             vim.lsp.config("*", {
                 capabilities = capabilities,
@@ -82,8 +95,8 @@ return {
                 on_init = function(client)
                     if client.workspace_folders then
                         local path = client.workspace_folders[1].name
-                        local has_luarc = vim.loop.fs_stat(path .. "/.luarc.json")
-                            or vim.loop.fs_stat(path .. "/.luarc.jsonc")
+                        local has_luarc = vim.uv.fs_stat(path .. "/.luarc.json")
+                            or vim.uv.fs_stat(path .. "/.luarc.jsonc")
                         if path ~= vim.fn.stdpath("config") and has_luarc then
                             return
                         end

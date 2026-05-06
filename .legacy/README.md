@@ -26,7 +26,7 @@ The previous `~/.vimrc` and `init.vim` remain in `legacy/` and at the repo root 
 
 ## Quick Setup
 
-- **1.** Install [nvim](https://github.com/neovim/neovim/releases/tag/v0.11.3) (greater than `0.9`, recommended `0.11.3`):
+- **1.** Install [nvim](https://github.com/neovim/neovim/releases/tag/v0.12.2) (greater than `0.9`, recommended `0.11.3`):
 
   ```bash
   if [[ "$(uname)" == "Darwin" ]]; then
@@ -39,7 +39,7 @@ The previous `~/.vimrc` and `init.vim` remain in `legacy/` and at the repo root 
 
   mkdir -p $HOME/dev/nvim
   cd $HOME/dev/nvim
-  wget https://github.com/neovim/neovim/releases/download/v0.11.3/$NVIM_TAR.tar.gz
+  wget https://github.com/neovim/neovim/releases/download/v0.12.2/$NVIM_TAR.tar.gz
   tar xvf $NVIM_TAR.tar.gz
   mv $NVIM_TAR nvim
   ```
@@ -61,7 +61,7 @@ The previous `~/.vimrc` and `init.vim` remain in `legacy/` and at the repo root 
   if [[ "$(uname)" == "Darwin" ]]; then
     brew update && brew upgrade
     brew install python node npm ripgrep pkg-config openssl cmake llvm ninja shellcheck jq git-lfs \
-        shfmt fd bash-completion@2 binutils
+        shfmt fd bash-completion@2 binutils tree-sitter
   else
     sudo apt update && sudo apt upgrade -y
     sudo apt install python3 python3-pip python3-venv nodejs npm ripgrep pkg-config libssl-dev cmake \

@@ -43,7 +43,6 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.hlsearch = true
 opt.incsearch = true
-opt.lazyredraw = true
 opt.magic = true
 opt.showmatch = true
 opt.matchtime = 2
@@ -51,6 +50,7 @@ opt.errorbells = false
 opt.visualbell = false
 opt.timeoutlen = 500
 opt.matchpairs:append("<:>")
+opt.winborder = "rounded"
 
 opt.fixeol = true
 opt.fileformat = "unix"

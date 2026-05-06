@@ -4,7 +4,7 @@ return {
         cmd = "Oil",
         keys = {
             {
-                "<leader>e",
+                "<leader>oe",
                 function()
                     local file_dir = vim.fn.expand("%:p:h")
                     require("oil").open_float(file_dir)

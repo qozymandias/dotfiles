@@ -69,4 +69,6 @@ map(
     ":if &scrollbind | windo set noscrollbind nocursorbind | else | windo set scrollbind cursorbind | endif<CR>"
 )
 
+map("n", "<leader>gm", ":Git mergetool<CR>", { desc = "Git mergetool" })
+
 vim.api.nvim_create_user_command("W", "w !sudo tee % > /dev/null", {})

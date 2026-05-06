@@ -1,17 +1,26 @@
 return {
     {
-        "maxmx03/solarized.nvim",
+        "qozymandias/NeoSolarized.nvim",
         lazy = false,
         priority = 1000,
-        opts = {
-            transparent = { enabled = false },
-            styles = {
-                comments = { italic = true },
-            },
-        },
-        config = function(_, opts)
-            require("solarized").setup(opts)
-            vim.cmd.colorscheme("solarized")
+        config = function()
+            require("NeoSolarized").setup({
+                style = "light",
+                transparent = false,
+                terminal_colors = true,
+                enable_italics = true,
+                styles = {
+                    comments = { italic = true },
+                    keywords = { italic = false },
+                    functions = {},
+                    variables = {},
+                    string = {},
+                    underline = true,
+                    undercurl = true,
+                },
+            })
+            vim.o.background = "light"
+            vim.cmd.colorscheme("NeoSolarized")
         end,
     },
 }

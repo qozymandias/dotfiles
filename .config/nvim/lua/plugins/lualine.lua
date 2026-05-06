@@ -4,19 +4,12 @@ return {
         event = "VeryLazy",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
-            local colors = { black = "#282828" }
-            local custom_gruvbox = require("lualine.themes.gruvbox_light")
-            for _, mode in ipairs({ "normal", "insert", "visual" }) do
-                custom_gruvbox[mode].c.fg = colors.black
-                custom_gruvbox[mode].c.gui = "bold"
-            end
-
             require("lualine").setup({
                 options = {
                     icons_enabled = true,
-                    theme = custom_gruvbox,
-                    component_separators = { left = "", right = "" },
-                    section_separators = { left = "", right = "" },
+                    theme = "NeoSolarized",
+                    component_separators = { left = "", right = "" },
+                    section_separators = { left = "", right = "" },
                     disabled_filetypes = {},
                     always_divide_middle = true,
                     globalstatus = true,
@@ -38,7 +31,7 @@ return {
                     lualine_z = {},
                 },
                 tabline = {},
-                extensions = { "fugitive", "neo-tree", "nvim-dap-ui", "overseer" },
+                extensions = { "fugitive", "nvim-dap-ui", "overseer" },
             })
         end,
     },

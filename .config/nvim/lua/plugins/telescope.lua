@@ -83,8 +83,8 @@ return {
 
             require("telescope").setup({
                 defaults = {
-                    prompt_prefix = "=> ",
-                    selection_caret = "-> ",
+                    prompt_prefix = "  ",
+                    selection_caret = " ",
                     mappings = {
                         i = { ["<C-t>"] = multiopen },
                         n = { ["<C-t>"] = multiopen },
@@ -123,7 +123,7 @@ return {
                     path_display = { "smart" },
                     winblend = 0,
                     border = {},
-                    borderchars = { "-", "|", "-", "|", "+", "+", "+", "+" },
+                    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
                     color_devicons = true,
                     use_less = true,
                     set_env = { COLORTERM = "truecolor" },
