@@ -29,7 +29,27 @@ return {
                                     relativenumber = false,
                                     winfixwidth = true,
                                 },
+                                keys = {
+                                    ["<Esc>"] = { "focus_main", mode = { "n", "i" } },
+                                },
                             },
+                            input = {
+                                keys = {
+                                    ["<Esc>"] = { "focus_main", mode = { "n", "i" } },
+                                },
+                            },
+                        },
+                        actions = {
+                            focus_main = function(picker)
+                                for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+                                    local buf = vim.api.nvim_win_get_buf(win)
+                                    local ft = vim.bo[buf].filetype
+                                    if not ft:match("^snacks_") and vim.api.nvim_win_get_config(win).relative == "" then
+                                        vim.api.nvim_set_current_win(win)
+                                        return
+                                    end
+                                end
+                            end,
                         },
                     },
                 },
@@ -48,6 +68,18 @@ return {
             {
                 "<leader>e",
                 function()
+                    local cur_ft = vim.bo.filetype
+                    if cur_ft:match("^snacks_picker") then
+                        for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+                            local buf = vim.api.nvim_win_get_buf(win)
+                            local ft = vim.bo[buf].filetype
+                            if not ft:match("^snacks_") and vim.api.nvim_win_get_config(win).relative == "" then
+                                vim.api.nvim_set_current_win(win)
+                                return
+                            end
+                        end
+                        return
+                    end
                     for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
                         local buf = vim.api.nvim_win_get_buf(win)
                         if vim.bo[buf].filetype:match("^snacks_picker_list") then
@@ -57,14 +89,28 @@ return {
                     end
                     Snacks.explorer()
                 end,
-                desc = "Focus file explorer",
+                desc = "Toggle focus file explorer",
             },
         },
         init = function()
             vim.api.nvim_create_autocmd("VimEnter", {
                 callback = function()
                     if vim.fn.argc() == 0 then return end
-                    vim.schedule(function() Snacks.explorer({ focus = false }) end)
+                    local origin = vim.api.nvim_get_current_tabpage()
+                    local tabs = vim.api.nvim_list_tabpages()
+                    local function open_for(idx)
+                        local tab = tabs[idx]
+                        if not tab then
+                            if vim.api.nvim_tabpage_is_valid(origin) then
+                                vim.api.nvim_set_current_tabpage(origin)
+                            end
+                            return
+                        end
+                        vim.api.nvim_set_current_tabpage(tab)
+                        Snacks.explorer({ focus = false })
+                        vim.defer_fn(function() open_for(idx + 1) end, 50)
+                    end
+                    vim.schedule(function() open_for(1) end)
                 end,
             })
 
