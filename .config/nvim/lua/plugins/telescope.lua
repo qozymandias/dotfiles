@@ -83,8 +83,8 @@ return {
 
             require("telescope").setup({
                 defaults = {
-                    prompt_prefix = "  ",
-                    selection_caret = " ",
+                    prompt_prefix = "  ",
+                    selection_caret = " ",
                     mappings = {
                         i = { ["<C-t>"] = multiopen },
                         n = { ["<C-t>"] = multiopen },

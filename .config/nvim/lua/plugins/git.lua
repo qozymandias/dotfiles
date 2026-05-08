@@ -1,6 +1,14 @@
 return {
-    { "tpope/vim-fugitive", cmd = { "Git", "G", "Gdiffsplit", "Gread", "Gwrite", "Gedit" } },
-    { "tpope/vim-rhubarb", dependencies = { "tpope/vim-fugitive" } },
+    {
+        "tpope/vim-fugitive",
+        cmd = {
+            "Git", "G",
+            "Gdiffsplit", "Gvdiffsplit", "Ghdiffsplit",
+            "Gread", "Gwrite", "Gedit",
+            "GBrowse",
+        },
+        dependencies = { "tpope/vim-rhubarb" },
+    },
 
     {
         "lewis6991/gitsigns.nvim",

@@ -8,7 +8,14 @@ map("n", "Q", "gq<CR>", { noremap = true })
 
 map("n", "<leader>w", ":w!<CR>", { desc = "Save" })
 map("n", "<leader>wq", ":wq!<CR>", { desc = "Save and quit" })
-map("n", "<leader>q", ":q<CR>", { desc = "Quit" })
+map("n", "<leader>q", function()
+    local win = vim.api.nvim_get_current_win()
+    if vim.api.nvim_win_get_config(win).relative ~= "" then
+        pcall(vim.api.nvim_win_close, win, false)
+    else
+        vim.cmd("q")
+    end
+end, { desc = "Quit" })
 map("n", "<leader>nu", ":set nu!<CR>", { desc = "Toggle line numbers" })
 
 map("n", "<leader>j", "gj")
