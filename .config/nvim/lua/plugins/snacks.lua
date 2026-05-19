@@ -6,7 +6,7 @@ return {
         opts = {
             bigfile     = { enabled = true },
             dashboard   = { enabled = true },
-            explorer    = { enabled = true, replace_netrw = true },
+            explorer    = { enabled = true, replace_netrw = false },
             indent      = { enabled = false },
             input       = { enabled = true },
             notifier    = { enabled = true, timeout = 3000 },
@@ -69,7 +69,21 @@ return {
                 "<leader>e",
                 function()
                     local cur_ft = vim.bo.filetype
+                    -- Going BACK from explorer: jump to the window we came from
+                    -- if it's still valid, otherwise fall back to the first
+                    -- non-snacks regular window.
                     if cur_ft:match("^snacks_picker") then
+                        local prev = vim.t.snacks_explorer_prev_win
+                        if prev and vim.api.nvim_win_is_valid(prev) then
+                            local buf = vim.api.nvim_win_get_buf(prev)
+                            local ft = vim.bo[buf].filetype
+                            if not ft:match("^snacks_")
+                                and vim.api.nvim_win_get_config(prev).relative == ""
+                            then
+                                vim.api.nvim_set_current_win(prev)
+                                return
+                            end
+                        end
                         for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
                             local buf = vim.api.nvim_win_get_buf(win)
                             local ft = vim.bo[buf].filetype
@@ -80,6 +94,10 @@ return {
                         end
                         return
                     end
+                    -- Going TO explorer: remember which window we were in so
+                    -- the next <leader>e returns here, not to the topmost
+                    -- window in creation order.
+                    vim.t.snacks_explorer_prev_win = vim.api.nvim_get_current_win()
                     for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
                         local buf = vim.api.nvim_win_get_buf(win)
                         if vim.bo[buf].filetype:match("^snacks_picker_list") then

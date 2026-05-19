@@ -12,6 +12,47 @@ return {
             { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
             { "<leader>r", "<cmd>Telescope registers<cr>", desc = "Registers" },
             { "<leader>gt", "<cmd>Telescope git_status<cr>", desc = "Git status" },
+            {
+                "<leader>gf",
+                function()
+                    local cwd = vim.fn.getcwd()
+                    local tracked = vim.fn.systemlist({ "git", "-C", cwd, "diff", "--name-only", "HEAD" })
+                    if vim.v.shell_error ~= 0 then
+                        vim.notify("Not a git repo or git failed", vim.log.levels.WARN)
+                        return
+                    end
+                    local untracked = vim.fn.systemlist({
+                        "git", "-C", cwd, "ls-files", "--others", "--exclude-standard",
+                    })
+                    local files, seen = {}, {}
+                    for _, list in ipairs({ tracked, untracked }) do
+                        for _, f in ipairs(list) do
+                            if f ~= "" and not seen[f] then
+                                files[#files + 1] = f
+                                seen[f] = true
+                            end
+                        end
+                    end
+                    if #files == 0 then
+                        vim.notify("No modified files", vim.log.levels.INFO)
+                        return
+                    end
+                    local pickers = require("telescope.pickers")
+                    local finders = require("telescope.finders")
+                    local conf = require("telescope.config").values
+                    local make_entry = require("telescope.make_entry")
+                    pickers.new({}, {
+                        prompt_title = "Git Modified Files",
+                        finder = finders.new_table({
+                            results = files,
+                            entry_maker = make_entry.gen_from_file({ cwd = cwd }),
+                        }),
+                        sorter = conf.file_sorter({}),
+                        previewer = conf.file_previewer({}),
+                    }):find()
+                end,
+                desc = "Git modified files",
+            },
             { "<leader>tg", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
             { "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "LSP definitions" },
             { "gi", "<cmd>Telescope lsp_implementations<cr>", desc = "LSP implementations" },
@@ -83,6 +124,7 @@ return {
 
             require("telescope").setup({
                 defaults = {
+                    dynamic_preview_title = true,
                     prompt_prefix = "  ",
                     selection_caret = " ",
                     mappings = {

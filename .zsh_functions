@@ -1,95 +1,77 @@
 # Shell functions - sourced from ~/.zshrc
 
-# get current branch in git repo
-parse_git_branch() {
-    local branch
-    branch=$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-    if [[ -n "$branch" ]]; then
-        local stat
-        stat=$(parse_git_dirty)
-        echo "[${branch}${stat}]"
-    fi
-}
+# Note: parse_git_branch / parse_git_dirty have been replaced by zsh's
+# built-in vcs_info (see ~/.zshrc). They were ~3-5x slower on large repos.
 
-# get current status of git repo
-parse_git_dirty() {
-    local status_out dirty untracked ahead newfile renamed deleted bits
-    status_out=$(git status 2>&1)
-    grep -q "modified:"               <<< "$status_out" && dirty=1     || dirty=0
-    grep -q "Untracked files"         <<< "$status_out" && untracked=1 || untracked=0
-    grep -q "Your branch is ahead of" <<< "$status_out" && ahead=1     || ahead=0
-    grep -q "new file:"               <<< "$status_out" && newfile=1   || newfile=0
-    grep -q "renamed:"                <<< "$status_out" && renamed=1   || renamed=0
-    grep -q "deleted:"                <<< "$status_out" && deleted=1   || deleted=0
-
-    bits=''
-    (( renamed ))   && bits=">${bits}"
-    (( ahead ))     && bits="*${bits}"
-    (( newfile ))   && bits="+${bits}"
-    (( untracked )) && bits="?${bits}"
-    (( deleted ))   && bits="x${bits}"
-    (( dirty ))     && bits="!${bits}"
-
-    [[ -n "$bits" ]] && echo " ${bits}"
-}
-
+# Print the previous command's exit status when non-zero (for prompts)
 nonzero_return() {
     local r=$?
-    (( r != 0 )) && echo "$r"
+    (( r != 0 )) && print -- "$r"
 }
 
+# git push --force-with-lease to a different remote branch
 force_push_to_different_origin() {
-    local local_branch=$1
-    local remote_branch=$2
-    git push --force-with-lease origin "$local_branch":"$remote_branch"
+    if (( $# != 2 )); then
+        print -u2 "usage: force_push_to_different_origin <local> <remote>"
+        return 2
+    fi
+    git push --force-with-lease origin "$1":"$2"
 }
 
+# Capture HTTP-style traffic on a port to capture.pcap
 tcpdump_rest_requests() {
-    local port=$1
-    tcpdump -i lo -A -s 0 "tcp port $port and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)" -w capture.pcap
+    local port=${1:?usage: tcpdump_rest_requests <port>}
+    tcpdump -i lo -A -s 0 \
+        "tcp port $port and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)" \
+        -w capture.pcap
 }
 
+# Print modified-file paths from `git status --short`
 gtm() {
-    gt | grep 'M ' | awk '{print $2}'
+    git status --short | awk '/^.M/ {print $2}'
 }
 
+# Replace files in-place with their ASCII transliteration.
+# Skips empty results and reports them.
 convert_into_ascii() {
     local filename tmp
     for filename in "$@"; do
         tmp="${filename}.tmp"
-        iconv -f UTF-8 -t ASCII//TRANSLIT//IGNORE "$filename" > "$tmp"
-        if [[ -s "$tmp" ]]; then
+        if iconv -f UTF-8 -t ASCII//TRANSLIT//IGNORE "$filename" > "$tmp" && [[ -s "$tmp" ]]; then
             mv "$tmp" "$filename"
         else
             rm -f "$tmp"
-            echo "Warning: conversion failed or produced empty file for $filename" >&2
+            print -u2 "warn: conversion failed or produced empty file: $filename"
         fi
     done
 }
 
+# Re-flow a markdown file: convert to ASCII, then run pandoc to wrap at 130 cols
 format_md() {
-    local filename=$1
-    convert_into_ascii "$filename" &&
-        pandoc "$filename" -o out.md -f markdown -t markdown+fenced_code_blocks --wrap=auto --columns=130 &&
-        mv out.md "$filename"
+    local filename=${1:?usage: format_md <file.md>}
+    convert_into_ascii "$filename" || return
+    pandoc "$filename" -o out.md -f markdown \
+        -t markdown+fenced_code_blocks --wrap=auto --columns=130 \
+        && mv out.md "$filename"
 }
 
-# Function for logging into AWS account "PROFILE_NAME", opens pop-up for login.
+# Log into the AWS SSO profile and verify identity.
 aws_login() {
-    local PROFILE_NAME="IDVerse---Play---Oscar-Downing/AdministratorAccess"
-    aws sso login --profile "$PROFILE_NAME"
-    aws sts get-caller-identity --profile "$PROFILE_NAME"
-    aws s3 ls --profile "$PROFILE_NAME"
+    local profile="IDVerse---Play---Oscar-Downing/AdministratorAccess"
+    aws sso login --profile "$profile"                  || return
+    aws sts get-caller-identity --profile "$profile"    || return
+    aws s3 ls --profile "$profile"
 }
 
-# Function for exporting AWS credentials, run every time you open a new shell.
+# Export AWS credentials as env vars for the current shell.
 aws_export_credentials() {
-    local PROFILE_NAME=$1
-    eval "$(aws configure export-credentials --profile "$PROFILE_NAME" --format env)"
-    AWS_DEFAULT_REGION=$(aws configure get region --profile "$PROFILE_NAME")
+    local profile=${1:?usage: aws_export_credentials <profile>}
+    eval "$(aws configure export-credentials --profile "$profile" --format env)"
+    AWS_DEFAULT_REGION=$(aws configure get region --profile "$profile")
     export AWS_DEFAULT_REGION
 }
 
+# Restricted gh copilot wrapper
 devpilot() {
     gh copilot \
         --available-tools='view,grep,glob,edit' \
@@ -99,9 +81,38 @@ devpilot() {
         --allow-tool='edit' \
         --allow-tool='shell(git:status|git:diff|git:log|git:blame|cargo:metadata|cargo:tree|cargo:locate-project)' \
         --allow-tool='shell(cat|less|head|tail|wc|stat|file|grep|rg|fd|find|du|awk|sed|mkdir|touch)' \
-        --deny-tool="shell(git:push|git:commit|git:reset|git:rebase|git:clean|rm|mv|cp|chmod|chown|curl|wget|bash)"
+        --deny-tool='shell(git:push|git:commit|git:reset|git:rebase|git:clean|rm|mv|cp|chmod|chown|curl|wget|bash)'
 }
 
+# Sync the active rust toolchain with ~/.rust-toolchain
 update_rust_version() {
-    rustup override set "$(cat ~/.rust-toolchain)"
+    local toolchain_file="$HOME/.rust-toolchain"
+    [[ -r "$toolchain_file" ]] || { print -u2 "missing $toolchain_file"; return 1 }
+    rustup override set "$(<"$toolchain_file")"
+}
+
+# Quick `mkdir -p && cd`
+mkcd() {
+    local dir=${1:?usage: mkcd <dir>}
+    mkdir -p -- "$dir" && cd -- "$dir"
+}
+
+# Extract any common archive type by extension
+unpack() {
+    local file=${1:?usage: unpack <archive>}
+    [[ -r "$file" ]] || { print -u2 "cannot read: $file"; return 1 }
+    case "${file:l}" in
+        *.tar.bz2|*.tbz2) tar xjf  "$file" ;;
+        *.tar.gz|*.tgz)   tar xzf  "$file" ;;
+        *.tar.xz|*.txz)   tar xJf  "$file" ;;
+        *.tar.zst)        tar --zstd -xf "$file" ;;
+        *.tar)            tar xf   "$file" ;;
+        *.bz2)            bunzip2  "$file" ;;
+        *.gz)             gunzip   "$file" ;;
+        *.xz)             unxz     "$file" ;;
+        *.zip)            unzip    "$file" ;;
+        *.7z)             7z x     "$file" ;;
+        *.rar)            unrar x  "$file" ;;
+        *) print -u2 "unsupported archive: $file"; return 1 ;;
+    esac
 }

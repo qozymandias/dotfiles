@@ -3,19 +3,28 @@
 [window]
 dimensions = { columns = 150, lines = 45 }
 padding = { x = 10, y = 10 }
-decorations = "Full"
 dynamic_title = true
 startup_mode = "Windowed"
+
+decorations = "buttonless"
+opacity = 1.00
+title = "Alacritty"
 
 [font]
 normal = { family = "FiraCode Nerd Font", style = "Retina" }
 bold = { family = "FiraCode Nerd Font", style = "Bold" }
 italic = { family = "FiraCode Nerd Font", style = "Italic" }
-size = 16.0
+size = 14.0
 
 [terminal.shell]
-program = "/bin/bash"
-args = ["-l"]
+program = "/bin/zsh"
+# -l: login shell so .zprofile/.zshrc are sourced.
+# -i: interactive (for completions, history, etc.).
+# -c: replace the shell with tmux. When tmux exits the Alacritty window closes
+#     instead of falling back to a bare zsh prompt that would auto-re-attach
+#     on the next launch.
+# new-session -A -s dev: attach to "dev" if it exists, otherwise create it.
+args = ["-l", "-i", "-c", "exec tmux new-session -A -s dev"]
 
 [colors.primary]
 background = "#fdf6e3"
@@ -92,4 +101,4 @@ chars = "\u001bb"
 [[keyboard.bindings]]
 key = "Back"
 mods = "Alt"
-chars = "\u0017"
+chars = "\u001b\u007f"

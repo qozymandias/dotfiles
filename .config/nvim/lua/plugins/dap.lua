@@ -59,14 +59,74 @@ return {
                 server = {
                     default_settings = {
                         ["rust-analyzer"] = {
-                            cargo = { allFeatures = true },
+                            cargo = {
+                                allFeatures = true,
+                                buildScripts = { enable = true },
+                            },
                             checkOnSave = true,
                             check = {
                                 command = "clippy",
                                 extraArgs = { "--no-deps", "--", "-Dwarnings" },
                             },
+                            procMacro = {
+                                enable = true,
+                                attributes = { enable = true },
+                            },
+                            diagnostics = {
+                                experimental = { enable = true },
+                                disabled = { "unresolved-proc-macro" },
+                            },
+                            cachePriming = { enable = true },
+                            files = {
+                                excludeDirs = { "target", "node_modules", ".direnv" },
+                            },
                         },
                     },
+                    on_attach = function(_, bufnr)
+                        vim.keymap.set("n", "<leader>ru", function()
+                            local diags = vim.diagnostic.get(0, {
+                                severity = { vim.diagnostic.severity.WARN, vim.diagnostic.severity.HINT },
+                            })
+                            local diag
+                            for _, d in ipairs(diags) do
+                                local code = d.code or (d.user_data and d.user_data.lsp and d.user_data.lsp.code)
+                                if code == "unused_imports" then
+                                    diag = d
+                                    break
+                                end
+                            end
+                            if not diag then
+                                vim.notify("No unused imports detected", vim.log.levels.INFO)
+                                return
+                            end
+                            local params = vim.lsp.util.make_range_params(0, "utf-8")
+                            params.range = {
+                                start = { line = diag.lnum, character = diag.col },
+                                ["end"] = { line = diag.end_lnum or diag.lnum, character = diag.end_col or diag.col },
+                            }
+                            params.context = { diagnostics = { vim.lsp.diagnostic.from(diag) } }
+                            vim.lsp.buf_request(0, "textDocument/codeAction", params, function(err, res, ctx)
+                                if err or not res then
+                                    vim.notify("No code actions available", vim.log.levels.WARN)
+                                    return
+                                end
+                                for _, action in ipairs(res) do
+                                    if action.title and action.title:lower():match("remove all the unused imports") then
+                                        local client = vim.lsp.get_client_by_id(ctx.client_id)
+                                        if action.edit then
+                                            vim.lsp.util.apply_workspace_edit(action.edit, client.offset_encoding)
+                                        end
+                                        if action.command then
+                                            vim.lsp.buf.execute_command(action.command)
+                                        end
+                                        vim.notify("Removed unused imports", vim.log.levels.INFO)
+                                        return
+                                    end
+                                end
+                                vim.notify("Action 'Remove all the unused imports' not offered", vim.log.levels.WARN)
+                            end)
+                        end, { buffer = bufnr, desc = "Rust: remove all unused imports" })
+                    end,
                 },
             }
         end,

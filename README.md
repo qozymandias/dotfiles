@@ -203,6 +203,34 @@ sudo apt install \
     libjavascriptcoregtk-4.1-dev libsoup-3.0-dev pkg-config
 ```
 
+### Leptos specific
+
+The Neovim config already enables proc-macro / `view!` support via rustaceanvim
+plus `tree-sitter-rstml` (JSX-style highlighting), `nvim-ts-autotag` (auto
+close `</div>`), and `crates.nvim` (inline Cargo.toml versions).
+
+For formatting `view!` macros via `rust-analyzer`:
+
+```bash
+cargo install leptosfmt
+```
+
+Drop a per-project `rust-analyzer.toml` next to `Cargo.toml`:
+
+```toml
+[rustfmt]
+overrideCommand = ["leptosfmt", "--stdin", "--rustfmt"]
+```
+
+And a `rustfmt.toml` setting the edition:
+
+```toml
+edition = "2021"
+```
+
+Useful rustaceanvim commands inside a `view!` block: `:RustLsp expandMacro`,
+`:RustLsp view hir`, `:RustLsp debuggables`.
+
 ### Install Node Version Manager and Upgrade Node
 
 ```bash

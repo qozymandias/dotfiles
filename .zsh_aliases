@@ -1,15 +1,17 @@
 # Aliases - sourced from ~/.zshrc
 
-alias cd1='cd ..'
-alias cd2='cd ../..'
-alias cd3='cd ../../..'
-alias cd4='cd ../../../..'
-alias cd5='cd ../../../../..'
-alias cd6='cd ../../../../../..'
-alias cd7='cd ../../../../../../..'
-alias cd8='cd ../../../../../../../..'
-alias cd9='cd ../../../../../../../../..'
-alias cd10='cd ../../../../../../../../../..'
+# Directory navigation: AUTO_CD + dot shortcuts (zsh idiomatic)
+alias -- ..='cd ..'
+alias -- ...='cd ../..'
+alias -- ....='cd ../../..'
+alias -- .....='cd ../../../..'
+alias -- ......='cd ../../../../..'
+alias -- .......='cd ../../../../../..'
+alias -- ........='cd ../../../../../../..'
+alias -- .........='cd ../../../../../../../..'
+alias -- ..........='cd ../../../../../../../../..'
+alias -- ~='cd ~'
+alias -- -- -='cd -'
 
 # ls colour flag differs between GNU (--color) and BSD/macOS (-G).
 if ls --color=auto >/dev/null 2>&1; then
@@ -22,12 +24,19 @@ fi
 
 alias l='ls'
 alias ll='ls -lh'
-alias lt='ls --human-readable --size -1 -S --classify'
+alias lt='ls -lhS -1 --classify 2>/dev/null || ls -lhS -1'
 alias left='ls -t -1'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
+# Global aliases (zsh-only): pipe to less / grep / xargs anywhere on the line
+alias -g L='| less'
+alias -g G='| grep'
+alias -g H='| head'
+alias -g T='| tail'
+alias -g X='| xargs'
 
 alias count='find . -type f | wc -l'
 alias h='history'
@@ -35,7 +44,6 @@ alias gt='git status --short'
 alias gd='git diff'
 alias git_history_neat='git log --oneline --graph --decorate --first-parent'
 alias extract='tar xvf'
-alias ~='cd ~/'
 alias v='nvim'
 alias create_pyenv='python3 -m venv ./venv'
 alias activate_pyenv='source ./venv/bin/activate'

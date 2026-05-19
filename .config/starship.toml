@@ -1,0 +1,117 @@
+# Starship prompt config. See https://starship.rs/config/
+# Two-line prompt:
+#   user@relx:cwd  git via rust/node [HH:MM:SS]
+#   --> 
+
+add_newline = false
+
+# Top line layout. Built-in $hostname/$time/$character avoid the cost of
+# `custom` modules forking /bin/sh each render (~5-10ms saved per module).
+format = """
+$username\
+[@](white)\
+$hostname\
+[:](white)\
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$rust\
+$nodejs\
+$cmd_duration\
+$time
+$character"""
+
+[character]
+success_symbol = "[-->](bold green)"
+error_symbol   = "[-->](bold red)"
+vimcmd_symbol  = "[<--](bold green)"
+
+[username]
+show_always = true
+format = "[$user]($style)"
+style_user = "bold red"
+style_root = "bold red"
+
+# Built-in hostname; ssh_only=false means it shows locally too. Set
+# trim_at = "." so we get just the short name (e.g. "relx" from "relx.local").
+[hostname]
+ssh_only = false
+trim_at = "."
+format = "[$hostname]($style)"
+style = "bold red"
+
+[directory]
+style = "bold blue"
+# Show the entire path, no truncation. Setting truncation_length = 0 disables
+# the head-of-path collapse; truncate_to_repo = false stops it from rewriting
+# the prefix to the git repo root.
+truncation_length = 0
+truncate_to_repo = false
+truncation_symbol = ""
+# Use the full absolute path (with $HOME unexpanded as ~) instead of the
+# repo-relative form.
+format = "[$path]($style)[$read_only]($read_only_style) "
+read_only = " RO"
+
+[git_branch]
+symbol = " "
+style = "bold magenta"
+format = "[$symbol$branch]($style) "
+
+# git_status walks the work tree; in huge repos this is the slowest module.
+# ignore_submodules skips recursing into submodule trees.
+[git_status]
+style = "bold magenta"
+ignore_submodules = true
+format = "([\\[$all_status$ahead_behind\\]]($style) )"
+conflicted = "="
+ahead      = "^${count}"
+behind     = "v${count}"
+diverged   = "^${ahead_count}v${behind_count}"
+untracked  = "?"
+stashed    = "\\$"
+modified   = "!"
+staged     = "+"
+renamed    = ">"
+deleted    = "x"
+
+[git_state]
+style = "bold yellow"
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+
+[cmd_duration]
+min_time = 2000
+style = "bold yellow"
+format = "took [$duration]($style) "
+
+# Built-in time module: no fork, formatted by starship internally.
+[time]
+disabled = false
+format = "[\\[$time\\]]($style)"
+time_format = "%H:%M:%S"
+style = "bold yellow"
+
+# Language modules - only render in matching project directories. Costs
+# nothing elsewhere because detection short-circuits.
+[rust]
+symbol = " "
+style = "bold red"
+format = "via [$symbol($version )]($style)"
+
+[nodejs]
+symbol = " "
+style = "bold green"
+format = "via [$symbol($version )]($style)"
+
+# Modules disabled by default to keep the prompt fast and uncluttered.
+# Re-enable per-directory with a project-local starship.toml override if you
+# want them back.
+[python]
+disabled = true
+
+[aws]
+disabled = true
+
+[kubernetes]
+disabled = true
