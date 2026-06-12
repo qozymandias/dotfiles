@@ -4,7 +4,7 @@ local map = vim.keymap.set
 
 map("i", "<C-u>", "<NOP>")
 map("n", "<space>", "<NOP>")
-map("n", "Q", "gq<CR>", { noremap = true })
+map("n", "Q", "gqap", { noremap = true })
 
 map("n", "<leader>w", ":w!<CR>", { desc = "Save" })
 map("n", "<leader>wq", ":wq!<CR>", { desc = "Save and quit" })

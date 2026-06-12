@@ -32,7 +32,7 @@ opt.textwidth = 500
 opt.autoindent = true
 opt.smartindent = true
 opt.cindent = true
-opt.wrap = true
+opt.wrap = false
 opt.splitbelow = true
 opt.splitright = true
 
@@ -56,11 +56,12 @@ opt.fixeol = true
 opt.fileformat = "unix"
 opt.foldmethod = "manual"
 
-opt.viminfo = { "'100", "<1000", "s100", "h" }
+opt.sidescrolloff = 36
+opt.shada = { "'100", "<1000", "s100", "h" }
 
-local undodir = "/tmp/.vim-undo-dir"
+local undodir = vim.fn.stdpath("state") .. "/undo"
 if vim.fn.isdirectory(undodir) == 0 then
-    vim.fn.mkdir(undodir, "p", 0700)
+    vim.fn.mkdir(undodir, "p", tonumber("700", 8))
 end
 opt.undodir = undodir
 opt.undofile = true

@@ -134,7 +134,25 @@ return {
 
             vim.api.nvim_create_autocmd("TabNew", {
                 callback = function()
-                    vim.schedule(function() Snacks.explorer({ focus = false }) end)
+                    -- Capture the tab now: when several tabs are created in
+                    -- one batch (e.g. telescope multi-select + <C-t>), every
+                    -- TabNew schedules a callback that only runs once the loop
+                    -- has finished, by which point the current tab is the last
+                    -- one. Without capturing, all explorers open on that final
+                    -- tab. Switch to the captured tab and skip if it already
+                    -- has an explorer.
+                    local tab = vim.api.nvim_get_current_tabpage()
+                    vim.schedule(function()
+                        if not vim.api.nvim_tabpage_is_valid(tab) then return end
+                        for _, win in ipairs(vim.api.nvim_tabpage_list_wins(tab)) do
+                            local buf = vim.api.nvim_win_get_buf(win)
+                            if vim.bo[buf].filetype:match("^snacks_picker_list") then
+                                return
+                            end
+                        end
+                        vim.api.nvim_set_current_tabpage(tab)
+                        Snacks.explorer({ focus = false })
+                    end)
                 end,
             })
 

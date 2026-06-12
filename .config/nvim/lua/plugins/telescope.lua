@@ -84,7 +84,7 @@ return {
             local actions_state = require("telescope.actions.state")
             local actions = require("telescope.actions")
 
-            local _bad = { "package-lock.*", "node_modules", ".*%.txt", ".*%.csv", ".*%.lua", "*conan*" }
+            local _bad = { "package-lock.*", "node_modules", ".*%.txt", ".*%.csv", "*conan*" }
             local function bad_files(filepath)
                 for _, v in ipairs(_bad) do
                     if filepath:match(v) then

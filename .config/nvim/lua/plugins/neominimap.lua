@@ -13,8 +13,6 @@ return {
             { "<leader>nbt", "<cmd>Neominimap BufToggle<cr>",   desc = "Toggle minimap for current buffer" },
         },
         init = function()
-            vim.opt.wrap = false
-            vim.opt.sidescrolloff = 36
 
             vim.g.neominimap = {
                 auto_enable = true,

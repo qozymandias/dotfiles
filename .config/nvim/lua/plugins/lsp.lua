@@ -17,7 +17,7 @@ return {
             vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
             vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, opts)
             vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-            vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+            vim.keymap.set("n", "gK", vim.lsp.buf.signature_help, opts)
 
             vim.diagnostic.config({
                 virtual_text = { prefix = "●" },
@@ -129,8 +129,6 @@ return {
                     },
                 },
             })
-
-            vim.lsp.enable(lsp_list)
         end,
     },
 

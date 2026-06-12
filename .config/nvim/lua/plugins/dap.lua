@@ -114,7 +114,8 @@ return {
                                     if action.title and action.title:lower():match("remove all the unused imports") then
                                         local client = vim.lsp.get_client_by_id(ctx.client_id)
                                         if action.edit then
-                                            vim.lsp.util.apply_workspace_edit(action.edit, client.offset_encoding)
+                                            local enc = client and client.offset_encoding or "utf-16"
+                                            vim.lsp.util.apply_workspace_edit(action.edit, enc)
                                         end
                                         if action.command then
                                             vim.lsp.buf.execute_command(action.command)
