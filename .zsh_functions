@@ -22,7 +22,7 @@ force_push_to_different_origin() {
 tcpdump_rest_requests() {
     local port=${1:?usage: tcpdump_rest_requests <port>}
     tcpdump -i lo -A -s 0 \
-        "tcp port $port and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)" \
+        '"tcp port $port and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)"' \
         -w capture.pcap
 }
 
@@ -74,14 +74,45 @@ aws_export_credentials() {
 # Restricted gh copilot wrapper
 devpilot() {
     gh copilot \
-        --available-tools='view,grep,glob,edit' \
-        --allow-tool='view' \
-        --allow-tool='grep' \
-        --allow-tool='glob' \
+        --available-tools='view,grep,glob,edit,create,skill,web_fetch' \
         --allow-tool='edit' \
-        --allow-tool='shell(git:status|git:diff|git:log|git:blame|cargo:metadata|cargo:tree|cargo:locate-project)' \
+        --allow-tool='create' \
+        --allow-tool='memory' \
+        --allow-tool='read' \
+        --allow-tool='url' \
+        --allow-tool='shell' \
+        --allow-tool='git' \
+        --allow-tool='shell(git:*)' \
+        --allow-tool='shell(cargo:metadata|cargo:tree|cargo:locate-project)' \
         --allow-tool='shell(cat|less|head|tail|wc|stat|file|grep|rg|fd|find|du|awk|sed|mkdir|touch)' \
-        --deny-tool='shell(git:push|git:commit|git:reset|git:rebase|git:clean|rm|mv|cp|chmod|chown|curl|wget|bash)'
+        --deny-tool='shell(git push)' \
+        --deny-tool='shell(git commit)' \
+        --deny-tool='shell(git reset)' \
+        --deny-tool='shell(git rebase)' \
+        --deny-tool='shell(git clean)' \
+        --deny-tool='shell(rm|mv|cp|chmod|chown|curl|wget|bash)' $1
+}
+
+gdevpilot() {
+    gh copilot \
+        --available-tools='view,grep,glob,edit,create,skill,web_fetch,bash' \
+        --allow-tool='edit' \
+        --allow-tool='create' \
+        --allow-tool='memory' \
+        --allow-tool='read' \
+        --allow-tool='url' \
+        --allow-tool='shell' \
+        --allow-tool='git' \
+        --allow-tool='bash' \
+        --allow-tool='shell(git:*)' \
+        --allow-tool='shell(cargo:metadata|cargo:tree|cargo:locate-project)' \
+        --allow-tool='shell(cat|less|head|tail|wc|stat|file|grep|rg|fd|find|du|awk|sed|mkdir|touch)' \
+        --deny-tool='shell(git push)' \
+        --deny-tool='shell(git commit)' \
+        --deny-tool='shell(git reset)' \
+        --deny-tool='shell(git rebase)' \
+        --deny-tool='shell(git clean)' \
+        --deny-tool='shell(rm|mv|cp|chmod|chown|curl|wget|bash)' $1
 }
 
 # Sync the active rust toolchain with ~/.rust-toolchain
