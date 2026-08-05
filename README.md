@@ -53,7 +53,7 @@ The previous `~/.vimrc` and `init.vim` remain in `legacy/` and at the repo root 
 
   mkdir -p $HOME/dev/nvim
   cd $HOME/dev/nvim
-  wget https://github.com/neovim/neovim/releases/download/v0.12.2/$NVIM_TAR.tar.gz
+  wget https://github.com/neovim/neovim/releases/download/v0.12.4/$NVIM_TAR.tar.gz
   tar xvf $NVIM_TAR.tar.gz
   mv $NVIM_TAR nvim
   ```

@@ -62,6 +62,7 @@ return {
                             cargo = {
                                 allFeatures = true,
                                 buildScripts = { enable = true },
+                                targetDir = true,
                             },
                             checkOnSave = true,
                             check = {
@@ -76,7 +77,7 @@ return {
                                 experimental = { enable = true },
                                 disabled = { "unresolved-proc-macro" },
                             },
-                            cachePriming = { enable = true },
+                            cachePriming = { enable = false },
                             files = {
                                 excludeDirs = { "target", "node_modules", ".direnv" },
                             },

@@ -111,6 +111,42 @@ return {
             },
         },
         init = function()
+            -- Serialize explorer creation. Snacks opens the explorer window
+            -- asynchronously, so creating several tabs in one batch (telescope
+            -- multi-select + <C-t>) races and stacks multiple explorers on one
+            -- tab. Draining a queue with the same 50ms stagger used at VimEnter
+            -- opens exactly one explorer per tab.
+            local explorer_queue = {}
+            local explorer_draining = false
+
+            local function tab_has_explorer(tab)
+                for _, win in ipairs(vim.api.nvim_tabpage_list_wins(tab)) do
+                    local buf = vim.api.nvim_win_get_buf(win)
+                    if vim.bo[buf].filetype:match("^snacks_picker_list") then
+                        return true
+                    end
+                end
+                return false
+            end
+
+            local function drain_explorer_queue()
+                if explorer_draining then return end
+                explorer_draining = true
+                local function step()
+                    local tab = table.remove(explorer_queue, 1)
+                    if not tab then
+                        explorer_draining = false
+                        return
+                    end
+                    if vim.api.nvim_tabpage_is_valid(tab) and not tab_has_explorer(tab) then
+                        vim.api.nvim_set_current_tabpage(tab)
+                        Snacks.explorer({ focus = false })
+                    end
+                    vim.defer_fn(step, 50)
+                end
+                step()
+            end
+
             vim.api.nvim_create_autocmd("VimEnter", {
                 callback = function()
                     if vim.fn.argc() == 0 then return end
@@ -134,24 +170,20 @@ return {
 
             vim.api.nvim_create_autocmd("TabNew", {
                 callback = function()
-                    -- Capture the tab now: when several tabs are created in
-                    -- one batch (e.g. telescope multi-select + <C-t>), every
-                    -- TabNew schedules a callback that only runs once the loop
-                    -- has finished, by which point the current tab is the last
-                    -- one. Without capturing, all explorers open on that final
-                    -- tab. Switch to the captured tab and skip if it already
-                    -- has an explorer.
+                    -- Capture the tab now: several TabNew events fired in one
+                    -- batch (telescope multi-select + <C-t>) all resolve after
+                    -- the loop, when the current tab is the last one. Queue the
+                    -- captured tab and drain serially so each explorer opens on
+                    -- its own tab instead of stacking on the final tab.
                     local tab = vim.api.nvim_get_current_tabpage()
                     vim.schedule(function()
                         if not vim.api.nvim_tabpage_is_valid(tab) then return end
-                        for _, win in ipairs(vim.api.nvim_tabpage_list_wins(tab)) do
-                            local buf = vim.api.nvim_win_get_buf(win)
-                            if vim.bo[buf].filetype:match("^snacks_picker_list") then
-                                return
-                            end
+                        if tab_has_explorer(tab) then return end
+                        for _, queued in ipairs(explorer_queue) do
+                            if queued == tab then return end
                         end
-                        vim.api.nvim_set_current_tabpage(tab)
-                        Snacks.explorer({ focus = false })
+                        explorer_queue[#explorer_queue + 1] = tab
+                        drain_explorer_queue()
                     end)
                 end,
             })

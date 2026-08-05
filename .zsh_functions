@@ -71,48 +71,28 @@ aws_export_credentials() {
     export AWS_DEFAULT_REGION
 }
 
-# Restricted gh copilot wrapper
+# Restricted gh copilot wrapper. Use `devpilot --plan` for a read-only session.
+#
+# ponytail: denies beat --allow-all-tools, so this list is the whole guardrail.
+# Only unrecoverable, publishing, escalating, or exfiltrating commands. Everything
+# else is recoverable from git or the reflog. Paths stay confined to the cwd.
 devpilot() {
     gh copilot \
-        --available-tools='view,grep,glob,edit,create,skill,web_fetch' \
-        --allow-tool='edit' \
-        --allow-tool='create' \
-        --allow-tool='memory' \
-        --allow-tool='read' \
-        --allow-tool='url' \
-        --allow-tool='shell' \
-        --allow-tool='git' \
-        --allow-tool='shell(git:*)' \
-        --allow-tool='shell(cargo:metadata|cargo:tree|cargo:locate-project)' \
-        --allow-tool='shell(cat|less|head|tail|wc|stat|file|grep|rg|fd|find|du|awk|sed|mkdir|touch)' \
+        -- \
+        --model "${DEVPILOT_MODEL:-claude-opus-5}" \
+        --allow-all-tools \
+        --disallow-temp-dir \
+        --add-dir "$HOME/.cargo/registry" \
+        --secret-env-vars=AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,AWS_SESSION_TOKEN,GITHUB_TOKEN \
+        --deny-tool='shell(rm)' \
+        --deny-tool='shell(git clean)' \
         --deny-tool='shell(git push)' \
         --deny-tool='shell(git commit)' \
-        --deny-tool='shell(git reset)' \
-        --deny-tool='shell(git rebase)' \
-        --deny-tool='shell(git clean)' \
-        --deny-tool='shell(rm|mv|cp|chmod|chown|curl|wget|bash)' $1
-}
-
-gdevpilot() {
-    gh copilot \
-        --available-tools='view,grep,glob,edit,create,skill,web_fetch,bash' \
-        --allow-tool='edit' \
-        --allow-tool='create' \
-        --allow-tool='memory' \
-        --allow-tool='read' \
-        --allow-tool='url' \
-        --allow-tool='shell' \
-        --allow-tool='git' \
-        --allow-tool='bash' \
-        --allow-tool='shell(git:*)' \
-        --allow-tool='shell(cargo:metadata|cargo:tree|cargo:locate-project)' \
-        --allow-tool='shell(cat|less|head|tail|wc|stat|file|grep|rg|fd|find|du|awk|sed|mkdir|touch)' \
-        --deny-tool='shell(git push)' \
-        --deny-tool='shell(git commit)' \
-        --deny-tool='shell(git reset)' \
-        --deny-tool='shell(git rebase)' \
-        --deny-tool='shell(git clean)' \
-        --deny-tool='shell(rm|mv|cp|chmod|chown|curl|wget|bash)' $1
+        --deny-tool='shell(sudo)' \
+        --deny-tool='shell(bash)' \
+        --deny-tool='shell(curl)' \
+        --deny-tool='shell(wget)' \
+        "$@"
 }
 
 # Sync the active rust toolchain with ~/.rust-toolchain

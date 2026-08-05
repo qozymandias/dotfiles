@@ -57,6 +57,8 @@ return {
             { "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "LSP definitions" },
             { "gi", "<cmd>Telescope lsp_implementations<cr>", desc = "LSP implementations" },
             { "gr", "<cmd>Telescope lsp_references<cr>", desc = "LSP references" },
+            { "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "LSP workspace symbols" },
+            { "<leader>sd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "LSP document symbols" },
             {
                 "<leader>fg",
                 mode = "v",
