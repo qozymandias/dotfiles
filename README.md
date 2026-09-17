@@ -97,15 +97,25 @@ The previous `~/.vimrc` and `init.vim` remain in `legacy/` and at the repo root 
   > Homebrew note: the `tree-sitter` formula only ships the C library; the CLI used by
   > nvim-treesitter `main` is the separate `tree-sitter-cli` formula.
 
-- **3.** Copy the config files into your home directory:
+- **3.** Copy the config files into your home directory (nvim is symlinked so edits track the repo):
 
   ```bash
   cd ~/dev/dotfiles
   cp .bashrc .bash_functions .bash_aliases .tmux.conf $HOME/
-  cp -r .config/nvim $HOME/.config/
+  ln -s ~/dev/dotfiles/.config/nvim $HOME/.config/nvim
   ```
 
   > Note: the shell environment is currently still bash. Migration to zsh is a work in progress.
+
+  `.tmux.conf` uses [TPM](https://github.com/tmux-plugins/tpm) for the status bar
+  ([catppuccin](https://github.com/catppuccin/tmux) theme + cpu/battery widgets). TPM must be
+  cloned before tmux starts; the rest install with `prefix + I` inside tmux:
+
+  ```bash
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  ```
+
+  > TPM reads `~/.tmux.conf` directly, so the file has to be copied (not run via `tmux -f`).
 
 - **4.** Start `nvim`. lazy.nvim bootstraps and installs all plugins on first launch. Mason auto-installs the LSP servers listed in `lua/plugins/lsp.lua`. Treesitter parsers compile on first use.
 

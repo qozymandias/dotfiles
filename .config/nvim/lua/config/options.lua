@@ -17,6 +17,7 @@ opt.relativenumber = true
 opt.signcolumn = "yes"
 opt.mouse = "c"
 opt.laststatus = 3
+opt.tabpagemax = 200
 opt.cmdheight = 2
 opt.so = 7
 opt.ruler = true
@@ -57,11 +58,11 @@ opt.fileformat = "unix"
 opt.foldmethod = "manual"
 
 opt.sidescrolloff = 36
-opt.shada = { "'100", "<1000", "s100", "h" }
+opt.shada = { "'1000", "<10000", "s1000", "h" }
 
 local undodir = vim.fn.stdpath("state") .. "/undo"
 if vim.fn.isdirectory(undodir) == 0 then
-    vim.fn.mkdir(undodir, "p", tonumber("700", 8))
+    vim.fn.mkdir(undodir, "p", 0700)
 end
 opt.undodir = undodir
 opt.undofile = true

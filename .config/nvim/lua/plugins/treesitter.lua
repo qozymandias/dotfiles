@@ -3,14 +3,20 @@ return {
         "nvim-treesitter/nvim-treesitter",
         branch = "main",
         lazy = false,
+        dependencies = { "rayliwell/tree-sitter-rstml" },
         build = ":TSUpdate",
         config = function()
+            pcall(function()
+                require("tree-sitter-rstml").init()
+            end)
+
             local langs = {
                 "bash", "c", "cpp", "css", "diff", "dockerfile", "git_config",
                 "git_rebase", "gitcommit", "gitignore", "go", "haskell", "html",
                 "javascript", "json", "kotlin", "lua", "luadoc",
                 "luap", "make", "markdown", "markdown_inline", "python", "query",
-                "regex", "rust", "scss", "sql", "toml", "tsx", "typescript",
+                "regex", "rust", "rust_with_rstml", "scss", "sql", "toml",
+                "tsx", "typescript",
                 "vim", "vimdoc", "yaml", "zig",
             }
 

@@ -74,7 +74,7 @@ return {
                                 attributes = { enable = true },
                             },
                             diagnostics = {
-                                experimental = { enable = true },
+                                experimental = { enable = false },
                                 disabled = { "unresolved-proc-macro" },
                             },
                             cachePriming = { enable = false },

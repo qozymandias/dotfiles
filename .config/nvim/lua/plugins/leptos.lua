@@ -1,8 +1,7 @@
 return {
     {
         "rayliwell/tree-sitter-rstml",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
-        ft = "rust",
+        lazy = false,
         build = ":TSUpdate",
         config = function()
             require("tree-sitter-rstml").setup()
