@@ -1,0 +1,2 @@
+edition = "2021"
+attr_value_brace_style = "AlwaysUnlessLit"

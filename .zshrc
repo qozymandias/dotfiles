@@ -158,5 +158,6 @@ fi
 # Keeping it out of here means subshells / ssh / scripts don't get hijacked.
 
 export RA_CACHE_DIR="$HOME/.cache/rust-analyzer"
+export PATH="/Users/downingo/.local/bin:$PATH"
 
 ulimit -n 65536

@@ -1,0 +1,32 @@
+[user]
+	email = odowning19@gmail.com
+	name = qozymandias
+[core]
+	editor = vim
+	fsmonitor = true
+	untrackedcache = true
+	commitGraph = true
+	deltaBaseCacheLimit = 2g
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[gc]
+	writeCommitGraph = true
+[pack]
+	threads = 0
+[protocol]
+	version = 2
+[maintenance]
+	repo = /Users/downingo/dev/idp/platform
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+# Cargo's registry index and git checkouts have no working tree to watch, and a wedged fsmonitor daemon there hangs
+# every cargo on the package cache lock. Kept last so it overrides core.fsmonitor above.
+[includeIf "gitdir:~/.cargo/"]
+	path = ~/.gitconfig-cargo
