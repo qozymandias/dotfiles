@@ -9,26 +9,17 @@ return {
             explorer    = { enabled = true, replace_netrw = false },
             indent      = { enabled = false },
             input       = { enabled = true },
+            lazygit     = { enabled = true },
             notifier    = { enabled = true, timeout = 3000 },
             picker      = {
                 enabled = true,
                 sources = {
                     explorer = {
-                        layout = {
-                            preset = "sidebar",
-                            preview = false,
-                            layout = { position = "left", width = 32 },
-                        },
-                        auto_close = false,
-                        jump = { close = false },
+                        layout = { layout = { width = 32 } },
                         hidden = true,
                         win = {
                             list = {
-                                wo = {
-                                    number = false,
-                                    relativenumber = false,
-                                    winfixwidth = true,
-                                },
+                                wo = { winfixwidth = true },
                                 keys = {
                                     ["<Esc>"] = { "focus_main", mode = { "n", "i" } },
                                 },
@@ -40,16 +31,7 @@ return {
                             },
                         },
                         actions = {
-                            focus_main = function(picker)
-                                for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
-                                    local buf = vim.api.nvim_win_get_buf(win)
-                                    local ft = vim.bo[buf].filetype
-                                    if not ft:match("^snacks_") and vim.api.nvim_win_get_config(win).relative == "" then
-                                        vim.api.nvim_set_current_win(win)
-                                        return
-                                    end
-                                end
-                            end,
+                            focus_main = function(picker) vim.api.nvim_set_current_win(picker.main) end,
                         },
                     },
                 },
@@ -61,6 +43,7 @@ return {
             words       = { enabled = true },
         },
         keys = {
+            { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
             { "<leader>nn", function() Snacks.notifier.show_history() end, desc = "Notification history" },
             { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss notifications" },
             { "<leader>fe", function() Snacks.explorer({ focus = false }) end, desc = "File explorer" },
@@ -68,56 +51,28 @@ return {
             {
                 "<leader>e",
                 function()
-                    local cur_ft = vim.bo.filetype
-                    -- Going BACK from explorer: jump to the window we came from
-                    -- if it's still valid, otherwise fall back to the first
-                    -- non-snacks regular window.
-                    if cur_ft:match("^snacks_picker") then
-                        local prev = vim.t.snacks_explorer_prev_win
-                        if prev and vim.api.nvim_win_is_valid(prev) then
-                            local buf = vim.api.nvim_win_get_buf(prev)
-                            local ft = vim.bo[buf].filetype
-                            if not ft:match("^snacks_")
-                                and vim.api.nvim_win_get_config(prev).relative == ""
-                            then
-                                vim.api.nvim_set_current_win(prev)
-                                return
-                            end
-                        end
-                        for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
-                            local buf = vim.api.nvim_win_get_buf(win)
-                            local ft = vim.bo[buf].filetype
-                            if not ft:match("^snacks_") and vim.api.nvim_win_get_config(win).relative == "" then
-                                vim.api.nvim_set_current_win(win)
-                                return
-                            end
-                        end
-                        return
+                    local explorer = Snacks.picker.get({ source = "explorer" })[1]
+                    if not explorer then return Snacks.explorer() end
+                    if explorer:is_focused() then
+                        vim.api.nvim_set_current_win(explorer.main)
+                    else
+                        explorer:focus("list")
                     end
-                    -- Going TO explorer: remember which window we were in so
-                    -- the next <leader>e returns here, not to the topmost
-                    -- window in creation order.
-                    vim.t.snacks_explorer_prev_win = vim.api.nvim_get_current_win()
-                    for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
-                        local buf = vim.api.nvim_win_get_buf(win)
-                        if vim.bo[buf].filetype:match("^snacks_picker_list") then
-                            vim.api.nvim_set_current_win(win)
-                            return
-                        end
-                    end
-                    Snacks.explorer()
                 end,
                 desc = "Toggle focus file explorer",
             },
         },
         init = function()
+            vim.env.LG_CONFIG_FILE = vim.fn.stdpath("config") .. "/lazygit.yml"
+
             -- Serialize explorer creation. Snacks opens the explorer window
             -- asynchronously, so creating several tabs in one batch (telescope
-            -- multi-select + <C-t>) races and stacks multiple explorers on one
-            -- tab. Draining a queue with the same 50ms stagger used at VimEnter
-            -- opens exactly one explorer per tab.
+            -- multi-select + <C-t>, or `nvim -p`) races and stacks multiple
+            -- explorers on one tab. Draining a queue with a 50ms stagger opens
+            -- exactly one explorer per tab.
             local explorer_queue = {}
             local explorer_draining = false
+            local explorer_return_tab
 
             local function tab_has_explorer(tab)
                 for _, win in ipairs(vim.api.nvim_tabpage_list_wins(tab)) do
@@ -136,6 +91,9 @@ return {
                     local tab = table.remove(explorer_queue, 1)
                     if not tab then
                         explorer_draining = false
+                        if vim.api.nvim_tabpage_is_valid(explorer_return_tab) then
+                            vim.api.nvim_set_current_tabpage(explorer_return_tab)
+                        end
                         return
                     end
                     if vim.api.nvim_tabpage_is_valid(tab) and not tab_has_explorer(tab) then
@@ -147,24 +105,25 @@ return {
                 step()
             end
 
+            -- return_tab is where the user ends up once the queue drains: the origin tab at startup, the newest
+            -- tab after TabNew.
+            local function enqueue_explorer(tab, return_tab)
+                explorer_return_tab = return_tab
+                if not vim.api.nvim_tabpage_is_valid(tab) or tab_has_explorer(tab) then return end
+                if vim.tbl_contains(explorer_queue, tab) then return end
+                explorer_queue[#explorer_queue + 1] = tab
+                drain_explorer_queue()
+            end
+
             vim.api.nvim_create_autocmd("VimEnter", {
                 callback = function()
                     if vim.fn.argc() == 0 then return end
-                    local origin = vim.api.nvim_get_current_tabpage()
-                    local tabs = vim.api.nvim_list_tabpages()
-                    local function open_for(idx)
-                        local tab = tabs[idx]
-                        if not tab then
-                            if vim.api.nvim_tabpage_is_valid(origin) then
-                                vim.api.nvim_set_current_tabpage(origin)
-                            end
-                            return
+                    vim.schedule(function()
+                        local origin = vim.api.nvim_get_current_tabpage()
+                        for _, tab in ipairs(vim.api.nvim_list_tabpages()) do
+                            enqueue_explorer(tab, origin)
                         end
-                        vim.api.nvim_set_current_tabpage(tab)
-                        Snacks.explorer({ focus = false })
-                        vim.defer_fn(function() open_for(idx + 1) end, 50)
-                    end
-                    vim.schedule(function() open_for(1) end)
+                    end)
                 end,
             })
 
@@ -172,39 +131,24 @@ return {
                 callback = function()
                     -- Capture the tab now: several TabNew events fired in one
                     -- batch (telescope multi-select + <C-t>) all resolve after
-                    -- the loop, when the current tab is the last one. Queue the
-                    -- captured tab and drain serially so each explorer opens on
-                    -- its own tab instead of stacking on the final tab.
+                    -- the loop, when the current tab is the last one.
                     local tab = vim.api.nvim_get_current_tabpage()
-                    vim.schedule(function()
-                        if not vim.api.nvim_tabpage_is_valid(tab) then return end
-                        if tab_has_explorer(tab) then return end
-                        for _, queued in ipairs(explorer_queue) do
-                            if queued == tab then return end
-                        end
-                        explorer_queue[#explorer_queue + 1] = tab
-                        drain_explorer_queue()
-                    end)
+                    vim.schedule(function() enqueue_explorer(tab, tab) end)
                 end,
             })
 
             vim.api.nvim_create_autocmd("QuitPre", {
                 callback = function()
-                    local non_explorer = 0
-                    for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
-                        local buf = vim.api.nvim_win_get_buf(win)
-                        local ft = vim.bo[buf].filetype
-                        if not ft:match("^snacks_") and vim.api.nvim_win_get_config(win).relative == "" then
-                            non_explorer = non_explorer + 1
-                        end
+                    local wins = vim.api.nvim_tabpage_list_wins(0)
+                    local function is_snacks(win)
+                        return vim.bo[vim.api.nvim_win_get_buf(win)].filetype:match("^snacks_") ~= nil
                     end
-                    if non_explorer <= 1 then
-                        for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
-                            local buf = vim.api.nvim_win_get_buf(win)
-                            if vim.bo[buf].filetype:match("^snacks_") then
-                                pcall(vim.api.nvim_win_close, win, true)
-                            end
-                        end
+                    local regular = vim.tbl_filter(function(win)
+                        return not is_snacks(win) and vim.api.nvim_win_get_config(win).relative == ""
+                    end, wins)
+                    if #regular > 1 then return end
+                    for _, win in ipairs(wins) do
+                        if is_snacks(win) then pcall(vim.api.nvim_win_close, win, true) end
                     end
                 end,
             })

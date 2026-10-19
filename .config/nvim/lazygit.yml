@@ -1,0 +1,9 @@
+# Loaded by snacks.nvim's lazygit via LG_CONFIG_FILE (see lua/plugins/snacks.lua).
+customCommands:
+  - key: t
+    context: files
+    description: Open in new nvim tab, keep lazygit running
+    output: none
+    # Hides the lazygit float rather than quitting it, so <leader>gg returns to the same session.
+    command: |-
+      nvim --server "$NVIM" --remote-expr "execute('lua Snacks.lazygit()')" && nvim --server "$NVIM" --remote-tab "$(pwd)"/{{.SelectedPath | quote}}

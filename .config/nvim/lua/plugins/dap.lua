@@ -83,7 +83,15 @@ return {
                             },
                         },
                     },
-                    on_attach = function(_, bufnr)
+                    on_attach = function(client, bufnr)
+                        vim.keymap.set("n", "<leader>rw", function()
+                            local ra = client.config.settings["rust-analyzer"]
+                            ra.cargo.target = ra.cargo.target == nil and "wasm32-unknown-unknown" or nil
+                            client:notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+                            require("rustaceanvim.commands.workspace_refresh")({ silent = true })
+                            vim.notify("rust-analyzer target: " .. (ra.cargo.target or "host"))
+                        end, { buffer = bufnr, desc = "Toggle wasm32 target" })
+
                         vim.keymap.set("n", "<leader>ru", function()
                             local diags = vim.diagnostic.get(0, {
                                 severity = { vim.diagnostic.severity.WARN, vim.diagnostic.severity.HINT },
