@@ -306,8 +306,9 @@ for no reason, and use `.for_each()` only for trivial side effects.
 
 Inline single-use values rather than binding a name to them. A `let` earns its
 place by being used more than once, by naming something the expression does
-not, or by keeping a line readable - not by habit. Destructure at the call site
-instead of binding a whole then reaching into it.
+not, or by keeping a line readable - not by habit. Do not destructure structs
+into local bindings (`let Foo { a, b } = ...`); bind the whole value and use
+`value.field`. Tuples and enum matches are unaffected.
 
 ### Type annotations
 
