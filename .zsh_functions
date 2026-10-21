@@ -80,17 +80,28 @@ aws_export_credentials() {
 devpilot() {
     gh copilot \
         -- \
-        --model "${DEVPILOT_MODEL:-claude-opus-5}" \
+        --model "${DEVPILOT_MODEL:-claude-opus-5.5}" \
         --allow-all-tools \
         --add-dir "$HOME/.cargo/registry" \
         --add-dir /tmp \
         --add-dir /private/tmp \
         --secret-env-vars=AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,AWS_SESSION_TOKEN,GITHUB_TOKEN \
-        --deny-tool='shell(rm)' \
         --deny-tool='shell(git clean)' \
         --deny-tool='shell(git push)' \
         --deny-tool='shell(git commit)' \
         --deny-tool='shell(sudo)' \
+        "$@"
+}
+
+gdevpilot() {
+    gh copilot \
+        -- \
+        --model "${DEVPILOT_MODEL:-claude-opus-5.5}" \
+        --allow-all-tools \
+        --add-dir "$HOME/.cargo/registry" \
+        --add-dir /tmp \
+        --add-dir /private/tmp \
+        --secret-env-vars=AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,AWS_SESSION_TOKEN,GITHUB_TOKEN \
         "$@"
 }
 
