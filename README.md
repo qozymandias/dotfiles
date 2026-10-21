@@ -97,13 +97,40 @@ The previous `~/.vimrc` and `init.vim` remain in `legacy/` and at the repo root 
   > Homebrew note: the `tree-sitter` formula only ships the C library; the CLI used by
   > nvim-treesitter `main` is the separate `tree-sitter-cli` formula.
 
-- **3.** Copy the config files into your home directory (nvim is symlinked so edits track the repo):
+- **3.** Symlink the config files into your home directory so edits in either place track the repo.
+  Any existing real file at a target is moved aside to `<name>.bak.<timestamp>` first; existing
+  symlinks are replaced.
 
   ```bash
-  cd ~/dev/dotfiles
-  cp .bashrc .bash_functions .bash_aliases .tmux.conf $HOME/
-  ln -s ~/dev/dotfiles/.config/nvim $HOME/.config/nvim
+  DOTFILES=~/dev/dotfiles
+
+  link() {
+    local src="$DOTFILES/$1" dst="$2"
+    [[ "$dst" -ef "$src" ]] && return
+    mkdir -p "$(dirname "$dst")"
+    if [[ -e "$dst" && ! -L "$dst" ]]; then
+      mv "$dst" "$dst.bak.$(date +%s)" || return 1
+    fi
+    ln -sfn "$src" "$dst"
+  }
+
+  for f in .bashrc .bash_profile .bash_aliases .bash_functions \
+           .zshrc .zprofile .zsh_aliases .zsh_functions \
+           .tmux.conf .gitconfig .gitconfig-cargo; do
+    link "$f" "$HOME/$f"
+  done
+
+  link .config/nvim                       "$HOME/.config/nvim"
+  link .config/starship.toml              "$HOME/.config/starship.toml"
+  link .config/fish/conf.d/atuin.env.fish "$HOME/.config/fish/conf.d/atuin.env.fish"
+  link alacritty.toml                     "$HOME/.config/alacritty/alacritty.toml"
+  link .ssh/config                        "$HOME/.ssh/config"
+  link .claude/settings.json              "$HOME/.claude/settings.json"
+  link .codex/config.toml                 "$HOME/.codex/config.toml"
+  link .copilot/copilot-instructions.md   "$HOME/.copilot/copilot-instructions.md"
   ```
+
+  Check the result with `ls -la ~ ~/.config | grep -- '->'`. Drop any line for a tool you do not use.
 
   > Note: the shell environment is currently still bash. Migration to zsh is a work in progress.
 
@@ -115,7 +142,7 @@ The previous `~/.vimrc` and `init.vim` remain in `legacy/` and at the repo root 
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   ```
 
-  > TPM reads `~/.tmux.conf` directly, so the file has to be copied (not run via `tmux -f`).
+  > TPM reads `~/.tmux.conf` directly, so the file has to be linked or copied there (not run via `tmux -f`).
 
 - **4.** Start `nvim`. lazy.nvim bootstraps and installs all plugins on first launch. Mason auto-installs the LSP servers listed in `lua/plugins/lsp.lua`. Treesitter parsers compile on first use.
 
@@ -154,10 +181,9 @@ C:\Users\odown>Created log file at "C:\Users\odown\AppData\Local\Temp\Alacritty-
 # Install via homebrew
 brew install --cask alacritty
 
-# Copy config file
+# Config is symlinked in Quick Setup step 3, or on its own:
 mkdir -p $HOME/.config/alacritty
-cd ~/dev/dotfiles
-cp alacritty.toml $HOME/.config/alacritty/alacritty.toml
+ln -sfn ~/dev/dotfiles/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 ```
 
 ### Locales fix
