@@ -135,6 +135,17 @@ devpilot() {
         --deny-tool="shell(git:push|git:commit|git:reset|git:rebase|git:clean|rm|mv|cp|chmod|chown|curl|wget|bash)"
 }
 
+gdevpilot() {
+    gh copilot \
+        --available-tools='view,grep,glob,edit' \
+        --allow-tool='view' \
+        --allow-tool='grep' \
+        --allow-tool='glob' \
+        --allow-tool='edit' \
+        --allow-tool='shell(git:status|git:diff|git:log|git:blame|cargo:metadata|cargo:tree|cargo:locate-project|git:push|git:commit|git:reset|git:rebase|git:clean|rm|mv|cp|chmod|chown|curl|wget|bash)' \
+        --allow-tool='shell(cat|less|head|tail|wc|stat|file|grep|rg|fd|find|du|awk|sed|mkdir|touch)'
+}
+
 update_rust_version() {
     rustup override set $(cat ~/.rust-toolchain)
 }
